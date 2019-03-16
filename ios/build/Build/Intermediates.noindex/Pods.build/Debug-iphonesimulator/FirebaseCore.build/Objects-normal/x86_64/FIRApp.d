@@ -1,0 +1,19 @@
+dependencies: \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/FIRApp.m \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Public/FIRApp.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Public/FIRConfiguration.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Public/FIRAnalyticsConfiguration.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Public/FIRLoggerLevel.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRAnalyticsConfiguration+Internal.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRAppInternal.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRErrors.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRErrorCode.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRBundleUtil.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponentContainerInternal.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponent.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponentContainer.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponentType.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRLibrary.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRLogger.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIROptionsInternal.h \
+  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Public/FIROptions.h

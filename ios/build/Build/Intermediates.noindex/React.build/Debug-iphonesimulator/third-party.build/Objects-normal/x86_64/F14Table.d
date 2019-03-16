@@ -1,0 +1,26 @@
+dependencies: \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/container/detail/F14Table.cpp \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/container/detail/F14Table.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Bits.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/Bits.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/ConstexprMath.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Portability.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/portability/Config.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/CPortability.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Utility.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Traits.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/Assume.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/portability/Builtins.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Likely.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/ScopeGuard.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/Preprocessor.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/UncaughtExceptions.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/functional/ApplyTuple.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/functional/Invoke.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/Align.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/Exception.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/CppAttributes.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/Launder.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/lang/SafeAssert.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/container/detail/F14Defaults.h \
+  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/third-party/folly-2018.10.22.00/folly/container/detail/F14IntrinsicsAvailability.h

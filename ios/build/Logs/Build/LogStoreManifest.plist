@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>9</integer>
+	<key>logs</key>
+	<dict>
+		<key>D1632E1C-C580-4B32-966A-7D7DC8EFBD1A</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D1632E1C-C580-4B32-966A-7D7DC8EFBD1A.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Shopping project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Shopping</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace Shopping with scheme Shopping and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>574265020.20920599</real>
+			<key>timeStoppedRecording</key>
+			<real>574265032.16011095</real>
+			<key>title</key>
+			<string>Building workspace Shopping with scheme Shopping and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>D1632E1C-C580-4B32-966A-7D7DC8EFBD1A</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

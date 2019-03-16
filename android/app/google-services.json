@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "880885897141",
+    "firebase_url": "https://facebook-1a64f.firebaseio.com",
+    "project_id": "facebook-1a64f",
+    "storage_bucket": "facebook-1a64f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880885897141:android:a00f43a0b15be47c",
+        "android_client_info": {
+          "package_name": "com.shopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880885897141-cr4im27vhj2gpt7b8kof022duipkh799.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.shopping",
+            "certificate_hash": "8a17c95eedbf285c612a5a5feadf66eb73b36ae7"
+          }
+        },
+        {
+          "client_id": "880885897141-fgp0tvp7turrc6onfck7bhddis9gfc2l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3OcM-Jxxm3ctrK_bWW74t20XI6Wmkn5s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880885897141-fgp0tvp7turrc6onfck7bhddis9gfc2l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "880885897141-ecomq313ppfbusm0aekl4q86ufvh0ko6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.Shopping"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

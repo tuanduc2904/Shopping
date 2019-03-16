@@ -1,0 +1,4 @@
+#Thu Mar 14 21:16:51 ICT 2019
+base.0=/Users/apple/Desktop/Shopping/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
