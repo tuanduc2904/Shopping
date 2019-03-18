@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/ReactCommon/jsi/JSCRuntime.cpp \
-  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/ReactCommon/jsi/JSCRuntime.h \
-  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/ReactCommon/jsi/jsi.h \
-  /Users/apple/Desktop/DA/Shopping/node_modules/react-native/ReactCommon/jsi/jsi-inl.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/jsi/JSCRuntime.cpp \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/jsi/JSCRuntime.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/jsi/jsi.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/jsi/jsi-inl.h

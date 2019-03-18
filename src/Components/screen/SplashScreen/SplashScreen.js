@@ -7,19 +7,23 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, StatusBar, Button, ImageBackground} from 'react-native';
-import {Dimens} from '../../../assets/Dimens';
-import {Icon} from "native-base";
-import {colors} from "../../../assets/color";
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View, StatusBar, Button, ImageBackground } from 'react-native';
+import { Dimens } from '../../../assets/Dimens';
+import { Icon } from "native-base";
+import { colors } from "../../../assets/color";
 import AutoTypingText from 'react-native-auto-typing-text';
+import { connect } from 'react-redux'
 
-export default class SplashScreen extends Component<Props> {
+class SplashScreen extends Component {
 
-    componentDidMount(): void {
+
+    componentDidMount() {
         setTimeout(() => {
             this.props.navigation.navigate('Login')
         }, 3000);
+
+      
     }
 
     render() {
@@ -28,10 +32,10 @@ export default class SplashScreen extends Component<Props> {
                 <ImageBackground
                     source={require('../../../assets/images/background-main.png')}
                     style={styles.bg}>
-                    <View style={{marginTop: Dimens.screen.height / 2.5}}>
-                        <View style={{alignItems: 'center'}}>
+                    <View style={{ marginTop: Dimens.screen.height / 2.5 }}>
+                        <View style={{ alignItems: 'center' }}>
                             <Icon name='shopping-bag' type='FontAwesome5'
-                                  style={{fontSize: 100, color: colors.red}}/></View>
+                                style={{ fontSize: 100, color: colors.red }} /></View>
                         <View>
                             <AutoTypingText
                                 text={`Shopping`}
@@ -47,7 +51,7 @@ export default class SplashScreen extends Component<Props> {
                                 }}
                                 onComplete={() => {
                                     console.log('done');
-                                }}/>
+                                }} />
                         </View>
                     </View>
                 </ImageBackground>
@@ -55,6 +59,17 @@ export default class SplashScreen extends Component<Props> {
         );
     }
 }
+
+// export default SplashScreen;
+
+
+function mapStateToProp(state) {
+    return {
+        Auth: state.Auth,
+    }
+}
+
+export default connect(mapStateToProp)(SplashScreen)
 const styles = StyleSheet.create({
     container: {
         flex: 1,

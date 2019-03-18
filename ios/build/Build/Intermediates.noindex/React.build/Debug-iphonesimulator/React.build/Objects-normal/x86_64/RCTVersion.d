@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/RCTVersion.m \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/RCTVersion.h
+  /Volumes/DATA/Mobile/Shopping/node_modules/react-native/React/Base/RCTVersion.m \
+  /Volumes/DATA/Mobile/Shopping/node_modules/react-native/React/Base/RCTVersion.h

@@ -7,30 +7,35 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import {
     createStackNavigator,
     createAppContainer,
     createBottomTabNavigator,
     TabNavigator,
 } from 'react-navigation';
-import  SplashScreen from '../Components/screen/SplashScreen/SplashScreen';
+import SplashScreen from '../Components/screen/SplashScreen/SplashScreen';
 import Login from "../Components/screen/Login/Login";
 import Home from "../Components/screen/Home/Home";
-import {Icon} from "native-base";
-import {colors} from "../assets/color";
+import { Icon } from "native-base";
+import { colors } from "../assets/color";
 import SeeMore from "../Components/screen/SeeMore/SeeMore";
 import ShoppingCart from "../Components/screen/ShoppingCart/ShoppingCart";
 import Booth from "../Components/screen/Booth/Booth";
 import Profile from "../Components/screen/Profile/Profile";
+import SignUp from '../Components/screen/SignUp/SignUp';
+import store from '../redux/store';
+import { Provider } from 'react-redux'
+
+
 const MainNavigator = createBottomTabNavigator({
     Home: {
         screen: Home,
         tabBarLabel: "Trang ",
         navigationOptions: {
-            tabBarIcon: ({tintColor}) => (
-                <Icon name='home' type='AntDesign' style={{fontSize: 30, color:tintColor}}/>
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name='home' type='AntDesign' style={{ fontSize: 30, color: tintColor }} />
             )
         },
     },
@@ -38,8 +43,8 @@ const MainNavigator = createBottomTabNavigator({
         screen: SeeMore,
         tabBarLabel: "Dạo",
         navigationOptions: {
-            tabBarIcon: ({tintColor}) => (
-                <Icon name='checkbox-multiple-blank-outline' type='MaterialCommunityIcons' style={{fontSize: 30, color:tintColor}}/>
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name='checkbox-multiple-blank-outline' type='MaterialCommunityIcons' style={{ fontSize: 30, color: tintColor }} />
             )
         },
     },
@@ -47,8 +52,8 @@ const MainNavigator = createBottomTabNavigator({
         screen: ShoppingCart,
         tabBarLabel: "ShoppingCart",
         navigationOptions: {
-            tabBarIcon: ({tintColor}) => (
-                <Icon name='shoppingcart' type='AntDesign' style={{fontSize: 30, color:tintColor}}/>
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name='shoppingcart' type='AntDesign' style={{ fontSize: 30, color: tintColor }} />
             )
         },
     },
@@ -56,8 +61,8 @@ const MainNavigator = createBottomTabNavigator({
         screen: Booth,
         tabBarLabel: "ShoppingCart",
         navigationOptions: {
-            tabBarIcon: ({tintColor}) => (
-                <Icon name='isv' type='AntDesign' style={{fontSize: 28, color:tintColor}}/>
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name='isv' type='AntDesign' style={{ fontSize: 28, color: tintColor }} />
             )
         },
     },
@@ -65,51 +70,59 @@ const MainNavigator = createBottomTabNavigator({
         screen: Profile,
         tabBarLabel: "ShoppingCart",
         navigationOptions: {
-            tabBarIcon: ({tintColor}) => (
-                <Icon name='user' type='EvilIcons' style={{fontSize: 35, color:tintColor}}/>
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name='user' type='EvilIcons' style={{ fontSize: 35, color: tintColor }} />
             )
         },
     },
-},{
-    tabBarOptions: {
-        showLabel: false,
-        title: true,
-        showIcon: true,
-        activeTintColor: colors.red,
-        inactiveTintColor: '#707070',
-        labelStyle: {
-            fontSize: 10,
+}, {
+        tabBarOptions: {
+            showLabel: false,
+            title: true,
+            showIcon: true,
+            activeTintColor: colors.red,
+            inactiveTintColor: '#707070',
+            labelStyle: {
+                fontSize: 10,
+            },
+            style: {
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                right: 0,
+                backgroundColor: '#ffffffcc',
+                // borderTopWidth: 1,
+                shadowColor: '#ffffffbf',
+                // shadowOpacity: 1,
+                elevation: 1
+            },
+            indicatorStyle: {
+                backgroundColor: 'transparent'
+            },
         },
-        style: {
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            right:0,
-            backgroundColor: '#ffffffcc',
-            // borderTopWidth: 1,
-            shadowColor: '#ffffffbf',
-            // shadowOpacity: 1,
-            elevation: 1
-        },
-        indicatorStyle: {
-            backgroundColor: 'transparent'
-        },
-    },
-    tabBarPosition: 'bottom',
-});
+        tabBarPosition: 'bottom',
+    });
+
 const NavStack = createStackNavigator({
-    // SplashScreen: {
-    //     screen: SplashScreen,
-    //     navigationOptions: {
-    //         header: null
-    //     }
-    // },
-    // Login: {
-    //     screen: Login,
-    //     navigationOptions: {
-    //         header: null
-    //     }
-    // },
+    SplashScreen: {
+        screen: SplashScreen,
+        navigationOptions: {
+            header: null
+        }
+    },
+    Login: {
+        screen: Login,
+        navigationOptions: {
+            header: null
+        }
+    },
+    SignUp:{
+        screen: SignUp,
+        navigationOptions: {
+            header: null
+        }
+    }
+    ,
     Menu: {
         screen: MainNavigator,
         navigationOptions: {
@@ -119,7 +132,21 @@ const NavStack = createStackNavigator({
             },
         }
     },
+    
 
 })
-const Main = createAppContainer(NavStack);
+const AppContainer = createAppContainer(NavStack);
+
+class Main extends Component {
+    render() {
+        return (
+            <Provider store={store}>
+                <AppContainer />
+            </Provider>
+        );
+    }
+}
+
+
+
 export default Main;

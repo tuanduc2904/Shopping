@@ -7,55 +7,141 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, StatusBar, Button, ImageBackground} from 'react-native';
-import {Dimens} from '../../../assets/Dimens';
-import {Icon} from "native-base";
-import {colors} from "../../../assets/color";
-import AutoTypingText from 'react-native-auto-typing-text';
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View, StatusBar, ImageBackground, Alert } from 'react-native';
+import { Dimens } from '../../../assets/Dimens';
+import { Icon, Button, Toast } from "native-base";
+import { colors } from "../../../assets/color";
 import ButtonComponent from "../../../Common/ButtonComponent/ButtonComponent";
 import TextInputComponent from "../../../Common/TextInputComponent/TextInputComponent";
 import TextComponent from "../../../Common/TextComponent/TextComponent";
+import { connect } from 'react-redux';
+import { firebaseApp } from '../../../Services/firebase';
+import { loginSuccess } from '../../../redux/actions/Authenticate';
+import { loadingShowLogin, loadingCloseLogin } from '../../../redux/actions/Loading';
+import ProgressDialog from '../Loading/ProgressDialog'
+import Loading from '../Loading/Loading'
 
-export default class Login extends Component<Props> {
 
 
+class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: '',
+            password: '',
+
+        }
+    }
+
+
+    logInFail(mess) {
+        this.props.loadingCloseLogin();
+
+    }
+
+    LOGIN() {
+        this.props.loadingShowLogin();
+        firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then((user) => {
+                if (user !== null) {
+                    this.props.loginSuccess(user);
+                    this.props.loadingCloseLogin();
+                    this.props.navigation.navigate('Menu');
+                }
+                else {
+                    console.log('null user')
+                }
+            })
+            .catch(function (error) {
+                Alert.alert(
+                    error.message);
+                // Toast.show({
+                //     text: "Wrong password!",
+                //     buttonText: "Okay",
+                //     type: "danger"
+                // })
+
+            }).then(() => this.props.loadingCloseLogin());
+    }
     render() {
         return (
             <View>
                 <ImageBackground
                     source={require('../../../assets/images/background-main.png')}
                     style={styles.bg}>
-                    <View style={{alignItems: 'center'}}>
+                    {/* <ProgressDialog visible={this.props.isLoading} /> */}
+                    <View style={{ alignItems: 'center' }}>
                         <Icon name='shopping-bag' type='FontAwesome5'
-                              style={{fontSize: 100, color: colors.red}}/></View>
+                            style={{ fontSize: 100, color: colors.red }} />
+                    </View>
                     <View style={styles.body}>
                         <View style={styles.viewTextInput}>
                             <TextInputComponent
-                                placeholder='Phone'
+                                placeholder='Email'
+                                onChangeText={(email) => this.setState({ email })}
                             />
                         </View>
                         <View style={styles.viewTextInput}>
                             <TextInputComponent
-                                placeholder='Phone'
+                                placeholder='Mật khẩu'
+                                onChangeText={(password) => this.setState({ password })}
+                                type='password'
+                                secureTextEntry={true}
                             />
                         </View>
                     </View>
+                    <View style={{
+                        alignItems: 'center',
+                        justifyContent: 'center',
+
+                    }}>
+                        {
+                            this.props.isLoading ? <Loading /> : null
+                        }
+                    </View>
                     <ButtonComponent
-                        text='Login'/>
+                        text='Login'
+                        onPress={() =>
+                            this.LOGIN()
+                        }
+                    />
+                    {/* <Button bordered danger
+                        onPress={() => {
+                            this.LOGIN();
+                        }}
+                    >
+                        <Text>LOGIN</Text>
+                    </Button> */}
+
                     <View style={styles.btnSignIn}>
                         <ButtonComponent
-                            text='Sign In'/>
+                            text='Sign In'
+                            onPress={() => this.props.navigation.navigate('SignUp')}
+                        />
                     </View>
                     <View style={styles.footer}>
                         <Text> </Text>
-                        <TextComponent style={styles.text}>Bỏ Qua</TextComponent>
+                        <TextComponent style={styles.text}
+                            onPress={() =>
+                                this.props.navigation.navigate('Menu')
+                            }
+
+                        >Bỏ Qua</TextComponent>
                     </View>
                 </ImageBackground>
             </View>
         );
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        Auth: state.Auth,
+        isLoading: state.Loading.isLoadingLogin
+    }
+}
+export default connect(mapStateToProps, { loginSuccess, loadingShowLogin, loadingCloseLogin })(Login)
 const styles = StyleSheet.create({
     container: {
         flex: 1,
