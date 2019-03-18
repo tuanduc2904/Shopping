@@ -10,10 +10,13 @@ target 'Shopping' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'react-native-fast-image', :path => '../node_modules/react-native-fast-image'
-  target 'Shopping-tvOSTests' do
+  pod 'react-native-fetch-blob', :path => '../node_modules/react-native-fetch-blob'
+ target 'Shopping-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
 
+
+    
 
   end
 

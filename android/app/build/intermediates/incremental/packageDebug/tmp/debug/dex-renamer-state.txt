@@ -1,4 +1,4 @@
-#Mon Mar 18 00:36:07 ICT 2019
-base.0=/Volumes/DATA/Mobile/Shopping/android/app/build/intermediates/transforms/dexMerger/debug/0
+#Mon Mar 18 20:23:12 ICT 2019
+base.0=/Volumes/DATA/Mobile/react-native/Shopping/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

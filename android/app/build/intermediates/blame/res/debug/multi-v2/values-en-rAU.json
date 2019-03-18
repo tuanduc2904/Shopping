@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Volumes/DATA/Mobile/Shopping/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "/Volumes/DATA/Mobile/react-native/Shopping/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
                     "source": "/Users/nguyenduc/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/22da8920d9eeea2bec6276d50d0d5553/res/values-en-rAU/values-en-rAU.xml",

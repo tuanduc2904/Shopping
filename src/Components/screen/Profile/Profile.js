@@ -7,7 +7,7 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     Platform,
     StyleSheet,
@@ -18,14 +18,17 @@ import {
     ImageBackground,
     SafeAreaView,
     FlatList,
-    TouchableOpacity,Image
+    TouchableOpacity, Image
 } from 'react-native';
-import {Dimens} from '../../../assets/Dimens';
-import {Icon} from "native-base";
-import {colors} from "../../../assets/color";
+import { Dimens } from '../../../assets/Dimens';
+import { Icon } from "native-base";
+import { colors } from "../../../assets/color";
 import TextComponent from "../../../Common/TextComponent/TextComponent";
-import {firebaseApp} from "../../../Services/firebase";
+import { firebaseApp } from "../../../Services/firebase";
 import FastImage from "react-native-fast-image";
+
+import UpdateProfile from '../UpdateProfile/UpdateProfile'
+
 export default class Profile extends Component<Props> {
 
     constructor(props) {
@@ -80,7 +83,9 @@ export default class Profile extends Component<Props> {
         return (
             <SafeAreaView>
                 <View>
-                    <FlatList
+
+                    <UpdateProfile />
+                    {/* <FlatList
                         showsVerticalScrollIndicator={false}
                         data={this.state.dataSource}
                         renderItem={({item}) =>
@@ -99,7 +104,7 @@ export default class Profile extends Component<Props> {
                         keyExtractor={(item, index) => index.toString()}
                         refreshing={this.state.refreshing}
                         onRefresh={this.handleRefresh}
-                    />
+                    /> */}
                 </View>
             </SafeAreaView>
         );

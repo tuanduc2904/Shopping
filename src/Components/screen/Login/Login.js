@@ -56,12 +56,6 @@ class Login extends Component {
             .catch(function (error) {
                 Alert.alert(
                     error.message);
-                // Toast.show({
-                //     text: "Wrong password!",
-                //     buttonText: "Okay",
-                //     type: "danger"
-                // })
-
             }).then(() => this.props.loadingCloseLogin());
     }
     render() {

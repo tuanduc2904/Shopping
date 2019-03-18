@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Volumes/DATA/Mobile/Shopping/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mn/values-mn.xml",
+            "outputFile": "/Volumes/DATA/Mobile/react-native/Shopping/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mn/values-mn.xml",
             "map": [
                 {
                     "source": "/Users/nguyenduc/.gradle/caches/transforms-1/files-1.1/play-services-base-16.1.0.aar/55b40650a0eb10a67462af092dcbcc2a/res/values-mn/values.xml",
