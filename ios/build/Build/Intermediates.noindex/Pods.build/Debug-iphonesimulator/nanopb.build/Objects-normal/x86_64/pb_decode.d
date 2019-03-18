@@ -1,5 +1,6 @@
-dependencies: /Users/apple/Desktop/Shopping/ios/Pods/nanopb/pb_decode.c \
-  /Users/apple/Desktop/Shopping/ios/Pods/Target\ Support\ Files/nanopb/nanopb-prefix.pch \
-  /Users/apple/Desktop/Shopping/ios/Pods/nanopb/pb.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/nanopb/pb_decode.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/nanopb/pb_common.h
+dependencies: \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/nanopb/pb_decode.c \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Target\ Support\ Files/nanopb/nanopb-prefix.pch \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/nanopb/pb.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/nanopb/pb_decode.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/nanopb/pb_common.h

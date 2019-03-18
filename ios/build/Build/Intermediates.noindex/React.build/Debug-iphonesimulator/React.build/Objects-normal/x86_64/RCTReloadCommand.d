@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/RCTReloadCommand.m \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/RCTReloadCommand.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/RCTKeyCommands.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTReloadCommand.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTReloadCommand.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTKeyCommands.h

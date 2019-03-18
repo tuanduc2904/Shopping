@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/FIRErrors.m \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRErrors.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRErrorCode.h
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseCore/Firebase/Core/FIRErrors.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRErrors.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRErrorCode.h

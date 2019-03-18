@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingCheckinService.m \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingCheckinService.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingUtilities.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/NSError+FIRMessaging.h
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingCheckinService.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingCheckinService.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingUtilities.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/NSError+FIRMessaging.h

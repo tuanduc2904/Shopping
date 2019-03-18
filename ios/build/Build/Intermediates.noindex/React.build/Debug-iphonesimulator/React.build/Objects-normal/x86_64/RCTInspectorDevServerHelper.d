@@ -1,8 +1,8 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.mm \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Inspector/RCTInspectorPackagerConnection.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/RCTLog.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/RCTUtils.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.mm \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Inspector/RCTInspectorPackagerConnection.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTLog.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTUtils.h

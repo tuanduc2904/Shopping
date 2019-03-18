@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/ios/Pods/Target\ Support\ Files/FirebaseMessaging/FirebaseMessaging-dummy.m
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Target\ Support\ Files/FirebaseMessaging/FirebaseMessaging-dummy.m

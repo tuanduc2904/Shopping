@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTTransformAnimatedNode.m \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTTransformAnimatedNode.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTTransformAnimatedNode.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTTransformAnimatedNode.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h

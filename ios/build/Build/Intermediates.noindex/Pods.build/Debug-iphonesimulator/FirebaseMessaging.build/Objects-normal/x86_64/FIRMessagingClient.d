@@ -1,17 +1,17 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingClient.m \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingClient.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/Public/FIRMessaging.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/Headers/Private/GoogleUtilities/GULReachabilityChecker.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConnection.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConstants.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDataMessageManager.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDefines.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingLogger.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMMessageCode.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRegistrar.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingCheckinService.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRmqManager.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingTopicsCommon.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingUtilities.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/NSError+FIRMessaging.h
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingClient.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingClient.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/Public/FIRMessaging.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/GoogleUtilities/GULReachabilityChecker.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConnection.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConstants.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDataMessageManager.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDefines.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingLogger.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMMessageCode.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRegistrar.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingCheckinService.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRmqManager.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingTopicsCommon.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingUtilities.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/NSError+FIRMessaging.h

@@ -1,10 +1,10 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingReceiver.m \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingReceiver.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDataMessageManager.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/Public/FIRMessaging.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/Headers/Private/GoogleUtilities/GULAppEnvironmentUtil.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingLogger.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMMessageCode.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingUtilities.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessaging_Private.h
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingReceiver.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingReceiver.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDataMessageManager.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/Public/FIRMessaging.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/GoogleUtilities/GULAppEnvironmentUtil.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingLogger.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMMessageCode.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingUtilities.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessaging_Private.h

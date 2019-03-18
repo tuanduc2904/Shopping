@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/ios/Pods/Target\ Support\ Files/GoogleUtilities/GoogleUtilities-dummy.m \
-  /Users/apple/Desktop/Shopping/ios/Pods/Target\ Support\ Files/GoogleUtilities/GoogleUtilities-prefix.pch
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Target\ Support\ Files/GoogleUtilities/GoogleUtilities-dummy.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Target\ Support\ Files/GoogleUtilities/GoogleUtilities-prefix.pch

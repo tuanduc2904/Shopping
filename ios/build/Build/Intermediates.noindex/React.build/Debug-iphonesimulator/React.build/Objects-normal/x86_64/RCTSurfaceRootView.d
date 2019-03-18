@@ -1,8 +1,8 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/Surface/RCTSurfaceRootView.mm \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/Surface/RCTSurfaceRootView.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Views/RCTView.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Views/RCTBorderStyle.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Views/RCTComponent.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Views/RCTPointerEvents.h \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/React/Base/RCTDefines.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/Surface/RCTSurfaceRootView.mm \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/Surface/RCTSurfaceRootView.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTView.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTComponent.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTDefines.h

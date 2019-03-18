@@ -22,8 +22,6 @@ import { loadingShowLogin, loadingCloseLogin } from '../../../redux/actions/Load
 import ProgressDialog from '../Loading/ProgressDialog'
 import Loading from '../Loading/Loading'
 
-
-
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -35,16 +33,20 @@ class Login extends Component {
     }
 
 
-    logInFail(mess) {
+    logInFail(error) {
         this.props.loadingCloseLogin();
-
+        Alert.alert(
+            error.message);
     }
 
-    LOGIN() {
+    async LOGIN() {
         this.props.loadingShowLogin();
+
         firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
             .then((user) => {
+                // console.log(user)
                 if (user !== null) {
+                    this.props.loadingCloseLogin();
                     this.props.loginSuccess(user);
                     this.props.loadingCloseLogin();
                     this.props.navigation.navigate('Menu');
@@ -53,10 +55,9 @@ class Login extends Component {
                     console.log('null user')
                 }
             })
-            .catch(function (error) {
-                Alert.alert(
-                    error.message);
-            }).then(() => this.props.loadingCloseLogin());
+            .catch(error =>
+                this.logInFail(error)
+            );
     }
     render() {
         return (
@@ -64,7 +65,7 @@ class Login extends Component {
                 <ImageBackground
                     source={require('../../../assets/images/background-main.png')}
                     style={styles.bg}>
-                    {/* <ProgressDialog visible={this.props.isLoading} /> */}
+                    <ProgressDialog visible={this.props.isLoading} />
                     <View style={{ alignItems: 'center' }}>
                         <Icon name='shopping-bag' type='FontAwesome5'
                             style={{ fontSize: 100, color: colors.red }} />
@@ -85,28 +86,13 @@ class Login extends Component {
                             />
                         </View>
                     </View>
-                    <View style={{
-                        alignItems: 'center',
-                        justifyContent: 'center',
-
-                    }}>
-                        {
-                            this.props.isLoading ? <Loading /> : null
-                        }
-                    </View>
+                    
                     <ButtonComponent
                         text='Login'
                         onPress={() =>
                             this.LOGIN()
                         }
                     />
-                    {/* <Button bordered danger
-                        onPress={() => {
-                            this.LOGIN();
-                        }}
-                    >
-                        <Text>LOGIN</Text>
-                    </Button> */}
 
                     <View style={styles.btnSignIn}>
                         <ButtonComponent

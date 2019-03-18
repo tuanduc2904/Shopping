@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/FIRDependency.m \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRDependency.h
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseCore/Firebase/Core/FIRDependency.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRDependency.h

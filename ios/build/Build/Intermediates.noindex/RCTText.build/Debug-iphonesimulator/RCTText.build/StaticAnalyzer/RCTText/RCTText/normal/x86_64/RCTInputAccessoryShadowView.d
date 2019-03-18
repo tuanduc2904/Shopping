@@ -1,19 +1,19 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/Libraries/Text/TextInput/RCTInputAccessoryShadowView.m \
-  /Users/apple/Desktop/Shopping/node_modules/react-native/Libraries/Text/TextInput/RCTInputAccessoryShadowView.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLayout.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
-  /Users/apple/Desktop/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/Libraries/Text/TextInput/RCTInputAccessoryShadowView.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/Libraries/Text/TextInput/RCTInputAccessoryShadowView.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLayout.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h

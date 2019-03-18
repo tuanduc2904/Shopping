@@ -15,4 +15,35 @@ dependencies: \
   /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTBorderStyle.h \
   /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTLog.h \
   /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTUtils.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTUtils.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/UIView+React.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTComponent.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Modules/RCTAccessibilityManager.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTComponentData.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Modules/RCTLayoutAnimation.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Modules/RCTLayoutAnimationGroup.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTModuleData.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTModuleMethod.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTBridgeMethod.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTNullability.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTRootContentView.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTView.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTRootShadowView.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTShadowView.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTLayout.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTRootViewInternal.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/ScrollView/RCTScrollableProtocol.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTShadowView+Internal.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/Surface/RCTSurfaceRootShadowView.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/Surface/RCTSurfaceRootShadowViewDelegate.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/Surface/RCTSurfaceRootView.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Modules/RCTUIManagerObserverCoordinator.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Modules/RCTUIManagerUtils.h

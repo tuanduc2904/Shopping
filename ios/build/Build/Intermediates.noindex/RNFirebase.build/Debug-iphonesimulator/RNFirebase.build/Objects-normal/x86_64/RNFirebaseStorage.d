@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/node_modules/react-native-firebase/ios/RNFirebase/storage/RNFirebaseStorage.m \
-  /Users/apple/Desktop/Shopping/node_modules/react-native-firebase/ios/RNFirebase/storage/RNFirebaseStorage.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-firebase/ios/RNFirebase/storage/RNFirebaseStorage.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-firebase/ios/RNFirebase/storage/RNFirebaseStorage.h

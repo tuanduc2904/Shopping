@@ -1,9 +1,9 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRemoteNotificationsProxy.m \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRemoteNotificationsProxy.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConstants.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingLogger.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMMessageCode.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingUtilities.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessaging_Private.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/Public/FIRMessaging.h
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRemoteNotificationsProxy.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRemoteNotificationsProxy.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConstants.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingLogger.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMMessageCode.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingUtilities.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessaging_Private.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/Public/FIRMessaging.h

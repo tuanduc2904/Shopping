@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingPersistentSyncMessage.m \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingPersistentSyncMessage.h \
-  /Users/apple/Desktop/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDefines.h
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingPersistentSyncMessage.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingPersistentSyncMessage.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDefines.h
