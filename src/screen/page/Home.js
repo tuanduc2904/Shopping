@@ -13,7 +13,6 @@ import {
 import {colors} from "../../assets/color";
 import {Dimens} from "../../assets/Dimens";
 import {Icon, Card} from "native-base";
-
 const {width} = Dimensions.get('window');
 const height = width * 0.5;
 import {firebaseApp} from "../../untils/firebase";
@@ -103,13 +102,7 @@ export default class Home extends Component {
     render() {
         return (
             <SafeAreaView style={styles.saf}>
-                <View style={styles.header}>
-                    <View style={styles.viewHorizontal}>
-                        <Icon name='search1' type='AntDesign' style={{fontSize: 30, color: colors.red}}/>
-                        <Icon name='ios-notifications-outline' type='Ionicons'
-                              style={{fontSize: 35, color: colors.red}}/>
-                    </View>
-                </View>
+                
                 <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
                     {/*view slilde show*/}
                     <FlatList

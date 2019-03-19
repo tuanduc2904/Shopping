@@ -50,13 +50,12 @@ export default (state = INITIAL, action) => {
                 listProduct: action.user.listProduct,
                 listOrder: action.user.listOrder,
                 listSell: action.user.listSell,
-                loggedIn: true,
                 profile: true,
             }
-        case 'NOT_PROFILE':
+        case 'SKIP_LOGIN':
             return {
                 ...state,
-                profile: false,
+                loggedIn: false,
             }
         default:
             return state;

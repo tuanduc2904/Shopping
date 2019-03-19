@@ -23,12 +23,12 @@ import Main from "./screen/Main";
 
 
 const NavStack = createStackNavigator({
-    SplashScreen: {
-        screen: SplashScreen,
-        navigationOptions: {
-            header: null
-        }
-    },
+    // SplashScreen: {
+    //     screen: SplashScreen,
+    //     navigationOptions: {
+    //         header: null
+    //     }
+    // },
     Login: {
         screen: Login,
         navigationOptions: {

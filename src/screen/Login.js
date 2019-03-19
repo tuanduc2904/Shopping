@@ -18,7 +18,7 @@ import TextComponent from "../Common/TextComponent/TextComponent";
 import { connect } from 'react-redux';
 import { firebaseApp } from '../untils/firebase';
 // import { loginSuccess } from '../../../redux/actions/Authenticate';
-import { loginSuccess } from '../redux/actions/Authenticate';
+import { loginSuccess, skipLogin } from '../redux/actions/Authenticate';
 import { loadingShowLogin, loadingCloseLogin } from '../redux/actions/Loading';
 import ProgressDialog from '../Components/ProgressDialog'
 
@@ -35,7 +35,6 @@ class Login extends Component {
 
 
     logInFail(error) {
-        this.props.loadingCloseLogin();
         Alert.alert(
             error.message);
     }
@@ -54,8 +53,10 @@ class Login extends Component {
                     console.log('null user')
                 }
             })
-            .catch(error =>
+            .catch(error => {
+                this.props.loadingCloseLogin();
                 this.logInFail(error)
+            }
             );
     }
     render() {
@@ -102,10 +103,10 @@ class Login extends Component {
                     <View style={styles.footer}>
                         <Text> </Text>
                         <TextComponent style={styles.text}
-                            onPress={() =>
-                                this.props.navigation.navigate('Menu')
-                            }
-
+                            onPress={() => {
+                                this.props.skipLogin();
+                                this.props.navigation.navigate('Main')
+                            }}
                         >Bỏ Qua</TextComponent>
                     </View>
                 </ImageBackground>
@@ -120,7 +121,7 @@ function mapStateToProps(state) {
         isLoading: state.Loading.isLoadingLogin
     }
 }
-export default connect(mapStateToProps, { loginSuccess, loadingShowLogin, loadingCloseLogin })(Login)
+export default connect(mapStateToProps, { loginSuccess, loadingShowLogin, loadingCloseLogin, skipLogin })(Login)
 const styles = StyleSheet.create({
     container: {
         flex: 1,

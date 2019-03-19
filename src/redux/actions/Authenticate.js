@@ -1,7 +1,13 @@
 
-export function updateProfile() {
+export function updateProfile(user) {
     return {
-        type: 'UPDATE_PROFILE'
+        type: 'UPDATE_PROFILE',
+        user
+    }
+}
+export function skipLogin(){
+    return {
+        type: 'SKIP_LOGIN'
     }
 }
 export function loginSuccess(user) {

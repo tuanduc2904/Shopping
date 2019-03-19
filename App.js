@@ -17,8 +17,8 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+
+export default class App extends Component {
   componentDidMount() {
 
     this.initialFirebase();
