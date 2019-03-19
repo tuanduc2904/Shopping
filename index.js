@@ -24,7 +24,7 @@ if (Platform.OS === 'android') {
     }
 }
 // import App from './App';
-import Main from './src/Main/Main'
+import App from './src/App'
 import { name as appName } from './app.json';
 console.disableYellowBox = true;
-AppRegistry.registerComponent(appName, () => Main);
+AppRegistry.registerComponent(appName, () => App);
