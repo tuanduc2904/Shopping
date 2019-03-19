@@ -27,6 +27,7 @@ import Profile from "../Components/screen/Profile/Profile";
 import SignUp from '../Components/screen/SignUp/SignUp';
 import store from '../redux/store';
 import { Provider } from 'react-redux'
+import UpdateProfile from "../Components/screen/UpdateProfile/UpdateProfile";
 
 
 const MainNavigator = createBottomTabNavigator({
@@ -67,7 +68,7 @@ const MainNavigator = createBottomTabNavigator({
         },
     },
     Profile: {
-        screen: Profile,
+        screen: UpdateProfile,
         tabBarLabel: "ShoppingCart",
         navigationOptions: {
             tabBarIcon: ({ tintColor }) => (
@@ -121,8 +122,7 @@ const NavStack = createStackNavigator({
         navigationOptions: {
             header: null
         }
-    }
-    ,
+    },
     Menu: {
         screen: MainNavigator,
         navigationOptions: {
@@ -132,6 +132,15 @@ const NavStack = createStackNavigator({
             },
         }
     },
+    UpdateProfile:{
+        screen: UpdateProfile,
+        navigationOptions: {
+            title:'Thông Tin Cá Nhân',
+            headerStyle: {
+                backgroundColor: '#FFF',
+            },
+        }
+    }
     
 
 })

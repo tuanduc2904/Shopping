@@ -18,7 +18,8 @@ import TextComponent from '../../../Common/TextComponent/TextComponent'
 import { connect } from 'react-redux';
 import ProgressDialog from '../Loading/ProgressDialog';
 import { firebaseApp } from '../../../Services/firebase';
-import { loadingShowSignUp, loadingCloseSigUp } from '../../../redux/actions/Loading';
+import { loadingShowSignUp, loadingCloseSignUp } from '../../../redux/actions/Loading';
+import Login from '../Login/Login';
 
 
 class SignUp extends Component {
@@ -46,28 +47,33 @@ class SignUp extends Component {
             );
         }
     }
-    signUp(email, password) {
-      
-        firebaseApp.auth().createUserWithEmailAndPassword(email, password).
-            then(() => {
 
+    SignFail(error) {
+        this.props.loadingCloseSignUp();
+        Alert.alert(
+            error.message);
+    }
+
+    signUp(email, password) {
+        this.props.loadingShowSignUp();
+        firebaseApp.auth().createUserWithEmailAndPassword(email, password).
+            then((user) => {
+                console.log(user)
+                this.props.loadingCloseSignUp();
                 Alert.alert(
                     'Thành Công',
                     'Đăng ký thành công với email: ' + email,
                     [
-                        { text: 'OK', onPress: () => { } },
+                        {
+                            text: 'Đăng nhập', onPress: () => {
+                                this.props.navigation.goBack();
+                            }
+                        },
                     ],
                 );
-            }).catch(function (error) {
-                Alert.alert(
-                    'Xin lỗi',
-                    'Đăng ký thất bại: ' + email + 'err : ' + error.message,
-                    [
-                        { text: 'OK' },
-                    ],
-                    { cancelable: false }
-                );
-
+            }).catch(error => {
+                this.SignFail(error);
+                console.log(error.message)
             });
     }
 
@@ -124,7 +130,7 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { loadingShowSignUp, loadingCloseSigUp })(SignUp)
+export default connect(mapStateToProps, { loadingShowSignUp, loadingCloseSignUp })(SignUp)
 const styles = StyleSheet.create({
     container: {
         flex: 1,

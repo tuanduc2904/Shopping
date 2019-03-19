@@ -1,55 +1,62 @@
-// import { LOGINSUCCESS, LOGOUT, STARTLOGIN } from '../actions/types'
 
 const INITIAL = {
     displayName: '',
-    idUser: '',
+    uid: '',
     email: '',
     phoneNumber: '',
-    avatar: '',
+    avatarSource: '',
     address: '',
     listProduct: [],
     listOrder: [],
     listSell: [],
-    isLoading: false,
     loggedIn: false,
-    error: false,
+    profile: false,
 }
 
 export default (state = INITIAL, action) => {
     switch (action.type) {
         case 'LOGINSUCCESS':
             return {
-                displayName: action.Auth.displayName,
-                idUser: action.Auth.user.uid,
-                email: action.Auth.email,
-                phoneNumber: action.Auth.phoneNumber,
-                avatar: action.Auth.avatar,
-                address: action.Auth.address,
-                listProduct: action.Auth.listProduct,
-                listOrder: action.Auth.listOrder,
-                listSell: action.Auth.listSell,
+                ...state,
+                uid: action.user.uid,
+                email: action.user.email,
+                profile: false,
                 loggedIn: true,
-                isLoading: false,
-
-            }
-        case 'STARTLOGIN':
-            return {
-                ...state, isLoading: true, loggedIn: false,
             }
         case 'LOGOUT':
             return {
+                ...state,
                 displayName: '',
-                idUser: '',
+                uid: '',
                 email: '',
                 phoneNumber: '',
-                avatar: '',
+                avatarSource: '',
                 address: '',
                 listProduct: [],
                 listOrder: [],
                 listSell: [],
                 loggedIn: false,
-                isLoading: false,
-
+                profile: false,
+            }
+        case 'UPDATE_PROFILE':
+            return {
+                ...state,
+                displayName: action.user.displayName,
+                uid: action.user.uid,
+                email: action.user.email,
+                phoneNumber: action.user.phoneNumber,
+                avatarSource: action.user.avatarSource,
+                address: action.user.address,
+                listProduct: action.user.listProduct,
+                listOrder: action.user.listOrder,
+                listSell: action.user.listSell,
+                loggedIn: true,
+                profile: true,
+            }
+        case 'NOT_PROFILE':
+            return {
+                ...state,
+                profile: false,
             }
         default:
             return state;

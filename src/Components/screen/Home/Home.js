@@ -8,7 +8,7 @@ import {
     Image,
     SafeAreaView,
     TouchableOpacity,
-    Text
+    Text,Platform
 } from 'react-native';
 import {colors} from "../../../assets/color";
 import {Dimens} from "../../../assets/Dimens";
@@ -103,6 +103,13 @@ export default class Home extends Component {
     render() {
         return (
             <SafeAreaView style={styles.saf}>
+                <View style={styles.header}>
+                    <View style={styles.viewHorizontal}>
+                        <Icon name='search1' type='AntDesign' style={{fontSize: 30, color: colors.red}}/>
+                        <Icon name='ios-notifications-outline' type='Ionicons'
+                              style={{fontSize: 35, color: colors.red}}/>
+                    </View>
+                </View>
                 <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
                     {/*view slilde show*/}
                     <FlatList
@@ -138,13 +145,7 @@ export default class Home extends Component {
                             }.bind(this))
                         }
                     </View>
-                    <View style={styles.header}>
-                        <View style={styles.viewHorizontal}>
-                            <Icon name='search1' type='AntDesign' style={{fontSize: 30, color: colors.red}}/>
-                            <Icon name='ios-notifications-outline' type='Ionicons'
-                                  style={{fontSize: 35, color: colors.red}}/>
-                        </View>
-                    </View>
+
                     <View style={styles.container}>
                         {/*san pham moi*/}
                         <Card style={[styles.card, styles.marginTop]}>
@@ -185,10 +186,10 @@ export default class Home extends Component {
                         </Card>
                         {/*view goi y hom nay*/}
                         <Card style={[styles.card]}>
-                            <View style={[styles.viewHorizontal, {marginTop: 5, marginBottom: 5}]}>
+                            <View style={[styles.viewHorizontal, {maNayrginTop: 5, marginBottom: 5}]}>
                                 <View style={styles.viewHorizontalLeft}>
                                     <View style={styles.bar}/>
-                                    <Text style={[styles.title]}>Sản Phẩm Mới</Text>
+                                    <Text style={[styles.title]}>Gợi Ý Hôm </Text>
                                 </View>
                                 <View>
                                     <Text style={[styles.textItemRight]}>Xem Thêm >></Text>
@@ -241,7 +242,9 @@ const styles = StyleSheet.create({
         backgroundColor: colors.white,
 
     },
+
     container: {
+
         flex: 1,
         marginLeft: 5,
         marginRight: 5,
@@ -353,19 +356,19 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     header: {
-        position: 'absolute',
         top: 0,
         height: 50,
         width: '100%',
         justifyContent: 'center',
-        backgroundColor: '#ffffffad'
+        backgroundColor: '#ffffffcc'
     },
     viewHorizontal: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         marginRight: 10,
-        marginLeft: 10
+        marginLeft: 10,
+
     },
     title: {
         fontSize: 18,

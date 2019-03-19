@@ -15,7 +15,7 @@ export default class TextInputComponent extends Component {
                     placeholder={this.props.placeholder}
                     onChangeText={this.props.onChangeText}
                     value={this.props.value}
-                    style={styles.text}
+                    style={[styles.text,this.props.style]}
                     underlineColorAndroid="transparent"
                     secureTextEntry = {this.props.secureTextEntry}
                     />

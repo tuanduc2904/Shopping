@@ -31,5 +31,6 @@ export const colors = {
     ManganeseGrey:'#50504b',
     mediumGray:'#717271',
     lightGrey:'#b2b3b2',
-    iconMenuColor:'#8393a0'
+    iconMenuColor:'#8393a0',
+    bgUser:'#FF0000'
 };

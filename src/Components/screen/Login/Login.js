@@ -39,16 +39,14 @@ class Login extends Component {
             error.message);
     }
 
-    async LOGIN() {
+    LOGIN() {
         this.props.loadingShowLogin();
-
         firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
             .then((user) => {
                 // console.log(user)
                 if (user !== null) {
                     this.props.loadingCloseLogin();
-                    this.props.loginSuccess(user);
-                    this.props.loadingCloseLogin();
+                    this.props.loginSuccess(user.user);
                     this.props.navigation.navigate('Menu');
                 }
                 else {
@@ -86,7 +84,7 @@ class Login extends Component {
                             />
                         </View>
                     </View>
-                    
+
                     <ButtonComponent
                         text='Login'
                         onPress={() =>

@@ -1,13 +1,13 @@
 
-export function startLogin() {
+export function updateProfile() {
     return {
-        type: 'STARTLOGIN'
+        type: 'UPDATE_PROFILE'
     }
 }
-export function loginSuccess(Auth) {
+export function loginSuccess(user) {
     return {
         type: 'LOGINSUCCESS',
-        Auth
+        user
     }
 }
 export function logout() {

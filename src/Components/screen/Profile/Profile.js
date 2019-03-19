@@ -7,7 +7,7 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     Platform,
     StyleSheet,
@@ -18,18 +18,17 @@ import {
     ImageBackground,
     SafeAreaView,
     FlatList,
-    TouchableOpacity, Image
+    TouchableOpacity, Image,
 } from 'react-native';
-import { Dimens } from '../../../assets/Dimens';
-import { Icon } from "native-base";
-import { colors } from "../../../assets/color";
+import {Dimens} from '../../../assets/Dimens';
+import {Icon} from "native-base";
+import {colors} from "../../../assets/color";
 import TextComponent from "../../../Common/TextComponent/TextComponent";
-import { firebaseApp } from "../../../Services/firebase";
+import {firebaseApp} from "../../../Services/firebase";
 import FastImage from "react-native-fast-image";
-
 import UpdateProfile from '../UpdateProfile/UpdateProfile'
 
-export default class Profile extends Component<Props> {
+export default class Profile extends Component {
 
     constructor(props) {
         super(props);
@@ -81,32 +80,19 @@ export default class Profile extends Component<Props> {
 
     render() {
         return (
-            <SafeAreaView>
-                <View>
-
-                    <UpdateProfile />
-                    {/* <FlatList
-                        showsVerticalScrollIndicator={false}
-                        data={this.state.dataSource}
-                        renderItem={({item}) =>
-                            <TouchableOpacity >
-
-
-                                <View >
-                                    <FastImage style={{width:200,height:200}}
-                                               source={{uri: item.image}}/>
-                                    <Text style={styles.name}>{item.name}</Text>
-
-
-                                </View>
-                            </TouchableOpacity>
-                        }
-                        keyExtractor={(item, index) => index.toString()}
-                        refreshing={this.state.refreshing}
-                        onRefresh={this.handleRefresh}
-                    /> */}
+            <View style={styles.container}>
+                {/*<UpdateProfile />*/}
+                <View style={styles.heard}>
+                    <View style={styles.viewHorizontalLeft}>
+                        <FastImage style={styles.avatar}/>
+                        <View style={styles.viewAccout}>
+                            <TextComponent style={styles.title}>Ken</TextComponent>
+                            <TextComponent style={styles.text}>ID: 123</TextComponent>
+                        </View>
+                    </View>
                 </View>
-            </SafeAreaView>
+
+            </View>
         );
     }
 }
@@ -115,36 +101,42 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: colors.white,
     },
+    height: Platform.OS === 'ios' ? 200 : 100,
+    heard: {
+        height: 160,
+        backgroundColor: colors.bgUser,
+
+    },
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: colors.background
     },
-    bg: {
-        width: Dimens.screen.width,
-        height: Dimens.screen.height,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    body: {
-        marginTop: 50,
-        marginBottom: 60
-    },
-    viewTextInput: {
-        height: 60
-    },
-    btnSignIn: {
-        marginTop: 30
-    },
-    footer: {
+    viewHorizontalLeft: {
+        position: 'absolute',
+        bottom: 10,
+        left: 10,
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        width: '90%',
-        marginTop: 60
+        alignItems:'center'
     },
-    text: {
-        fontSize: 18,
-        color: colors.red
+    avatar: {
+        width: 100,
+        height: 100,
+        borderRadius: 100 / 2,
+        backgroundColor: colors.background
+    },
+    viewAccout:{
+        marginLeft:15,
+
+
+    },
+    title:{
+        color:colors.white,
+        fontSize:22,
+        fontWeight: 'bold'
+    },
+    text:{
+        marginTop:5,
+        color:colors.white,
     }
 
 })
