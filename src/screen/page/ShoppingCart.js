@@ -26,7 +26,7 @@ import {colors} from "../../assets/color";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import {firebaseApp} from "../../untils/firebase";
 import FastImage from "react-native-fast-image";
-export default class ShoppingCart extends Component<Props> {
+export default class ShoppingCart extends Component {
 
     constructor(props) {
         super(props);
