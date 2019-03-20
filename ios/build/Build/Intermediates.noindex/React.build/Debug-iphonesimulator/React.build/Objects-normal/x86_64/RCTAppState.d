@@ -1,14 +1,14 @@
 dependencies: \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Modules/RCTAppState.m \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Modules/RCTAppState.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Modules/RCTEventEmitter.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTBridge.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTEventDispatcher.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTUtils.h
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Modules/RCTAppState.m \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Modules/RCTAppState.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Modules/RCTEventEmitter.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTUtils.h

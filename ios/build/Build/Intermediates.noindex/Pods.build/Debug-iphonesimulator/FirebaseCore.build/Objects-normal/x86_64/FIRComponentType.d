@@ -1,7 +1,7 @@
 dependencies: \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseCore/Firebase/Core/FIRComponentType.m \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponentType.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponentContainerInternal.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponent.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponentContainer.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRLibrary.h
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseCore/Firebase/Core/FIRComponentType.m \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponentType.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponentContainerInternal.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponent.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRComponentContainer.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRLibrary.h

@@ -1,6 +1,6 @@
 dependencies: \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTFrameUpdate.m \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTUtils.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTDefines.h
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTFrameUpdate.m \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTDefines.h

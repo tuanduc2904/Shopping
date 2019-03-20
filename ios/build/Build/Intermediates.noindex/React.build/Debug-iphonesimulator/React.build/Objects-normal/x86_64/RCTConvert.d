@@ -1,16 +1,16 @@
 dependencies: \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTConvert.m \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTConvert.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTAnimationType.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTBorderStyle.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTLog.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTUtils.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTPointerEvents.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTImageSource.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTParserUtils.h
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTConvert.m \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTImageSource.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTParserUtils.h

@@ -1,11 +1,11 @@
 dependencies: \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/CxxBridge/RCTMessageThread.mm \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/CxxBridge/RCTMessageThread.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTJavaScriptExecutor.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/MessageQueueThread.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/CxxModule/RCTCxxUtils.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTUtils.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTAssert.h
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/CxxBridge/RCTMessageThread.mm \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/CxxBridge/RCTMessageThread.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTJavaScriptExecutor.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/MessageQueueThread.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/CxxModule/RCTCxxUtils.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTAssert.h

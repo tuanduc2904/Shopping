@@ -1,3 +1,3 @@
 dependencies: \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/Libraries/Text/Text/NSTextStorage+FontScaling.m \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/Libraries/Text/Text/NSTextStorage+FontScaling.h
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/Libraries/Text/Text/NSTextStorage+FontScaling.m \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/Libraries/Text/Text/NSTextStorage+FontScaling.h

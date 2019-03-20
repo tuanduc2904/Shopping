@@ -21,6 +21,7 @@ import { Provider } from 'react-redux'
 import UpdateProfile from "./screen/UpdateProfile";
 import Main from "./screen/Main";
 import MyShop from './screen/MyShop'
+import PostProduct from "./screen/page/PostProduct";
 
 const NavStack = createStackNavigator({
     // SplashScreen: {
@@ -29,6 +30,15 @@ const NavStack = createStackNavigator({
     //         header: null
     //     }
     // },
+    PostProduct: {
+        screen: PostProduct,
+        navigationOptions: {
+            title: 'Thêm Sản Phẩm',
+            headerStyle: {
+                backgroundColor: '#FFF',
+            },
+        }
+    },
     Login: {
         screen: Login,
         navigationOptions: {
@@ -78,7 +88,8 @@ const NavStack = createStackNavigator({
                 backgroundColor: '#FFF',
             },
         }
-    }
+    },
+
 
 })
 const AppContainer = createAppContainer(NavStack);

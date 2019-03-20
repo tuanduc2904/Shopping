@@ -1,9 +1,9 @@
 dependencies: \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImagePrefetcher.m \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImagePrefetcher.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageManager.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCompat.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageOperation.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageDownloader.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCache.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCacheConfig.h
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImagePrefetcher.m \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImagePrefetcher.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageManager.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCompat.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageOperation.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageDownloader.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCache.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCacheConfig.h

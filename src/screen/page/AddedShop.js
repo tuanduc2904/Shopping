@@ -60,10 +60,13 @@ class AddedShop extends Component {
     }
 
     render() {
+
         return (
 
             <View style={styles.container}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    // onPress={() => { navigate('PostProduct')}}
+                >
                     <Card style={[styles.card]}>
                         <View style={[styles.viewHorizontal, {marginTop: 5, marginBottom: 5}]}>
                             <View style={styles.viewHorizontalLeft}>
@@ -72,6 +75,7 @@ class AddedShop extends Component {
                             </View>
                         </View>
                     </Card>
+                </TouchableOpacity>
                     <View>
                         <FlatList
                             showsVerticalScrollIndicator={false}
@@ -102,7 +106,7 @@ class AddedShop extends Component {
                             numColumns={2}
                         />
                     </View>
-                </TouchableOpacity>
+
                 <View>
 
                 </View>

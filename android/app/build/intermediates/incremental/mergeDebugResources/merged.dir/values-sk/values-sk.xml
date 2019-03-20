@@ -48,4 +48,7 @@
     <string msgid="4133737464567140336" name="fcm_fallback_notification_channel_label">"Rôzne"</string>
     <string msgid="146198913615257606" name="search_menu_title">"Vyhľadávanie"</string>
     <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="ucrop_label_edit_photo">Upraviť fotografiu</string>
+    <string name="ucrop_label_original">Pôvodná</string>
+    <string name="ucrop_menu_crop">Orezať</string>
 </resources>

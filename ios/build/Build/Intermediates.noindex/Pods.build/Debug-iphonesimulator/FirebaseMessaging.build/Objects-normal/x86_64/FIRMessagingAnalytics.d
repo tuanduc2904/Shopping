@@ -1,9 +1,9 @@
 dependencies: \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingAnalytics.m \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingAnalytics.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/FirebaseAnalyticsInterop/FIRAnalyticsInterop.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingLogger.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMMessageCode.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/FirebaseAnalyticsInterop/FIRInteropEventNames.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/FirebaseAnalyticsInterop/FIRInteropParameterNames.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/GoogleUtilities/GULAppEnvironmentUtil.h
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingAnalytics.m \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingAnalytics.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/Headers/Private/FirebaseAnalyticsInterop/FIRAnalyticsInterop.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingLogger.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMMessageCode.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/Headers/Private/FirebaseAnalyticsInterop/FIRInteropEventNames.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/Headers/Private/FirebaseAnalyticsInterop/FIRInteropParameterNames.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/Headers/Private/GoogleUtilities/GULAppEnvironmentUtil.h

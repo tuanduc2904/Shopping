@@ -1,4 +1,4 @@
 dependencies: \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Profiler/RCTProfileTrampoline-arm64.S \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Profiler/RCTMacros.h
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Profiler/RCTProfileTrampoline-arm64.S \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Profiler/RCTMacros.h

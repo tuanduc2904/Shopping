@@ -7,21 +7,21 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     Platform,
     StyleSheet,
     Text,
     View,
-    TouchableOpacity, Image, ScrollView
+    TouchableOpacity, Image, ScrollView, Alert
 } from 'react-native';
-import { Dimens } from '../../assets/Dimens';
-import { colors } from "../../assets/color";
+import {Dimens} from '../../assets/Dimens';
+import {colors} from "../../assets/color";
 import TextComponent from "../../Common/TextComponent/TextComponent";
-import { firebaseApp } from "../../untils/firebase";
+import {firebaseApp} from "../../untils/firebase";
 import FastImage from "react-native-fast-image";
-import { Button } from 'native-base'
-import { connect } from 'react-redux'
+import {Button, Card} from 'native-base'
+import {connect} from 'react-redux'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
@@ -44,7 +44,7 @@ class Profile extends Component {
                 <View style={styles.heard}>
                     <View style={styles.viewHorizontalLeft}>
                         <FastImage style={styles.avatar}
-                            source={{ uri: this.props.user.avatarSource }}
+                                   source={{uri: this.props.user.avatarSource}}
                         />
                         <View style={styles.viewAccout}>
                             <TextComponent style={styles.title}>{this.props.user.displayName}</TextComponent>
@@ -52,51 +52,72 @@ class Profile extends Component {
                         </View>
                     </View>
                 </View>
-                <ScrollView style={{ flex: 1, paddingTop: 10, backgroundColor: colors.background }}>
+                <ScrollView style={{flex: 1, paddingTop: 10, backgroundColor: colors.background}}>
 
-                    <View style={styles.row}>
-                        <Text style={{ marginTop: 5, marginBottom: 5 }}>Quản lý đơn hàng: </Text>
+                    <Card style={[styles.card, styles.row]}>
+                        <Text style={{marginTop: 5, marginBottom: 5}}>Quản lý đơn hàng: </Text>
                         <View style={styles.order}>
                             <TouchableOpacity style={styles.orderChild}>
-                                <View style={{ alignItems: 'center' }}>
-                                    <Icon name="send-o" styes={styles.textCenter} color={colors.red} size={45} />
+                                <View style={{alignItems: 'center'}}>
+                                    <Icon name="send-o" styes={styles.textCenter} color={colors.red} size={45}/>
                                     <Text styes={styles.textCenter}>Chuyển hàng </Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.orderChild}>
-                                <View style={{ alignItems: 'center' }} >
-                                    <MaterialIcons name="local-shipping" styes={styles.textCenter} color={colors.red} size={45} />
+                                <View style={{alignItems: 'center'}}>
+                                    <MaterialIcons name="local-shipping" styes={styles.textCenter} color={colors.red}
+                                                   size={45}/>
                                     <Text styes={styles.textCenter}>Đang giao</Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.orderChild}>
-                                <View style={{ alignItems: 'center' }}>
-                                    <Icon name="gift" styes={styles.textCenter} color={colors.red} size={45} />
+                                <View style={{alignItems: 'center'}}>
+                                    <Icon name="gift" styes={styles.textCenter} color={colors.red} size={45}/>
                                     <Text styes={styles.textCenter}>Đã nhận</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>
-                    </View>
-                    <Button block style={styles.button}>
-                        <MaterialIcons name="person" style={styles.button_icon} />
-                        <Text style={styles.button_text}>Thông tin tài khoản</Text>
-                    </Button>
-                    <Button block style={styles.button}
+                    </Card>
+                    <TouchableOpacity>
+                        <Card style={[styles.card, styles.button,]}>
+                            <MaterialIcons name="person" style={styles.button_icon}/>
+                            <Text style={styles.button_text}>Thông tin tài khoản</Text>
+                        </Card>
+                    </TouchableOpacity>
+                    < TouchableOpacity
                         onPress={() => {
                             this.props.navigation.navigate('MyShop')
+                        }}>
+                        <Card style={[styles.card, styles.button,]}>
+                            <MaterialIcons name="store" style={styles.button_icon}/>
+                            <Text style={styles.button_text}>Shop của tôi</Text>
+                        </Card>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Card style={[styles.card, styles.button,]}>
+                            <MaterialIcons name="help-outline" style={styles.button_icon}/>
+                            <Text style={styles.button_text}>Trung tâm trợ giúp</Text>
+                        </Card>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => {
+                            Alert.alert(
+                                'Shopping ',
+                                'Bạn muốn đăng xuất tài  !',
+                                [
+                                    {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+
+                                    {text: 'OK',},
+                                ],
+                                {cancelable: false}
+                            )
                         }}
-                    >
-                        <MaterialIcons name="store" style={styles.button_icon} />
-                        <Text style={styles.button_text}>Shop của tôi</Text>
-                    </Button>
-                    <Button block style={styles.button}>
-                        <MaterialIcons name="help-outline" style={styles.button_icon} />
-                        <Text style={styles.button_text}>Trung tâm trợ giúp</Text>
-                    </Button>
-                    <Button block style={styles.button}>
-                        <MaterialIcons name="exit-to-app" style={styles.button_icon} />
-                        <Text style={{ fontSize: 18, color: colors.red }}>Đăng xuất tài khoản</Text>
-                    </Button>
+                       >
+                        <Card style={[styles.card, styles.button,]}>
+                            <MaterialIcons name="exit-to-app" style={styles.button_icon}/>
+                            <Text style={{fontSize: 18, color: colors.red}}>Đăng xuất tài khoản</Text>
+                        </Card>
+                    </TouchableOpacity>
 
                 </ScrollView>
 
@@ -104,27 +125,35 @@ class Profile extends Component {
         );
     }
 }
+
 function mapStateToProps(state) {
     return {
         user: state.Auth
     }
 }
+
 export default connect(mapStateToProps)(Profile)
 
 const styles = StyleSheet.create({
+
     saf: {
         flex: 1,
         backgroundColor: colors.white,
     },
-    height: Platform.OS === 'ios' ? 200 : 100,
+    // height: Platform.OS === 'ios' ? 200 : 100,
     heard: {
         height: 120,
         backgroundColor: colors.bgUser,
         flexDirection: 'column',
     },
+    card: {
+        borderRadius: 8,
+
+    },
     container: {
         flex: 1,
         backgroundColor: colors.background,
+
 
     },
     viewHorizontalLeft: {
@@ -171,20 +200,26 @@ const styles = StyleSheet.create({
         padding: 5,
         paddingBottom: 10,
         paddingTop: 10,
-        borderRadius: 10
+        borderRadius: 10,
+        marginLeft: 5,
+        marginRight: 5,
     },
     button: {
+        height: 50,
         margin: 10,
         backgroundColor: colors.white,
         alignItems: 'center',
-        justifyContent: 'flex-start',
+        flexDirection: 'row',
         paddingLeft: 15,
+        marginLeft: 5,
+        marginRight: 5,
     },
     button_icon: {
         fontSize: 25,
         paddingLeft: 5,
         paddingRight: 5,
-        color: colors.red
+        color: colors.red,
+
     },
     button_text: {
         fontSize: 18
