@@ -8,6 +8,7 @@ import { colors } from "../assets/color";
 import ShoppingCart from "./page/ShoppingCart";
 import Booth from "./page/Booth";
 import Profile from "./page/Profile";
+import SkipedLogin from './page/SkipedLogin'
 import HeaderMain from '../Components/HeaderMain';
 import { connect } from 'react-redux';
 import { firebaseApp } from '../untils/firebase';
@@ -51,25 +52,19 @@ class Main extends Component {
         const user = this.props.user;
         if (user.loggedIn) {
             firebaseApp.database().ref('user').child(user.uid).once('value').then((snapshot) => {
-                console.log(`user.uid :` + user.uid);
-                console.log(`snapshot uid: ` + snapshot.val().uid);
                 if (snapshot.val().uid === user.uid) {
                     this.props.updateProfile(snapshot.val());
-                    console.log(`updateProfile`)
-                }
-                else {
-
                 }
             }).catch(err => {
-                console.log(err.message);
                 this.goToUpdateProfile();
-                console.log(`goToUpdateProfile`);
             })
         }
 
     };
 
-
+    goBackNavigation(){
+        this.props.navigation.goBack();
+    }
 
     render() {
         return (
@@ -123,17 +118,29 @@ class Main extends Component {
                         onPress={() => this.setState({ selectedTab: 'Booth' })}>
                         <Booth />
                     </TabNavigator.Item>
-
-                    <TabNavigator.Item
-                        selected={this.state.selectedTab === 'Profile'}
-                        // title="Profile"
-                        renderIcon={() => <Icon name='user' type='EvilIcons' style={{ fontSize: 35, color: '#707070' }} />}
-                        renderSelectedIcon={() => <Icon name='user' type='EvilIcons'
-                            style={{ fontSize: 35, color: colors.red }} />}
-                        // renderBadge={() => <CustomBadgeView />}
-                        onPress={() => this.setState({ selectedTab: 'Profile' })}>
-                        <Profile />
-                    </TabNavigator.Item>
+                    {
+                        this.props.user.loggedIn ?
+                            <TabNavigator.Item
+                                selected={this.state.selectedTab === 'Profile'}
+                                // title="Profile"
+                                renderIcon={() => <Icon name='user' type='EvilIcons' style={{ fontSize: 35, color: '#707070' }} />}
+                                renderSelectedIcon={() => <Icon name='user' type='EvilIcons'
+                                    style={{ fontSize: 35, color: colors.red }} />}
+                                // renderBadge={() => <CustomBadgeView />}
+                                onPress={() => this.setState({ selectedTab: 'Profile' })}>
+                                <Profile />
+                            </TabNavigator.Item> :
+                            <TabNavigator.Item
+                                selected={this.state.selectedTab === 'SkipedLogin'}
+                                // title="Profile"
+                                renderIcon={() => <Icon name='user' type='EvilIcons' style={{ fontSize: 35, color: '#707070' }} />}
+                                renderSelectedIcon={() => <Icon name='user' type='EvilIcons'
+                                    style={{ fontSize: 35, color: colors.red }} />}
+                                // renderBadge={() => <CustomBadgeView />}
+                                onPress={() => this.setState({ selectedTab: 'SkipedLogin' })}>
+                                <SkipedLogin navigation={this.props.navigation}/>
+                            </TabNavigator.Item>
+                    }
                 </TabNavigator>
             </SafeAreaView>
         );
