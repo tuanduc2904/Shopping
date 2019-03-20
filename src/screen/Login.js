@@ -21,7 +21,7 @@ import { firebaseApp } from '../untils/firebase';
 import { loginSuccess, skipLogin } from '../redux/actions/Authenticate';
 import { loadingShowLogin, loadingCloseLogin } from '../redux/actions/Loading';
 import ProgressDialog from '../Components/ProgressDialog'
-
+import {NavigationActions, StackActions} from 'react-navigation';
 
 class Login extends Component {
     constructor(props) {
@@ -48,7 +48,7 @@ class Login extends Component {
                 if (user !== null) {
                     this.props.loadingCloseLogin();
                     this.props.loginSuccess(user.user);
-                    this.props.navigation.navigate('Main');
+                    this.navigateScreen('Main');
                 }
                 else {
                     console.log('null user')
@@ -58,6 +58,17 @@ class Login extends Component {
                 this.logInFail(error)
             );
     }
+    //ham khong cho bam quay lai
+    navigateScreen = (screen) => {
+        const resetAction = StackActions.reset({
+            index: 0,
+            actions: [
+                NavigationActions.navigate({routeName: screen})
+            ]
+        });
+        this.props.navigation.dispatch(resetAction);
+    }
+
     render() {
         return (
             <View>
