@@ -19,7 +19,7 @@ export const colors = {
     softPurple: '#C678DD',
     cadetBlue: '#ABB2BF',
     froly: '#e06c75',
-    background: '#f6f6f6',
+    background: '#EFEFEF',
     color_text_second: '#66666e',
     color_item_selected: '#454456',
     colorPrimarySecond: '#63be29',

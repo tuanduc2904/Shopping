@@ -128,7 +128,7 @@ class Main extends Component {
                                     style={{ fontSize: 35, color: colors.red }} />}
                                 // renderBadge={() => <CustomBadgeView />}
                                 onPress={() => this.setState({ selectedTab: 'Profile' })}>
-                                <Profile />
+                                <Profile navigation={this.props.navigation}/>
                             </TabNavigator.Item> :
                             <TabNavigator.Item
                                 selected={this.state.selectedTab === 'SkipedLogin'}

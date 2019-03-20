@@ -52,7 +52,7 @@ class Profile extends Component {
                         </View>
                     </View>
                 </View>
-                <ScrollView style={{ flex: 1, paddingTop: 10, backgroundColor: '#EFEFEF' }}>
+                <ScrollView style={{ flex: 1, paddingTop: 10, backgroundColor: colors.background }}>
 
                     <View style={styles.row}>
                         <Text style={{ marginTop: 5, marginBottom: 5 }}>Quản lý đơn hàng: </Text>
@@ -81,7 +81,11 @@ class Profile extends Component {
                         <MaterialIcons name="person" style={styles.button_icon} />
                         <Text style={styles.button_text}>Thông tin tài khoản</Text>
                     </Button>
-                    <Button block style={styles.button}>
+                    <Button block style={styles.button}
+                        onPress={() => {
+                            this.props.navigation.navigate('MyShop')
+                        }}
+                    >
                         <MaterialIcons name="store" style={styles.button_icon} />
                         <Text style={styles.button_text}>Shop của tôi</Text>
                     </Button>

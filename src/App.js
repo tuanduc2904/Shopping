@@ -9,7 +9,7 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import {createStackNavigator,createAppContainer} from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 import SplashScreen from './screen/SplashScreen';
 import Login from "./screen/Login";
 import { Icon } from "native-base";
@@ -20,7 +20,7 @@ import store from './redux/store';
 import { Provider } from 'react-redux'
 import UpdateProfile from "./screen/UpdateProfile";
 import Main from "./screen/Main";
-
+import MyShop from './screen/MyShop'
 
 const NavStack = createStackNavigator({
     // SplashScreen: {
@@ -35,7 +35,7 @@ const NavStack = createStackNavigator({
             header: null
         }
     },
-    SignUp:{
+    SignUp: {
         screen: SignUp,
         navigationOptions: {
             header: null
@@ -51,25 +51,34 @@ const NavStack = createStackNavigator({
             },
         }
     },
-    SeeMore:{
-        screen:SeeMore,
+    SeeMore: {
+        screen: SeeMore,
         navigationOptions: {
-            title:'Home',
+            title: 'Home',
             headerStyle: {
                 backgroundColor: '#FFF',
             },
         }
     },
-    UpdateProfile:{
+    UpdateProfile: {
         screen: UpdateProfile,
         navigationOptions: {
-            title:'Cập Nhật Thông Tin Cá Nhân',
+            title: 'Cập Nhật Thông Tin Cá Nhân',
+            headerStyle: {
+                backgroundColor: '#FFF',
+            },
+        }
+
+    },
+    MyShop: {
+        screen: MyShop,
+        navigationOptions: {
+            title: 'Shop của tôi',
             headerStyle: {
                 backgroundColor: '#FFF',
             },
         }
     }
-    
 
 })
 const AppContainer = createAppContainer(NavStack);

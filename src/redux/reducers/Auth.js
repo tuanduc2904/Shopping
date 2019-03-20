@@ -11,6 +11,7 @@ const INITIAL = {
     listSell: [],
     loggedIn: false,
     profile: false,
+    nameShop: '',
 }
 
 export default (state = INITIAL, action) => {
@@ -32,6 +33,7 @@ export default (state = INITIAL, action) => {
                 phoneNumber: '',
                 avatarSource: '',
                 address: '',
+                nameShop: '',
                 listProduct: [],
                 listOrder: [],
                 listSell: [],
@@ -51,6 +53,7 @@ export default (state = INITIAL, action) => {
                 listOrder: action.user.listOrder,
                 listSell: action.user.listSell,
                 profile: true,
+                nameShop: action.user.nameShop,
             }
         case 'SKIP_LOGIN':
             return {

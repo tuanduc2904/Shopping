@@ -112,7 +112,7 @@ class UpdateProfile extends Component {
 
     checkForm() {
         let { avatarSource, displayName, phoneNumber, address } = this.state;
-        let { email, uid, listProduct, listOrder, listSell } = this.props.user;
+        let { email, uid, listProduct, listOrder, listSell, nameShop } = this.props.user;
         let user = {
             avatarSource: avatarSource,
             displayName: displayName,
@@ -122,7 +122,8 @@ class UpdateProfile extends Component {
             uid: uid,
             listProduct: listProduct,
             listOrder: listOrder,
-            listSell: listSell
+            listSell: listSell,
+            nameShop: nameShop,
         }
         console.log(avatarSource + `/` + displayName + `/` + phoneNumber + `/` + address)
         if (avatarSource.length < 3) {
@@ -142,11 +143,11 @@ class UpdateProfile extends Component {
                 'Sai địa chỉ');
         }
         else {
-            this.adUserToFirebase(user)
+            this.addUserToFirebase(user)
         }
     }
 
-    adUserToFirebase(user) {
+    addUserToFirebase(user) {
         firebaseApp.database().ref(`user`).child(user.uid).set({
             avatarSource: user.avatarSource,
             displayName: user.displayName,
@@ -156,10 +157,10 @@ class UpdateProfile extends Component {
             uid: user.uid,
             listProduct: user.listProduct,
             listOrder: user.listOrder,
-            listSell: user.listSell
-        }).then((user) => {
-            // this.props.updateProfile(user)
-            console.log(user)
+            listSell: user.listSell,
+            nameShop: user.nameShop
+        }).then((snap) => {
+            this.props.updateProfile(user);
             Alert.alert(
                 'Cập nhật thành công');
         }).catch((err) => {
@@ -177,7 +178,7 @@ class UpdateProfile extends Component {
                         this.imagePicker()
                     }}>
                     {
-                        this.state.loadingImage ? <ActivityIndicator color="red" style={styles.avatar} size="large"/> :
+                        this.state.loadingImage ? <ActivityIndicator color="red" style={styles.avatar} size="large" /> :
                             <FastImage style={styles.avatar}
                                 source={{ uri: this.state.avatarSource }}
                             />
