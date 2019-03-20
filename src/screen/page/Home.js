@@ -111,7 +111,7 @@ export default class Home extends Component {
                         horizontal
                         showsHorizontalScrollIndicator={false}
                         pagingEnabled
-                        keyExtractor={item => item._id}
+                        keyExtractor={item => item._id.toString()}
                         renderItem={({item, i}) => (
                             <View key={i} style={{height, width}}>
                                 <Image style={{height, width}} source={{uri: item.imageUrl}}/>

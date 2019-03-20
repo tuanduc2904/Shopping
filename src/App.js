@@ -63,7 +63,7 @@ const NavStack = createStackNavigator({
     UpdateProfile:{
         screen: UpdateProfile,
         navigationOptions: {
-            title:'Thông Tin Cá Nhân',
+            title:'Cập Nhật Thông Tin Cá Nhân',
             headerStyle: {
                 backgroundColor: '#FFF',
             },

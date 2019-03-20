@@ -35,6 +35,7 @@ class Login extends Component {
 
 
     logInFail(error) {
+        this.props.loadingCloseLogin();
         Alert.alert(
             error.message);
     }
@@ -53,10 +54,8 @@ class Login extends Component {
                     console.log('null user')
                 }
             })
-            .catch(error => {
-                this.props.loadingCloseLogin();
+            .catch(error =>
                 this.logInFail(error)
-            }
             );
     }
     render() {

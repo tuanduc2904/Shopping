@@ -11,27 +11,36 @@ import Profile from "./page/Profile";
 import HeaderMain from '../Components/HeaderMain';
 import { connect } from 'react-redux';
 import { firebaseApp } from '../untils/firebase';
-import { updateProfile, logout } from '../redux/actions/Authenticate'
+import { updateProfile, logout } from '../redux/actions/Authenticate';
+import { loadingShowLogin } from '../redux/actions/Loading'
 
 class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
             selectedTab: 'Home',
+            user: {}
         }
+    }
+    componentWillReceiveProps(props) {
+        if (props.responseData) { console.log(props.user); } // should be getting the data if the request works
     }
 
     componentDidMount() {
-        this.checkLogin();
+        if (this.props.user !== null) {
+            this.checkLogin();
+        }
     };
 
     goToUpdateProfile() {
+
         Alert.alert(
-            'Bạn cần phải bổ xung thông tin cho tài khoản',
+            'Bổ sung thông tin tài khoản',
+            'Bạn cần phải bổ sung thông tin cho tài khoản',
             [
                 {
                     text: 'Ok', onPress: () => {
-                        // this.props.navigation.navigate('UpdateProfile');
+                        this.props.navigation.navigate('UpdateProfile');
                     }
                 },
             ],
@@ -39,24 +48,28 @@ class Main extends Component {
     };
 
     checkLogin() {
-        let user = this.props.user;
-        console.log(user)
+        const user = this.props.user;
         if (user.loggedIn) {
-            firebaseApp.database().ref('user').child(user.uid).once('value', function (user) {
-                if (user.val() === null) {
-                    // this.goToUpdateProfile();
+            firebaseApp.database().ref('user').child(user.uid).once('value').then((snapshot) => {
+                console.log(`user.uid :` + user.uid);
+                console.log(`snapshot uid: ` + snapshot.val().uid);
+                if (snapshot.val().uid === user.uid) {
+                    this.props.updateProfile(snapshot.val());
+                    console.log(`updateProfile`)
                 }
                 else {
-                    // this.props.updateProfile(user.val());
 
                 }
             }).catch(err => {
-                console.log(err.message)
+                console.log(err.message);
+                this.goToUpdateProfile();
+                console.log(`goToUpdateProfile`);
             })
         }
+
     };
 
-    
+
 
     render() {
         return (
@@ -131,4 +144,4 @@ function mapStateToProps(state) {
         user: state.Auth
     }
 }
-export default connect(mapStateToProps, { updateProfile, logout })(Main);
+export default connect(mapStateToProps, { updateProfile, logout, loadingShowLogin })(Main);

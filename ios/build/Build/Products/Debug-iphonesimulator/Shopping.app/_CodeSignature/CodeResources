@@ -10,7 +10,7 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		sXp7UgwDMktXZbGCcKlw33UMpbY=
+		BGM9+zaUsp6JS10YJgbVM1PXdpM=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -107,7 +107,7 @@
 		</data>
 		<key>PlugIns/ShoppingTests.xctest.dSYM/Contents/Resources/DWARF/ShoppingTests</key>
 		<data>
-		7lx5YzcUm687vCoQOyoWrNCmuPY=
+		N00IAxvdeo3RVL45mu6bFBZHfsw=
 		</data>
 		<key>PlugIns/ShoppingTests.xctest/Info.plist</key>
 		<data>
@@ -115,7 +115,7 @@
 		</data>
 		<key>PlugIns/ShoppingTests.xctest/ShoppingTests</key>
 		<data>
-		NAnbgf3jZB1v0FIa0vsqtvKNU3I=
+		HUoDhRCt/9AqnlPnh33R+GUIApM=
 		</data>
 		<key>PlugIns/ShoppingTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
@@ -147,11 +147,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sXp7UgwDMktXZbGCcKlw33UMpbY=
+			BGM9+zaUsp6JS10YJgbVM1PXdpM=
 			</data>
 			<key>hash2</key>
 			<data>
-			RBXyNodwkX+TbXLUaRxiAJpwOD5pzcC0wIHsBFwcQJU=
+			W4FALoQVAvQGTTlyYInGT/u6GAmjQhRINzMLUB1l5Xw=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -380,11 +380,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7lx5YzcUm687vCoQOyoWrNCmuPY=
+			N00IAxvdeo3RVL45mu6bFBZHfsw=
 			</data>
 			<key>hash2</key>
 			<data>
-			n/lQEf4ov89+bDP00U1Pkf/niEOADXuSpwKG/JV2/Fo=
+			D1+jWw5trhfPdwmRVzHbJfu2+qWWdvQscBij3X0sKZI=
 			</data>
 		</dict>
 		<key>PlugIns/ShoppingTests.xctest/Info.plist</key>
@@ -402,11 +402,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NAnbgf3jZB1v0FIa0vsqtvKNU3I=
+			HUoDhRCt/9AqnlPnh33R+GUIApM=
 			</data>
 			<key>hash2</key>
 			<data>
-			lTio8izMmwzahjyYMgrtrPM4yzqyNkXvpH7uucv0Ysw=
+			LijDgqzjYNkmzvDvEpKXvZcEDUa0K05NdI6QXpYJdWw=
 			</data>
 		</dict>
 		<key>PlugIns/ShoppingTests.xctest/_CodeSignature/CodeResources</key>
