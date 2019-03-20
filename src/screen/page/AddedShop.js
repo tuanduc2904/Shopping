@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
-
-export default class AddedShop extends Component {
+import { connect } from 'react-redux'
+class AddedShop extends Component {
   render() {
     return (
       <View>
-        <Text> textInComponent </Text>
+        <Text> Đã có shop page/addedShop </Text>
       </View>
     )
   }
 }
+export default connect()(AddedShop);

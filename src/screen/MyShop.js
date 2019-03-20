@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, Alert } from 'react-native';
 import { colors } from '../assets/color'
 import { connect } from 'react-redux';
 import AddShop from './page/AddShop';
-
+import AddedShop from './page/AddedShop'
 class MyShop extends Component {
   componentDidMount() {
     console.log('nameShop :' + this.props.user.nameShop);
@@ -14,9 +14,7 @@ class MyShop extends Component {
         {this.props.user.nameShop === undefined || this.props.user.nameShop === "" ? <View>
           <AddShop />
         </View> :
-          <View>
-            <Text>Đã có shop</Text>
-          </View>
+          <AddedShop />
         }
       </View>
     )
