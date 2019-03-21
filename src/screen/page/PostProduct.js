@@ -114,6 +114,7 @@ export default class PostProduct extends Component {
                                 <TextInputComponent
                                     placeholder='Tên Sản '
                                     numberOfLines={2}
+                                    multiline={true}
                                     style={styles.textInput}
                                     // value={this.state.nameShop}
                                     // onChangeText={(nameShop) => this.setState({ nameShop })}
@@ -123,6 +124,7 @@ export default class PostProduct extends Component {
                                 <TextInputComponent
                                     style={styles.textInput}
                                     placeholder='Giá sản phẩm'
+                                    multiline={true}
                                     value={this.state.nameShop}
                                     keyboardType='number-pad'
                                     onChangeText={(nameShop) => this.setState({nameShop})}

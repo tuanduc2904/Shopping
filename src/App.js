@@ -24,12 +24,12 @@ import MyShop from './screen/MyShop'
 import PostProduct from "./screen/page/PostProduct";
 
 const NavStack = createStackNavigator({
-    // SplashScreen: {
-    //     screen: SplashScreen,
-    //     navigationOptions: {
-    //         header: null
-    //     }
-    // },
+    SplashScreen: {
+        screen: SplashScreen,
+        navigationOptions: {
+            header: null
+        }
+    },
     PostProduct: {
         screen: PostProduct,
         navigationOptions: {

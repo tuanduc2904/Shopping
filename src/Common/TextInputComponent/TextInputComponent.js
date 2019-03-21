@@ -20,7 +20,7 @@ export default class TextInputComponent extends Component {
                     secureTextEntry = {this.props.secureTextEntry}
                     numberOfLines={this.props.numberOfLines}
                     keyboardType={this.props.keyboardType}
-                    multiline={true}
+                    multiline={this.props.multiline}
                     />
             </View>
         );
