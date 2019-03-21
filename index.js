@@ -7,7 +7,7 @@ require('core-js/fn/set');
 require('core-js/fn/array/find');
 
 
-import { AppRegistry,Platform } from 'react-native';
+import { AppRegistry, Platform } from 'react-native';
 if (Platform.OS === 'android') {
     if (typeof Symbol === 'undefined') {
         if (Array.prototype['@@iterator'] === undefined) {
@@ -28,3 +28,31 @@ import App from './src/App'
 import { name as appName } from './app.json';
 console.disableYellowBox = true;
 AppRegistry.registerComponent(appName, () => App);
+
+
+/// cau truc products
+var products = [
+    {
+        avatarSource: '',
+        uid: '',
+        nameShop: '',
+        listSelling: ['idProduct'],
+        products: [
+            {
+                idProduct: '',
+                name: '',
+                uid: '',
+                nameShop: '',
+                avatarSource: '',
+                images: [],
+                price: '',
+                category: '',
+                color: [],
+                timeAdd: '',
+                description: '',
+                feedback: [],
+
+            }
+        ],
+    },
+]

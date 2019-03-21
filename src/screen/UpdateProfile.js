@@ -113,6 +113,17 @@ class UpdateProfile extends Component {
     checkForm() {
         let { avatarSource, displayName, phoneNumber, address } = this.state;
         let { email, uid, listProduct, listOrder, listSell, nameShop } = this.props.user;
+
+        if (listProduct === undefined) {
+            listProduct = null
+        }
+        if (listOrder === undefined) {
+            listOrder = null
+        }
+        if (listSell === undefined) {
+            listSell = null
+        }
+
         let user = {
             avatarSource: avatarSource,
             displayName: displayName,
@@ -125,7 +136,6 @@ class UpdateProfile extends Component {
             listSell: listSell,
             nameShop: nameShop,
         }
-        console.log(avatarSource + `/` + displayName + `/` + phoneNumber + `/` + address)
         if (avatarSource.length < 3) {
             Alert.alert(
                 'Bạn chưa thêm ảnh đại diện');
