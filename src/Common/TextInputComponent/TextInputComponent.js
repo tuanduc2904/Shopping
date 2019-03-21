@@ -18,6 +18,9 @@ export default class TextInputComponent extends Component {
                     style={[styles.text,this.props.style]}
                     underlineColorAndroid="transparent"
                     secureTextEntry = {this.props.secureTextEntry}
+                    numberOfLines={this.props.numberOfLines}
+                    keyboardType={this.props.keyboardType}
+                    multiline={true}
                     />
             </View>
         );

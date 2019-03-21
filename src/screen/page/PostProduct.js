@@ -8,10 +8,13 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView,SafeAreaView} from 'react-native';
+import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, SafeAreaView} from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import TextInputComponent from "../../Common/TextInputComponent/TextInputComponent";
+import {colors} from "../../assets/color";
+import {Icon, List, ListItem} from "native-base";
+import ButtonComponent from "../../Common/ButtonComponent/ButtonComponent";
 
 export default class PostProduct extends Component {
 
@@ -19,29 +22,39 @@ export default class PostProduct extends Component {
         super();
         this.state = {
             image: null,
-            images: null
+            images: null,
+            show: false,
+            show2: false,
         };
     }
 
 
-    cleanupImages() {
-        ImagePicker.clean().then(() => {
-            console.log('removed tmp images from tmp directory');
-        }).catch(e => {
-            alert(e);
-        });
-    }
+    showview() {
+        this.setState({
+            show: true,
 
-    cleanupSingleImage() {
-        let image = this.state.image || (this.state.images && this.state.images.length ? this.state.images[0] : null);
-        console.log('will cleanup image', image);
-
-        ImagePicker.cleanSingle(image ? image.uri : null).then(() => {
-            console.log(`removed tmp image ${image.uri} from tmp directory`);
-        }).catch(e => {
-            alert(e);
         })
     }
+
+    resetview() {
+        this.setState({
+            show: false,
+
+        })
+    }
+    showview2() {
+        this.setState({
+            show2: true,
+        })
+    }
+    resetview2() {
+        this.setState({
+
+            show2: false,
+        })
+    }
+
+
 
     pickMultiple() {
         ImagePicker.openPicker({
@@ -62,7 +75,7 @@ export default class PostProduct extends Component {
 
 
     renderImage(image) {
-        return <Image style={{width: 300, height: 300, resizeMode: 'contain'}} source={image}/>
+        return <Image style={styles.image} source={image}/>
     }
 
     renderAsset(image) {
@@ -76,57 +89,134 @@ export default class PostProduct extends Component {
     render() {
         return (
             <SafeAreaView style={styles.saf}>
-            <View style={styles.container}>
-                <ScrollView>
-                    <View style={styles.viewTextInput}>
-                        <TextInputComponent
-                            placeholder='Tên Sản '
-                            // value={this.state.nameShop}
-                            // onChangeText={(nameShop) => this.setState({ nameShop })}
-                        />
+                <View style={styles.container}>
+                    <ScrollView>
+
+                        <View style={styles.header}>
+                            <ScrollView horizontal
+                                        showsHorizontalScrollIndicator={false}>
+                                <TouchableOpacity
+                                    onPress={this.pickMultiple.bind(this)}
+                                    style={styles.addImage}>
+                                    <Icon name='camerao' type='AntDesign'
+                                          style={{fontSize: 30, color: colors.red}}/>
+                                    <TextComponent style={styles.textAdd}>Thêm Ảnh</TextComponent>
+                                </TouchableOpacity>
+                                {this.state.image ? this.renderAsset(this.state.image) : null}
+                                {this.state.images ? this.state.images.map(i => <View
+                                    key={i.uri}>{this.renderAsset(i)}</View>) : null}
+
+                            </ScrollView>
+                            <View style={styles.bar}/>
+                        </View>
+                        <View>
+                            <View style={styles.viewTextInput}>
+                                <TextInputComponent
+                                    placeholder='Tên Sản '
+                                    numberOfLines={2}
+                                    style={styles.textInput}
+                                    // value={this.state.nameShop}
+                                    // onChangeText={(nameShop) => this.setState({ nameShop })}
+                                />
+                            </View>
+                            <View style={styles.viewTextInput}>
+                                <TextInputComponent
+                                    style={styles.textInput}
+                                    placeholder='Giá sản phẩm'
+                                    value={this.state.nameShop}
+                                    keyboardType='number-pad'
+                                    onChangeText={(nameShop) => this.setState({nameShop})}
+                                />
+                            </View>
+                            <View>
+                                <TouchableOpacity
+                                    onPress={() => this.showview()}
+                                    style={[styles.button, styles.viewTextInput]}>
+                                    <TextComponent>Chọn Màu</TextComponent>
+                                    <Icon name='color-lens' type='MaterialIcons'
+                                          style={{fontSize: 25, color: colors.red}}/>
+                                </TouchableOpacity>
+                                {
+                                    this.state.show ?
+                                        <View>
+                                            <TouchableOpacity onPress={() => this.resetview()}>
+                                                <TextComponent style={[styles.text]}>White</TextComponent>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => this.resetview()}>
+                                                <TextComponent style={styles.text}>Black</TextComponent>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => this.resetview()}>
+                                                <TextComponent style={styles.text}>Red</TextComponent>
+                                            </TouchableOpacity>
+                                        </View>
+
+                                        : null}
+                            </View>
+                            <View>
+                                <TouchableOpacity
+                                    onPress={() => this.showview2()}
+                                    style={[styles.button, styles.viewTextInput]}>
+                                    <TextComponent>Chọn Danh Mục</TextComponent>
+                                    <Icon name='color-lens' type='MaterialIcons'
+                                          style={{fontSize: 25, color: colors.red}}/>
+                                </TouchableOpacity>
+                                {
+                                    this.state.show2 ?
+                                        <View>
+                                            <TouchableOpacity onPress={() => this.resetview2()}>
+                                                <TextComponent style={[styles.text]}>White</TextComponent>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => this.resetview2()}>
+                                                <TextComponent style={styles.text}>Black</TextComponent>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => this.resetview2()}>
+                                                <TextComponent style={styles.text}>Red</TextComponent>
+                                            </TouchableOpacity>
+                                        </View>
+
+                                        : null}
+                            </View>
+
+                        </View>
+
+                    </ScrollView>
+
+                    <View style={styles.body}>
+                        <ButtonComponent
+
+                            text='Đăng Sản Phẩm'/>
                     </View>
-                    <View style={styles.viewTextInput}>
-                        <TextInputComponent
-                            placeholder='Giá sản phẩm'
-                            value={this.state.nameShop}
-                            onChangeText={(nameShop) => this.setState({nameShop})}
-                        />
-                    </View>
-                    {this.state.image ? this.renderAsset(this.state.image) : null}
-                    {this.state.images ? this.state.images.map(i => <View
-                        key={i.uri}>{this.renderAsset(i)}</View>) : null}
-                </ScrollView>
 
 
-                <TouchableOpacity onPress={this.pickMultiple.bind(this)} >
-                    <Text style={styles.text}>Them Anh</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={this.cleanupSingleImage.bind(this)} >
-                    <Text style={styles.text}>Cleanup All Images</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={this.cleanupSingleImage.bind(this)} >
-                    <Text style={styles.text}>Dang san pham</Text>
-                </TouchableOpacity>
-
-            </View>
+                </View>
             </SafeAreaView>
-                );
+        );
 
     }
 }
 
 const styles = StyleSheet.create({
-    saf:{
+    saf: {
         flex: 1,
     },
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+
     },
     button: {
-        backgroundColor: 'blue',
-        marginBottom: 10
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderBottomWidth: 1,
+        borderBottomColor: colors.bgUser,
+        paddingLeft: 10,
+        paddingRight: 10
+    },
+    textInput: {
+        width: '100%',
+        paddingLeft: 15,
+        paddingRight: 5
     },
     text: {
         color: 'black',
@@ -137,6 +227,42 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10
 
-    }
+    },
+    addImage: {
+        width: 80,
+        height: 80,
+        borderWidth: 1,
+        borderRadius: 15,
+        marginRight: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderStyle: 'dashed',
+        borderColor: colors.bgUser,
+        marginLeft: 10
+    },
+    image: {
+        width: 80,
+        height: 80,
+        marginRight: 10,
+        borderRadius: 15,
+    },
+    header: {
+        marginTop: 10,
+        marginBottom: 10
+    },
+    textAdd: {
+        fontSize: 12,
+        fontWeight: '200'
+    },
+    body: {
+        alignItems: 'center'
+    },
+    bar: {
+        width: '100%',
+        marginTop: 10,
+        height: 1,
+        backgroundColor: colors.lightGray
+    },
+
 });
 
