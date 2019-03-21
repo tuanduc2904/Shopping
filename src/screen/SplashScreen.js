@@ -14,17 +14,29 @@ import { Icon } from "native-base";
 import { colors } from "../assets/color";
 import AutoTypingText from 'react-native-auto-typing-text';
 import { connect } from 'react-redux'
+import { NavigationActions, StackActions } from 'react-navigation';
 
 class SplashScreen extends Component {
 
 
     componentDidMount() {
         setTimeout(() => {
-            this.props.navigation.navigate('Login')
+            this.navigateScreen('Login')
         }, 3000);
 
-      
+
     }
+
+    navigateScreen = (screen) => {
+        const resetAction = StackActions.reset({
+            index: 0,
+            actions: [
+                NavigationActions.navigate({ routeName: screen })
+            ]
+        });
+        this.props.navigation.dispatch(resetAction);
+    }
+
 
     render() {
         return (

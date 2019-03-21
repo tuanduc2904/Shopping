@@ -7,7 +7,7 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     Platform,
     StyleSheet,
@@ -15,16 +15,18 @@ import {
     View,
     TouchableOpacity, Image, ScrollView, Alert
 } from 'react-native';
-import {Dimens} from '../../assets/Dimens';
-import {colors} from "../../assets/color";
+import { Dimens } from '../../assets/Dimens';
+import { colors } from "../../assets/color";
 import TextComponent from "../../Common/TextComponent/TextComponent";
-import {firebaseApp} from "../../untils/firebase";
+import { firebaseApp } from "../../untils/firebase";
 import FastImage from "react-native-fast-image";
-import {Button, Card} from 'native-base'
-import {connect} from 'react-redux'
+import { Button, Card } from 'native-base'
+import { connect } from 'react-redux'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-
+import { NavigationActions, StackActions } from 'react-navigation';
+import { logout } from '../../redux/actions/Authenticate';
+import { SkipedLogin } from './SkipedLogin'
 class Profile extends Component {
 
     constructor(props) {
@@ -38,13 +40,25 @@ class Profile extends Component {
 
     }
 
+    //ham khong cho bam quay lai
+    navigateScreen = (screen) => {
+        const resetAction = StackActions.reset({
+            index: 0,
+            actions: [
+                NavigationActions.navigate({ routeName: screen })
+            ]
+        });
+        this.props.navigation.dispatch(resetAction);
+    }
+
+
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.heard}>
                     <View style={styles.viewHorizontalLeft}>
                         <FastImage style={styles.avatar}
-                                   source={{uri: this.props.user.avatarSource}}
+                            source={{ uri: this.props.user.avatarSource }}
                         />
                         <View style={styles.viewAccout}>
                             <TextComponent style={styles.title}>{this.props.user.displayName}</TextComponent>
@@ -52,50 +66,54 @@ class Profile extends Component {
                         </View>
                     </View>
                 </View>
-                <ScrollView style={{flex: 1, paddingTop: 10, backgroundColor: colors.background}}>
+                <ScrollView style={{ flex: 1, paddingTop: 10, backgroundColor: colors.background }}>
 
                     <Card style={[styles.card, styles.row]}>
-                        <Text style={{marginTop: 5, marginBottom: 5}}>Quản lý đơn hàng: </Text>
+                        <Text style={{ marginTop: 5, marginBottom: 5 }}>Quản lý đơn hàng: </Text>
                         <View style={styles.order}>
                             <TouchableOpacity style={styles.orderChild}>
-                                <View style={{alignItems: 'center'}}>
-                                    <Icon name="send-o" styes={styles.textCenter} color={colors.red} size={45}/>
+                                <View style={{ alignItems: 'center' }}>
+                                    <Icon name="send-o" styes={styles.textCenter} color={colors.red} size={45} />
                                     <Text styes={styles.textCenter}>Chuyển hàng </Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.orderChild}>
-                                <View style={{alignItems: 'center'}}>
+                                <View style={{ alignItems: 'center' }}>
                                     <MaterialIcons name="local-shipping" styes={styles.textCenter} color={colors.red}
-                                                   size={45}/>
+                                        size={45} />
                                     <Text styes={styles.textCenter}>Đang giao</Text>
                                 </View>
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.orderChild}>
-                                <View style={{alignItems: 'center'}}>
-                                    <Icon name="gift" styes={styles.textCenter} color={colors.red} size={45}/>
+                                <View style={{ alignItems: 'center' }}>
+                                    <Icon name="gift" styes={styles.textCenter} color={colors.red} size={45} />
                                     <Text styes={styles.textCenter}>Đã nhận</Text>
                                 </View>
                             </TouchableOpacity>
                         </View>
                     </Card>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => {
+                            this.props.navigation.navigate('UpdateProfile');
+                        }}
+                    >
                         <Card style={[styles.card, styles.button,]}>
-                            <MaterialIcons name="person" style={styles.button_icon}/>
+                            <MaterialIcons name="person" style={styles.button_icon} />
                             <Text style={styles.button_text}>Thông tin tài khoản</Text>
                         </Card>
                     </TouchableOpacity>
-                    < TouchableOpacity
+                    <TouchableOpacity
                         onPress={() => {
                             this.props.navigation.navigate('MyShop')
                         }}>
                         <Card style={[styles.card, styles.button,]}>
-                            <MaterialIcons name="store" style={styles.button_icon}/>
+                            <MaterialIcons name="store" style={styles.button_icon} />
                             <Text style={styles.button_text}>Shop của tôi</Text>
                         </Card>
                     </TouchableOpacity>
                     <TouchableOpacity>
                         <Card style={[styles.card, styles.button,]}>
-                            <MaterialIcons name="help-outline" style={styles.button_icon}/>
+                            <MaterialIcons name="help-outline" style={styles.button_icon} />
                             <Text style={styles.button_text}>Trung tâm trợ giúp</Text>
                         </Card>
                     </TouchableOpacity>
@@ -103,19 +121,26 @@ class Profile extends Component {
                         onPress={() => {
                             Alert.alert(
                                 'Shopping ',
-                                'Bạn muốn đăng xuất tài  !',
+                                'Bạn muốn đăng xuất tài khoản?',
                                 [
-                                    {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                                    {
+                                        text: 'Cancel'
+                                    },
 
-                                    {text: 'OK',},
+                                    {
+                                        text: 'OK', onPress: () => {
+                                            this.props.logout();
+                                            this.navigateScreen('Login');
+                                        }
+                                    },
                                 ],
-                                {cancelable: false}
+                                { cancelable: false }
                             )
                         }}
-                       >
+                    >
                         <Card style={[styles.card, styles.button,]}>
-                            <MaterialIcons name="exit-to-app" style={styles.button_icon}/>
-                            <Text style={{fontSize: 18, color: colors.red}}>Đăng xuất tài khoản</Text>
+                            <MaterialIcons name="exit-to-app" style={styles.button_icon} />
+                            <Text style={{ fontSize: 18, color: colors.red }}>Đăng xuất tài khoản</Text>
                         </Card>
                     </TouchableOpacity>
 
@@ -132,7 +157,7 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Profile)
+export default connect(mapStateToProps, { logout })(Profile)
 
 const styles = StyleSheet.create({
 

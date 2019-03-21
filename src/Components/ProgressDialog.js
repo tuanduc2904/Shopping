@@ -13,14 +13,10 @@ const ProgressDialog = ({ visible }) => (
   >
     <View style={styles.container}>
       <View style={styles.content}>
-        {/* <Text style={styles.title}>Vui lòng đợi</Text> */}
         <View style={styles.loading}>
           <View style={styles.loader}>
-            <ActivityIndicator size="large" color="white"/>
+            <ActivityIndicator size="large" color="red" />
           </View>
-          {/* <View style={styles.loadingContent}>
-            <Text>Loading</Text>
-          </View>  */}
         </View>
       </View>
     </View>
@@ -30,21 +26,22 @@ const ProgressDialog = ({ visible }) => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, .5)',
+    // backgroundColor: 'rgba(0, 0, 0, 0.5)',
     alignItems: 'center',
     justifyContent: 'center',
   },
   content: {
     padding: 35,
-
   },
   title: {
     fontSize: 18,
     fontWeight: 'bold',
+
   },
   loading: {
     flexDirection: 'row',
     alignItems: 'center',
+
   },
   loader: {
     flex: 1,

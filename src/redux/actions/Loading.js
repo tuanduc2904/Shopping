@@ -3,7 +3,7 @@ export function loadingShowSignUp() {
         type: 'LOADINGSHOWESIGNUP'
     }
 }
-export function loadingCloseSigUp() {
+export function loadingCloseSignUp() {
     return {
         type: 'LOADINGCLOSESIGNUP'
     }

@@ -50,8 +50,11 @@ class SignUp extends Component {
 
     SignFail(error) {
         this.props.loadingCloseSignUp();
-        Alert.alert(
-            error.message);
+        setTimeout(() => {
+            Alert.alert(
+                error.message);
+        }, 500);
+
     }
 
     signUp(email, password) {
@@ -73,7 +76,6 @@ class SignUp extends Component {
                 );
             }).catch(error => {
                 this.SignFail(error);
-                console.log(error.message)
             });
     }
 
@@ -126,7 +128,6 @@ class SignUp extends Component {
 function mapStateToProps(state) {
     return {
         isLoading: state.Loading.isLoadingSignUp
-
     }
 }
 

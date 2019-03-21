@@ -48,6 +48,8 @@ class Main extends Component {
         );
     };
 
+
+
     checkLogin() {
         const user = this.props.user;
         if (user.loggedIn) {
@@ -62,14 +64,13 @@ class Main extends Component {
 
     };
 
-    goBackNavigation(){
-        this.props.navigation.goBack();
-    }
 
     render() {
         return (
             <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
-                <HeaderMain />
+                {this.state.selectedTab === 'Profile' ? null :
+                    <HeaderMain />
+                }
                 <TabNavigator tabBarStyle={{ backgroundColor: colors.white }}>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'Home'}
@@ -85,7 +86,6 @@ class Main extends Component {
 
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'SeeMore'}
-                        // title="Profile"
                         renderIcon={() => <Icon name='checkbox-multiple-blank-outline' type='MaterialCommunityIcons'
                             style={{ fontSize: 25, color: '#707070' }} />}
                         renderSelectedIcon={() => <Icon name='checkbox-multiple-blank-outline'
@@ -97,8 +97,17 @@ class Main extends Component {
                     </TabNavigator.Item>
 
                     <TabNavigator.Item
+                        selected={this.state.selectedTab === 'Booth'}
+                        renderIcon={() => <Icon name='isv' type='AntDesign' style={{ fontSize: 25, color: '#707070' }} />}
+                        renderSelectedIcon={() => <Icon name='isv' type='AntDesign'
+                            style={{ fontSize: 25, color: colors.red }} />}
+                        // renderBadge={() => <CustomBadgeView />}
+                        onPress={() => this.setState({ selectedTab: 'Booth' })}>
+                        <Booth />
+                    </TabNavigator.Item>
+
+                    <TabNavigator.Item
                         selected={this.state.selectedTab === 'ShoppingCart'}
-                        // title="Profile"
                         renderIcon={() => <Icon name='shoppingcart' type='AntDesign'
                             style={{ fontSize: 25, color: '#707070' }} />}
                         renderSelectedIcon={() => <Icon name='shoppingcart' type='AntDesign'
@@ -108,37 +117,26 @@ class Main extends Component {
                         <ShoppingCart />
                     </TabNavigator.Item>
 
-                    <TabNavigator.Item
-                        selected={this.state.selectedTab === 'Booth'}
-                        // title="Profile"
-                        renderIcon={() => <Icon name='isv' type='AntDesign' style={{ fontSize: 25, color: '#707070' }} />}
-                        renderSelectedIcon={() => <Icon name='isv' type='AntDesign'
-                            style={{ fontSize: 25, color: colors.red }} />}
-                        // renderBadge={() => <CustomBadgeView />}
-                        onPress={() => this.setState({ selectedTab: 'Booth' })}>
-                        <Booth />
-                    </TabNavigator.Item>
+
                     {
                         this.props.user.loggedIn ?
                             <TabNavigator.Item
                                 selected={this.state.selectedTab === 'Profile'}
-                                // title="Profile"
                                 renderIcon={() => <Icon name='user' type='EvilIcons' style={{ fontSize: 35, color: '#707070' }} />}
                                 renderSelectedIcon={() => <Icon name='user' type='EvilIcons'
                                     style={{ fontSize: 35, color: colors.red }} />}
                                 // renderBadge={() => <CustomBadgeView />}
                                 onPress={() => this.setState({ selectedTab: 'Profile' })}>
-                                <Profile navigation={this.props.navigation}/>
+                                <Profile navigation={this.props.navigation} />
                             </TabNavigator.Item> :
                             <TabNavigator.Item
-                                selected={this.state.selectedTab === 'SkipedLogin'}
-                                // title="Profile"
+                                selected={this.state.selectedTab === 'Profile'}
                                 renderIcon={() => <Icon name='user' type='EvilIcons' style={{ fontSize: 35, color: '#707070' }} />}
                                 renderSelectedIcon={() => <Icon name='user' type='EvilIcons'
                                     style={{ fontSize: 35, color: colors.red }} />}
                                 // renderBadge={() => <CustomBadgeView />}
-                                onPress={() => this.setState({ selectedTab: 'SkipedLogin' })}>
-                                <SkipedLogin navigation={this.props.navigation}/>
+                                onPress={() => this.setState({ selectedTab: 'Profile' })}>
+                                <SkipedLogin navigation={this.props.navigation} />
                             </TabNavigator.Item>
                     }
                 </TabNavigator>

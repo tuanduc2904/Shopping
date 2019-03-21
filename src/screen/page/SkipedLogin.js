@@ -19,6 +19,7 @@ export default class SkipedLogin extends Component {
         )
     }
 }
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
