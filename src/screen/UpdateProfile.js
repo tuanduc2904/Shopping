@@ -162,7 +162,16 @@ class UpdateProfile extends Component {
         }).then((snap) => {
             this.props.updateProfile(user);
             Alert.alert(
-                'Cập nhật thành công');
+                'Thành công',
+                'Cập nhật thành công',
+                [
+                    {
+                        text: 'Ok', onPress: () => {
+                            this.props.navigation.goBack();
+                        }
+                    },
+                ],
+            );
         }).catch((err) => {
             Alert.alert(
                 err.message);
