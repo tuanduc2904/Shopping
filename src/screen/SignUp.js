@@ -63,17 +63,20 @@ class SignUp extends Component {
             then((user) => {
                 console.log(user)
                 this.props.loadingCloseSignUp();
-                Alert.alert(
-                    'Thành Công',
-                    'Đăng ký thành công với email: ' + email,
-                    [
-                        {
-                            text: 'Đăng nhập', onPress: () => {
-                                this.props.navigation.goBack();
-                            }
-                        },
-                    ],
-                );
+                setTimeout(() => {
+                    Alert.alert(
+                        'Thành Công',
+                        'Đăng ký thành công với email: ' + email,
+                        [
+                            {
+                                text: 'Đăng nhập', onPress: () => {
+                                    this.props.navigation.goBack();
+                                }
+                            },
+                        ],
+                    );
+                }, 500);
+
             }).catch(error => {
                 this.SignFail(error);
             });

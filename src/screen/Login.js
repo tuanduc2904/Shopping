@@ -21,7 +21,7 @@ import { firebaseApp } from '../untils/firebase';
 import { loginSuccess, skipLogin } from '../redux/actions/Authenticate';
 import { loadingShowLogin, loadingCloseLogin } from '../redux/actions/Loading';
 import ProgressDialog from '../Components/ProgressDialog'
-import {NavigationActions, StackActions} from 'react-navigation';
+import { NavigationActions, StackActions } from 'react-navigation';
 
 class Login extends Component {
     constructor(props) {
@@ -36,8 +36,11 @@ class Login extends Component {
 
     logInFail(error) {
         this.props.loadingCloseLogin();
-        Alert.alert(
-            error.message);
+        setTimeout(() => {
+            Alert.alert(
+                error.message);
+        }, 500);
+
     }
 
     LOGIN() {
@@ -63,7 +66,7 @@ class Login extends Component {
         const resetAction = StackActions.reset({
             index: 0,
             actions: [
-                NavigationActions.navigate({routeName: screen})
+                NavigationActions.navigate({ routeName: screen })
             ]
         });
         this.props.navigation.dispatch(resetAction);
