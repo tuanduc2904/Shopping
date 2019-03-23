@@ -7,13 +7,13 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, SafeAreaView} from 'react-native';
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, SafeAreaView } from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import TextInputComponent from "../../Common/TextInputComponent/TextInputComponent";
-import {colors} from "../../assets/color";
-import {Icon, List, ListItem} from "native-base";
+import { colors } from "../../assets/color";
+import { Icon, List, ListItem, CheckBox, Body } from "native-base";
 import ButtonComponent from "../../Common/ButtonComponent/ButtonComponent";
 
 export default class PostProduct extends Component {
@@ -25,14 +25,18 @@ export default class PostProduct extends Component {
             images: null,
             show: false,
             show2: false,
+            colorBlue: false,
+            colorYellow: false,
+            colorBlack: false,
+            colorWhite: false
         };
     }
 
 
     showview() {
         this.setState({
-            show: true,
-
+            show: !this.state.show,
+            show2: false
         })
     }
 
@@ -44,7 +48,8 @@ export default class PostProduct extends Component {
     }
     showview2() {
         this.setState({
-            show2: true,
+            show2: !this.state.show2,
+            show: false,
         })
     }
     resetview2() {
@@ -67,7 +72,7 @@ export default class PostProduct extends Component {
                 image: null,
                 images: images.map(i => {
                     console.log('received image', i);
-                    return {uri: i.path, width: i.width, height: i.height, mime: i.mime};
+                    return { uri: i.path, width: i.width, height: i.height, mime: i.mime };
                 })
             });
         }).catch(e => alert(e));
@@ -75,7 +80,7 @@ export default class PostProduct extends Component {
 
 
     renderImage(image) {
-        return <Image style={styles.image} source={image}/>
+        return <Image style={styles.image} source={image} />
     }
 
     renderAsset(image) {
@@ -94,12 +99,12 @@ export default class PostProduct extends Component {
 
                         <View style={styles.header}>
                             <ScrollView horizontal
-                                        showsHorizontalScrollIndicator={false}>
+                                showsHorizontalScrollIndicator={false}>
                                 <TouchableOpacity
                                     onPress={this.pickMultiple.bind(this)}
                                     style={styles.addImage}>
                                     <Icon name='camerao' type='AntDesign'
-                                          style={{fontSize: 30, color: colors.red}}/>
+                                        style={{ fontSize: 30, color: colors.red }} />
                                     <TextComponent style={styles.textAdd}>Thêm Ảnh</TextComponent>
                                 </TouchableOpacity>
                                 {this.state.image ? this.renderAsset(this.state.image) : null}
@@ -107,7 +112,7 @@ export default class PostProduct extends Component {
                                     key={i.uri}>{this.renderAsset(i)}</View>) : null}
 
                             </ScrollView>
-                            <View style={styles.bar}/>
+                            <View style={styles.bar} />
                         </View>
                         <View>
                             <View style={styles.viewTextInput}>
@@ -116,8 +121,8 @@ export default class PostProduct extends Component {
                                     numberOfLines={2}
                                     multiline={true}
                                     style={styles.textInput}
-                                    // value={this.state.nameShop}
-                                    // onChangeText={(nameShop) => this.setState({ nameShop })}
+                                // value={this.state.nameShop}
+                                // onChangeText={(nameShop) => this.setState({ nameShop })}
                                 />
                             </View>
                             <View style={styles.viewTextInput}>
@@ -127,7 +132,7 @@ export default class PostProduct extends Component {
                                     multiline={true}
                                     value={this.state.nameShop}
                                     keyboardType='number-pad'
-                                    onChangeText={(nameShop) => this.setState({nameShop})}
+                                    onChangeText={(nameShop) => this.setState({ nameShop })}
                                 />
                             </View>
                             <View>
@@ -136,12 +141,12 @@ export default class PostProduct extends Component {
                                     style={[styles.button, styles.viewTextInput]}>
                                     <TextComponent>Chọn Màu</TextComponent>
                                     <Icon name='color-lens' type='MaterialIcons'
-                                          style={{fontSize: 25, color: colors.red}}/>
+                                        style={{ fontSize: 25, color: colors.red }} />
                                 </TouchableOpacity>
                                 {
                                     this.state.show ?
                                         <View>
-                                            <TouchableOpacity onPress={() => this.resetview()}>
+                                            {/* <TouchableOpacity onPress={() => this.resetview()}>
                                                 <TextComponent style={[styles.text]}>White</TextComponent>
                                             </TouchableOpacity>
                                             <TouchableOpacity onPress={() => this.resetview()}>
@@ -149,7 +154,56 @@ export default class PostProduct extends Component {
                                             </TouchableOpacity>
                                             <TouchableOpacity onPress={() => this.resetview()}>
                                                 <TextComponent style={styles.text}>Red</TextComponent>
-                                            </TouchableOpacity>
+                                            </TouchableOpacity> */}
+
+                                            <ListItem
+                                                onPress={() => {
+                                                    this.setState({
+                                                        colorBlack: !this.state.colorBlack
+                                                    })
+                                                }}
+                                            >
+                                                <CheckBox checked={this.state.colorBlack} />
+                                                <Body>
+                                                    <Text>Màu đen</Text>
+                                                </Body>
+                                            </ListItem>
+                                            <ListItem
+                                                onPress={() => {
+                                                    this.setState({
+                                                        colorBlue: !this.state.colorBlue
+                                                    })
+                                                }}
+                                            >
+                                                <CheckBox checked={this.state.colorBlue} />
+                                                <Body>
+                                                    <Text>Màu xanh</Text>
+                                                </Body>
+                                            </ListItem>
+                                            <ListItem
+                                                onPress={() => {
+                                                    this.setState({
+                                                        colorWhite: !this.state.colorWhite
+                                                    })
+                                                }}
+                                            >
+                                                <CheckBox checked={this.state.colorWhite} />
+                                                <Body>
+                                                    <Text>Màu trắng</Text>
+                                                </Body>
+                                            </ListItem>
+                                            <ListItem
+                                                onPress={() => {
+                                                    this.setState({
+                                                        colorYellow: !this.state.colorYellow
+                                                    })
+                                                }}
+                                            >
+                                                <CheckBox checked={this.state.colorYellow} />
+                                                <Body>
+                                                    <Text>Màu màu vàng</Text>
+                                                </Body>
+                                            </ListItem>
                                         </View>
 
                                         : null}
@@ -160,7 +214,7 @@ export default class PostProduct extends Component {
                                     style={[styles.button, styles.viewTextInput]}>
                                     <TextComponent>Chọn Danh Mục</TextComponent>
                                     <Icon name='color-lens' type='MaterialIcons'
-                                          style={{fontSize: 25, color: colors.red}}/>
+                                        style={{ fontSize: 25, color: colors.red }} />
                                 </TouchableOpacity>
                                 {
                                     this.state.show2 ?
@@ -186,7 +240,7 @@ export default class PostProduct extends Component {
                     <View style={styles.body}>
                         <ButtonComponent
 
-                            text='Đăng Sản Phẩm'/>
+                            text='Đăng Sản Phẩm' />
                     </View>
 
 
