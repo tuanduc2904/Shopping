@@ -146,16 +146,6 @@ export default class PostProduct extends Component {
                                 {
                                     this.state.show ?
                                         <View>
-                                            {/* <TouchableOpacity onPress={() => this.resetview()}>
-                                                <TextComponent style={[styles.text]}>White</TextComponent>
-                                            </TouchableOpacity>
-                                            <TouchableOpacity onPress={() => this.resetview()}>
-                                                <TextComponent style={styles.text}>Black</TextComponent>
-                                            </TouchableOpacity>
-                                            <TouchableOpacity onPress={() => this.resetview()}>
-                                                <TextComponent style={styles.text}>Red</TextComponent>
-                                            </TouchableOpacity> */}
-
                                             <ListItem
                                                 onPress={() => {
                                                     this.setState({
@@ -163,7 +153,7 @@ export default class PostProduct extends Component {
                                                     })
                                                 }}
                                             >
-                                                <CheckBox checked={this.state.colorBlack} />
+                                                <CheckBox checked={this.state.colorBlack} color="red"/>
                                                 <Body>
                                                     <Text>Màu đen</Text>
                                                 </Body>
@@ -175,7 +165,7 @@ export default class PostProduct extends Component {
                                                     })
                                                 }}
                                             >
-                                                <CheckBox checked={this.state.colorBlue} />
+                                                <CheckBox checked={this.state.colorBlue} color="red"/>
                                                 <Body>
                                                     <Text>Màu xanh</Text>
                                                 </Body>
@@ -187,7 +177,7 @@ export default class PostProduct extends Component {
                                                     })
                                                 }}
                                             >
-                                                <CheckBox checked={this.state.colorWhite} />
+                                                <CheckBox checked={this.state.colorWhite} color="red"/>
                                                 <Body>
                                                     <Text>Màu trắng</Text>
                                                 </Body>
@@ -199,7 +189,7 @@ export default class PostProduct extends Component {
                                                     })
                                                 }}
                                             >
-                                                <CheckBox checked={this.state.colorYellow} />
+                                                <CheckBox checked={this.state.colorYellow} color="red"/>
                                                 <Body>
                                                     <Text>Màu màu vàng</Text>
                                                 </Body>
