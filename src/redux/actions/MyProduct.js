@@ -1,10 +1,4 @@
 import firebase from 'firebase';
-
-
-
-
-
-
 addSuccess = (product) => {
     return {
         type: 'ADD_SUCCESS',
@@ -24,27 +18,23 @@ err = () => {
 
 const storage = firebase.storage();
 
-upLoadImageToFirebase = (blobs) => {
-    let mime = 'img/jpg';
-    let urls = [];
-    let promise = blobs.map((item) => {
-        return storage.ref('imgProduct').child(`${item.key}.jpg`)
-            .put(item.blob, { contentType: mime })
-            .then(snapshoot => {
-                return snapshoot.ref.getDownloadURL()
-            }).then(downloadURL => {
-                return urls = urls.concat(downloadURL);
-            })
-    });
-    Promise.all(promise).then((urls) => {
-        console.log(`urls : ${urls}`);
-        return urls;
-    })
+upLoadImageToFirebase = (item) => {
+    return storage.ref('imgProduct').child(`${item.key}.jpg`)
+        .put(item.blob, { contentType: 'application/octet-stream' })
 }
 
 export const addProduct = (product) => {
     return (dispatch) => {
+        let { blobs } = product;
+        let urls = [];
         dispatch(startAdd());
-        dispatch(upLoadImageToFirebase(product.blobs))
+        let req = blobs.forEach((item) => {
+            upLoadImageToFirebase(item).then((snapshoot) => {
+                urls = urls.concat(snapshoot.ref.getDownloadURL());
+            }).catch(err => {
+                console.log(err)
+            })
+        })
+        
     }
 }
