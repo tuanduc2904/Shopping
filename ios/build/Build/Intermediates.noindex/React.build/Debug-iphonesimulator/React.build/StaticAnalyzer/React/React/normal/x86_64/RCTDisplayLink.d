@@ -1,10 +1,10 @@
 dependencies: \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTDisplayLink.m \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTDisplayLink.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTModuleData.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Profiler/RCTProfile.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTDisplayLink.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTDisplayLink.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTModuleData.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Profiler/RCTProfile.h

@@ -33,7 +33,7 @@ const uploadImage = (uri, uid, mime = 'application/octet-stream') => {
         const uploadUri = Platform.OS === 'ios' ? uri.replace('file://', '') : uri;
         console.log('uri : ' + uploadUri);
         const sessionID = uid;
-        let uploadBlob = null;
+        // let uploadBlob = null;
         const imageRef = storage.ref('avatarUser').child(`${sessionID}.jpg`);
 
         fs.readFile(uploadUri, 'base64')

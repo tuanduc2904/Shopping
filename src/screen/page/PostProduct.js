@@ -15,47 +15,102 @@ import TextInputComponent from "../../Common/TextInputComponent/TextInputCompone
 import { colors } from "../../assets/color";
 import { Icon, List, ListItem, CheckBox, Body } from "native-base";
 import ButtonComponent from "../../Common/ButtonComponent/ButtonComponent";
+// import * as actionCreator from '../../redux/actions';
+import { addProduct } from '../../redux/actions/MyProduct'
+import RNFetchBlob from 'react-native-fetch-blob';
+import { connect } from 'react-redux'
 
-export default class PostProduct extends Component {
+
+
+const Blob = RNFetchBlob.polyfill.Blob;
+const fs = RNFetchBlob.fs;
+window.XMLHttpRequest = RNFetchBlob.polyfill.XMLHttpRequest;
+window.Blob = Blob;
+
+
+
+class PostProduct extends Component {
 
     constructor() {
         super();
         this.state = {
-            image: null,
             images: null,
             show: false,
-            show2: false,
+            showCategories: false,
             colorBlue: false,
             colorYellow: false,
             colorBlack: false,
-            colorWhite: false
+            colorWhite: false,
+            category: 'Giày dép',
+            productName: '',
+            price: '',
+            description: '',
+            blobs: [],
         };
     }
 
+    addProduct() {
+        let colors = this.getColors();
+        let { productName, description, price, category, blobs } = this.state;
 
-    showview() {
+        if (productName.length < 1) {
+            alert(`Chưa có tên sản phẩm`)
+        }
+        else if (description.length < 1) {
+            alert(`Chưa có mô tả`)
+        }
+        else if (price.length < 3) {
+            alert(`Giá sản phẩm ít nhất 3 giá trị`)
+        }
+        else if (blobs.length < 1) {
+            alert(`Chưa chọn ảnh`)
+        }
+        else {
+            this.props.addProduct({ colors, productName, description, price, category, blobs });
+        }
+    }
+
+    imageAddBlob = (images, uid, mime = 'img/jpg') => {
+        this.setState({ blobs: [] });
+        images.forEach((image) => {
+            new Promise((resolve, reject) => {
+                const uploadUri = Platform.OS === 'ios' ? image.uri.replace('file://', '') : image.uri;
+                const key = new Date().getTime();
+
+
+                fs.readFile(uploadUri, 'base64')
+                    .then((data) => {
+                        return Blob.build(data, { type: `${mime};BASE64` })
+                    }).then((blob) => {
+                        this.setState({
+                            blobs: this.state.blobs.concat({ blob, key })
+                        })
+                    })
+                    .catch((err) => {
+                        reject(err)
+                    })
+            })
+        })
+    }
+
+
+    showColors() {
         this.setState({
             show: !this.state.show,
-            show2: false
+            showCategories: false
         })
     }
 
-    resetview() {
+    showCategories() {
         this.setState({
-            show: false,
-
-        })
-    }
-    showview2() {
-        this.setState({
-            show2: !this.state.show2,
+            showCategories: !this.state.showCategories,
             show: false,
         })
     }
-    resetview2() {
+    setCategory(category) {
         this.setState({
-
-            show2: false,
+            category,
+            showCategories: false,
         })
     }
 
@@ -69,15 +124,14 @@ export default class PostProduct extends Component {
             forceJpg: true,
         }).then(images => {
             this.setState({
-                image: null,
                 images: images.map(i => {
-                    console.log('received image', i);
-                    return { uri: i.path, width: i.width, height: i.height, mime: i.mime };
+                    return { uri: i.path, width: i.width / 3, height: i.height / 3, mime: i.mime };
                 })
             });
-        }).catch(e => alert(e));
+        }).then(() => {
+            this.imageAddBlob(this.state.images);
+        }).catch(e => { });
     }
-
 
     renderImage(image) {
         return <Image style={styles.image} source={image} />
@@ -85,10 +139,15 @@ export default class PostProduct extends Component {
 
     renderAsset(image) {
         if (image.mime && image.mime.toLowerCase().indexOf('video/') !== -1) {
-            return this.renderVideo(image);
+            return null;
         }
 
         return this.renderImage(image);
+    }
+
+    getColors() {
+        let { colorYellow, colorBlack, colorBlue, colorWhite } = this.state;
+        return { colorYellow, colorBlack, colorBlue, colorWhite };
     }
 
     render() {
@@ -96,7 +155,6 @@ export default class PostProduct extends Component {
             <SafeAreaView style={styles.saf}>
                 <View style={styles.container}>
                     <ScrollView>
-
                         <View style={styles.header}>
                             <ScrollView horizontal
                                 showsHorizontalScrollIndicator={false}>
@@ -107,9 +165,10 @@ export default class PostProduct extends Component {
                                         style={{ fontSize: 30, color: colors.red }} />
                                     <TextComponent style={styles.textAdd}>Thêm Ảnh</TextComponent>
                                 </TouchableOpacity>
-                                {this.state.image ? this.renderAsset(this.state.image) : null}
-                                {this.state.images ? this.state.images.map(i => <View
-                                    key={i.uri}>{this.renderAsset(i)}</View>) : null}
+                                {this.state.images ? this.state.images.map(i =>
+                                    <View
+                                        key={i.uri}>{this.renderAsset(i)}</View>
+                                ) : null}
 
                             </ScrollView>
                             <View style={styles.bar} />
@@ -117,12 +176,22 @@ export default class PostProduct extends Component {
                         <View>
                             <View style={styles.viewTextInput}>
                                 <TextInputComponent
-                                    placeholder='Tên Sản '
+                                    placeholder='Tên Sản Phẩm '
                                     numberOfLines={2}
                                     multiline={true}
                                     style={styles.textInput}
-                                // value={this.state.nameShop}
-                                // onChangeText={(nameShop) => this.setState({ nameShop })}
+                                    value={this.state.productName}
+                                    onChangeText={(productName) => this.setState({ productName })}
+                                />
+                            </View>
+                            <View style={styles.viewTextInput}>
+                                <TextInputComponent
+                                    placeholder='Mô tả'
+                                    numberOfLines={2}
+                                    multiline={true}
+                                    style={styles.textInput}
+                                    value={this.state.description}
+                                    onChangeText={(description) => this.setState({ description })}
                                 />
                             </View>
                             <View style={styles.viewTextInput}>
@@ -130,14 +199,14 @@ export default class PostProduct extends Component {
                                     style={styles.textInput}
                                     placeholder='Giá sản phẩm'
                                     multiline={true}
-                                    value={this.state.nameShop}
+                                    value={this.state.price}
                                     keyboardType='number-pad'
-                                    onChangeText={(nameShop) => this.setState({ nameShop })}
+                                    onChangeText={(price) => this.setState({ price })}
                                 />
                             </View>
                             <View>
                                 <TouchableOpacity
-                                    onPress={() => this.showview()}
+                                    onPress={() => this.showColors()}
                                     style={[styles.button, styles.viewTextInput]}>
                                     <TextComponent>Chọn Màu</TextComponent>
                                     <Icon name='color-lens' type='MaterialIcons'
@@ -153,7 +222,7 @@ export default class PostProduct extends Component {
                                                     })
                                                 }}
                                             >
-                                                <CheckBox checked={this.state.colorBlack} color="red"/>
+                                                <CheckBox checked={this.state.colorBlack} color="red" />
                                                 <Body>
                                                     <Text>Màu đen</Text>
                                                 </Body>
@@ -165,7 +234,7 @@ export default class PostProduct extends Component {
                                                     })
                                                 }}
                                             >
-                                                <CheckBox checked={this.state.colorBlue} color="red"/>
+                                                <CheckBox checked={this.state.colorBlue} color="red" />
                                                 <Body>
                                                     <Text>Màu xanh</Text>
                                                 </Body>
@@ -177,7 +246,7 @@ export default class PostProduct extends Component {
                                                     })
                                                 }}
                                             >
-                                                <CheckBox checked={this.state.colorWhite} color="red"/>
+                                                <CheckBox checked={this.state.colorWhite} color="red" />
                                                 <Body>
                                                     <Text>Màu trắng</Text>
                                                 </Body>
@@ -189,9 +258,9 @@ export default class PostProduct extends Component {
                                                     })
                                                 }}
                                             >
-                                                <CheckBox checked={this.state.colorYellow} color="red"/>
+                                                <CheckBox checked={this.state.colorYellow} color="red" />
                                                 <Body>
-                                                    <Text>Màu màu vàng</Text>
+                                                    <Text>Màu vàng</Text>
                                                 </Body>
                                             </ListItem>
                                         </View>
@@ -200,26 +269,25 @@ export default class PostProduct extends Component {
                             </View>
                             <View>
                                 <TouchableOpacity
-                                    onPress={() => this.showview2()}
+                                    onPress={() => this.showCategories()}
                                     style={[styles.button, styles.viewTextInput]}>
                                     <TextComponent>Chọn Danh Mục</TextComponent>
-                                    <Icon name='color-lens' type='MaterialIcons'
-                                        style={{ fontSize: 25, color: colors.red }} />
+                                    <TextComponent style={{ marginRight: 10 }}>{this.state.category}</TextComponent>
+
                                 </TouchableOpacity>
                                 {
-                                    this.state.show2 ?
+                                    this.state.showCategories ?
                                         <View>
-                                            <TouchableOpacity onPress={() => this.resetview2()}>
-                                                <TextComponent style={[styles.text]}>White</TextComponent>
+                                            <TouchableOpacity onPress={() => this.setCategory('Giày dép')}>
+                                                <TextComponent style={[styles.category]}>Giày dép</TextComponent>
                                             </TouchableOpacity>
-                                            <TouchableOpacity onPress={() => this.resetview2()}>
-                                                <TextComponent style={styles.text}>Black</TextComponent>
+                                            <TouchableOpacity onPress={() => this.setCategory('Quần áo')}>
+                                                <TextComponent style={styles.category}>Quần áo</TextComponent>
                                             </TouchableOpacity>
-                                            <TouchableOpacity onPress={() => this.resetview2()}>
-                                                <TextComponent style={styles.text}>Red</TextComponent>
+                                            <TouchableOpacity onPress={() => this.setCategory('Phụ kiện')}>
+                                                <TextComponent style={styles.category}>Phụ kiện</TextComponent>
                                             </TouchableOpacity>
                                         </View>
-
                                         : null}
                             </View>
 
@@ -229,7 +297,9 @@ export default class PostProduct extends Component {
 
                     <View style={styles.body}>
                         <ButtonComponent
-
+                            onPress={() => {
+                                this.addProduct();
+                            }}
                             text='Đăng Sản Phẩm' />
                     </View>
 
@@ -241,6 +311,11 @@ export default class PostProduct extends Component {
     }
 }
 
+export default connect((state) => {
+    return {
+
+    }
+}, { addProduct })(PostProduct);
 const styles = StyleSheet.create({
     saf: {
         flex: 1,
@@ -309,6 +384,10 @@ const styles = StyleSheet.create({
         height: 1,
         backgroundColor: colors.lightGray
     },
+    category: {
+        marginLeft: 10,
+        paddingTop: 2,
+    }
 
 });
 
