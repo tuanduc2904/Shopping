@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     StyleSheet,
     View,
@@ -8,18 +8,19 @@ import {
     Image,
     SafeAreaView,
     TouchableOpacity,
-    Text,Platform
+    Text, Platform
 } from 'react-native';
-import {colors} from "../../assets/color";
-import {Dimens} from "../../assets/Dimens";
-import {Icon, Card} from "native-base";
-const {width} = Dimensions.get('window');
+import { colors } from "../../assets/color";
+import { Dimens } from "../../assets/Dimens";
+import { Icon, Card } from "native-base";
+const { width } = Dimensions.get('window');
 const height = width * 0.5;
-import {firebaseApp} from "../../untils/firebase";
+import { firebaseApp } from "../../untils/firebase";
 import FastImage from "react-native-fast-image";
 import TextComponent from "../../Common/TextComponent/TextComponent";
+import { connect } from 'react-redux'
 
-export default class Home extends Component {
+class Home extends Component {
     constructor(props) {
         super(props);
         this.itemRef = firebaseApp.database();
@@ -30,7 +31,7 @@ export default class Home extends Component {
             sliderIndex: 0,
             maxSlider: 2,
             banners: [
-                {_id: 1, imageUrl: 'https://png.pngtree.com/thumb_back/fh260/back_pic/00/15/30/4656e81f6dc57c5.jpg'},
+                { _id: 1, imageUrl: 'https://png.pngtree.com/thumb_back/fh260/back_pic/00/15/30/4656e81f6dc57c5.jpg' },
                 {
                     _id: 2,
                     imageUrl: 'https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
@@ -47,34 +48,9 @@ export default class Home extends Component {
         }
     }
 
-    getProducts() {
-        let items = [];
 
-        this.itemRef.ref('Products').on('value', (dataSnapshot) => {
 
-            dataSnapshot.forEach((child) => {
-                items.push({
-                    image: child.val().image,
-                    name: child.val().name,
-                    describe: child.val().describe,
-                    cmt: child.val().cmt,
-                    like: child.val().like,
-                    money: child.val().money,
-                    shopid: child.val().shopid,
-                    key: child.key
-                })
-            })
-            this.setState({
-                isLoading: false,
-                dataSource: items,
-                refreshing: false,
-            })
-        })
-    }
 
-    componentDidMount() {
-        this.getProducts(this.itemRef)
-    }
 
 
     setRef = (c) => {
@@ -82,12 +58,12 @@ export default class Home extends Component {
     }
 
     scrollToIndex = (index, animated) => {
-        this.listRef && this.listRef.scrollToIndex({index, animated})
+        this.listRef && this.listRef.scrollToIndex({ index, animated })
     }
 
     componentWillMount() {
         setInterval(function () {
-            const {sliderIndex, maxSlider} = this.state
+            const { sliderIndex, maxSlider } = this.state
             let nextIndex = 0
 
             if (sliderIndex < maxSlider) {
@@ -95,14 +71,15 @@ export default class Home extends Component {
             }
 
             this.scrollToIndex(nextIndex, true)
-            this.setState({sliderIndex: nextIndex})
+            this.setState({ sliderIndex: nextIndex })
         }.bind(this), 3000)
     }
+
 
     render() {
         return (
             <SafeAreaView style={styles.saf}>
-                
+
                 <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
                     {/*view slilde show*/}
                     <FlatList
@@ -112,14 +89,14 @@ export default class Home extends Component {
                         showsHorizontalScrollIndicator={false}
                         pagingEnabled
                         keyExtractor={item => item._id.toString()}
-                        renderItem={({item, i}) => (
-                            <View key={i} style={{height, width}}>
-                                <Image style={{height, width}} source={{uri: item.imageUrl}}/>
+                        renderItem={({ item, i }) => (
+                            <View key={i} style={{ height, width }}>
+                                <Image style={{ height, width }} source={{ uri: item.imageUrl }} />
                             </View>
                         )}
                         onMomentumScrollEnd={(event) => {
                             let sliderIndex = event.nativeEvent.contentOffset.x ? event.nativeEvent.contentOffset.x / width : 0
-                            this.setState({sliderIndex})
+                            this.setState({ sliderIndex })
                         }}
                     />
                     <View style={styles.sliderContainer}>
@@ -130,7 +107,7 @@ export default class Home extends Component {
                                         <View style={styles.sliderBtn}>
                                             {
                                                 this.state.sliderIndex == index ?
-                                                    <View style={styles.sliderBtnSelected}/> : null
+                                                    <View style={styles.sliderBtnSelected} /> : null
                                             }
                                         </View>
                                     </View>
@@ -145,7 +122,7 @@ export default class Home extends Component {
 
                             <View style={[styles.viewHorizontal, styles.marginTop]}>
                                 <View style={styles.viewHorizontalLeft}>
-                                    <View style={styles.bar}/>
+                                    <View style={styles.bar} />
                                     <Text style={[styles.title]}>Sản Phẩm Mới</Text>
                                 </View>
                                 <View>
@@ -156,16 +133,16 @@ export default class Home extends Component {
                             <FlatList
                                 horizontal
                                 showsVerticalScrollIndicator={false}
-                                data={this.state.dataSource}
-                                renderItem={({item}) =>
+                                data={this.props.defaultProducts}
+                                renderItem={({ item }) =>
                                     <TouchableOpacity>
                                         <View style={styles.left10}>
                                             <FastImage style={styles.image}
-                                                       source={{uri: item.image}}/>
-                                            <View style={[styles.left10, {marginBottom: 5}]}>
-                                                <TextComponent style={styles.name}>{item.name}</TextComponent>
-                                                <TextComponent style={styles.money}>{item.money}</TextComponent>
-                                                <TextComponent style={styles.shopid}>{item.shopid}</TextComponent>
+                                                source={{ uri: item.images[0] }} />
+                                            <View style={[styles.left10, { marginBottom: 5 }]}>
+                                                <TextComponent style={styles.name}>{item.productName}</TextComponent>
+                                                <TextComponent style={styles.money}>{item.price}</TextComponent>
+                                                <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
                                             </View>
 
 
@@ -173,15 +150,14 @@ export default class Home extends Component {
                                     </TouchableOpacity>
                                 }
                                 keyExtractor={(item, index) => index.toString()}
-                                refreshing={this.state.refreshing}
-                                onRefresh={this.handleRefresh}
+
                             />
                         </Card>
                         {/*view goi y hom nay*/}
                         <Card style={[styles.card]}>
-                            <View style={[styles.viewHorizontal, {maNayrginTop: 5, marginBottom: 5}]}>
+                            <View style={[styles.viewHorizontal, { maNayrginTop: 5, marginBottom: 5 }]}>
                                 <View style={styles.viewHorizontalLeft}>
-                                    <View style={styles.bar}/>
+                                    <View style={styles.bar} />
                                     <Text style={[styles.title]}>Gợi Ý Hôm </Text>
                                 </View>
                                 <View>
@@ -194,23 +170,23 @@ export default class Home extends Component {
                             <FlatList
 
                                 showsVerticalScrollIndicator={false}
-                                data={this.state.dataSource}
-                                renderItem={({item}) =>
+                                data={this.props.defaultProducts}
+                                renderItem={({ item }) =>
                                     <TouchableOpacity style={[styles.viewItem]}>
 
                                         <FastImage style={styles.imageNumColumns}
-                                                   source={{uri: item.image}}/>
-                                        <View style={[styles.left10, {marginBottom: 5, marginTop: 5}]}>
-                                            <TextComponent style={styles.name}>{item.name}</TextComponent>
-                                            <TextComponent style={styles.money}>{item.money}</TextComponent>
-                                            <TextComponent style={styles.shopid}>{item.shopid}</TextComponent>
+                                            source={{ uri: item.images[0] }} />
+                                        <View style={[styles.left10, { marginBottom: 5, marginTop: 5 }]}>
+                                            <TextComponent style={styles.name}>{item.productName}</TextComponent>
+                                            <TextComponent style={styles.money}>{item.price}</TextComponent>
+                                            <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
                                         </View>
                                         <View>
-                                            <View style={[styles.viewHorizontal, {marginBottom: 10}]}>
+                                            <View style={[styles.viewHorizontal, { marginBottom: 10 }]}>
                                                 <Icon name='hearto' type='AntDesign'
-                                                      style={{fontSize: 20, color: colors.red}}/>
+                                                    style={{ fontSize: 20, color: colors.red }} />
                                                 <Icon name='local-shipping' type='MaterialIcons'
-                                                      style={{fontSize: 20, color: colors.red}}/>
+                                                    style={{ fontSize: 20, color: colors.red }} />
                                             </View>
                                         </View>
                                     </TouchableOpacity>
@@ -222,13 +198,18 @@ export default class Home extends Component {
                             />
                         </View>
                     </View>
-                    <View style={{marginBottom: 50}}/>
+                    <View style={{ marginBottom: 50 }} />
                 </ScrollView>
             </SafeAreaView>
         );
     }
 }
-
+const mapStateToProps = (state) => {
+    return {
+        defaultProducts: state.Products.defaultProducts
+    }
+}
+export default connect(mapStateToProps)(Home);
 const styles = StyleSheet.create({
     saf: {
         flex: 1,

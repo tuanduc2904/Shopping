@@ -14,7 +14,7 @@ import { connect } from 'react-redux';
 import { firebaseApp } from '../untils/firebase';
 import { updateProfile, logout } from '../redux/actions/Authenticate';
 import { loadingShowLogin } from '../redux/actions/Loading'
-
+import { getDefaulProduct } from '../redux/actions/Product'
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -31,6 +31,7 @@ class Main extends Component {
         if (this.props.user !== null) {
             this.checkLogin();
         }
+        this.props.getDefaulProduct();
     };
 
     goToUpdateProfile() {
@@ -53,11 +54,11 @@ class Main extends Component {
     checkLogin() {
         const user = this.props.user;
         if (user.loggedIn) {
-            firebaseApp.database().ref('user').child(user.uid).once('value').then((snapshot) => {
+            firebaseApp.database().ref('user').child(user.uid).on('value', snapshot => {
                 if (snapshot.val().uid === user.uid) {
                     this.props.updateProfile(snapshot.val());
                 }
-            }).catch(err => {
+            }, err => {
                 this.goToUpdateProfile();
             })
         }
@@ -149,4 +150,4 @@ function mapStateToProps(state) {
         user: state.Auth
     }
 }
-export default connect(mapStateToProps, { updateProfile, logout, loadingShowLogin })(Main);
+export default connect(mapStateToProps, { updateProfile, logout, loadingShowLogin, getDefaulProduct })(Main);

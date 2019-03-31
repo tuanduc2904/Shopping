@@ -36,17 +36,15 @@ export const finish = () => {
 export const getProduct = (user) => {
     return (dispatch) => {
         dispatch(startAdd());
-        db.ref('products').child(user.uid).once('value').then((snapshot) => {
+        db.ref('products').child(user.uid).on('value', snapshot => {
             let myProducts = [];
             snapshot.forEach((child) => {
                 let product = child.val();
                 product.key = child.key;
                 myProducts.push(product);
             });
-            return myProducts
-        }).then(myProducts => {
             dispatch(getSuccessData(myProducts));
-        }).catch(err => {
+        }, err => {
             dispatch(err());
         })
     }
