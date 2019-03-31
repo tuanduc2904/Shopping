@@ -133,7 +133,7 @@ class Home extends Component {
                             <FlatList
                                 horizontal
                                 showsVerticalScrollIndicator={false}
-                                data={this.props.defaultProducts}
+                                data={this.props.newProducts}
                                 renderItem={({ item }) =>
                                     <TouchableOpacity>
                                         <View style={styles.left10}>
@@ -206,7 +206,8 @@ class Home extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        defaultProducts: state.Products.defaultProducts
+        defaultProducts: state.Products.defaultProducts,
+        newProducts: state.Products.newProducts
     }
 }
 export default connect(mapStateToProps)(Home);

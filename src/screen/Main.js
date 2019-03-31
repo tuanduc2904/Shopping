@@ -53,10 +53,15 @@ class Main extends Component {
 
     checkLogin() {
         const user = this.props.user;
+        console.log(user.uid)
         if (user.loggedIn) {
             firebaseApp.database().ref('user').child(user.uid).on('value', snapshot => {
-                if (snapshot.val().uid === user.uid) {
+                if (snapshot.val()) {
                     this.props.updateProfile(snapshot.val());
+                }
+                else {
+                    this.goToUpdateProfile();
+
                 }
             }, err => {
                 this.goToUpdateProfile();

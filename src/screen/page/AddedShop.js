@@ -47,31 +47,42 @@ class AddedShop extends Component {
           </Card>
         </TouchableOpacity>
         <View>
-          <FlatList
-            showsVerticalScrollIndicator={false}
-            data={this.props.myProduct.myProducts}
-            renderItem={({ item }) =>
-              <TouchableOpacity style={[styles.viewItem]}>
-                <FastImage style={styles.imageNumColumns}
-                  source={{ uri: item.images[0] }} />
-                <View style={[styles.left10, { marginBottom: 5, marginTop: 5 }]}>
-                  <TextComponent style={styles.name}>{item.productName}</TextComponent>
-                  <TextComponent style={styles.money}>{item.price}</TextComponent>
-                  <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
-                </View>
-                <View>
-                  <View style={[styles.viewHorizontal, { marginBottom: 10 }]}>
-                    <Icon name='hearto' type='AntDesign'
-                      style={{ fontSize: 20, color: colors.red }} />
-                    <Icon name='local-shipping' type='MaterialIcons'
-                      style={{ fontSize: 20, color: colors.red }} />
+          {this.props.myProduct.myProducts.length > 0 ?
+            <FlatList
+              showsVerticalScrollIndicator={false}
+              data={this.props.myProduct.myProducts}
+              renderItem={({ item }) =>
+                <TouchableOpacity style={[styles.viewItem]}>
+                  <FastImage style={styles.imageNumColumns}
+                    source={{ uri: item.images[0] }} />
+                  <View style={[styles.left10, { marginBottom: 5, marginTop: 5 }]}>
+                    <TextComponent style={styles.name}>{item.productName}</TextComponent>
+                    <TextComponent style={styles.money}>{item.price}</TextComponent>
+                    <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
                   </View>
-                </View>
-              </TouchableOpacity>
-            }
-            keyExtractor={(item, index) => index.toString()}
-            numColumns={2}
-          />
+                  <View>
+                    <View style={[styles.viewHorizontal, { marginBottom: 10 }]}>
+                      <Icon name='hearto' type='AntDesign'
+                        style={{ fontSize: 20, color: colors.red }} />
+                      <Icon name='local-shipping' type='MaterialIcons'
+                        style={{ fontSize: 20, color: colors.red }} />
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              }
+              keyExtractor={(item, index) => index.toString()}
+              numColumns={2}
+            /> :
+            <View style={{
+              width: '100%',
+              height: '100%',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}>
+              <TextComponent style={{ fontSize: 20 }}>Chưa có sản phẩm nào</TextComponent>
+            </View>
+          }
+
         </View>
         {this.props.myProduct.isLoading ? <Loading /> : null}
       </View>
@@ -90,7 +101,7 @@ export default connect(mapStateToProps, { getProduct })(AddedShop);
 
 
 const styles = StyleSheet.create({
-  
+
 
   container: {
     flex: 1,

@@ -36,7 +36,7 @@ export const finish = () => {
 export const getProduct = (user) => {
     return (dispatch) => {
         dispatch(startAdd());
-        db.ref('products').child(user.uid).on('value', snapshot => {
+        db.ref('products').child(user.uid).once('value', snapshot => {
             let myProducts = [];
             snapshot.forEach((child) => {
                 let product = child.val();
@@ -63,7 +63,9 @@ export const addProduct = (product, user) => {
                 }).then(downloadURL => {
                     itemsProcessed++;
                     urls = urls.concat(downloadURL);
-                    let date = new Date().toLocaleDateString("en-US");
+                    let today = new Date();
+                    let date = today.toLocaleDateString("en-US")
+                    let time = `${today.getHours()}:${today.getMinutes()}`;
                     if (itemsProcessed === arr.length) {
                         db.ref(`products`).child(user.uid).push({
                             productName: product.productName,
@@ -75,7 +77,8 @@ export const addProduct = (product, user) => {
                             uid: user.uid,
                             nameShop: user.nameShop,
                             avatarSource: user.avatarSource,
-                            date: date
+                            date: date,
+                            time: time
                         }).then((snap) => {
                             let newProduct = {
                                 productName: product.productName,
@@ -88,7 +91,8 @@ export const addProduct = (product, user) => {
                                 nameShop: user.nameShop,
                                 avatarSource: user.avatarSource,
                                 key: snap.key,
-                                date: date
+                                date: date,
+                                time: time
                             };
                             dispatch(addSuccess(newProduct))
                         })
