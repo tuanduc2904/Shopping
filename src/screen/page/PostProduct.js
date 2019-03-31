@@ -79,7 +79,6 @@ class PostProduct extends Component {
                 const uploadUri = Platform.OS === 'ios' ? image.uri.replace('file://', '') : image.uri;
                 const key = new Date().getTime();
 
-
                 fs.readFile(uploadUri, 'base64')
                     .then((data) => {
                         return Blob.build(data, { type: `${mime};BASE64` })

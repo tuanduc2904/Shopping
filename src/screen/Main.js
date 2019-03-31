@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { SafeAreaView, Alert } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import Home from "./page/Home";
-import SeeMore from "./SeeMore";
+import ShopSell from "./page/ShopSell";
 import { Icon } from "native-base";
 import { colors } from "../assets/color";
 import ShoppingCart from "./page/ShoppingCart";
@@ -91,15 +91,15 @@ class Main extends Component {
                     </TabNavigator.Item>
 
                     <TabNavigator.Item
-                        selected={this.state.selectedTab === 'SeeMore'}
+                        selected={this.state.selectedTab === 'ShopSell'}
                         renderIcon={() => <Icon name='checkbox-multiple-blank-outline' type='MaterialCommunityIcons'
                             style={{ fontSize: 25, color: '#707070' }} />}
                         renderSelectedIcon={() => <Icon name='checkbox-multiple-blank-outline'
                             type='MaterialCommunityIcons'
                             style={{ fontSize: 25, color: colors.red }} />}
                         // renderBadge={() => <CustomBadgeView />}
-                        onPress={() => this.setState({ selectedTab: 'SeeMore' })}>
-                        <SeeMore navigation={this.props.navigation}/>
+                        onPress={() => this.setState({ selectedTab: 'ShopSell' })}>
+                        <ShopSell navigation={this.props.navigation}/>
                     </TabNavigator.Item>
 
                     <TabNavigator.Item
