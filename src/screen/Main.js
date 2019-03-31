@@ -86,7 +86,7 @@ class Main extends Component {
                             style={{ fontSize: 25, color: colors.red }} />}
                         badgeText="1"
                         onPress={() => this.setState({ selectedTab: 'Home' })}>
-                        <Home />
+                        <Home navigation={this.props.navigation}/>
 
                     </TabNavigator.Item>
 
@@ -99,7 +99,7 @@ class Main extends Component {
                             style={{ fontSize: 25, color: colors.red }} />}
                         // renderBadge={() => <CustomBadgeView />}
                         onPress={() => this.setState({ selectedTab: 'SeeMore' })}>
-                        <SeeMore />
+                        <SeeMore navigation={this.props.navigation}/>
                     </TabNavigator.Item>
 
                     <TabNavigator.Item
@@ -109,7 +109,7 @@ class Main extends Component {
                             style={{ fontSize: 25, color: colors.red }} />}
                         // renderBadge={() => <CustomBadgeView />}
                         onPress={() => this.setState({ selectedTab: 'Booth' })}>
-                        <Booth />
+                        <Booth navigation={this.props.navigation}/>
                     </TabNavigator.Item>
 
                     <TabNavigator.Item
@@ -119,8 +119,9 @@ class Main extends Component {
                         renderSelectedIcon={() => <Icon name='shoppingcart' type='AntDesign'
                             style={{ fontSize: 25, color: colors.red }} />}
                         // renderBadge={() => <CustomBadgeView />}
+                        // badgeText={this.props.cartItems.length}
                         onPress={() => this.setState({ selectedTab: 'ShoppingCart' })}>
-                        <ShoppingCart />
+                        <ShoppingCart navigation={this.props.navigation}/>
                     </TabNavigator.Item>
 
 
@@ -152,7 +153,8 @@ class Main extends Component {
 }
 function mapStateToProps(state) {
     return {
-        user: state.Auth
+        user: state.Auth,
+
     }
 }
 export default connect(mapStateToProps, { updateProfile, logout, loadingShowLogin, getDefaulProduct })(Main);

@@ -23,36 +23,11 @@ if (Platform.OS === 'android') {
         }
     }
 }
-// import App from './App';
+// import App from './app/routes/index';
 import App from './src/App'
+
 import { name as appName } from './app.json';
 console.disableYellowBox = true;
 AppRegistry.registerComponent(appName, () => App);
 
 
-/// cau truc products
-var products = [
-    {
-        avatarSource: '',
-        uid: '',
-        nameShop: '',
-        listSelling: ['idProduct'],
-        products: [
-            {
-                idProduct: '',
-                name: '',
-                uid: '',
-                nameShop: '',
-                avatarSource: '',
-                images: [],
-                price: '',
-                category: '',
-                color: [],
-                timeAdd: '',
-                description: '',
-                feedback: [],
-
-            }
-        ],
-    },
-]

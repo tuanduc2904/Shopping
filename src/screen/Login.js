@@ -9,7 +9,7 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, StatusBar, ImageBackground, Alert } from 'react-native';
-import { Dimens } from '../assets/Dimens';
+import {Dimens} from '../assets/Dimens'
 import { Icon, Button, Toast } from "native-base";
 import { colors } from "../assets/color";
 import ButtonComponent from "../Common/ButtonComponent/ButtonComponent";

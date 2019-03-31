@@ -28,7 +28,10 @@ import {colors} from "../assets/color";
 import {Dimens} from "../assets/Dimens";
 const {width} = Dimensions.get('window');
 const height = width * 0.5;
-export default class SeeMore extends Component {
+import {data} from '../Components/cart/data';
+import { connect } from 'react-redux'
+import Products from "../Components/Products";
+class SeeMore extends Component {
 
     constructor(props) {
         super(props);
@@ -37,6 +40,7 @@ export default class SeeMore extends Component {
             isLoading: true,
             dataSource: [],
             refreshing: false,
+            data:[]
         }
 
     }
@@ -83,54 +87,64 @@ export default class SeeMore extends Component {
             <SafeAreaView style={styles.saf}>
                 <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
                     <View style={styles.container}>
-                        <Card style={[styles.card]}>
-                            <View style={[styles.viewHorizontal, {marginTop: 5, marginBottom: 5}]}>
-                                <View style={styles.viewHorizontalLeft}>
-                                    <FastImage style={styles.avatar}/>
-                                    <TextComponent style={[styles.title]}>Ken</TextComponent>
+                        {/*<Card style={[styles.card]}>*/}
+                            {/*<View style={[styles.viewHorizontal, {marginTop: 5, marginBottom: 5}]}>*/}
+                                {/*<View style={styles.viewHorizontalLeft}>*/}
+                                    {/*<FastImage style={styles.avatar}/>*/}
+                                    {/*<TextComponent style={[styles.title]}>Ken</TextComponent>*/}
 
 
-                                </View>
-                                <View>
-                                    <TextComponent style={[styles.textItemRight]}>1h </TextComponent>
-                                </View>
-                            </View>
+                                {/*</View>*/}
+                                {/*<View>*/}
+                                    {/*<TextComponent style={[styles.textItemRight]}>1h </TextComponent>*/}
+                                {/*</View>*/}
+                            {/*</View>*/}
 
-                        </Card>
-                        <FlatList
-                            horizontal
-                            showsVerticalScrollIndicator={false}
-                            data={this.state.dataSource}
-                            renderItem={({item}) =>
-                                <TouchableOpacity style={[styles.viewItem]}>
+                        {/*</Card>*/}
+                        {/*<FlatList*/}
+                            {/*horizontal*/}
+                            {/*showsVerticalScrollIndicator={false}*/}
+                            {/*data={this.state.dataSource}*/}
+                            {/*renderItem={({item}) =>*/}
+                                {/*<TouchableOpacity style={[styles.viewItem]}>*/}
 
-                                    <FastImage style={styles.imageNumColumns}
-                                               source={{uri: item.image}}/>
-                                    <View style={[styles.left10, {marginBottom: 5, marginTop: 5}]}>
-                                        <TextComponent style={styles.name}>{item.name}</TextComponent>
-                                        <TextComponent style={styles.money}>{item.money}</TextComponent>
-                                        <TextComponent style={styles.shopid}>{item.shopid}</TextComponent>
-                                    </View>
-                                    <View>
-                                        <View style={[styles.viewHorizontal, {marginBottom: 10}]}>
-                                            <Icon name='hearto' type='AntDesign'
-                                                  style={{fontSize: 20, color: colors.red}}/>
-                                            <Icon name='local-shipping' type='MaterialIcons'
-                                                  style={{fontSize: 20, color: colors.red}}/>
-                                        </View>
-                                    </View>
-                                </TouchableOpacity>
-                            }
-                            keyExtractor={(item, index) => index.toString()}
-                            refreshing={this.state.refreshing}
-                            onRefresh={this.handleRefresh}
-                        />
+                                    {/*<FastImage style={styles.imageNumColumns}*/}
+                                               {/*source={{uri: item.image}}/>*/}
+                                    {/*<View style={[styles.left10, {marginBottom: 5, marginTop: 5}]}>*/}
+                                        {/*<TextComponent style={styles.name}>{item.name}</TextComponent>*/}
+                                        {/*<TextComponent style={styles.money}>{item.money}</TextComponent>*/}
+                                        {/*<TextComponent style={styles.shopid}>{item.shopid}</TextComponent>*/}
+                                    {/*</View>*/}
+                                    {/*<View>*/}
+                                        {/*<View style={[styles.viewHorizontal, {marginBottom: 10}]}>*/}
+                                            {/*<Icon name='hearto' type='AntDesign'*/}
+                                                  {/*style={{fontSize: 20, color: colors.red}}/>*/}
+                                            {/*<Icon name='local-shipping' type='MaterialIcons'*/}
+                                                  {/*style={{fontSize: 20, color: colors.red}}/>*/}
+                                        {/*</View>*/}
+                                    {/*</View>*/}
+                                {/*</TouchableOpacity>*/}
+                            {/*}*/}
+                            {/*keyExtractor={(item, index) => index.toString()}*/}
+                            {/*refreshing={this.state.refreshing}*/}
+                            {/*onRefresh={this.handleRefresh}*/}
+                        {/*/>*/}
+                        <Products products={data} onPress={this.props.addItemToCart} />
+                        {console.log('log: ',this.props.addItemToCart)}
                     </View>
+
                 </ScrollView>
             </SafeAreaView>
         );
     }
 }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addItemToCart: (product) => dispatch({ type: 'ADD_TO_CART', payload: product })
+    }
+}
+
+export default connect(null, mapDispatchToProps)(SeeMore);
 const styles = StyleSheet.create({
     saf: {
         flex: 1,

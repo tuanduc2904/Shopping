@@ -22,7 +22,8 @@ import UpdateProfile from "./screen/UpdateProfile";
 import Main from "./screen/Main";
 import MyShop from './screen/MyShop'
 import PostProduct from "./screen/page/PostProduct";
-
+import Detaill from "./screen/page/Detaill";
+import Comment from './screen/page/Comment'
 const NavStack = createStackNavigator({
     SplashScreen: {
         screen: SplashScreen,
@@ -55,7 +56,19 @@ const NavStack = createStackNavigator({
     Main: {
         screen: Main,
         navigationOptions: {
-            header: null,
+            header: null
+        }
+    },
+    Detaill:{
+        screen: Detaill,
+        navigationOptions: {
+            header: null
+        }
+    },
+    Comment: {
+        screen: Comment,
+        navigationOptions: {
+            title: 'Đánh Giá',
             headerStyle: {
                 backgroundColor: '#FFF',
             },
