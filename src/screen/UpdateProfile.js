@@ -90,7 +90,6 @@ class UpdateProfile extends Component {
                     })
                     .catch(err => {
                         this.setState({ loadingImage: false })
-
                         console.log(err)
                     })
 
@@ -169,7 +168,7 @@ class UpdateProfile extends Component {
             listOrder: user.listOrder,
             listSell: user.listSell,
             nameShop: user.nameShop
-        }).then((snap) => {
+        }).then(() => {
             this.props.updateProfile(user);
             Alert.alert(
                 'Thành công',

@@ -16,10 +16,9 @@ import ButtonComponent from "../Common/ButtonComponent/ButtonComponent";
 import TextInputComponent from "../Common/TextInputComponent/TextInputComponent";
 import TextComponent from '../Common/TextComponent/TextComponent'
 import { connect } from 'react-redux';
-import ProgressDialog from '../Components/ProgressDialog';
 import { firebaseApp } from '../untils/firebase';
 import { loadingShowSignUp, loadingCloseSignUp } from '../redux/actions/Loading';
-import Login from './Login';
+import Loading from '../Components/Loading';
 
 
 class SignUp extends Component {
@@ -88,7 +87,6 @@ class SignUp extends Component {
                 <ImageBackground
                     source={require('../assets/images/background-main.png')}
                     style={styles.bg}>
-                    <ProgressDialog visible={this.props.isLoading} />
                     <View style={{ alignItems: 'center' }}>
                         <Icon name='shopping-bag' type='FontAwesome5'
                             style={{ fontSize: 100, color: colors.red }} /></View>
@@ -124,6 +122,8 @@ class SignUp extends Component {
                         >Quay Lại</TextComponent>
                     </View>
                 </ImageBackground>
+                {this.props.isLoading ? <Loading /> : null}
+
             </View>
         );
     }

@@ -8,7 +8,7 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, SafeAreaView } from 'react-native';
+import { Platform, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, SafeAreaView, Alert } from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import TextInputComponent from "../../Common/TextInputComponent/TextInputComponent";
@@ -16,11 +16,11 @@ import { colors } from "../../assets/color";
 import { Icon, List, ListItem, CheckBox, Body } from "native-base";
 import ButtonComponent from "../../Common/ButtonComponent/ButtonComponent";
 // import * as actionCreator from '../../redux/actions';
-import { addProduct } from '../../redux/actions/MyProduct'
+import { addProduct, finish } from '../../redux/actions/MyProduct'
 import RNFetchBlob from 'react-native-fetch-blob';
 import { connect } from 'react-redux'
 
-
+import Loading from '../../Components/Loading';
 
 const Blob = RNFetchBlob.polyfill.Blob;
 const fs = RNFetchBlob.fs;
@@ -66,7 +66,9 @@ class PostProduct extends Component {
             alert(`Chưa chọn ảnh`)
         }
         else {
-            this.props.addProduct({ colors, productName, description, price, category, blobs });
+            let product = { colors, productName, description, price, category, blobs };
+            let user = this.props.user;
+            this.props.addProduct(product, user);
         }
     }
 
@@ -266,6 +268,7 @@ class PostProduct extends Component {
                                         </View>
 
                                         : null}
+
                             </View>
                             <View>
                                 <TouchableOpacity
@@ -305,7 +308,21 @@ class PostProduct extends Component {
 
 
                 </View>
+                {this.props.myProduct.isAdding ? <Loading /> : null}
+                {this.props.myProduct.success ? Alert.alert(
+                    'Thành công!',
+                    'Đăng thành công',
+                    [
+                        {
+                            text: 'OK', onPress: () => {
+                                this.props.navigation.goBack();
+                                this.props.finish();
+                            }
+                        },
+                    ],
+                ) : null}
             </SafeAreaView>
+
         );
 
     }
@@ -313,9 +330,10 @@ class PostProduct extends Component {
 
 export default connect((state) => {
     return {
-
+        user: state.Auth,
+        myProduct: state.MyProduct
     }
-}, { addProduct })(PostProduct);
+}, { addProduct, finish })(PostProduct);
 const styles = StyleSheet.create({
     saf: {
         flex: 1,

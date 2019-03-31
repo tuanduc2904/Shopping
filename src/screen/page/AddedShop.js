@@ -82,7 +82,6 @@ class AddedShop extends Component {
           </Card>
         </TouchableOpacity>
         <View>
-          <Text>test update database: {this.props.user.displayName}</Text>
           <FlatList
             showsVerticalScrollIndicator={false}
             data={this.state.dataSource}

@@ -20,7 +20,7 @@ import { firebaseApp } from '../untils/firebase';
 // import { loginSuccess } from '../../../redux/actions/Authenticate';
 import { loginSuccess, skipLogin } from '../redux/actions/Authenticate';
 import { loadingShowLogin, loadingCloseLogin } from '../redux/actions/Loading';
-import ProgressDialog from '../Components/ProgressDialog'
+import Loading from '../Components/Loading'
 import { NavigationActions, StackActions } from 'react-navigation';
 
 class Login extends Component {
@@ -78,7 +78,6 @@ class Login extends Component {
                 <ImageBackground
                     source={require('../assets/images/background-main.png')}
                     style={styles.bg}>
-                    <ProgressDialog visible={this.props.isLoading} />
                     <View style={{ alignItems: 'center' }}>
                         <Icon name='shopping-bag' type='FontAwesome5'
                             style={{ fontSize: 100, color: colors.red }} />
@@ -123,6 +122,7 @@ class Login extends Component {
                         >Bỏ Qua</TextComponent>
                     </View>
                 </ImageBackground>
+                {this.props.isLoading ? <Loading /> : null}
             </View>
         );
     }
