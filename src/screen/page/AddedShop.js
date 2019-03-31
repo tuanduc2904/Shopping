@@ -5,58 +5,23 @@ import { colors } from "../../assets/color";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import { Card, Icon } from "native-base";
 import { firebaseApp } from "../../untils/firebase";
-import { Dimens } from "../../assets/Dimens";
 import FastImage from "react-native-fast-image";
-
+import { getProduct } from '../../redux/actions/MyProduct';
+import Loading from '../../Components/Loading';
 const { width } = Dimensions.get('window');
 
 class AddedShop extends Component {
   constructor(props) {
     super(props);
-    this.itemRef = firebaseApp.database();
     this.state = {
-      isLoading: true,
       dataSource: [],
       refreshing: false,
     }
 
   }
 
-  getProducts(itemRef) {
-    let items = [];
-
-    this.itemRef.ref('Products').on('value', (dataSnapshot) => {
-
-      dataSnapshot.forEach((child) => {
-        items.push({
-          image: child.val().image,
-          name: child.val().name,
-          describe: child.val().describe,
-          cmt: child.val().cmt,
-          like: child.val().like,
-          money: child.val().money,
-          shopid: child.val().shopid,
-          key: child.key
-        })
-      })
-      this.setState({
-        isLoading: false,
-        dataSource: items,
-        refreshing: false,
-      })
-    })
-  }
-
   componentDidMount() {
-    this.getProducts(this.itemRef)
-  }
-
-  handleRefresh = () => {
-    this.setState({
-      refreshing: true,
-    }, () => {
-      this.getProducts(this.itemRef)
-    })
+    this.props.getProduct(this.props.user);
   }
 
   render() {
@@ -84,16 +49,15 @@ class AddedShop extends Component {
         <View>
           <FlatList
             showsVerticalScrollIndicator={false}
-            data={this.state.dataSource}
+            data={this.props.myProduct.myProducts}
             renderItem={({ item }) =>
               <TouchableOpacity style={[styles.viewItem]}>
-
                 <FastImage style={styles.imageNumColumns}
-                  source={{ uri: item.image }} />
+                  source={{ uri: item.images[0] }} />
                 <View style={[styles.left10, { marginBottom: 5, marginTop: 5 }]}>
-                  <TextComponent style={styles.name}>{item.name}</TextComponent>
-                  <TextComponent style={styles.money}>{item.money}</TextComponent>
-                  <TextComponent style={styles.shopid}>{item.shopid}</TextComponent>
+                  <TextComponent style={styles.name}>{item.productName}</TextComponent>
+                  <TextComponent style={styles.money}>{item.price}</TextComponent>
+                  <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
                 </View>
                 <View>
                   <View style={[styles.viewHorizontal, { marginBottom: 10 }]}>
@@ -106,15 +70,10 @@ class AddedShop extends Component {
               </TouchableOpacity>
             }
             keyExtractor={(item, index) => index.toString()}
-            refreshing={this.state.refreshing}
-            onRefresh={this.handleRefresh}
             numColumns={2}
           />
         </View>
-
-        <View>
-
-        </View>
+        {this.props.myProduct.isLoading ? <Loading /> : null}
       </View>
 
     )
@@ -123,18 +82,15 @@ class AddedShop extends Component {
 function mapStateToProps(state) {
   return {
     user: state.Auth,
+    myProduct: state.MyProduct
   }
 }
 
-export default connect(mapStateToProps)(AddedShop);
+export default connect(mapStateToProps, { getProduct })(AddedShop);
 
 
 const styles = StyleSheet.create({
-  saf: {
-    flex: 1,
-    backgroundColor: colors.white,
-
-  },
+  
 
   container: {
     flex: 1,

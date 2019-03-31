@@ -308,7 +308,7 @@ class PostProduct extends Component {
 
 
                 </View>
-                {this.props.myProduct.isAdding ? <Loading /> : null}
+                {this.props.myProduct.isLoading ? <Loading /> : null}
                 {this.props.myProduct.success ? Alert.alert(
                     'Thành công!',
                     'Đăng thành công',
@@ -316,6 +316,17 @@ class PostProduct extends Component {
                         {
                             text: 'OK', onPress: () => {
                                 this.props.navigation.goBack();
+                                this.props.finish();
+                            }
+                        },
+                    ],
+                ) : null}
+                {this.props.myProduct.err ? Alert.alert(
+                    'Thất bại',
+                    'Kiểm tra lại kết nối',
+                    [
+                        {
+                            text: 'OK', onPress: () => {
                                 this.props.finish();
                             }
                         },

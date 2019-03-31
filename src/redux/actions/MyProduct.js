@@ -1,6 +1,12 @@
 import firebase from 'firebase';
 
 
+getSuccessData = (myProducts) => {
+    return {
+        type: 'GET_SUCCESS_DATA',
+        myProducts
+    }
+}
 addSuccess = (product) => {
     return {
         type: 'ADD_SUCCESS',
@@ -18,6 +24,7 @@ err = () => {
     }
 }
 
+
 const storage = firebase.storage();
 const db = firebase.database();
 
@@ -26,7 +33,24 @@ export const finish = () => {
         type: 'FINISH'
     }
 }
-
+export const getProduct = (user) => {
+    return (dispatch) => {
+        dispatch(startAdd());
+        db.ref('products').child(user.uid).once('value').then((snapshot) => {
+            let myProducts = [];
+            snapshot.forEach((child) => {
+                let product = child.val();
+                product.key = child.key;
+                myProducts.push(product);
+            });
+            return myProducts
+        }).then(myProducts => {
+            dispatch(getSuccessData(myProducts));
+        }).catch(err => {
+            dispatch(err());
+        })
+    }
+}
 export const addProduct = (product, user) => {
     return (dispatch) => {
         dispatch(startAdd());
