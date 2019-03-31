@@ -9,7 +9,7 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, StatusBar, Button, ImageBackground } from 'react-native';
-import { Dimens } from '../assets/Dimens';
+import {Dimens} from '../assets/Dimens'
 import { Icon } from "native-base";
 import { colors } from "../assets/color";
 import AutoTypingText from 'react-native-auto-typing-text';

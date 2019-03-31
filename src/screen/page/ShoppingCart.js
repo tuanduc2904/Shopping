@@ -26,7 +26,11 @@ import {colors} from "../../assets/color";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import {firebaseApp} from "../../untils/firebase";
 import FastImage from "react-native-fast-image";
-export default class ShoppingCart extends Component {
+import Header from "../../Components/cart/Header";
+import ItemsContainer from "../../Components/cart/ItemsContainer";
+import Footer from "../../Components/cart/Footer";
+import {connect} from 'react-redux';
+class ShoppingCart extends Component {
 
     constructor(props) {
         super(props);
@@ -78,33 +82,44 @@ export default class ShoppingCart extends Component {
 
     render() {
         return (
-            <SafeAreaView>
-                <View>
-                    <FlatList
-                        showsVerticalScrollIndicator={false}
-                        data={this.state.dataSource}
-                        renderItem={({item}) =>
-                            <TouchableOpacity >
+            <SafeAreaView style={styles.saf}>
+                <View style={styles.container}>
+                    {/*<FlatList*/}
+                        {/*showsVerticalScrollIndicator={false}*/}
+                        {/*data={this.state.dataSource}*/}
+                        {/*renderItem={({item}) =>*/}
+                            {/*<TouchableOpacity >*/}
 
 
-                                <View >
-                                    <FastImage style={{width:200,height:200}}
-                                               source={{uri: item.image}}/>
-                                    <Text style={styles.name}>{item.name}</Text>
+                                {/*<View >*/}
+                                    {/*<FastImage style={{width:200,height:200}}*/}
+                                               {/*source={{uri: item.image}}/>*/}
+                                    {/*<Text style={styles.name}>{item.name}</Text>*/}
 
 
-                                </View>
-                            </TouchableOpacity>
-                        }
-                        keyExtractor={(item, index) => index.toString()}
-                        refreshing={this.state.refreshing}
-                        onRefresh={this.handleRefresh}
-                    />
+                                {/*</View>*/}
+                            {/*</TouchableOpacity>*/}
+                        {/*}*/}
+                        {/*keyExtractor={(item, index) => index.toString()}*/}
+                        {/*refreshing={this.state.refreshing}*/}
+                        {/*onRefresh={this.handleRefresh}*/}
+                    {/*/>*/}
+                    {/*<Header />*/}
+                    <ItemsContainer />
+
+                    <Footer />
                 </View>
             </SafeAreaView>
         );
     }
 }
+function mapStateToProps(state) {
+    return {
+        cartItems: state,
+
+    }
+}
+export default connect(mapStateToProps)( ShoppingCart)
 const styles = StyleSheet.create({
     saf: {
         flex: 1,
@@ -112,8 +127,6 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
     },
     bg: {
         width: Dimens.screen.width,

@@ -77,6 +77,7 @@ class Home extends Component {
 
 
     render() {
+        const {navigate} = this.props.navigation;
         return (
             <SafeAreaView style={styles.saf}>
 
@@ -135,7 +136,10 @@ class Home extends Component {
                                 showsVerticalScrollIndicator={false}
                                 data={this.props.defaultProducts}
                                 renderItem={({ item }) =>
-                                    <TouchableOpacity>
+                                    <TouchableOpacity
+                                        onPress={() => {
+                                            navigate('Detaill',{item:item});
+                                        }}>
                                         <View style={styles.left10}>
                                             <FastImage style={styles.image}
                                                 source={{ uri: item.images[0] }} />
@@ -156,7 +160,7 @@ class Home extends Component {
                         {/*view goi y hom nay*/}
                         <Card style={[styles.card]}>
                             <View style={[styles.viewHorizontal, { maNayrginTop: 5, marginBottom: 5 }]}>
-                                <View style={styles.viewHorizontalLeft}>
+                                <View style={[styles.viewHorizontalLeft,{marginTop:5,marginBottom:5,justifyContent:'center'}]}>
                                     <View style={styles.bar} />
                                     <Text style={[styles.title]}>Gợi Ý Hôm </Text>
                                 </View>
@@ -172,7 +176,11 @@ class Home extends Component {
                                 showsVerticalScrollIndicator={false}
                                 data={this.props.defaultProducts}
                                 renderItem={({ item }) =>
-                                    <TouchableOpacity style={[styles.viewItem]}>
+                                    <TouchableOpacity
+                                        onPress={() => {
+                                            navigate('Detaill',{item:item});
+                                        }}
+                                        style={[styles.viewItem]}>
 
                                         <FastImage style={styles.imageNumColumns}
                                             source={{ uri: item.images[0] }} />
