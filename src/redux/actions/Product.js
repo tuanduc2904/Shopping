@@ -48,7 +48,6 @@ export const getDefaulProduct = () => {
                 let listProduct = [];
                 products.forEach(item => {
                     let product = item.val();
-                    console.log(product)
                     current++;
                     if (current === 1) {
                         shop.uid = product.uid;

@@ -14,7 +14,7 @@ import SplashScreen from './screen/SplashScreen';
 import Login from "./screen/Login";
 import { Icon } from "native-base";
 import { colors } from "./assets/color";
-import SeeMore from "./screen/page/ShopSell";
+// import SeeMore from "./screen/page/ShopSell";
 import SignUp from './screen/SignUp';
 import store from './redux/store';
 import { Provider } from 'react-redux'
@@ -74,15 +74,15 @@ const NavStack = createStackNavigator({
             },
         }
     },
-    SeeMore: {
-        screen: SeeMore,
-        navigationOptions: {
-            title: 'Home',
-            headerStyle: {
-                backgroundColor: '#FFF',
-            },
-        }
-    },
+    // SeeMore: {
+    //     screen: SeeMore,
+    //     navigationOptions: {
+    //         title: 'Home',
+    //         headerStyle: {
+    //             backgroundColor: '#FFF',
+    //         },
+    //     }
+    // },
     UpdateProfile: {
         screen: UpdateProfile,
         navigationOptions: {

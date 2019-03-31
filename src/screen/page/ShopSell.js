@@ -20,15 +20,17 @@ import {
     FlatList,
     TouchableOpacity, Image, Dimensions, ScrollView
 } from 'react-native';
+import ListShop from '../../Components/ListShop'
 import { Card, Icon } from "native-base";
 import FastImage from "react-native-fast-image";
 import { firebaseApp } from "../../untils/firebase";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import { colors } from "../../assets/color";
 import { Dimens } from "../../assets/Dimens";
+import { connect } from 'react-redux';
 const { width } = Dimensions.get('window');
 const height = width * 0.5;
-export default class ShopSell extends Component {
+class ShopSell extends Component {
 
     constructor(props) {
         super(props);
@@ -41,33 +43,10 @@ export default class ShopSell extends Component {
 
     }
 
-    getProducts(itemRef) {
-        let items = [];
 
-        this.itemRef.ref('Products').on('value', (dataSnapshot) => {
-
-            dataSnapshot.forEach((child) => {
-                items.push({
-                    image: child.val().image,
-                    name: child.val().name,
-                    describe: child.val().describe,
-                    cmt: child.val().cmt,
-                    like: child.val().like,
-                    money: child.val().money,
-                    shopid: child.val().shopid,
-                    key: child.key
-                })
-            })
-            this.setState({
-                isLoading: false,
-                dataSource: items,
-                refreshing: false,
-            })
-        })
-    }
 
     componentDidMount() {
-        this.getProducts(this.itemRef)
+        console.log(this.props.storeProducts[0].products[0].images[0]);
     }
 
     handleRefresh = () => {
@@ -82,55 +61,43 @@ export default class ShopSell extends Component {
         return (
             <SafeAreaView style={styles.saf}>
                 <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
-                    <View style={styles.container}>
-                        <Card style={[styles.card]}>
-                            <View style={[styles.viewHorizontal, { marginTop: 5, marginBottom: 5 }]}>
-                                <View style={styles.viewHorizontalLeft}>
-                                    <FastImage style={styles.avatar} />
-                                    <TextComponent style={[styles.title]}>Ken</TextComponent>
-
-
-                                </View>
-                                <View>
-                                    <TextComponent style={[styles.textItemRight]}>1h </TextComponent>
-                                </View>
-                            </View>
-
-                        </Card>
-                        <FlatList
-                            horizontal
-                            showsVerticalScrollIndicator={false}
-                            data={this.state.dataSource}
-                            renderItem={({ item }) =>
-                                <TouchableOpacity style={[styles.viewItem]}>
-
-                                    <FastImage style={styles.imageNumColumns}
-                                        source={{ uri: item.image }} />
-                                    <View style={[styles.left10, { marginBottom: 5, marginTop: 5 }]}>
-                                        <TextComponent style={styles.name}>{item.name}</TextComponent>
-                                        <TextComponent style={styles.money}>{item.money}</TextComponent>
-                                        <TextComponent style={styles.shopid}>{item.shopid}</TextComponent>
-                                    </View>
-                                    <View>
-                                        <View style={[styles.viewHorizontal, { marginBottom: 10 }]}>
-                                            <Icon name='hearto' type='AntDesign'
-                                                style={{ fontSize: 20, color: colors.red }} />
-                                            <Icon name='local-shipping' type='MaterialIcons'
-                                                style={{ fontSize: 20, color: colors.red }} />
+                    <FlatList
+                        vertical
+                        showsVerticalScrollIndicator={false}
+                        data={this.props.storeProducts}
+                        renderItem={({ item }) =>
+                            <View style={styles.container}>
+                                <Card style={[styles.card]}>
+                                    <View style={[styles.viewHorizontal, { marginTop: 5, marginBottom: 5 }]}>
+                                        <View style={styles.viewHorizontalLeft}>
+                                            <FastImage style={styles.avatar}
+                                                source={{ uri: item.avatarSource }}
+                                            />
+                                            <TextComponent style={[styles.title]}>{item.nameShop}</TextComponent>
+                                        </View>
+                                        <View>
+                                            <TextComponent style={[styles.textItemRight]}>{item.products.avatarSource}</TextComponent>
                                         </View>
                                     </View>
-                                </TouchableOpacity>
-                            }
-                            keyExtractor={(item, index) => index.toString()}
-                            refreshing={this.state.refreshing}
-                            onRefresh={this.handleRefresh}
-                        />
-                    </View>
+                                </Card>
+                                <ListShop products={item.products} />
+
+                            </View>
+                        }
+                        keyExtractor={(item, index) => index.toString()}
+
+                    />
                 </ScrollView>
             </SafeAreaView>
         );
     }
 }
+mapStateToProps = (state) => {
+    return {
+        storeProducts: state.Products.storeProducts
+    }
+}
+export default connect(mapStateToProps)(ShopSell)
 const styles = StyleSheet.create({
     saf: {
         flex: 1,
