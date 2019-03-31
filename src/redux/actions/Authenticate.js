@@ -1,4 +1,3 @@
-
 export function updateProfile(user) {
     return {
         type: 'UPDATE_PROFILE',

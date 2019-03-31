@@ -33,7 +33,7 @@ const uploadImage = (uri, uid, mime = 'application/octet-stream') => {
         const uploadUri = Platform.OS === 'ios' ? uri.replace('file://', '') : uri;
         console.log('uri : ' + uploadUri);
         const sessionID = uid;
-        let uploadBlob = null;
+        // let uploadBlob = null;
         const imageRef = storage.ref('avatarUser').child(`${sessionID}.jpg`);
 
         fs.readFile(uploadUri, 'base64')
@@ -90,7 +90,6 @@ class UpdateProfile extends Component {
                     })
                     .catch(err => {
                         this.setState({ loadingImage: false })
-
                         console.log(err)
                     })
 
@@ -169,7 +168,7 @@ class UpdateProfile extends Component {
             listOrder: user.listOrder,
             listSell: user.listSell,
             nameShop: user.nameShop
-        }).then((snap) => {
+        }).then(() => {
             this.props.updateProfile(user);
             Alert.alert(
                 'Thành công',

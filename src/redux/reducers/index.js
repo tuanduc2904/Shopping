@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import Auth from './Auth';
 import Loading from './Loading'
-
-
-const reducer = combineReducers({
+import MyProduct from './MyProduct'
+import Products from './Products'
+const reducers = combineReducers({
     Auth: Auth,
     Loading: Loading,
+    MyProduct: MyProduct,
+    Products: Products
 });
-export default reducer;
+export default reducers;
