@@ -23,8 +23,8 @@ if (Platform.OS === 'android') {
         }
     }
 }
-// import App from './app/routes/index';
-import App from './src/App'
+import App from './app/routes/index';
+// import App from './src/App'
 
 import { name as appName } from './app.json';
 console.disableYellowBox = true;
