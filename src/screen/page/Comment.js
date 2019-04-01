@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {  StyleSheet,
+import {
+    StyleSheet,
     View,
     TextInput,
     Button,
@@ -12,35 +13,42 @@ import {  StyleSheet,
     Platform,
     NativeModules,
     StatusBarIOS,
-    Modal } from 'react-native';
-import {Icon,Spinner} from 'native-base';
+    Modal
+} from 'react-native';
+import { Icon, Spinner } from 'native-base';
 import { connect } from 'react-redux';
 import FastImage from "react-native-fast-image";
 import TextComponent from "../../Common/TextComponent/TextComponent";
-import {colors} from "../../assets/color";
+import { colors } from "../../assets/color";
 
-export  class Comment extends Component {
+export class Comment extends Component {
     constructor(props) {
         super(props);
         this.state = {
             dataSourceListCommnet: [
-                { id: 1,
+                {
+                    id: 1,
                     avatar: 'https://png.pngtree.com/thumb_back/fh260/back_pic/00/15/30/4656e81f6dc57c5.jpg',
-                name:'ken',
-                    content:'Hihi'},
+                    name: 'ken',
+                    content: 'Hihi'
+                },
                 {
                     id: 2,
                     avatar: 'https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-                , name:'ken'},
+                    , name: 'ken'
+                },
                 {
                     id: 3,
                     avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhcSnO3gsJmdH3kQX_2uJ9dMoG447FVNEwhuDh9dZDt0LQX07h'
-                , name:'ken'},
+                    , name: 'ken'
+                },
                 {
                     id: 4,
                     avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhcSnO3gsJmdH3kQX_2uJ9dMoG447FVNEwhuDh9dZDt0LQX07h'
-                , name:'ken'},
+                    , name: 'ken'
+                },
             ],
+            comment: '',
         };
     }
 
@@ -56,10 +64,10 @@ export  class Comment extends Component {
                             data={this.state.dataSourceListCommnet}
                             showsVerticalScrollIndicator={false}
 
-                            renderItem={({item}) =>
+                            renderItem={({ item }) =>
                                 <View>
                                     <View style={styles.itemview}>
-                                        <FastImage style={styles.avatar} source={{uri: item.avatar}}/>
+                                        <FastImage style={styles.avatar} source={{ uri: item.avatar }} />
                                         <View>
                                             <View style={styles.viewText}>
                                                 <TextComponent style={styles.title}>{item.name}</TextComponent>
@@ -67,8 +75,6 @@ export  class Comment extends Component {
                                             </View>
                                             <View style={styles.viewTime}>
                                                 <TextComponent>{item.created_date}</TextComponent>
-
-
                                             </View>
                                         </View>
 
@@ -82,22 +88,22 @@ export  class Comment extends Component {
 
 
                     <KeyboardAvoidingView behavior="padding"
-                                          keyboardVerticalOffset={44 + this.state.statusBarHeight}>
+                        keyboardVerticalOffset={44}>
                         <View style={styles.footer}>
                             <TextInput
                                 value={this.state.typing}
                                 style={styles.input2}
                                 underlineColorAndroid="transparent"
-                                placeholder="Type something nice"
-                                // onChangeText={(content) => {
-                                //     this.setState({content});
-                                // }}
-                                // value={this.state.content}
+                                placeholder="Viết bình luận"
+                                onChangeText={(comment) => {
+                                    this.setState({ comment });
+                                }}
+                                value={this.state.comment}
                             />
                             <TouchableOpacity onPress={() => {
                                 // this.getComment(), this.remove(),this.load()
                             }}>
-                                <Text style={styles.send}>Send</Text>
+                                <Text style={styles.send}>Gửi</Text>
                             </TouchableOpacity>
                         </View>
                     </KeyboardAvoidingView>
@@ -255,7 +261,7 @@ const styles = StyleSheet.create({
     },
     footer: {
         flexDirection: 'row',
-        backgroundColor:colors.white
+        backgroundColor: colors.white
     },
     input2: {
         paddingHorizontal: 20,

@@ -15,7 +15,8 @@ import { firebaseApp } from '../untils/firebase';
 import { updateProfile, logout } from '../redux/actions/Authenticate';
 import { loadingShowLogin } from '../redux/actions/Loading';
 import { getDefaulProduct } from '../redux/actions/Product';
-import { getDataCart } from '../redux/actions/Cart'
+import { getDataCart } from '../redux/actions/Cart';
+import global from './global';
 
 class Main extends Component {
     constructor(props) {
@@ -24,6 +25,7 @@ class Main extends Component {
             selectedTab: 'Home',
             user: {}
         }
+        global.goBackNavigation = this.goBackNavigation.bind(this);
     }
 
     componentDidMount() {
@@ -33,7 +35,9 @@ class Main extends Component {
         }
         this.props.getDataCart();
     };
-
+    goBackNavigation() {
+        this.props.navigation.goBack();
+    }
     goToUpdateProfile() {
 
         Alert.alert(

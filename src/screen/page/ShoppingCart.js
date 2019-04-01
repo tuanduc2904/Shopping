@@ -18,110 +18,108 @@ import {
     TouchableOpacity, Dimensions, Text
 } from 'react-native';
 const { width } = Dimensions.get('window');
-
-import { Dimens } from '../../assets/Dimens';
 import { Icon, Card } from "native-base";
 import { colors } from "../../assets/color";
 import TextComponent from "../../Common/TextComponent/TextComponent";
-import { firebaseApp } from "../../untils/firebase";
 import FastImage from "react-native-fast-image";
-import Header from "../../Components/cart/Header";
-import ItemsContainer from "../../Components/cart/ItemsContainer";
 import Footer from "../../Components/cart/Footer";
 import { connect } from 'react-redux';
-import { removeProduct, incrQuantity, decrQuantity } from '../../redux/actions/Cart'
+import { removeProduct, incrQuantity, decrQuantity } from '../../redux/actions/Cart';
+
+
 class ShoppingCart extends Component {
 
     constructor(props) {
         super(props);
-
     }
 
 
     render() {
         return (
             <SafeAreaView style={styles.saf}>
-                <View style={styles.container}>
-                    <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
-                        <FlatList
-                            vertical
-                            showsVerticalScrollIndicator={false}
-                            data={this.props.carts}
-                            renderItem={({ item }) =>
-                                <View style={styles.container}>
-                                    <Card style={[styles.card]}>
-                                        <View>
-                                            <View style={[styles.viewHorizontal, { marginTop: 5, marginBottom: 5 }]}>
-                                                <View style={styles.viewHorizontalLeft}>
-                                                    <FastImage style={styles.avatar}
-                                                        source={{ uri: item.product.avatarSource }}
-                                                    />
-                                                </View>
-                                                <View>
-                                                    <TouchableOpacity
-                                                        onPress={() => {
-                                                            let key = item.product.key;
-                                                            this.props.removeProduct(key)
-                                                        }}
-                                                    >
-                                                        <TextComponent style={[styles.textItemRight]}>X</TextComponent>
-                                                    </TouchableOpacity>
+                {this.props.carts.length > 0 ?
+                    <View style={styles.container}>
+                        <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
+                            <FlatList
+                                vertical
+                                showsVerticalScrollIndicator={false}
+                                data={this.props.carts}
+                                renderItem={({ item }) =>
+                                    <View style={styles.container}>
+                                        <Card style={[styles.card]}>
+                                            <View>
+                                                <View style={[styles.viewHorizontal, { marginTop: 5, marginBottom: 5 }]}>
+                                                    <View style={styles.viewHorizontalLeft}>
+                                                        <FastImage style={styles.avatar}
+                                                            source={{ uri: item.product.avatarSource }}
+                                                        />
+                                                    </View>
+                                                    <View>
+                                                        <TouchableOpacity
+                                                            onPress={() => {
+                                                                let key = item.product.key;
+                                                                this.props.removeProduct(key)
+                                                            }}
+                                                        >
+                                                            <TextComponent style={[styles.textItemRight]}>X</TextComponent>
+                                                        </TouchableOpacity>
+                                                    </View>
                                                 </View>
                                             </View>
-                                        </View>
 
-                                        <Card style={[styles.viewItem]}>
-                                            <FastImage style={styles.imageNumColumns}
-                                                source={{ uri: item.product.images[0] }} />
-                                            <View style={[styles.left10, {
-                                                marginBottom: 20, marginTop: 5, flexDirection: 'column',
-                                                justifyContent: 'space-between',
-                                            }]}>
-                                                <Text style={{ marginTop: 20, fontSize: 17, fontWeight: '400' }}>{item.product.productName}</Text>
-                                                <Card style={{
-                                                    flexDirection: 'row', alignItems: 'center',
-                                                    justifyContent: 'space-between', width: 120
-                                                }}>
-                                                    <TouchableOpacity
-                                                        onPress={() => {
-                                                            let key = item.product.key;
-                                                            this.props.decrQuantity(key)
-                                                        }}
-                                                    >
-                                                        <Text style={{
-                                                            fontSize: 25, paddingLeft: 10,
-                                                            paddingRight: 10, fontWeight: 'bold'
-                                                        }}>-</Text>
-                                                    </TouchableOpacity>
-                                                    <Text style={{ fontSize: 20 }}>{item.quantity}</Text>
+                                            <Card style={[styles.viewItem]}>
+                                                <FastImage style={styles.imageNumColumns}
+                                                    source={{ uri: item.product.images[0] }} />
+                                                <View style={[styles.left10, {
+                                                    marginBottom: 20, marginTop: 5, flexDirection: 'column',
+                                                    justifyContent: 'space-between',
+                                                }]}>
+                                                    <Text style={{ marginTop: 20, fontSize: 17, fontWeight: '400' }}>{item.product.productName}</Text>
+                                                    <Card style={{
+                                                        flexDirection: 'row', alignItems: 'center',
+                                                        justifyContent: 'space-between', width: 120
+                                                    }}>
+                                                        <TouchableOpacity
+                                                            onPress={() => {
+                                                                let key = item.product.key;
+                                                                this.props.decrQuantity(key)
+                                                            }}
+                                                        >
+                                                            <Text style={{
+                                                                fontSize: 25, paddingLeft: 10,
+                                                                paddingRight: 10, fontWeight: 'bold'
+                                                            }}>-</Text>
+                                                        </TouchableOpacity>
+                                                        <Text style={{ fontSize: 20 }}>{item.quantity}</Text>
 
-                                                    <TouchableOpacity
-                                                        onPress={() => {
-                                                            let key = item.product.key;
-                                                            this.props.incrQuantity(key)
-                                                        }}
-                                                    >
-                                                        <Text style={{
-                                                            fontSize: 25, paddingLeft: 10,
-                                                            paddingRight: 10, fontWeight: 'bold'
-                                                        }}>+</Text>
-                                                    </TouchableOpacity>
-                                                </Card>
-                                                <TextComponent style={styles.money}>{item.product.price}đ</TextComponent>
-                                            </View>
+                                                        <TouchableOpacity
+                                                            onPress={() => {
+                                                                let key = item.product.key;
+                                                                this.props.incrQuantity(key)
+                                                            }}
+                                                        >
+                                                            <Text style={{
+                                                                fontSize: 25, paddingLeft: 10,
+                                                                paddingRight: 10, fontWeight: 'bold'
+                                                            }}>+</Text>
+                                                        </TouchableOpacity>
+                                                    </Card>
+                                                    <TextComponent style={styles.money}>{item.product.price}đ</TextComponent>
+                                                </View>
+                                            </Card>
                                         </Card>
-                                    </Card>
 
 
-                                </View>
-                            }
-                            keyExtractor={(item, index) => index.toString()}
-                        />
-                    </ScrollView>
-
-
-                    <Footer />
-                </View>
+                                    </View>
+                                }
+                                keyExtractor={(item, index) => index.toString()}
+                            />
+                        </ScrollView>
+                        <Footer />
+                    </View> :
+                    <View style={{ flex: 1,justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
+                        <Text style={{ fontSize: 20 }}>Chưa có sản phẩm nào trong giỏ hàng</Text>
+                    </View>}
             </SafeAreaView>
         );
     }

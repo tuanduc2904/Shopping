@@ -6,8 +6,14 @@ import {
 } from './types';
 import firebase from 'firebase';
 
-const db = firebase.database();
 
+const db = firebase.database();
+const getNameProducts = (nameProducts) => {
+    return {
+        type: GET_SUCCESS_NAME_PRODUCTS,
+        nameProducts
+    }
+}
 const getDefault = (defaultProducts) => {
     return {
         type: GET_SUCCESS_DEFAULT_PRODUCTS,
@@ -65,7 +71,7 @@ export const getDefaulProduct = () => {
             dispatch(getDefault(JSON.parse(JSON.stringify(defaultProducts))));
             dispatch(getNewProducts(JSON.parse(JSON.stringify(defaultProducts.reverse()))));
             dispatch(getStoreProducts(JSON.parse(JSON.stringify(storeProducts))));
-
+            dispatch(getNameProducts(JSON.parse(JSON.stringify(storeProducts.sort(compare)))));
 
         }, error => {
             console.log('error', error);
@@ -74,4 +80,16 @@ export const getDefaulProduct = () => {
 
 
     }
+}
+function compare(a, b) {
+    const productNameA = a.productName;
+    const productNameB = b.productName;
+
+    let comparison = 0;
+    if (productNameA > productNameB) {
+        comparison = 1
+    } else if (productNameA < productNameB) {
+        comparison = -1;
+    }
+    return comparison;
 }
