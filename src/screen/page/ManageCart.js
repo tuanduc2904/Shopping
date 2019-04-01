@@ -24,21 +24,22 @@ export default class ManageCart extends Component {
     }
 
     render() {
+        const {navigate} = this.props.navigation
         return (
             <Container>
                 <Tabs tabBarUnderlineStyle={{backgroundColor:colors.red,height:2}}>
                     <Tab
                         heading={ <TabHeading style={{backgroundColor:colors.white}}><TextComponent >Chờ Chuyển </TextComponent></TabHeading>}>
-                        <WaitingForShipment />
+                        <WaitingForShipment navigate={navigate}/>
                     </Tab>
                     <Tab
                         heading={ <TabHeading style={{backgroundColor:colors.white}}><TextComponent >Đang Giao</TextComponent></TabHeading>}>
-                        <Moving />
+                        <Moving navigate={navigate}/>
                     </Tab>
                     <Tab
                         heading={ <TabHeading style={{backgroundColor:colors.white}}><TextComponent >Đã Nhận</TextComponent></TabHeading>}>
 
-                        <Receive />
+                        <Receive navigate={navigate}/>
                     </Tab>
                 </Tabs>
             </Container>
