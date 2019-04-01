@@ -13,8 +13,10 @@ import HeaderMain from '../Components/HeaderMain';
 import { connect } from 'react-redux';
 import { firebaseApp } from '../untils/firebase';
 import { updateProfile, logout } from '../redux/actions/Authenticate';
-import { loadingShowLogin } from '../redux/actions/Loading'
-import { getDefaulProduct } from '../redux/actions/Product'
+import { loadingShowLogin } from '../redux/actions/Loading';
+import { getDefaulProduct } from '../redux/actions/Product';
+import { getDataCart } from '../redux/actions/Cart'
+
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -23,15 +25,13 @@ class Main extends Component {
             user: {}
         }
     }
-    componentWillReceiveProps(props) {
-        if (props.responseData) { console.log(props.user); } // should be getting the data if the request works
-    }
 
     componentDidMount() {
+        this.props.getDefaulProduct();
         if (this.props.user !== null) {
             this.checkLogin();
         }
-        this.props.getDefaulProduct();
+        this.props.getDataCart();
     };
 
     goToUpdateProfile() {
@@ -53,7 +53,6 @@ class Main extends Component {
 
     checkLogin() {
         const user = this.props.user;
-        console.log(user.uid)
         if (user.loggedIn) {
             firebaseApp.database().ref('user').child(user.uid).on('value', snapshot => {
                 if (snapshot.val()) {
@@ -84,9 +83,8 @@ class Main extends Component {
                         renderIcon={() => <Icon name='home' type='AntDesign' style={{ fontSize: 25, color: '#707070' }} />}
                         renderSelectedIcon={() => <Icon name='home' type='AntDesign'
                             style={{ fontSize: 25, color: colors.red }} />}
-                        badgeText="1"
                         onPress={() => this.setState({ selectedTab: 'Home' })}>
-                        <Home navigation={this.props.navigation}/>
+                        <Home navigation={this.props.navigation} />
 
                     </TabNavigator.Item>
 
@@ -99,7 +97,7 @@ class Main extends Component {
                             style={{ fontSize: 25, color: colors.red }} />}
                         // renderBadge={() => <CustomBadgeView />}
                         onPress={() => this.setState({ selectedTab: 'ShopSell' })}>
-                        <ShopSell navigation={this.props.navigation}/>
+                        <ShopSell navigation={this.props.navigation} />
                     </TabNavigator.Item>
 
                     <TabNavigator.Item
@@ -109,7 +107,7 @@ class Main extends Component {
                             style={{ fontSize: 25, color: colors.red }} />}
                         // renderBadge={() => <CustomBadgeView />}
                         onPress={() => this.setState({ selectedTab: 'Booth' })}>
-                        <Booth navigation={this.props.navigation}/>
+                        <Booth navigation={this.props.navigation} />
                     </TabNavigator.Item>
 
                     <TabNavigator.Item
@@ -118,10 +116,9 @@ class Main extends Component {
                             style={{ fontSize: 25, color: '#707070' }} />}
                         renderSelectedIcon={() => <Icon name='shoppingcart' type='AntDesign'
                             style={{ fontSize: 25, color: colors.red }} />}
-                        // renderBadge={() => <CustomBadgeView />}
-                        // badgeText={this.props.cartItems.length}
+                        badgeText={this.props.cart.carts.length}
                         onPress={() => this.setState({ selectedTab: 'ShoppingCart' })}>
-                        <ShoppingCart navigation={this.props.navigation}/>
+                        <ShoppingCart navigation={this.props.navigation} />
                     </TabNavigator.Item>
 
 
@@ -154,7 +151,7 @@ class Main extends Component {
 function mapStateToProps(state) {
     return {
         user: state.Auth,
-
+        cart: state.Cart
     }
 }
-export default connect(mapStateToProps, { updateProfile, logout, loadingShowLogin, getDefaulProduct })(Main);
+export default connect(mapStateToProps, { updateProfile, logout, loadingShowLogin, getDefaulProduct, getDataCart })(Main);

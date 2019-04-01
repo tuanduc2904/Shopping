@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { colors } from "../../assets/color";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import { Card, Icon } from "native-base";
-import { firebaseApp } from "../../untils/firebase";
 import FastImage from "react-native-fast-image";
 import { getProduct } from '../../redux/actions/MyProduct';
 import Loading from '../../Components/Loading';
@@ -13,11 +12,6 @@ const { width } = Dimensions.get('window');
 class AddedShop extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      dataSource: [],
-      refreshing: false,
-    }
-
   }
 
   componentDidMount() {

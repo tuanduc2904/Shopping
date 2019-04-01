@@ -3,7 +3,7 @@ import {
     GET_SUCCESS_NEW_PRODUCTS, GET_SUCCESS_REFER_PRODUCTS,
     GET_SUCCESS_STORE_PRODUCTS, GET_SUCCESS_DEFAULT_PRODUCTS,
     FINISHALL, START_GET_DATA
-} from '../actions/type';
+} from '../actions/types';
 
 const INITIAL = {
     defaultProducts: [],

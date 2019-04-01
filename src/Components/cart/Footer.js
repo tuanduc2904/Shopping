@@ -1,36 +1,41 @@
-import React from 'react';
-import { View, Text } from 'react-native';
-import {colors} from "../../assets/color";
-
-const Footer = () => {
-    const {
-        containerStyle,
-        buttonContainerStyle,
-        closeButtonStyle,
-        checkoutButtonStyle } = styles;
-    return (
-        <View style={containerStyle}>
-
-            <View style={buttonContainerStyle}>
-                <View style={styles.totalStyle}>
-                    <Text>Tổng - </Text>
-                    <Text>$300</Text>
-                </View>
-
-                <View style={checkoutButtonStyle}>
-                    <Text style={{ color: '#fff',fontWeight: 'bold' }}>Mua Hàng</Text>
+import React, { Component } from 'react';
+import { View, Text ,StyleSheet} from 'react-native';
+import { colors } from "../../assets/color";
+import { connect } from 'react-redux';
+class Footer extends Component {
+    constructor(props) {
+        super(props)
+    }
+    render() {
+        return (
+            <View style={styles.containerStyle}>
+                <View style={styles.buttonContainerStyle}>
+                    <View style={styles.totalStyle}>
+                        <Text>Tổng - </Text>
+                        <Text>{this.props.totalMoney} đ</Text>
+                    </View>
+                    <View style={styles.checkoutButtonStyle}>
+                        <Text style={{ color: '#fff', fontWeight: 'bold' }}>Mua Hàng</Text>
+                    </View>
                 </View>
             </View>
-        </View>
-    );
+        );
+    };
 };
+const mapStateToProps = (state) => {
+    return {
+        totalMoney: state.Cart.totalMoney
+    }
+}
+export default connect(mapStateToProps)(Footer);
 
-const styles = {
+const styles = StyleSheet.create({
     containerStyle: {
         paddingRight: 15,
         paddingLeft: 15,
         borderTopWidth: 1,
         borderColor: '#e2e2e2',
+        bottom: 0,
 
 
     },
@@ -38,8 +43,8 @@ const styles = {
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingTop: 15,
-        paddingBottom:15,
-        alignItems:'center'
+        paddingBottom: 15,
+        alignItems: 'center'
     },
     closeButtonStyle: {
         backgroundColor: '#7f8c8d',
@@ -59,6 +64,5 @@ const styles = {
         flexDirection: 'row',
         justifyContent: 'space-between'
     }
-};
+});
 
-export default Footer;

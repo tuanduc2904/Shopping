@@ -7,105 +7,111 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     Platform,
     StyleSheet,
-    Text,
     View,
-    StatusBar,
-    Button,
-    ImageBackground,
     SafeAreaView,
     FlatList,
-    TouchableOpacity,Image
+    ScrollView,
+    TouchableOpacity, Dimensions, Text
 } from 'react-native';
-import {Dimens} from '../../assets/Dimens';
-import {Icon} from "native-base";
-import {colors} from "../../assets/color";
+const { width } = Dimensions.get('window');
+
+import { Dimens } from '../../assets/Dimens';
+import { Icon, Card } from "native-base";
+import { colors } from "../../assets/color";
 import TextComponent from "../../Common/TextComponent/TextComponent";
-import {firebaseApp} from "../../untils/firebase";
+import { firebaseApp } from "../../untils/firebase";
 import FastImage from "react-native-fast-image";
 import Header from "../../Components/cart/Header";
 import ItemsContainer from "../../Components/cart/ItemsContainer";
 import Footer from "../../Components/cart/Footer";
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { removeProduct, incrQuantity, decrQuantity } from '../../redux/actions/Cart'
 class ShoppingCart extends Component {
 
     constructor(props) {
         super(props);
-        this.itemRef = firebaseApp.database();
-        this.state = {
-            isLoading: true,
-            dataSource: [],
-            refreshing: false,
-        }
 
     }
 
-    getProducts(itemRef) {
-        let items = [];
-
-        this.itemRef.ref('Products').on('value', (dataSnapshot) => {
-
-            dataSnapshot.forEach((child) => {
-                items.push({
-                    image: child.val().image,
-                    name: child.val().name,
-                    describe: child.val().describe,
-                    cmt: child.val().cmt,
-                    like: child.val().like,
-                    money: child.val().money,
-                    shopid: child.val().shopid,
-                    key: child.key
-                })
-            })
-            this.setState({
-                isLoading: false,
-                dataSource: items,
-                refreshing: false,
-            })
-        })
-    }
-
-    componentDidMount() {
-        this.getProducts(this.itemRef)
-    }
-
-    handleRefresh = () => {
-        this.setState({
-            refreshing: true,
-        }, () => {
-            this.getProducts(this.itemRef)
-        })
-    }
 
     render() {
         return (
             <SafeAreaView style={styles.saf}>
                 <View style={styles.container}>
-                    {/*<FlatList*/}
-                        {/*showsVerticalScrollIndicator={false}*/}
-                        {/*data={this.state.dataSource}*/}
-                        {/*renderItem={({item}) =>*/}
-                            {/*<TouchableOpacity >*/}
+                    <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
+                        <FlatList
+                            vertical
+                            showsVerticalScrollIndicator={false}
+                            data={this.props.carts}
+                            renderItem={({ item }) =>
+                                <View style={styles.container}>
+                                    <Card style={[styles.card]}>
+                                        <View>
+                                            <View style={[styles.viewHorizontal, { marginTop: 5, marginBottom: 5 }]}>
+                                                <View style={styles.viewHorizontalLeft}>
+                                                    <FastImage style={styles.avatar}
+                                                        source={{ uri: item.product.avatarSource }}
+                                                    />
+                                                </View>
+                                                <View>
+                                                    <TouchableOpacity
+                                                        onPress={() => {
+                                                            let key = item.product.key;
+                                                            this.props.removeProduct(key)
+                                                        }}
+                                                    >
+                                                        <TextComponent style={[styles.textItemRight]}>X</TextComponent>
+                                                    </TouchableOpacity>
+                                                </View>
+                                            </View>
+                                        </View>
+
+                                        <Card style={[styles.viewItem]}>
+                                            <FastImage style={styles.imageNumColumns}
+                                                source={{ uri: item.product.images[0] }} />
+                                            <View style={[styles.left10, {
+                                                marginBottom: 5, marginTop: 5, flexDirection: 'column',
+                                            }]}>
+                                                <Text>{item.product.productName}</Text>
+                                                <Card style={{
+                                                    flexDirection: 'row', alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                }}>
+                                                    <TouchableOpacity
+                                                        onPress={() => {
+                                                            let key = item.product.key;
+                                                            this.props.decrQuantity(key)
+                                                        }}
+                                                    >
+                                                        <Text style={{ fontSize: 20 }}>-</Text>
+                                                    </TouchableOpacity>
+                                                    <Text style={{ fontSize: 20 }}>{item.quantity}</Text>
+
+                                                    <TouchableOpacity
+                                                        onPress={() => {
+                                                            let key = item.product.key;
+                                                            this.props.incrQuantity(key)
+                                                        }}
+                                                    >
+                                                        <Text style={{ fontSize: 20 }}>+</Text>
+                                                    </TouchableOpacity>
+                                                </Card>
+                                                <TextComponent style={styles.money}>{item.product.price}đ</TextComponent>
+                                            </View>
+                                        </Card>
+                                    </Card>
 
 
-                                {/*<View >*/}
-                                    {/*<FastImage style={{width:200,height:200}}*/}
-                                               {/*source={{uri: item.image}}/>*/}
-                                    {/*<Text style={styles.name}>{item.name}</Text>*/}
+                                </View>
+                            }
+                            keyExtractor={(item, index) => index.toString()}
+                        />
+                    </ScrollView>
 
-
-                                {/*</View>*/}
-                            {/*</TouchableOpacity>*/}
-                        {/*}*/}
-                        {/*keyExtractor={(item, index) => index.toString()}*/}
-                        {/*refreshing={this.state.refreshing}*/}
-                        {/*onRefresh={this.handleRefresh}*/}
-                    {/*/>*/}
-                    {/*<Header />*/}
-                    <ItemsContainer />
 
                     <Footer />
                 </View>
@@ -115,44 +121,130 @@ class ShoppingCart extends Component {
 }
 function mapStateToProps(state) {
     return {
-        cartItems: state,
-
+        carts: state.Cart.carts,
+        totalMoney: state.Cart.totalMoney
     }
 }
-export default connect(mapStateToProps)( ShoppingCart)
+export default connect(mapStateToProps, { removeProduct, incrQuantity, decrQuantity })(ShoppingCart)
+
 const styles = StyleSheet.create({
     saf: {
         flex: 1,
         backgroundColor: colors.white,
+
+    },
+    scroll: {
+        flex: 1,
+        backgroundColor: colors.background
     },
     container: {
+
         flex: 1,
+        marginLeft: 5,
+        marginRight: 5,
+        backgroundColor: colors.background
     },
-    bg: {
-        width: Dimens.screen.width,
-        height: Dimens.screen.height,
+
+    bar: {
+        width: 4,
+        height: 20,
+        backgroundColor: colors.red,
+        marginRight: 5
+    },
+    card: {
+        borderRadius: 8,
+        margin: 5
+    },
+    viewHorizontalLeft: {
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    body: {
-        marginTop: 50,
-        marginBottom: 60
-    },
-    viewTextInput: {
-        height: 60
-    },
-    btnSignIn: {
-        marginTop: 30
-    },
-    footer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        width: '90%',
-        marginTop: 60
+
     },
     text: {
         fontSize: 18,
         color: colors.red
+    },
+    image: {
+        justifyContent: 'center',
+        flex: 1,
+        width: 100,
+        alignItems: 'center',
+        height: 100,
+        margin: 5,
+        backgroundColor: colors.background,
+        borderRadius: 8
+    },
+    imageNumColumns: {
+        justifyContent: 'center',
+        width: width / 2.6,
+        padding: 20,
+        alignItems: 'center',
+        height: 120,
+        backgroundColor: '#FFF',
+        borderTopLeftRadius: 8,
+        borderTopRightRadius: 8,
+        borderBottomLeftRadius: 8,
+        borderBottomRightRadius: 8,
+        margin: 20
+
+    },
+    viewItem: {
+        backgroundColor: colors.white,
+        margin: 5,
+        flexDirection: 'row',
+    },
+
+    header: {
+        top: 0,
+        height: 50,
+        width: '100%',
+        justifyContent: 'center',
+        backgroundColor: '#ffffffcc'
+    },
+    viewHorizontal: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginRight: 10,
+        marginLeft: 10,
+
+    },
+    title: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: colors.red
+    },
+    left10: {
+        left: 5
+    },
+    textItemRight: {
+        color: colors.black,
+        paddingRight: 10,
+    },
+    marginTop: {
+        marginTop: 10,
+        marginBottom: 5
+    },
+    name: {
+        fontWeight: 'bold',
+        fontSize: 15
+    },
+    money: {
+        color: colors.red,
+        fontWeight: 'bold'
+    },
+    avatar: {
+        width: 40,
+        height: 40,
+        borderRadius: 40 / 2,
+        borderWidth: 1,
+        borderColor: colors.bgUser,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginRight: 10,
+        backgroundColor: colors.background
     }
+
 
 })

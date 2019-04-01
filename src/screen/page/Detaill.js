@@ -1,21 +1,22 @@
-import React, {Component} from 'react';
-import {View, Text, SafeAreaView, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
-import {connect} from 'react-redux';
-import {colors} from "../../assets/color";
-import {Icon} from "native-base";
+import React, { Component } from 'react';
+import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { connect } from 'react-redux';
+import { colors } from "../../assets/color";
+import { Icon } from "native-base";
 import FastImage from "react-native-fast-image";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import ButtonComponent from "../../Common/ButtonComponent/ButtonComponent";
+import { addProductToCart } from '../../redux/actions/Cart'
 
-export class Detaill extends Component {
+class Detaill extends Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
 
     render() {
-        const {navigate} = this.props.navigation;
-        const {navigation} = this.props;
+        const { navigate } = this.props.navigation;
+        const { navigation } = this.props;
         const item = this.props.navigation.state.params.item;
         return (
             <SafeAreaView style={styles.saf}>
@@ -23,16 +24,16 @@ export class Detaill extends Component {
                     <TouchableOpacity
                         onPress={() => navigation.goBack()}
                         style={styles.backButton}>
-                        <Icon name='left' type='AntDesign' style={{fontSize: 25, color: colors.red}}/>
+                        <Icon name='left' type='AntDesign' style={{ fontSize: 25, color: colors.red }} />
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.container}>
                     <ScrollView>
                         <FastImage style={styles.image}
-                                   source={{uri: item.images[0]}}
+                            source={{ uri: item.images[0] }}
                         />
-                        <View style={{backgroundColor: colors.white, marginBottom: 10}}>
+                        <View style={{ backgroundColor: colors.white, marginBottom: 10 }}>
                             <View style={styles.horizontall}>
                                 <TextComponent style={styles.name}>{item.productName}</TextComponent>
                                 <TextComponent style={styles.money}>{item.price} đ</TextComponent>
@@ -40,7 +41,7 @@ export class Detaill extends Component {
 
                             <View style={styles.viewAvatar}>
                                 <FastImage style={styles.avatar}
-                                           source={{uri: item.images[0]}}
+                                    source={{ uri: item.images[0] }}
                                 />
                                 <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
                             </View>
@@ -49,27 +50,27 @@ export class Detaill extends Component {
                                 marginRight: 10,
                             }}>
                                 <TextComponent style={styles.infoTitle}>Mô tả sản phẩm</TextComponent>
-                                <TextComponent> san pham ....</TextComponent>
+                                <TextComponent>Sản phẩm ....</TextComponent>
                             </View>
                         </View>
                         <TouchableOpacity
                             onPress={() => {
                                 navigate('Comment');
                             }}
-                            style={{backgroundColor: colors.white, marginBottom: 10}}>
-                            <View style={[styles.horizontall,{marginBottom:10}]}>
+                            style={{ backgroundColor: colors.white, marginBottom: 10 }}>
+                            <View style={[styles.horizontall, { marginBottom: 10 }]}>
                                 <View
-                                    style={{flexDirection: 'row', alignItems: 'center'}}>
-                                    <Icon name='star' type='AntDesign' style={{fontSize: 30, color: colors.yellow}}/>
+                                    style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                    <Icon name='star' type='AntDesign' style={{ fontSize: 30, color: colors.yellow }} />
                                     <TextComponent style={styles.danhgia}>Đánh Giá Sản Phẩm</TextComponent>
                                 </View>
                                 <TouchableOpacity>
-                                    <TextComponent style={{fontSize:12,color:colors.red}}>Xem Thêm >></TextComponent>
+                                    <TextComponent style={{ fontSize: 12, color: colors.red }}>Xem Thêm >></TextComponent>
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.viewAvatar}>
                                 <FastImage style={styles.avatar}
-                                           source={{uri: item.images[0]}}
+                                    source={{ uri: item.images[0] }}
                                 />
                                 <View>
                                     <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
@@ -81,16 +82,28 @@ export class Detaill extends Component {
                     </ScrollView>
                     <View style={styles.footer}>
                         <ButtonComponent
-                        text='Thêm Vào Giỏ Hàng'
-                        styleText={{color:colors.white,fontWeight:'bold'}}
-                        style={{backgroundColor:colors.red}}/>
+                            text='Thêm Vào Giỏ Hàng'
+                            styleText={{ color: colors.white, fontWeight: 'bold' }}
+                            style={{ backgroundColor: colors.red }}
+                            onPress={() => {
+                                let carts = this.props.carts.length > 0 ? this.props.carts : [];
+                                this.props.addProductToCart(item, carts)
+                            }}
+                        />
                     </View>
                 </View>
-
             </SafeAreaView>
         );
     }
+};
+
+const mapStateToProps = (state) => {
+    return {
+        carts: state.Cart.carts
+    }
 }
+
+export default connect(mapStateToProps, { addProductToCart })(Detaill);
 
 const styles = StyleSheet.create({
     saf: {
@@ -131,7 +144,7 @@ const styles = StyleSheet.create({
     horizontall: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems:'center',
+        alignItems: 'center',
         marginTop: 10,
         marginLeft: 10,
         marginRight: 10,
@@ -166,13 +179,12 @@ const styles = StyleSheet.create({
         color: colors.red,
         fontSize: 16,
     },
-    footer:{
+    footer: {
         position: 'absolute',
-        bottom:10,
-        alignItems:'center',
-        justifyContent:'center',
-        width:'100%'
+        bottom: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%'
     }
 })
 
-export default Detaill

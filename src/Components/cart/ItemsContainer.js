@@ -5,9 +5,8 @@ import Item from './Item';
 class ItemsContainer extends Component {
     render() {
         return (
-            <View style={styles.containterStyle}>
-                <Item/>
-            </View>
+            <Item />
+
         );
     }
 }

@@ -9,53 +9,26 @@
 
 import React, { Component } from 'react';
 import {
-    Platform,
     StyleSheet,
     Text,
     View,
-    StatusBar,
-    Button,
-    ImageBackground,
     SafeAreaView,
     FlatList,
-    TouchableOpacity, Image, Dimensions, ScrollView
+    TouchableOpacity, Dimensions, ScrollView
 } from 'react-native';
 import ListShop from '../../Components/ListShop'
 import { Card, Icon } from "native-base";
 import FastImage from "react-native-fast-image";
-import { firebaseApp } from "../../untils/firebase";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import { colors } from "../../assets/color";
-import { Dimens } from "../../assets/Dimens";
 import { connect } from 'react-redux';
 const { width } = Dimensions.get('window');
-const height = width * 0.5;
 class ShopSell extends Component {
 
     constructor(props) {
         super(props);
-        this.itemRef = firebaseApp.database();
-        this.state = {
-            isLoading: true,
-            dataSource: [],
-            refreshing: false,
-        }
-
     }
 
-
-
-    componentDidMount() {
-        console.log(this.props.storeProducts[0].products[0].images[0]);
-    }
-
-    handleRefresh = () => {
-        this.setState({
-            refreshing: true,
-        }, () => {
-            this.getProducts(this.itemRef)
-        })
-    }
 
     render() {
         return (
@@ -81,7 +54,6 @@ class ShopSell extends Component {
                                     </View>
                                 </Card>
                                 <ListShop products={item.products} />
-
                             </View>
                         }
                         keyExtractor={(item, index) => index.toString()}

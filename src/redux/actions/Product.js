@@ -3,7 +3,7 @@ import {
     GET_SUCCESS_NEW_PRODUCTS, GET_SUCCESS_REFER_PRODUCTS,
     GET_SUCCESS_STORE_PRODUCTS, GET_SUCCESS_DEFAULT_PRODUCTS,
     FINISHALL, START_GET_DATA
-} from './type';
+} from './types';
 import firebase from 'firebase';
 
 const db = firebase.database();
@@ -62,9 +62,9 @@ export const getDefaulProduct = () => {
                 storeProducts.push(shop);
 
             })
-            dispatch(getDefault(defaultProducts));
-            dispatch(getNewProducts(defaultProducts.reverse()));
-            dispatch(getStoreProducts(storeProducts));
+            dispatch(getDefault(JSON.parse(JSON.stringify(defaultProducts))));
+            dispatch(getNewProducts(JSON.parse(JSON.stringify(defaultProducts.reverse()))));
+            dispatch(getStoreProducts(JSON.parse(JSON.stringify(storeProducts))));
 
 
         }, error => {
