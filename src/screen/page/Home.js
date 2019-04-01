@@ -29,20 +29,20 @@ class Home extends Component {
             dataSource: [],
             refreshing: false,
             sliderIndex: 0,
-            maxSlider: 2,
+            maxSlider: 3,
             banners: [
-                { _id: 1, imageUrl: 'https://png.pngtree.com/thumb_back/fh260/back_pic/00/15/30/4656e81f6dc57c5.jpg' },
+                { _id: 1, imageUrl: 'https://chonhangchuan.com/wp-content/uploads/2018/08/tung-bung-ngay-sieu-flash-sale-gia-khuynh-dao.jpg' },
                 {
                     _id: 2,
-                    imageUrl: 'https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
+                    imageUrl: 'https://cdn-images-1.medium.com/max/1200/1*IDV0DLWDt0EVMh0BAML5NA.png'
                 },
                 {
                     _id: 3,
-                    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhcSnO3gsJmdH3kQX_2uJ9dMoG447FVNEwhuDh9dZDt0LQX07h'
+                    imageUrl: 'https://salt.tikicdn.com/media/upload/landingpage/banners/48857a34498b41762f2ca326ed9149eb.png'
                 },
                 {
                     _id: 4,
-                    imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhcSnO3gsJmdH3kQX_2uJ9dMoG447FVNEwhuDh9dZDt0LQX07h'
+                    imageUrl: 'https://saledenroi.com/wp-content/uploads/2017/07/banner-tiki-khuyen-mai.jpg'
                 },
             ],
         }

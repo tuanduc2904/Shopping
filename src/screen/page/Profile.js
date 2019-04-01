@@ -20,9 +20,9 @@ import { colors } from "../../assets/color";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import { firebaseApp } from "../../untils/firebase";
 import FastImage from "react-native-fast-image";
-import { Button, Card } from 'native-base'
+import { Button, Card,Icon } from 'native-base'
 import { connect } from 'react-redux'
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icons from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import { NavigationActions, StackActions } from 'react-navigation';
 import { logout } from '../../redux/actions/Authenticate';
@@ -69,28 +69,33 @@ class Profile extends Component {
                 <ScrollView style={{ flex: 1, paddingTop: 10, backgroundColor: colors.background }}>
 
                     <Card style={[styles.card, styles.row]}>
+                        <TouchableOpacity
+                                          onPress={() => {
+                                              this.props.navigation.navigate('ManageCart');
+                                          }}>
                         <Text style={{ marginTop: 5, marginBottom: 5 }}>Quản lý đơn hàng: </Text>
                         <View style={styles.order}>
-                            <TouchableOpacity style={styles.orderChild}>
+                            <View style={styles.orderChild}>
                                 <View style={{ alignItems: 'center' }}>
-                                    <Icon name="send-o" styes={styles.textCenter} color={colors.red} size={45} />
+                                    <MaterialIcons name="present-to-all"  color={colors.red} size={45}/>
                                     <Text styes={styles.textCenter}>Chuyển hàng </Text>
                                 </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.orderChild}>
+                            </View>
+                            <View style={styles.orderChild}>
                                 <View style={{ alignItems: 'center' }}>
                                     <MaterialIcons name="local-shipping" styes={styles.textCenter} color={colors.red}
                                         size={45} />
                                     <Text styes={styles.textCenter}>Đang giao</Text>
                                 </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity style={styles.orderChild}>
+                            </View>
+                            <View style={styles.orderChild}>
                                 <View style={{ alignItems: 'center' }}>
-                                    <Icon name="gift" styes={styles.textCenter} color={colors.red} size={45} />
+                                    <Icons name="gift" styes={styles.textCenter} color={colors.red} size={45} />
                                     <Text styes={styles.textCenter}>Đã nhận</Text>
                                 </View>
-                            </TouchableOpacity>
+                            </View>
                         </View>
+                        </TouchableOpacity>
                     </Card>
                     <TouchableOpacity
                         onPress={() => {

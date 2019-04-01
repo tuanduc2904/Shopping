@@ -22,7 +22,6 @@ import { loginSuccess, skipLogin } from '../redux/actions/Authenticate';
 import { loadingShowLogin, loadingCloseLogin } from '../redux/actions/Loading';
 import Loading from '../Components/Loading'
 import { NavigationActions, StackActions } from 'react-navigation';
-
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -148,8 +147,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     body: {
-        marginTop: 50,
-        marginBottom: 60
+        marginTop: Dimens.screen.height/10,
+        marginBottom: Dimens.screen.height/10
     },
     viewTextInput: {
         height: 60
@@ -161,7 +160,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '90%',
-        marginTop: 60
+        marginTop: Dimens.screen.height/8
     },
     text: {
         fontSize: 18,

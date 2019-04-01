@@ -12,8 +12,10 @@ export default class HeaderMain extends Component {
                     {/* <Icon name='search1' type='AntDesign' style={{ fontSize: 30, color: colors.red }} /> */}
                     <Item>
                         <Icon name="ios-search"  />
-                        <Input placeholder="Search" style={{color: colors.red}}/>
-                        <Icon name="ios-notifications-outline" style={{color: colors.red}}/>
+                        <Input placeholder="Search"
+                               clearButtonMode='always'
+                               style={{color: colors.red, width: 200}}/>
+                        <Icon name="notifications" type='MaterialIcons' style={{color: colors.red}}/>
                     </Item>
                 </View>
             </View>

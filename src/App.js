@@ -23,7 +23,10 @@ import Main from "./screen/Main";
 import MyShop from './screen/MyShop'
 import PostProduct from "./screen/page/PostProduct";
 import Detaill from "./screen/page/Detaill";
-import Comment from './screen/page/Comment'
+import Comment from './screen/page/Comment';
+import ManageCart from "./screen/page/ManageCart";
+
+
 const NavStack = createStackNavigator({
     SplashScreen: {
         screen: SplashScreen,
@@ -77,15 +80,15 @@ const NavStack = createStackNavigator({
             },
         }
     },
-    // SeeMore: {
-    //     screen: SeeMore,
-    //     navigationOptions: {
-    //         title: 'Home',
-    //         headerStyle: {
-    //             backgroundColor: '#FFF',
-    //         },
-    //     }
-    // },
+    ManageCart: {
+        screen: ManageCart,
+        navigationOptions: {
+            title: 'Quản Lý Đơn Hàng',
+            headerStyle: {
+                backgroundColor: '#FFF',
+            },
+        }
+    },
     UpdateProfile: {
         screen: UpdateProfile,
         navigationOptions: {

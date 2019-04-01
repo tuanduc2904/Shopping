@@ -43,8 +43,8 @@ class Footer extends Component {
                 {this.state.checkout ? <FormCheckOut /> : null}
                 <View style={styles.buttonContainerStyle}>
                     <View style={styles.totalStyle}>
-                        <Text style={{ fontWeight: 'bold' }}>Tổng : </Text>
-                        <Text style={{ fontWeight: 'bold', color: 'red' }}>{this.props.totalMoney} đ</Text>
+                        <Text style={{ fontWeight: 'bold',fontSize:18 }}>Tổng : </Text>
+                        <Text style={{ fontWeight: 'bold', color: 'red',fontSize:15 }}>{this.props.totalMoney} đ</Text>
                     </View>
 
                     <TouchableOpacity style={styles.checkoutButtonStyle}
@@ -52,7 +52,7 @@ class Footer extends Component {
                             this.checkout()
                         }}
                     >
-                        <Text style={{ color: '#fff', fontWeight: 'bold' }}>{choose}</Text>
+                        <Text style={{ color: '#fff', fontWeight: 'bold',fontSize:16 }}>{choose}</Text>
 
                     </TouchableOpacity>
 
@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
         borderTopWidth: 1,
         borderColor: '#e2e2e2',
         bottom: 0,
+        backgroundColor:colors.white
     },
     buttonContainerStyle: {
         flexDirection: 'row',
@@ -100,7 +101,8 @@ const styles = StyleSheet.create({
     },
     totalStyle: {
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        alignItems: 'center'
     }
 });
 

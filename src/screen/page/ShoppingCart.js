@@ -7,7 +7,7 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     Platform,
     StyleSheet,
@@ -17,14 +17,15 @@ import {
     ScrollView,
     TouchableOpacity, Dimensions, Text
 } from 'react-native';
-const { width } = Dimensions.get('window');
-import { Icon, Card } from "native-base";
-import { colors } from "../../assets/color";
+
+const {width} = Dimensions.get('window');
+import {Icon, Card} from "native-base";
+import {colors} from "../../assets/color";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import FastImage from "react-native-fast-image";
 import Footer from "../../Components/cart/Footer";
-import { connect } from 'react-redux';
-import { removeProduct, incrQuantity, decrQuantity } from '../../redux/actions/Cart';
+import {connect} from 'react-redux';
+import {removeProduct, incrQuantity, decrQuantity} from '../../redux/actions/Cart';
 
 
 class ShoppingCart extends Component {
@@ -44,14 +45,14 @@ class ShoppingCart extends Component {
                                 vertical
                                 showsVerticalScrollIndicator={false}
                                 data={this.props.carts}
-                                renderItem={({ item }) =>
+                                renderItem={({item}) =>
                                     <View style={styles.container}>
                                         <Card style={[styles.card]}>
                                             <View>
-                                                <View style={[styles.viewHorizontal, { marginTop: 5, marginBottom: 5 }]}>
+                                                <View style={[styles.viewHorizontal, {marginTop: 5, marginBottom: 5}]}>
                                                     <View style={styles.viewHorizontalLeft}>
                                                         <FastImage style={styles.avatar}
-                                                            source={{ uri: item.product.avatarSource }}
+                                                                   source={{uri: item.product.avatarSource}}
                                                         />
                                                     </View>
                                                     <View>
@@ -61,52 +62,105 @@ class ShoppingCart extends Component {
                                                                 this.props.removeProduct(key)
                                                             }}
                                                         >
-                                                            <TextComponent style={[styles.textItemRight]}>X</TextComponent>
+                                                            <TextComponent
+                                                                style={[styles.textItemRight]}>X</TextComponent>
                                                         </TouchableOpacity>
                                                     </View>
                                                 </View>
                                             </View>
-
-                                            <Card style={[styles.viewItem]}>
+                                            <View style={{
+                                                width: '100%',
+                                                height: 0.5,
+                                                backgroundColor: colors.background,
+                                                marginTop: 5
+                                            }}/>
+                                            <View style={[styles.viewItem]}>
                                                 <FastImage style={styles.imageNumColumns}
-                                                    source={{ uri: item.product.images[0] }} />
+                                                           source={{uri: item.product.images[0]}}/>
                                                 <View style={[styles.left10, {
                                                     marginBottom: 20, marginTop: 5, flexDirection: 'column',
                                                     justifyContent: 'space-between',
                                                 }]}>
-                                                    <Text style={{ marginTop: 20, fontSize: 17, fontWeight: '400' }}>{item.product.productName}</Text>
-                                                    <Card style={{
-                                                        flexDirection: 'row', alignItems: 'center',
-                                                        justifyContent: 'space-between', width: 120
-                                                    }}>
+                                                    <Text style={{
+                                                        marginTop: 20,
+                                                        fontSize: 17,
+                                                        fontWeight: '600'
+                                                    }}>{item.product.productName}</Text>
+                                                    <TextComponent
+                                                        style={styles.money}>{item.product.price} đ</TextComponent>
+                                                    {/*<Card style={{*/}
+                                                        {/*flexDirection: 'row', alignItems: 'center',*/}
+                                                        {/*justifyContent: 'space-between', width: 120*/}
+                                                    {/*}}>*/}
+                                                        {/*<TouchableOpacity*/}
+                                                            {/*onPress={() => {*/}
+                                                                {/*let key = item.product.key;*/}
+                                                                {/*this.props.decrQuantity(key)*/}
+                                                            {/*}}*/}
+                                                        {/*>*/}
+                                                            {/*<Text style={{*/}
+                                                                {/*fontSize: 25, paddingLeft: 10,*/}
+                                                                {/*paddingRight: 10, fontWeight: 'bold'*/}
+                                                            {/*}}>-</Text>*/}
+                                                        {/*</TouchableOpacity>*/}
+                                                        {/*<Text style={{fontSize: 20}}>{item.quantity}</Text>*/}
+
+                                                        {/*<TouchableOpacity*/}
+                                                            {/*onPress={() => {*/}
+                                                                {/*let key = item.product.key;*/}
+                                                                {/*this.props.incrQuantity(key)*/}
+                                                            {/*}}*/}
+                                                        {/*>*/}
+                                                            {/*<Text style={{*/}
+                                                                {/*fontSize: 25, paddingLeft: 10,*/}
+                                                                {/*paddingRight: 10, fontWeight: 'bold'*/}
+                                                            {/*}}>+</Text>*/}
+                                                        {/*</TouchableOpacity>*/}
+                                                    {/*</Card>*/}
+                                                    <View style={styles.counterStyle}>
                                                         <TouchableOpacity
                                                             onPress={() => {
                                                                 let key = item.product.key;
                                                                 this.props.decrQuantity(key)
                                                             }}
-                                                        >
-                                                            <Text style={{
-                                                                fontSize: 25, paddingLeft: 10,
-                                                                paddingRight: 10, fontWeight: 'bold'
-                                                            }}>-</Text>
+                                                            style={{
+                                                            borderRadius: 15,
+                                                            backgroundColor: colors.red,
+                                                            height: 30,
+                                                            width: 30,
+                                                            justifyContent: 'center',
+                                                            alignItems: 'center'
+                                                        }}>
+                                                            <Icon
+                                                                name="ios-remove"
+                                                                size={25}
+                                                               style={{color:colors.white}}
+                                                            />
                                                         </TouchableOpacity>
-                                                        <Text style={{ fontSize: 20 }}>{item.quantity}</Text>
-
+                                                        <Text style={{fontSize: 20,marginLeft:5,marginRight:5}}>{item.quantity}</Text>
                                                         <TouchableOpacity
                                                             onPress={() => {
                                                                 let key = item.product.key;
                                                                 this.props.incrQuantity(key)
                                                             }}
-                                                        >
-                                                            <Text style={{
-                                                                fontSize: 25, paddingLeft: 10,
-                                                                paddingRight: 10, fontWeight: 'bold'
-                                                            }}>+</Text>
+                                                            style={{
+                                                            borderRadius: 15,
+                                                            backgroundColor: colors.red,
+                                                            height: 30, width: 30,
+                                                            justifyContent: 'center',
+                                                            alignItems: 'center'
+                                                        }}>
+                                                            <Icon
+                                                                name="ios-add"
+                                                                size={25}
+                                                                style={{color:colors.white}}
+                                                            />
                                                         </TouchableOpacity>
-                                                    </Card>
-                                                    <TextComponent style={styles.money}>{item.product.price}đ</TextComponent>
+
+                                                    </View>
+
                                                 </View>
-                                            </Card>
+                                            </View>
                                         </Card>
 
 
@@ -115,22 +169,24 @@ class ShoppingCart extends Component {
                                 keyExtractor={(item, index) => index.toString()}
                             />
                         </ScrollView>
-                        <Footer />
+                        <Footer/>
                     </View> :
-                    <View style={{ flex: 1,justifyContent: 'center', alignItems: 'center', flexDirection: 'row' }}>
-                        <Text style={{ fontSize: 20 }}>Chưa có sản phẩm nào trong giỏ hàng</Text>
+                    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
+                        <Text style={{fontSize: 20}}>Chưa có sản phẩm nào trong giỏ hàng</Text>
                     </View>}
             </SafeAreaView>
         );
     }
 }
+
 function mapStateToProps(state) {
     return {
         carts: state.Cart.carts,
         totalMoney: state.Cart.totalMoney
     }
 }
-export default connect(mapStateToProps, { removeProduct, incrQuantity, decrQuantity })(ShoppingCart)
+
+export default connect(mapStateToProps, {removeProduct, incrQuantity, decrQuantity})(ShoppingCart)
 
 const styles = StyleSheet.create({
     saf: {
@@ -145,8 +201,6 @@ const styles = StyleSheet.create({
     container: {
 
         flex: 1,
-        marginLeft: 5,
-        marginRight: 5,
         backgroundColor: colors.background
     },
 
@@ -158,7 +212,8 @@ const styles = StyleSheet.create({
     },
     card: {
         borderRadius: 8,
-        margin: 5
+       marginLeft: 10,
+        marginRight:10
     },
     viewHorizontalLeft: {
         flexDirection: 'row',
@@ -182,7 +237,7 @@ const styles = StyleSheet.create({
     },
     imageNumColumns: {
         justifyContent: 'center',
-        width: width / 2.6,
+        width: width / 2.8,
         padding: 20,
         alignItems: 'center',
         height: 120,
@@ -191,7 +246,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 8,
         borderBottomLeftRadius: 8,
         borderBottomRightRadius: 8,
-        margin: 20
+        margin: 5
 
     },
     viewItem: {
@@ -250,6 +305,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginRight: 10,
         backgroundColor: colors.background
+    },
+    counterStyle: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center'
     }
 
 

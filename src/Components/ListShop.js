@@ -33,7 +33,8 @@ export default class componentName extends Component {
                         <FastImage style={styles.imageNumColumns}
                             source={{ uri: item.images[0] }} />
                         <View style={[styles.left10, { marginBottom: 5, marginTop: 5 }]}>
-                            <TextComponent style={styles.name}>{item.item}</TextComponent>
+                            <TextComponent style={styles.name}>{item.productName}</TextComponent>
+                            {/*<TextComponent style={styles.name}>{item.item}</TextComponent>*/}
                             <TextComponent style={styles.money}>{item.price}</TextComponent>
                             <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
                         </View>
