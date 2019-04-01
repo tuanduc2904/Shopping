@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { Icon } from 'native-base'
 const { width } = Dimensions.get('window');
 import TextComponent from "../../Common/TextComponent/TextComponent";
-
+import global from '../global'
 const height = width * 0.5;
 
 class Booth extends Component {
@@ -33,10 +33,11 @@ class Booth extends Component {
                 <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
                     <FlatList
                         showsVerticalScrollIndicator={false}
-                        data={this.props.nameProducts.product}
+                        data={this.props.nameProducts}
                         renderItem={({ item }) =>
                             <TouchableOpacity
                                 onPress={() => {
+                                    global.goToDetail(item)
                                 }}
                                 style={[styles.viewItem]}>
 

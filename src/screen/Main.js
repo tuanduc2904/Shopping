@@ -18,6 +18,7 @@ import { getDefaulProduct } from '../redux/actions/Product';
 import { getDataCart } from '../redux/actions/Cart';
 import global from './global';
 
+
 class Main extends Component {
     constructor(props) {
         super(props);
@@ -26,8 +27,15 @@ class Main extends Component {
             user: {}
         }
         global.goBackNavigation = this.goBackNavigation.bind(this);
-    }
+        global.goToDetail = this.goToDetail.bind(this);
 
+    }
+    goToDetail(item) {
+        this.props.navigation.navigate('Detaill', { item: item });
+    }
+    goBackNavigation() {
+        this.props.navigation.goBack();
+    }
     componentDidMount() {
         this.props.getDefaulProduct();
         if (this.props.user !== null) {
@@ -35,9 +43,7 @@ class Main extends Component {
         }
         this.props.getDataCart();
     };
-    goBackNavigation() {
-        this.props.navigation.goBack();
-    }
+
     goToUpdateProfile() {
 
         Alert.alert(

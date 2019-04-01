@@ -1,3 +1,4 @@
 module.exports = {
-    goBackNavigation: null
+    goBackNavigation: null,
+    goToDetail: null,
 };

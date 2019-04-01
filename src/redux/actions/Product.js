@@ -71,7 +71,7 @@ export const getDefaulProduct = () => {
             dispatch(getDefault(JSON.parse(JSON.stringify(defaultProducts))));
             dispatch(getNewProducts(JSON.parse(JSON.stringify(defaultProducts.reverse()))));
             dispatch(getStoreProducts(JSON.parse(JSON.stringify(storeProducts))));
-            dispatch(getNameProducts(JSON.parse(JSON.stringify(storeProducts.sort(compare)))));
+            dispatch(getNameProducts(JSON.parse(JSON.stringify(defaultProducts.sort(compare)))));
 
         }, error => {
             console.log('error', error);
@@ -84,7 +84,7 @@ export const getDefaulProduct = () => {
 function compare(a, b) {
     const productNameA = a.productName;
     const productNameB = b.productName;
-
+    console.log(a);
     let comparison = 0;
     if (productNameA > productNameB) {
         comparison = 1

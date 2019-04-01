@@ -4,6 +4,7 @@ import FastImage from "react-native-fast-image";
 import TextComponent from "../Common/TextComponent/TextComponent";
 import { colors } from "../assets/color";
 import { Card, Icon } from "native-base";
+import global from '../screen/global'
 const { width } = Dimensions.get('window');
 
 
@@ -24,7 +25,11 @@ export default class componentName extends Component {
                 showsVerticalScrollIndicator={false}
                 data={this.props.products}
                 renderItem={({ item }) =>
-                    <TouchableOpacity style={[styles.viewItem]}>
+                    <TouchableOpacity style={[styles.viewItem]}
+                        onPress={() => {
+                            global.goToDetail(item)
+                        }}
+                    >
                         <FastImage style={styles.imageNumColumns}
                             source={{ uri: item.images[0] }} />
                         <View style={[styles.left10, { marginBottom: 5, marginTop: 5 }]}>
