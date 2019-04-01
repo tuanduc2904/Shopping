@@ -74,12 +74,13 @@ class ShoppingCart extends Component {
                                             <FastImage style={styles.imageNumColumns}
                                                 source={{ uri: item.product.images[0] }} />
                                             <View style={[styles.left10, {
-                                                marginBottom: 5, marginTop: 5, flexDirection: 'column',
+                                                marginBottom: 20, marginTop: 5, flexDirection: 'column',
+                                                justifyContent: 'space-between',
                                             }]}>
-                                                <Text>{item.product.productName}</Text>
+                                                <Text style={{ marginTop: 20, fontSize: 17, fontWeight: '400' }}>{item.product.productName}</Text>
                                                 <Card style={{
                                                     flexDirection: 'row', alignItems: 'center',
-                                                    justifyContent: 'center',
+                                                    justifyContent: 'space-between', width: 120
                                                 }}>
                                                     <TouchableOpacity
                                                         onPress={() => {
@@ -87,7 +88,10 @@ class ShoppingCart extends Component {
                                                             this.props.decrQuantity(key)
                                                         }}
                                                     >
-                                                        <Text style={{ fontSize: 20 }}>-</Text>
+                                                        <Text style={{
+                                                            fontSize: 25, paddingLeft: 10,
+                                                            paddingRight: 10, fontWeight: 'bold'
+                                                        }}>-</Text>
                                                     </TouchableOpacity>
                                                     <Text style={{ fontSize: 20 }}>{item.quantity}</Text>
 
@@ -97,7 +101,10 @@ class ShoppingCart extends Component {
                                                             this.props.incrQuantity(key)
                                                         }}
                                                     >
-                                                        <Text style={{ fontSize: 20 }}>+</Text>
+                                                        <Text style={{
+                                                            fontSize: 25, paddingLeft: 10,
+                                                            paddingRight: 10, fontWeight: 'bold'
+                                                        }}>+</Text>
                                                     </TouchableOpacity>
                                                 </Card>
                                                 <TextComponent style={styles.money}>{item.product.price}đ</TextComponent>
@@ -232,7 +239,8 @@ const styles = StyleSheet.create({
     },
     money: {
         color: colors.red,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: 17
     },
     avatar: {
         width: 40,

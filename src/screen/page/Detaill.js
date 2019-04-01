@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { colors } from "../../assets/color";
-import { Icon } from "native-base";
+import { Icon, Toast, Root } from "native-base";
 import FastImage from "react-native-fast-image";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import ButtonComponent from "../../Common/ButtonComponent/ButtonComponent";
@@ -16,82 +16,80 @@ class Detaill extends Component {
 
     render() {
         const { navigate } = this.props.navigation;
-        const { navigation } = this.props;
         const item = this.props.navigation.state.params.item;
         return (
             <SafeAreaView style={styles.saf}>
-                <View style={styles.header}>
-                    <TouchableOpacity
-                        onPress={() => navigation.goBack()}
-                        style={styles.backButton}>
-                        <Icon name='left' type='AntDesign' style={{ fontSize: 25, color: colors.red }} />
-                    </TouchableOpacity>
-                </View>
-
-                <View style={styles.container}>
-                    <ScrollView>
-                        <FastImage style={styles.image}
-                            source={{ uri: item.images[0] }}
-                        />
-                        <View style={{ backgroundColor: colors.white, marginBottom: 10 }}>
-                            <View style={styles.horizontall}>
-                                <TextComponent style={styles.name}>{item.productName}</TextComponent>
-                                <TextComponent style={styles.money}>{item.price} đ</TextComponent>
-                            </View>
-
-                            <View style={styles.viewAvatar}>
-                                <FastImage style={styles.avatar}
-                                    source={{ uri: item.images[0] }}
-                                />
-                                <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
-                            </View>
-                            <View style={{
-                                marginLeft: 10,
-                                marginRight: 10,
-                            }}>
-                                <TextComponent style={styles.infoTitle}>Mô tả sản phẩm</TextComponent>
-                                <TextComponent>Sản phẩm ....</TextComponent>
-                            </View>
-                        </View>
-                        <TouchableOpacity
-                            onPress={() => {
-                                navigate('Comment');
-                            }}
-                            style={{ backgroundColor: colors.white, marginBottom: 10 }}>
-                            <View style={[styles.horizontall, { marginBottom: 10 }]}>
-                                <View
-                                    style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                    <Icon name='star' type='AntDesign' style={{ fontSize: 30, color: colors.yellow }} />
-                                    <TextComponent style={styles.danhgia}>Đánh Giá Sản Phẩm</TextComponent>
+                <Root>
+                    <View style={styles.container}>
+                        <ScrollView>
+                            <FastImage style={styles.image}
+                                source={{ uri: item.images[0] }}
+                            />
+                            <View style={{ backgroundColor: colors.white, marginBottom: 10 }}>
+                                <View style={styles.horizontall}>
+                                    <TextComponent style={styles.name}>{item.productName}</TextComponent>
+                                    <TextComponent style={styles.money}>{item.price} đ</TextComponent>
                                 </View>
-                                <TouchableOpacity>
-                                    <TextComponent style={{ fontSize: 12, color: colors.red }}>Xem Thêm >></TextComponent>
-                                </TouchableOpacity>
-                            </View>
-                            <View style={styles.viewAvatar}>
-                                <FastImage style={styles.avatar}
-                                    source={{ uri: item.images[0] }}
-                                />
-                                <View>
+
+                                <View style={styles.viewAvatar}>
+                                    <FastImage style={styles.avatar}
+                                        source={{ uri: item.images[0] }}
+                                    />
                                     <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
-                                    <TextComponent> San pham rat tot</TextComponent>
+                                </View>
+                                <View style={{
+                                    marginLeft: 10,
+                                    marginRight: 10,
+                                }}>
+                                    <TextComponent style={styles.infoTitle}>Mô tả sản phẩm</TextComponent>
+                                    <TextComponent>Sản phẩm ....</TextComponent>
                                 </View>
                             </View>
-                        </TouchableOpacity>
+                            <TouchableOpacity
+                                onPress={() => {
+                                    navigate('Comment');
+                                }}
+                                style={{ backgroundColor: colors.white, marginBottom: 10 }}>
+                                <View style={[styles.horizontall, { marginBottom: 10 }]}>
+                                    <View
+                                        style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                        <Icon name='star' type='AntDesign' style={{ fontSize: 30, color: colors.yellow }} />
+                                        <TextComponent style={styles.danhgia}>Đánh Giá Sản Phẩm</TextComponent>
+                                    </View>
+                                    <TouchableOpacity>
+                                        <TextComponent style={{ fontSize: 12, color: colors.red }}>Xem Thêm >></TextComponent>
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={styles.viewAvatar}>
+                                    <FastImage style={styles.avatar}
+                                        source={{ uri: item.images[0] }}
+                                    />
+                                    <View>
+                                        <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
+                                        <TextComponent> San pham rat tot</TextComponent>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
 
-                    </ScrollView>
-                    <View style={styles.footer}>
-                        <ButtonComponent
-                            text='Thêm Vào Giỏ Hàng'
-                            styleText={{ color: colors.white, fontWeight: 'bold' }}
-                            style={{ backgroundColor: colors.red }}
-                            onPress={() => {
-                                let carts = this.props.carts.length > 0 ? this.props.carts : [];
-                                this.props.addProductToCart(item, carts)
-                            }}
-                        />
+                        </ScrollView>
+                        <View style={styles.footer}>
+                            <ButtonComponent
+                                text='Thêm Vào Giỏ Hàng'
+                                styleText={{ color: colors.white, fontWeight: 'bold' }}
+                                style={{ backgroundColor: colors.red }}
+                                onPress={() => {
+                                    this.props.addProductToCart(item);
+                                    Toast.show({
+                                        text: "Sản phẩm đã được thêm vào giỏ hàng",
+                                        buttonText: "Okay",
+                                        position: "top",
+                                        type: "success"
+                                    })
+                                }}
+                            />
+                        </View>
                     </View>
-                </View>
+                </Root>
             </SafeAreaView>
         );
     }

@@ -62,7 +62,10 @@ const NavStack = createStackNavigator({
     Detaill:{
         screen: Detaill,
         navigationOptions: {
-            header: null
+            title: 'Chi tiết sản phẩm',
+            headerStyle: {
+                backgroundColor: '#FFF',
+            },
         }
     },
     Comment: {

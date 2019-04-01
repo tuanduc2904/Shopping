@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text ,StyleSheet} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { colors } from "../../assets/color";
 import { connect } from 'react-redux';
 class Footer extends Component {
@@ -11,8 +11,8 @@ class Footer extends Component {
             <View style={styles.containerStyle}>
                 <View style={styles.buttonContainerStyle}>
                     <View style={styles.totalStyle}>
-                        <Text>Tổng - </Text>
-                        <Text>{this.props.totalMoney} đ</Text>
+                        <Text style={{ fontWeight: 'bold' }}>Tổng : </Text>
+                        <Text style={{ fontWeight: 'bold',color:'red' }}>{this.props.totalMoney} đ</Text>
                     </View>
                     <View style={styles.checkoutButtonStyle}>
                         <Text style={{ color: '#fff', fontWeight: 'bold' }}>Mua Hàng</Text>

@@ -11,8 +11,14 @@ const DEFAULT = {
 export default (state = DEFAULT, action) => {
     switch (action.type) {
         case ADD_PRODUCT_TO_CART:
+            let newCarts = [];
+            let isExist = state.carts.some(e => e.product.key === action.product.key);
+            if (isExist) {
+                newCarts = state.carts
+            }
+            else { newCarts = state.carts.concat({ product: action.product, quantity: 1 }) }
             return {
-                ...state, carts: state.carts.concat({ product: action.product, quantity: 1 })
+                ...state, carts: newCarts
             };
         case REMOVE_PRODUCT_TO_CART:
             return {
@@ -34,8 +40,9 @@ export default (state = DEFAULT, action) => {
                 })
             };
         case TOTAL_MONEY:
+            const total = state.carts.length > 0 ? state.carts.map(e => e.product.price * e.quantity).reduce((a, b) => a + b) : 0
             return {
-                ...state, totalMoney: state.carts.map(e => e.product.price * e.quantity)
+                ...state, totalMoney: total
             }
         case GET_CART:
             return {
