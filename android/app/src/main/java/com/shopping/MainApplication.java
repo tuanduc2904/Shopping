@@ -3,6 +3,7 @@ package com.shopping;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.rnfingerprint.FingerprintAuthPackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import com.imagepicker.ImagePickerPackage;
@@ -32,6 +33,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new FingerprintAuthPackage(),
             new PickerPackage(),
             new RNFetchBlobPackage(),
             new ImagePickerPackage(),

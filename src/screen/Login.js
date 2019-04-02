@@ -20,17 +20,36 @@ import { firebaseApp } from '../untils/firebase';
 // import { loginSuccess } from '../../../redux/actions/Authenticate';
 import { loginSuccess, skipLogin } from '../redux/actions/Authenticate';
 import { loadingShowLogin, loadingCloseLogin } from '../redux/actions/Loading';
-import Loading from '../Components/Loading'
+import Loading from '../Components/Loading';
+import TouchID from 'react-native-touch-id';
 import { NavigationActions, StackActions } from 'react-navigation';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
+
+const optionalConfigObject = {
+    title: "Authentication Required", // Android
+    color: "#e00606", // Android,
+    fallbackLabel: "Show Passcode" // iOS (if empty, then label is hidden)
+}
+
+
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: this.props.email,
+            email: '',
             password: '',
+            biometryType: null
+
         }
     }
 
+    componentDidMount() {
+        TouchID.isSupported()
+            .then(biometryType => {
+                this.setState({ biometryType });
+            })
+    }
 
     logInFail(error) {
         this.props.loadingCloseLogin();
@@ -40,6 +59,7 @@ class Login extends Component {
         }, 500);
 
     }
+
 
     LOGIN() {
         this.props.loadingShowLogin();
@@ -70,6 +90,28 @@ class Login extends Component {
         this.props.navigation.dispatch(resetAction);
     }
 
+    clickHandler() {
+        TouchID.isSupported()
+            .then(biometryType => {
+                if (biometryType === 'TouchID') {
+                    // Touch ID is supported on iOS
+                    TouchID.authenticate('Prompted message for TouchID').then(success => {
+                        // Success
+                    });
+                } else if (biometryType === 'FaceID') {
+                    // Face ID is supported on iOS
+                    TouchID.authenticate('Prompted message for FaceID').then(success => {
+                        // Success
+                    });
+                } else if (biometryType === true) {
+                    // Touch ID is supported on Android
+                }
+            })
+            .catch(error => {
+                // The device does not support Touch ID
+            });
+    }
+
     render() {
         return (
             <View>
@@ -96,14 +138,19 @@ class Login extends Component {
                             />
                         </View>
                     </View>
-
+                    <TouchableOpacity
+                        onPress={()=>{
+                            this.clickHandler();
+                        }}
+                        >
+                        <Icon name="md-finger-print" type="Ionicons" style={{fontSize:30}}/>
+                    </TouchableOpacity>
                     <ButtonComponent
                         text='Login'
-                        onPress={() =>
-                            this.LOGIN()
-                        }
+                        onPress={() => {
+                            this.LOGIN();
+                        }}
                     />
-
                     <View style={styles.btnSignIn}>
                         <ButtonComponent
                             text='Sign In'
@@ -167,3 +214,13 @@ const styles = StyleSheet.create({
     }
 
 })
+function authenticate() {
+    return TouchID.authenticate()
+        .then(success => {
+            AlertIOS.alert('Authenticated Successfully');
+        })
+        .catch(error => {
+            console.log(error)
+            AlertIOS.alert(error.message);
+        });
+}
