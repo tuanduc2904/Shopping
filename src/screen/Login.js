@@ -25,7 +25,10 @@ import TouchID from 'react-native-touch-id';
 import { NavigationActions, StackActions } from 'react-navigation';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-
+const optionalConfigObject = {
+    unifiedErrors: false,
+    passcodeFallback: false
+}
 
 
 class Login extends Component {
@@ -87,30 +90,40 @@ class Login extends Component {
     }
 
     clickHandler() {
-        TouchID.isSupported()
-            .then(biometryType => {
-                if (biometryType === 'TouchID') {
-                    TouchID.authenticate('Prompted message for TouchID').then(success => {
-                        this.props.loginSuccess(user.user);
-                        this.navigateScreen('Main');
+        TouchID.authenticate('to demo this react-native component', optionalConfigObject)
+            .then(success => {
+                this.props.loginSuccess(this.props.user);
+                this.navigateScreen('Main');
 
-                    });
-                } else if (biometryType === 'FaceID') {
-                    TouchID.authenticate('Prompted message for FaceID').then(success => {
-                        this.props.loginSuccess(user.user);
-                        this.navigateScreen('Main');
 
-                    });
-                } else if (biometryType === true) {
-                    TouchID.authenticate('Prompted message for FaceID').then(success => {
-                        this.props.loginSuccess(user.user);
-                        this.navigateScreen('Main');
-                    });
-                }
             })
             .catch(error => {
-                alert(`Thiết bị không được hỗ trợ`)
+                alert(error)
             });
+        // TouchID.isSupported()
+        //     .then(biometryType => {
+        //         if (biometryType === 'TouchID') {
+        //             TouchID.authenticate('Đăng nhập bằng vân tay').then(success => {
+        //                 this.props.loginSuccess(user.user);
+        //                 this.navigateScreen('Main');
+
+        //             });
+        //         } else if (biometryType === 'FaceID') {
+        //             TouchID.authenticate('Đăng nhập bằng vân tay').then(success => {
+        //                 this.props.loginSuccess(user.user);
+        //                 this.navigateScreen('Main');
+
+        //             });
+        //         } else if (biometryType === true) {
+        //             TouchID.authenticate('Đăng nhập bằng vân tay').then(success => {
+        //                 this.props.loginSuccess(user.user);
+        //                 this.navigateScreen('Main');
+        //             });
+        //         }
+        //     })
+        //     .catch(error => {
+        //         alert(`Thiết bị không được hỗ trợ`)
+        //     });
     }
 
     render() {
@@ -221,13 +234,3 @@ const styles = StyleSheet.create({
     }
 
 })
-function authenticate() {
-    return TouchID.authenticate()
-        .then(success => {
-            AlertIOS.alert('Authenticated Successfully');
-        })
-        .catch(error => {
-            console.log(error)
-            AlertIOS.alert(error.message);
-        });
-}
