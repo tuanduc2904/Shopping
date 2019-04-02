@@ -83,7 +83,12 @@ export const getOrder = () => {
                 let order = {};
                 order.key = item.key;
                 order.address = item.val().address;
-                order.carts = item.val().carts;
+                let carts = []
+                item.child(`carts`).forEach(product => {
+                    carts.push(product.val());
+                });
+                // console.log(JSON.stringify(carts))
+                order.carts = carts;
                 order.date = item.val().date;
                 order.status = item.val().status;
                 order.totalMoney = item.val().totalMoney;

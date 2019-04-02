@@ -16,7 +16,7 @@ import { updateProfile, logout } from '../redux/actions/Authenticate';
 import { getDefaulProduct } from '../redux/actions/Product';
 import { getDataCart } from '../redux/actions/Cart';
 import global from './global';
-import Loading from '../Components/Loading'
+import Loading from '../Components/Loading';
 
 class Main extends Component {
     constructor(props) {
@@ -87,7 +87,7 @@ class Main extends Component {
             <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
                 {this.props.isLoading ? <Loading /> : null}
                 {this.state.selectedTab === 'Profile' ? null :
-                    <HeaderMain selectedTabSearch={this.selectedTabSearch} navigation={this.props.navigation} />
+                    <HeaderMain selectedTabSearch={this.selectedTabSearch} navigate={this.props.navigation.navigate} />
                 }
                 <TabNavigator tabBarStyle={{ backgroundColor: colors.white }}>
                     <TabNavigator.Item
@@ -116,7 +116,7 @@ class Main extends Component {
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'Search'}
                         renderIcon={() => <Icon name='ios-search' style={{ fontSize: 27, color: '#707070' }} />}
-                        renderSelectedIcon={() => <Icon name='ios-search' 
+                        renderSelectedIcon={() => <Icon name='ios-search'
                             style={{ fontSize: 27, color: colors.red }} />}
                         // renderBadge={() => <CustomBadgeView />}
                         onPress={() => this.setState({ selectedTab: 'Search' })}>

@@ -61,9 +61,6 @@ class Home extends Component {
         this.listRef && this.listRef.scrollToIndex({ index, animated })
     }
 
-    componentWillMount() {
-
-    }
     componentDidMount() {
         setInterval(function () {
             const { sliderIndex, maxSlider } = this.state

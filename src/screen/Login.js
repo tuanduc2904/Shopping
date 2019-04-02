@@ -59,42 +59,27 @@ class Login extends Component {
 
     }
 
-
+    logFirebase() {
+        firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+            .then((user) => {
+                if (user !== null) {
+                    this.props.loadingCloseLogin();
+                    this.props.loginSuccess(user.user);
+                    this.navigateScreen('Main');
+                }
+            })
+            .catch(error =>
+                this.logInFail(error)
+            );
+    }
     LOGIN() {
         if (this.state.email === this.props.user.email) {
             this.props.loadingShowLogin();
-            firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-                .then((user) => {
-                    // console.log(user)
-                    if (user !== null) {
-                        this.props.loadingCloseLogin();
-                        this.props.loginSuccess(user.user);
-                        this.navigateScreen('Main');
-                    }
-                    else {
-                        console.log('null user')
-                    }
-                })
-                .catch(error =>
-                    this.logInFail(error)
-                );
+            this.logFirebase();
         } else {
             this.props.logout();
             this.props.loadingShowLogin();
-            firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-                .then((user) => {
-                    if (user !== null) {
-                        this.props.loadingCloseLogin();
-                        this.props.loginSuccess(user.user);
-                        this.navigateScreen('Main');
-                    }
-                    else {
-                        console.log('null user')
-                    }
-                })
-                .catch(error =>
-                    this.logInFail(error)
-                );
+            this.logFirebase();
         }
     }
     //ham khong cho bam quay lai
@@ -108,7 +93,7 @@ class Login extends Component {
         this.props.navigation.dispatch(resetAction);
     }
 
-    clickHandler() {
+    loginWithFingter() {
         if (this.state.email === this.props.user.email) {
             TouchID.authenticate('Đăng nhập bằng vân tay', optionalConfigObject)
                 .then(success => {
@@ -118,9 +103,6 @@ class Login extends Component {
                 .catch(error => {
                     // alert(error)
                 });
-        }
-        else {
-            alert(`Email không đúng`);
         }
 
     }
@@ -152,11 +134,11 @@ class Login extends Component {
                             />
                         </View>
                     </View>
-                    <View style={{marginTop:Dimens.screen.height/50,marginBottom:Dimens.screen.height/20}}>
+                    <View style={{ marginTop: Dimens.screen.height / 50, marginBottom: Dimens.screen.height / 20 }}>
                         <TouchableOpacity
                             onPress={() => {
                                 if (this.props.user.email !== '') {
-                                    this.clickHandler();
+                                    this.loginWithFingter();
                                 }
                                 else {
                                     alert(`Bạn phải đặng nhập cho lần sử dụng đầu tiên`)

@@ -22,23 +22,14 @@ import UpdateProfile from "./screen/UpdateProfile";
 import Main from "./screen/Main";
 import MyShop from './screen/MyShop'
 import PostProduct from "./screen/page/PostProduct";
-import Detaill from "./screen/page/Detaill";
+import Detaill from "./screen/Detaill";
 import Comment from './screen/page/Comment';
 import ManageOrder from "./screen/ManageOrder";
 import ProfileCart from "./screen/page/ProfileCart";
-import WaitingForReceive from "./screen/page/WaitingForReceive";
 import Notification from './screen/page/Notification'
 
 const NavStack = createStackNavigator({
-    // Notification:{
-    //     screen: Notification,
-    //     navigationOptions: {
-    //         title: 'Thông Báo',
-    //         headerStyle: {
-    //             backgroundColor: '#FFF',
-    //         },
-    //     }
-    // },
+
     SplashScreen: {
         screen: SplashScreen,
         navigationOptions: {
@@ -119,7 +110,7 @@ const NavStack = createStackNavigator({
             },
         }
     },
-    ProfileCart:{
+    ProfileCart: {
         screen: ProfileCart,
         navigationOptions: {
             title: 'Thông Tin Đơn Hàng',
@@ -128,8 +119,15 @@ const NavStack = createStackNavigator({
             },
         }
     },
-
-
+    Notification: {
+        screen: Notification,
+        navigationOptions: {
+            title: 'Thông Báo',
+            headerStyle: {
+                backgroundColor: '#FFF',
+            },
+        }
+    },
 
 
 
