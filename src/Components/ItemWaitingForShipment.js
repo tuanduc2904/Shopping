@@ -72,7 +72,7 @@ export default class ItemWaitingForShipment extends Component {
                             <View style={{ flexDirection: 'row', }}>
                                 <TextComponent>Tổng Thanh Toán: </TextComponent>
                                 <TextComponent
-                                    style={styles.money}>{item.product.price * item.quantity} đ</TextComponent>
+                                    style={styles.money}> {item.product.price * item.quantity} đ</TextComponent>
                             </View>
                         </View>
 

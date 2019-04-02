@@ -60,7 +60,7 @@ class Detaill extends Component {
                                 horizontal
                                 showsHorizontalScrollIndicator={false}
                                 pagingEnabled
-                                keyExtractor={(item,index) => index.toString()}
+                                keyExtractor={(item, index) => index.toString()}
                                 renderItem={({ item, i }) =>
                                     (
                                         <View key={i} style={{ height, width }}>
@@ -76,9 +76,15 @@ class Detaill extends Component {
                             <View style={{ backgroundColor: colors.white, marginBottom: 10 }}>
                                 <View style={styles.horizontall}>
                                     <TextComponent style={styles.name}>{this.state.item.productName}</TextComponent>
-                                    <TextComponent style={styles.money}>{this.state.item.price} đ</TextComponent>
+                                    <TextComponent style={styles.money}>Giá:  {this.state.item.price} đ</TextComponent>
                                 </View>
-
+                                <View style={{
+                                    width: '100%',
+                                    height: 1,
+                                    backgroundColor: colors.background,
+                                    marginTop: 1,
+                                    marginBottom: 1
+                                }} />
                                 <View style={styles.viewAvatar}>
                                     <FastImage style={styles.avatar}
                                         source={{ uri: this.state.item.avatarSource }}
@@ -86,13 +92,28 @@ class Detaill extends Component {
                                     <TextComponent style={styles.shopid}>{this.state.item.nameShop}</TextComponent>
                                 </View>
                                 <View style={{
+                                    width: '100%',
+                                    height: 1,
+                                    backgroundColor: colors.background,
+                                    marginTop: 1,
+                                    marginBottom: 1
+                                }} />
+                                <View style={{
                                     marginLeft: 10,
                                     marginRight: 10,
                                 }}>
                                     <TextComponent style={styles.infoTitle}>Mô tả sản phẩm</TextComponent>
-                                    <TextComponent>Sản phẩm ....</TextComponent>
+                                    
+                                    <TextComponent style={{ paddingBottom: 30, paddingTop: 15 }}>{this.state.item.description}</TextComponent>
                                 </View>
                             </View>
+                            <View style={{
+                                width: '100%',
+                                height: 1,
+                                backgroundColor: colors.background,
+                                marginTop: 1,
+                                marginBottom: 1
+                            }} />
                             <TouchableOpacity
                                 onPress={() => {
                                     navigate('Comment');
@@ -185,7 +206,9 @@ const styles = StyleSheet.create({
     },
     money: {
         color: colors.red,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        padding: 10,
+        marginRight: 10
     },
     horizontall: {
         flexDirection: 'row',
@@ -218,6 +241,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: colors.red,
         fontSize: 15,
+        paddingTop: 10,
 
     },
     danhgia: {
