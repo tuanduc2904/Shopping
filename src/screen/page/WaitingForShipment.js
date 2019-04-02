@@ -31,7 +31,7 @@ export default class WaitingForShipment extends Component {
                                 />
                             </View>
                             <View>
-                                
+
                             </View>
                         </View>
                     </View>

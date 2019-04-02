@@ -25,6 +25,8 @@ import PostProduct from "./screen/page/PostProduct";
 import Detaill from "./screen/page/Detaill";
 import Comment from './screen/page/Comment';
 import ManageOrder from "./screen/ManageOrder";
+import ProfileCart from "./screen/page/ProfileCart";
+import WaitingForReceive from "./screen/page/WaitingForReceive";
 
 
 const NavStack = createStackNavigator({
@@ -108,6 +110,17 @@ const NavStack = createStackNavigator({
             },
         }
     },
+    ProfileCart:{
+        screen: ProfileCart,
+        navigationOptions: {
+            title: 'Thông Tin Đơn Hàng',
+            headerStyle: {
+                backgroundColor: '#FFF',
+            },
+        }
+    },
+
+
 
 
 })

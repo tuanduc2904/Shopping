@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
     Platform,
     StyleSheet,
@@ -21,51 +21,111 @@ export default class WaitingForReceive extends Component {
             user: {}
         }
     }
+
     render() {
+        const navigate = this.props.navigate;
         return (
             <View style={styles.container}>
-                <Card style={[styles.card]}>
-                    <View>
-                        <View style={[styles.viewHorizontal, {marginTop: 5, marginBottom: 5}]}>
-                            <View style={styles.viewHorizontalLeft}>
-                                <FastImage style={styles.avatar}
-                                    // source={{uri: item.product.avatarSource}}
-                                />
-                            </View>
-
-                        </View>
-                    </View>
-                    <View style={{
-                        width: '100%',
-                        height: 0.5,
-                        backgroundColor: colors.background,
-                        marginTop: 5
-                    }}/>
-                    <View style={[styles.viewItem]}>
-                        <FastImage style={styles.imageNumColumns}
-                            // source={{uri: item.product.images[0]}}
-                        />
+                <TouchableOpacity   onPress={()=> {navigate('ProfileCart')}}>
+                    <Card style={[styles.card]}>
                         <View>
-                            <Text style={{
-                                marginTop: 5,
-                                fontSize: 17,
-                                fontWeight: '600'
-                            }}>name</Text>
-                            <TextComponent
-                                style={styles.money}>2000 đ</TextComponent>
-                            <TouchableOpacity style={styles.checkoutButtonStyle}
-                                // onPress={() => {
-                                //     this.checkout()}}
-                            >
-                                <Text style={{ color: '#fff', fontWeight: 'bold',fontSize:16 }}>Đánh Giá</Text>
+                            <View style={[styles.viewHorizontal, {marginTop: 5, marginBottom: 5}]}>
+                                <View style={styles.viewHorizontalLeft}>
+                                    <FastImage style={styles.avatar}
+                                        // source={{uri: item.product.avatarSource}}
+                                    />
+                                    <TextComponent>Ken</TextComponent>
+                                </View>
 
-                            </TouchableOpacity>
-
+                            </View>
                         </View>
-                    </View>
-                </Card>
+                        <View style={{
+                            width: '100%',
+                            height: 1,
+                            backgroundColor: colors.background,
+                            marginTop: 5
+                        }}/>
+                        <View style={[styles.viewItem]}>
+                            <FastImage style={styles.imageNumColumns}
+                                // source={{uri: item.product.images[0]}}
+                            />
+                            <View>
+                                <Text style={{
+                                    marginTop: 5,
+                                    fontSize: 17,
+                                    fontWeight: '600'
+                                }}>name</Text>
 
 
+                            </View>
+                        </View>
+                        <View style={{
+                            width: '100%',
+                            height: 1,
+                            backgroundColor: colors.background,
+                            marginTop: 10,
+                            marginBottom: 10
+                        }}/>
+                        <View style={[styles.viewHorizontal]}>
+                            <TextComponent>5 sản phẩm</TextComponent>
+                            <View style={{flexDirection: 'row',}}>
+                                <TextComponent>Tổng Thanh Toán: </TextComponent>
+                                <TextComponent
+                                    style={styles.money}>2000 đ</TextComponent>
+                            </View>
+                        </View>
+                        <View style={{
+                            width: '100%',
+                            height: 1,
+                            backgroundColor: colors.background,
+                            marginTop: 10,
+                            marginBottom: 10
+                        }}/>
+                        <View style={{ alignItems: 'center',justifyContent:'center'}}>
+
+                            <TextComponent style={{color: colors.mediumGray, fontSize: 12, marginLeft: 10}}>Xem Thêm</TextComponent>
+                        </View>
+
+                        <View style={{
+                            width: '100%',
+                            height: 1,
+                            backgroundColor: colors.background,
+                            marginTop: 10,
+                            marginBottom: 10
+                        }}/>
+                        <View style={{marginLeft: 10, flexDirection: 'row', alignItems: 'center'}}>
+                            <Icon name='local-shipping' type='MaterialIcons'
+                                  style={{fontSize: 20, color: colors.green,}}/>
+                            <TextComponent style={{color: colors.green, fontSize: 12, marginLeft: 10}}>Đang chờ lấy </TextComponent>
+                        </View>
+                        <View style={{
+                            width: '100%',
+                            height: 1,
+                            backgroundColor: colors.background,
+                            marginTop: 10,
+                            marginBottom: 10
+                        }}/>
+                        <View style={[styles.viewHorizontal]}>
+                            <TextComponent style={{width: 200, color: colors.mediumGray}}>Nhận sản phẩm muộn nhất vào
+                                ngày 30-04-2019 </TextComponent>
+                            {/*<TouchableOpacity style={styles.checkoutButtonStyle}*/}
+                                {/*// onPress={() => {*/}
+                                {/*//     this.checkout()}}*/}
+                            {/*>*/}
+                                {/*<Text style={{color: '#fff', fontWeight: 'bold', fontSize: 16}}>Đánh Giá</Text>*/}
+
+                            {/*</TouchableOpacity>*/}
+                        </View>
+                        <View style={{
+                            width: '100%',
+                            height: 1,
+                            backgroundColor: colors.background,
+                            marginTop: 10,
+                            marginBottom: 10
+                        }}/>
+                    </Card>
+
+                </TouchableOpacity>
             </View>
         );
     }
@@ -175,7 +235,7 @@ const styles = StyleSheet.create({
     money: {
         color: colors.red,
         fontWeight: 'bold',
-        fontSize: 17
+        fontSize: 15
     },
     avatar: {
         width: 40,
@@ -200,8 +260,7 @@ const styles = StyleSheet.create({
         paddingRight: 10,
         paddingLeft: 10,
         borderRadius: 3,
-        marginTop:35,
-        marginLeft:Dimens.screen.width/3.5
+
     },
 
 
