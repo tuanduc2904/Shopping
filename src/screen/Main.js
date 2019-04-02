@@ -115,9 +115,9 @@ class Main extends Component {
 
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'Search'}
-                        renderIcon={() => <Icon name='isv' type='AntDesign' style={{ fontSize: 25, color: '#707070' }} />}
-                        renderSelectedIcon={() => <Icon name='isv' type='AntDesign'
-                            style={{ fontSize: 25, color: colors.red }} />}
+                        renderIcon={() => <Icon name='ios-search' style={{ fontSize: 27, color: '#707070' }} />}
+                        renderSelectedIcon={() => <Icon name='ios-search' 
+                            style={{ fontSize: 27, color: colors.red }} />}
                         // renderBadge={() => <CustomBadgeView />}
                         onPress={() => this.setState({ selectedTab: 'Search' })}>
                         <Search navigation={this.props.navigation} />
