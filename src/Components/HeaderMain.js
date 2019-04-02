@@ -20,7 +20,7 @@ class HeaderMain extends Component {
                 <View style={styles.viewHorizontal}>
                     {/* <Icon name='search1' type='AntDesign' style={{ fontSize: 30, color: colors.red }} /> */}
                     <Item>
-                        <Icon name="ios-search" onPress={() => this.props.searchProductName(this.state.text)} />
+                        <Icon name="ios-search"/>
                         <Input placeholder="Search"
                             clearButtonMode='always'
                             onChangeText={(text) => {
