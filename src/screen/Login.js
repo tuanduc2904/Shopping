@@ -26,18 +26,13 @@ import { NavigationActions, StackActions } from 'react-navigation';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
-const optionalConfigObject = {
-    title: "Authentication Required", // Android
-    color: "#e00606", // Android,
-    fallbackLabel: "Show Passcode" // iOS (if empty, then label is hidden)
-}
 
 
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
+            email: this.props.user.email,
             password: '',
             biometryType: null
 
@@ -45,6 +40,7 @@ class Login extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props.user.email);
         TouchID.isSupported()
             .then(biometryType => {
                 this.setState({ biometryType });
@@ -94,21 +90,26 @@ class Login extends Component {
         TouchID.isSupported()
             .then(biometryType => {
                 if (biometryType === 'TouchID') {
-                    // Touch ID is supported on iOS
                     TouchID.authenticate('Prompted message for TouchID').then(success => {
-                        // Success
+                        this.props.loginSuccess(user.user);
+                        this.navigateScreen('Main');
+
                     });
                 } else if (biometryType === 'FaceID') {
-                    // Face ID is supported on iOS
                     TouchID.authenticate('Prompted message for FaceID').then(success => {
-                        // Success
+                        this.props.loginSuccess(user.user);
+                        this.navigateScreen('Main');
+
                     });
                 } else if (biometryType === true) {
-                    // Touch ID is supported on Android
+                    TouchID.authenticate('Prompted message for FaceID').then(success => {
+                        this.props.loginSuccess(user.user);
+                        this.navigateScreen('Main');
+                    });
                 }
             })
             .catch(error => {
-                // The device does not support Touch ID
+                alert(`Thiết bị không được hỗ trợ`)
             });
     }
 
@@ -125,6 +126,7 @@ class Login extends Component {
                     <View style={styles.body}>
                         <View style={styles.viewTextInput}>
                             <TextInputComponent
+                                value={this.state.email}
                                 placeholder='Email'
                                 onChangeText={(email) => this.setState({ email })}
                             />
@@ -139,11 +141,16 @@ class Login extends Component {
                         </View>
                     </View>
                     <TouchableOpacity
-                        onPress={()=>{
-                            this.clickHandler();
+                        onPress={() => {
+                            if (this.props.user.email !== '') {
+                                this.clickHandler();
+                            }
+                            else {
+                                alert(`Bạn phải đặng nhập cho lần sử dụng đầu tiên`)
+                            }
                         }}
-                        >
-                        <Icon name="md-finger-print" type="Ionicons" style={{fontSize:30}}/>
+                    >
+                        <Icon name="md-finger-print" type="Ionicons" style={{ fontSize: 30 }} />
                     </TouchableOpacity>
                     <ButtonComponent
                         text='Login'

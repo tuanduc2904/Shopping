@@ -134,7 +134,7 @@ class Profile extends Component {
 
                                     {
                                         text: 'OK', onPress: () => {
-                                            this.props.logout();
+                                            // this.props.logout();
                                             this.navigateScreen('Login');
                                         }
                                     },

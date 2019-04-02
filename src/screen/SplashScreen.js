@@ -9,21 +9,22 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, StatusBar, Button, ImageBackground } from 'react-native';
-import {Dimens} from '../assets/Dimens'
+import { Dimens } from '../assets/Dimens'
 import { Icon } from "native-base";
 import { colors } from "../assets/color";
 import AutoTypingText from 'react-native-auto-typing-text';
 import { connect } from 'react-redux'
 import { NavigationActions, StackActions } from 'react-navigation';
+import { getUserLogin } from '../redux/actions/Authenticate'
 
 class SplashScreen extends Component {
 
 
     componentDidMount() {
+        this.props.getUserLogin();
         setTimeout(() => {
             this.navigateScreen('Login')
         }, 3000);
-
 
     }
 
@@ -72,16 +73,9 @@ class SplashScreen extends Component {
     }
 }
 
-// export default SplashScreen;
 
 
-function mapStateToProp(state) {
-    return {
-        Auth: state.Auth,
-    }
-}
-
-export default connect(mapStateToProp)(SplashScreen)
+export default connect(null, { getUserLogin })(SplashScreen)
 const styles = StyleSheet.create({
     container: {
         flex: 1,

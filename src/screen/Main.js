@@ -66,6 +66,7 @@ class Main extends Component {
         if (user.loggedIn) {
             firebaseApp.database().ref('user').child(user.uid).on('value', snapshot => {
                 if (snapshot.val()) {
+                    
                     this.props.updateProfile(snapshot.val());
                 }
                 else {
