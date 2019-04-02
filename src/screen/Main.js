@@ -13,11 +13,10 @@ import HeaderMain from '../Components/HeaderMain';
 import { connect } from 'react-redux';
 import { firebaseApp } from '../untils/firebase';
 import { updateProfile, logout } from '../redux/actions/Authenticate';
-import { loadingShowLogin } from '../redux/actions/Loading';
 import { getDefaulProduct } from '../redux/actions/Product';
 import { getDataCart } from '../redux/actions/Cart';
 import global from './global';
-
+import Loading from '../Components/Loading'
 
 class Main extends Component {
     constructor(props) {
@@ -86,6 +85,7 @@ class Main extends Component {
     render() {
         return (
             <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
+                {this.props.isLoading ? <Loading /> : null}
                 {this.state.selectedTab === 'Profile' ? null :
                     <HeaderMain selectedTabSearch={this.selectedTabSearch} />
                 }
@@ -164,7 +164,8 @@ class Main extends Component {
 function mapStateToProps(state) {
     return {
         user: state.Auth,
-        cart: state.Cart
+        cart: state.Cart,
+        isLoading: state.Products.isLoading
     }
 }
-export default connect(mapStateToProps, { updateProfile, logout, loadingShowLogin, getDefaulProduct, getDataCart })(Main);
+export default connect(mapStateToProps, { updateProfile, logout, getDefaulProduct, getDataCart })(Main);
