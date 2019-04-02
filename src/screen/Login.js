@@ -113,61 +113,63 @@ class Login extends Component {
                 <ImageBackground
                     source={require('../assets/images/background-main.png')}
                     style={styles.bg}>
-                    <View style={{ alignItems: 'center' }}>
-                        <Icon name='shopping-bag' type='FontAwesome5'
-                            style={{ fontSize: 100, color: colors.red }} />
-                    </View>
-                    <View style={styles.body}>
-                        <View style={styles.viewTextInput}>
-                            <TextInputComponent
-                                value={this.state.email}
-                                placeholder='Email'
-                                onChangeText={(email) => this.setState({ email })}
-                            />
+                    <View style={styles.container}>
+                        <View style={{ alignItems: 'center' }}>
+                            <Icon name='shopping-bag' type='FontAwesome5'
+                                style={{ fontSize: 100, color: colors.red }} />
                         </View>
-                        <View style={styles.viewTextInput}>
-                            <TextInputComponent
-                                placeholder='Mật khẩu'
-                                onChangeText={(password) => this.setState({ password })}
-                                type='password'
-                                secureTextEntry={true}
-                            />
+                        <View style={{ marginTop: 50 }}>
+                            <View style={styles.viewTextInput}>
+                                <TextInputComponent
+                                    value={this.state.email}
+                                    placeholder='Email'
+                                    onChangeText={(email) => this.setState({ email })}
+                                />
+                            </View>
+                            <View style={styles.viewTextInput}>
+                                <TextInputComponent
+                                    placeholder='Mật khẩu'
+                                    onChangeText={(password) => this.setState({ password })}
+                                    type='password'
+                                    secureTextEntry={true}
+                                />
+                            </View>
                         </View>
-                    </View>
-                    <View style={{ marginTop: Dimens.screen.height / 50, marginBottom: Dimens.screen.height / 20 }}>
-                        <TouchableOpacity
-                            onPress={() => {
-                                if (this.props.user.email !== '') {
-                                    this.loginWithFingter();
-                                }
-                                else {
-                                    alert(`Bạn phải đặng nhập cho lần sử dụng đầu tiên`)
-                                }
-                            }}
-                        >
-                            <Icon name="md-finger-print" type="Ionicons" style={{ fontSize: 30 }} />
-                        </TouchableOpacity>
-                    </View>
-                    <ButtonComponent
-                        text='Login'
-                        onPress={() => {
-                            this.LOGIN();
-                        }}
-                    />
-                    <View style={styles.btnSignIn}>
+                        <View style={{ paddingBottom: 10 }}>
+                            <TouchableOpacity
+                                onPress={() => {
+                                    if (this.props.user.email !== '') {
+                                        this.loginWithFingter();
+                                    }
+                                    else {
+                                        alert(`Bạn phải đặng nhập cho lần sử dụng đầu tiên`)
+                                    }
+                                }}
+                            >
+                                <Icon name="md-finger-print" type="Ionicons" style={{ fontSize: 36,color:'red' }} />
+                            </TouchableOpacity>
+                        </View>
                         <ButtonComponent
-                            text='Sign In'
-                            onPress={() => this.props.navigation.navigate('SignUp')}
-                        />
-                    </View>
-                    <View style={styles.footer}>
-                        <Text> </Text>
-                        <TextComponent style={styles.text}
+                            text='Login'
                             onPress={() => {
-                                this.props.skipLogin();
-                                this.props.navigation.navigate('Main')
+                                this.LOGIN();
                             }}
-                        >Bỏ Qua</TextComponent>
+                        />
+                        <View style={styles.btnSignIn}>
+                            <ButtonComponent
+                                text='Sign In'
+                                onPress={() => this.props.navigation.navigate('SignUp')}
+                            />
+                        </View>
+                        <View style={styles.footer}>
+                            <Text> </Text>
+                            <TextComponent style={styles.text}
+                                onPress={() => {
+                                    this.props.skipLogin();
+                                    this.props.navigation.navigate('Main')
+                                }}
+                            >Bỏ Qua</TextComponent>
+                        </View>
                     </View>
                 </ImageBackground>
                 {this.props.isLoading ? <Loading /> : null}
@@ -209,7 +211,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '90%',
-        marginTop: Dimens.screen.height / 8
+        position: 'absolute', left:0, right: 30, bottom: 30
+
     },
     text: {
         fontSize: 18,

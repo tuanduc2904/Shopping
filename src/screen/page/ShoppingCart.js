@@ -39,7 +39,7 @@ class ShoppingCart extends Component {
     render() {
         return (
             <SafeAreaView style={styles.saf}>
-               
+
                 {this.props.isLoading ? <Loading /> : null}
                 {this.props.carts.length > 0 ?
                     <View style={styles.container}>
@@ -57,6 +57,7 @@ class ShoppingCart extends Component {
                                                         <FastImage style={styles.avatar}
                                                             source={{ uri: item.product.avatarSource }}
                                                         />
+                                                        <Text>{item.product.nameShop}</Text>
                                                     </View>
                                                     <View>
                                                         <TouchableOpacity
@@ -99,16 +100,17 @@ class ShoppingCart extends Component {
                                                             }}
                                                             style={{
                                                                 borderRadius: 15,
-                                                                backgroundColor: colors.red,
+                                                                // backgroundColor: colors.red,
                                                                 height: 30,
                                                                 width: 30,
                                                                 justifyContent: 'center',
                                                                 alignItems: 'center'
                                                             }}>
                                                             <Icon
-                                                                name="ios-remove"
+                                                                name="ios-arrow-dropleft"
+                                                                type ="Ionicons"
                                                                 size={25}
-                                                                style={{ color: colors.white }}
+                                                                style={{ color: colors.mediumGray }}
                                                             />
                                                         </TouchableOpacity>
                                                         <Text style={{ fontSize: 20, marginLeft: 5, marginRight: 5 }}>{item.quantity}</Text>
@@ -119,15 +121,16 @@ class ShoppingCart extends Component {
                                                             }}
                                                             style={{
                                                                 borderRadius: 15,
-                                                                backgroundColor: colors.red,
+                                                                // backgroundColor: colors.red,
                                                                 height: 30, width: 30,
                                                                 justifyContent: 'center',
                                                                 alignItems: 'center'
                                                             }}>
                                                             <Icon
-                                                                name="ios-add"
+                                                                name="ios-arrow-dropright"
+                                                                type="Ionicons"
                                                                 size={25}
-                                                                style={{ color: colors.white }}
+                                                                style={{ color: colors.mediumGray }}
                                                             />
                                                         </TouchableOpacity>
 

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {
-    StyleSheet,
-    View, FlatList
-} from 'react-native';
+    StyleSheet,View, FlatList} from 'react-native';
 import ItemWaitingForReceive from '../../Components/ItemWaitingForReceive'
 import { colors } from "../../assets/color";
 import { connect } from 'react-redux';
