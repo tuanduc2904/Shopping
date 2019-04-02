@@ -1,5 +1,5 @@
 import {
-    TOTAL_MONEY, ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_TO_CART, INCR_QUANTITY, DECR_QUANTITY, GET_CART
+    TOTAL_MONEY, ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_TO_CART, INCR_QUANTITY, DECR_QUANTITY, GET_CART, REMOVE_ALL_CART
 } from './types';
 import { saveCart, getCart } from '../../untils/asyncStorage';
 
@@ -22,6 +22,19 @@ const addtocarts = (product) => {
     return {
         type: ADD_PRODUCT_TO_CART,
         product
+    }
+}
+
+export const removeAllCarts = () => {
+    return {
+        type: REMOVE_ALL_CART
+    }
+}
+
+export const removeAllCart = () => {
+    return (dispatch) => {
+        saveCart([]);
+        dispatch(removeAllCarts());
     }
 }
 

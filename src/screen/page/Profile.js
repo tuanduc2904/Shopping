@@ -20,7 +20,7 @@ import { colors } from "../../assets/color";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import { firebaseApp } from "../../untils/firebase";
 import FastImage from "react-native-fast-image";
-import { Button, Card,Icon } from 'native-base'
+import { Button, Card, Icon } from 'native-base'
 import { connect } from 'react-redux'
 import Icons from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
@@ -70,31 +70,31 @@ class Profile extends Component {
 
                     <Card style={[styles.card, styles.row]}>
                         <TouchableOpacity
-                                          onPress={() => {
-                                              this.props.navigation.navigate('ManageCart');
-                                          }}>
-                        <Text style={{ marginTop: 5, marginBottom: 5 }}>Quản lý đơn hàng: </Text>
-                        <View style={styles.order}>
-                            <View style={styles.orderChild}>
-                                <View style={{ alignItems: 'center' }}>
-                                    <MaterialIcons name="present-to-all"  color={colors.red} size={45}/>
-                                    <Text styes={styles.textCenter}>Chuyển hàng </Text>
+                            onPress={() => {
+                                this.props.navigation.navigate('ManageOrder');
+                            }}>
+                            <Text style={{ marginTop: 5, marginBottom: 5 }}>Quản lý đơn hàng: </Text>
+                            <View style={styles.order}>
+                                <View style={styles.orderChild}>
+                                    <View style={{ alignItems: 'center' }}>
+                                        <MaterialIcons name="present-to-all" color={colors.red} size={45} />
+                                        <Text styes={styles.textCenter}>Chuyển hàng </Text>
+                                    </View>
+                                </View>
+                                <View style={styles.orderChild}>
+                                    <View style={{ alignItems: 'center' }}>
+                                        <MaterialIcons name="local-shipping" styes={styles.textCenter} color={colors.red}
+                                            size={45} />
+                                        <Text styes={styles.textCenter}>Đang giao</Text>
+                                    </View>
+                                </View>
+                                <View style={styles.orderChild}>
+                                    <View style={{ alignItems: 'center' }}>
+                                        <Icons name="gift" styes={styles.textCenter} color={colors.red} size={45} />
+                                        <Text styes={styles.textCenter}>Đã nhận</Text>
+                                    </View>
                                 </View>
                             </View>
-                            <View style={styles.orderChild}>
-                                <View style={{ alignItems: 'center' }}>
-                                    <MaterialIcons name="local-shipping" styes={styles.textCenter} color={colors.red}
-                                        size={45} />
-                                    <Text styes={styles.textCenter}>Đang giao</Text>
-                                </View>
-                            </View>
-                            <View style={styles.orderChild}>
-                                <View style={{ alignItems: 'center' }}>
-                                    <Icons name="gift" styes={styles.textCenter} color={colors.red} size={45} />
-                                    <Text styes={styles.textCenter}>Đã nhận</Text>
-                                </View>
-                            </View>
-                        </View>
                         </TouchableOpacity>
                     </Card>
                     <TouchableOpacity

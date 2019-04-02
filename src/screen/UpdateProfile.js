@@ -31,7 +31,7 @@ window.Blob = Blob;
 const uploadImage = (uri, uid, mime = 'application/octet-stream') => {
     return new Promise((resolve, reject) => {
         const uploadUri = Platform.OS === 'ios' ? uri.replace('file://', '') : uri;
-        console.log('uri : ' + uploadUri);
+
         const sessionID = uid;
         // let uploadBlob = null;
         const imageRef = storage.ref('avatarUser').child(`${sessionID}.jpg`);
@@ -90,7 +90,7 @@ class UpdateProfile extends Component {
                     })
                     .catch(err => {
                         this.setState({ loadingImage: false })
-                        console.log(err)
+
                     })
 
                 // const source = { uri: response.uri };

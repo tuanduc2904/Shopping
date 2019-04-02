@@ -9,7 +9,7 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, StatusBar, ImageBackground, Alert } from 'react-native';
-import {Dimens} from '../assets/Dimens'
+import { Dimens } from '../assets/Dimens'
 import { Icon, Button, Toast } from "native-base";
 import { colors } from "../assets/color";
 import ButtonComponent from "../Common/ButtonComponent/ButtonComponent";
@@ -26,9 +26,8 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
+            email: this.props.email,
             password: '',
-
         }
     }
 
@@ -129,7 +128,7 @@ class Login extends Component {
 
 function mapStateToProps(state) {
     return {
-        Auth: state.Auth,
+        user: state.Auth,
         isLoading: state.Loading.isLoadingLogin
     }
 }
@@ -147,8 +146,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     body: {
-        marginTop: Dimens.screen.height/10,
-        marginBottom: Dimens.screen.height/10
+        marginTop: Dimens.screen.height / 10,
+        marginBottom: Dimens.screen.height / 10
     },
     viewTextInput: {
         height: 60
@@ -160,7 +159,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '90%',
-        marginTop: Dimens.screen.height/8
+        marginTop: Dimens.screen.height / 8
     },
     text: {
         fontSize: 18,

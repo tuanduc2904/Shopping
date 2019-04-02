@@ -62,7 +62,7 @@ class SplashScreen extends Component {
 
                                 }}
                                 onComplete={() => {
-                                    console.log('done');
+
                                 }} />
                         </View>
                     </View>

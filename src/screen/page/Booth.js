@@ -21,9 +21,7 @@ class Booth extends Component {
 
         }
     }
-    componentDidMount() {
-        console.log(this.props.nameProducts)
-    }
+  
 
 
 

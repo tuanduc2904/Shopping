@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/NSDictionary+FIRMessaging.m \
-  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/NSDictionary+FIRMessaging.h
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/NSDictionary+FIRMessaging.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/NSDictionary+FIRMessaging.h

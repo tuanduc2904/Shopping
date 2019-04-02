@@ -13,7 +13,7 @@ import FastImage from "react-native-fast-image";
 import {Dimens} from "../../assets/Dimens";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 
-export default class Receive extends Component {
+export default class WaitingForReceive extends Component {
     constructor(props) {
         super(props);
         this.state = {

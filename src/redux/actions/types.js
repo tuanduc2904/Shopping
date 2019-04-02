@@ -15,6 +15,18 @@ export const INCR_QUANTITY = "INCR_QUANTITY";
 export const DECR_QUANTITY = "DECR_QUANTITY";
 export const TOTAL_MONEY = "TOTAL_MONEY";
 export const GET_CART = "GET_CART"
+export const REMOVE_ALL_CART = "REMOVE_ALL_CART"
+// order
+
+export const UPDATE_MYORDERING = "UPDATE_MYORDERING";
+export const UPDATE_MYSELLING = "UPDATE_MYSELLING";
+export const LOADING_ORDER = "LOADING_ORDER";
+export const FINISH_ORDER = "FINISH_ORDER";
+export const FINISH_ADD_ORDER = "FINISH_ADD_ORDER";
+export const DONE_ADD_ORDER = "DONE_ADD_ORDER"
+
+
+
 
 
 

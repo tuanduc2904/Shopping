@@ -3,38 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>logFormatVersion</key>
-	<integer>9</integer>
+	<integer>10</integer>
 	<key>logs</key>
-	<dict>
-		<key>5FD18536-13AD-4B1D-A055-692A74005DFF</key>
-		<dict>
-			<key>className</key>
-			<string>IDECommandLineBuildLog</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>5FD18536-13AD-4B1D-A055-692A74005DFF.xcactivitylog</string>
-			<key>highLevelStatus</key>
-			<string>E</string>
-			<key>schemeIdentifier-containerName</key>
-			<string>Shopping project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>Shopping</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Building workspace Shopping with scheme Shopping and configuration Debug</string>
-			<key>timeStartedRecording</key>
-			<real>575811511.595312</real>
-			<key>timeStoppedRecording</key>
-			<real>575811515.71448004</real>
-			<key>title</key>
-			<string>Building workspace Shopping with scheme Shopping and configuration Debug</string>
-			<key>uniqueIdentifier</key>
-			<string>5FD18536-13AD-4B1D-A055-692A74005DFF</string>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

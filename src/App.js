@@ -24,7 +24,7 @@ import MyShop from './screen/MyShop'
 import PostProduct from "./screen/page/PostProduct";
 import Detaill from "./screen/page/Detaill";
 import Comment from './screen/page/Comment';
-import ManageCart from "./screen/page/ManageCart";
+import ManageOrder from "./screen/ManageOrder";
 
 
 const NavStack = createStackNavigator({
@@ -62,7 +62,7 @@ const NavStack = createStackNavigator({
             header: null
         }
     },
-    Detaill:{
+    Detaill: {
         screen: Detaill,
         navigationOptions: {
             title: 'Chi tiết sản phẩm',
@@ -80,8 +80,8 @@ const NavStack = createStackNavigator({
             },
         }
     },
-    ManageCart: {
-        screen: ManageCart,
+    ManageOrder: {
+        screen: ManageOrder,
         navigationOptions: {
             title: 'Quản Lý Đơn Hàng',
             headerStyle: {

@@ -9,7 +9,6 @@ import {
 class Products extends Component {
 
     renderProducts = (products) => {
-        console.log(products)
         return products.map((item, index) => {
             return (
                 <View key={index} style={{ padding: 20 }}>

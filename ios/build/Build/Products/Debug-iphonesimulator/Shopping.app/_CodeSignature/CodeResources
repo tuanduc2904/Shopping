@@ -10,7 +10,7 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		eKeaM1D9Pwm0TS/vH9dB6I2vzkY=
+		Q0djNpJLJ/0brUmdU6Ty0gs9Eno=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -46,39 +46,39 @@
 		</data>
 		<key>Frameworks/QBImagePicker.framework/Info.plist</key>
 		<data>
-		SLgFikMqQJdpDXBnqpUGtkGiYjA=
+		645ti86xS7yRXuommPTecvtTguE=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker</key>
 		<data>
-		MrTzPjat79EEF1LoPufzCGRE6HU=
+		UQb5r0YGsw4BirjZYmFeqs4MvtE=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/Info.plist</key>
 		<data>
-		iwZHbHPu3m3FYRI+FCDLbHeFs44=
+		KG+MAARMrEL3ddhnu29ufvFASGw=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QBAlbumsNavigationController.nib</key>
 		<data>
-		CNaPukcGmCwDZNqrBLX42txCXUw=
+		k/IRm7zdoMWunjwVYVMm96ZYHB4=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QBAlbumsViewController.nib</key>
 		<data>
-		Jzuu5bOyyKCNA8ccvBilFMVAbKg=
+		WnOLDY748Vhg8SPx34NK7tpzANA=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QBAssetsViewController.nib</key>
 		<data>
-		VANfymvub8qcOP+DkaXbupqk6ag=
+		xVeWI3g0YISCMAHfNT5XiDNUUY8=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QL5-wR-LYt-view-66K-TS-Yoc.nib</key>
 		<data>
-		GHGifCaJTL5fBjMZtPmlX2/9qac=
+		CzmyOX3qfQjJA2fnJRwXNsA8d5g=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QiH-NZ-ZGN-view-sD2-zK-ryo.nib</key>
 		<data>
-		h6K3uByWYguf03aRA4ZeqCORL+w=
+		6xCOmY0RO7GpkDVuHZDPHmaRDWQ=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/_CodeSignature/CodeResources</key>
 		<data>
-		9CN4IhMAgH9yIT9R/fI4aWyr1vw=
+		mYyh+ue1NPl/dgDVNx19PzsxHyc=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/de.lproj/QBImagePicker.strings</key>
 		<dict>
@@ -145,11 +145,11 @@
 		</dict>
 		<key>Frameworks/RSKImageCropper.framework/Info.plist</key>
 		<data>
-		aiF2xEPKGK38JWRNm/MrkuTFjp8=
+		3cqhkAwfTB98VYvdMeZYPcS4i4Y=
 		</data>
 		<key>Frameworks/RSKImageCropper.framework/RSKImageCropper</key>
 		<data>
-		nBSCjzAIAFiZxerhXKwJkO7Xu8Q=
+		bNw4sHdN4l31o8dUz0Mjocq0sW0=
 		</data>
 		<key>Frameworks/RSKImageCropper.framework/RSKImageCropperStrings.bundle/ar.lproj/RSKImageCropper.strings</key>
 		<dict>
@@ -432,7 +432,7 @@
 		</dict>
 		<key>Frameworks/RSKImageCropper.framework/_CodeSignature/CodeResources</key>
 		<data>
-		W1IpME2dQ12P+/gewWK/Pl1O4Ww=
+		D5axiXwVOFUEmiFgVBSX++r9yVg=
 		</data>
 		<key>Frameworks/XCTest.framework/Info.plist</key>
 		<data>
@@ -469,7 +469,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		X0FtnlUi9fLc+SPYHdeSCaN66oY=
+		vjScyF5TMcx+/p/cCuimyVwUJsA=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -497,7 +497,7 @@
 		</data>
 		<key>PlugIns/ShoppingTests.xctest.dSYM/Contents/Resources/DWARF/ShoppingTests</key>
 		<data>
-		c+b526dJGT7SpG3B4M+2oyK0tN4=
+		MUeGW+M7PJ673lHDs3Gy3VD9fw8=
 		</data>
 		<key>PlugIns/ShoppingTests.xctest/Info.plist</key>
 		<data>
@@ -505,7 +505,7 @@
 		</data>
 		<key>PlugIns/ShoppingTests.xctest/ShoppingTests</key>
 		<data>
-		ULUCYgyP/1KnEHFe3qv/AmUTwIU=
+		euiMupFo66SHbHQae+6oI05ECTs=
 		</data>
 		<key>PlugIns/ShoppingTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
@@ -537,11 +537,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eKeaM1D9Pwm0TS/vH9dB6I2vzkY=
+			Q0djNpJLJ/0brUmdU6Ty0gs9Eno=
 			</data>
 			<key>hash2</key>
 			<data>
-			Iovr7IYgWGBaNtAWa1oOgaSd+/Q65TJsgo3yoIOCQzY=
+			e+q/bezIXk3kspGiN6DkbseVZNY8fftSMwm+4MnagBY=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -636,99 +636,99 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			SLgFikMqQJdpDXBnqpUGtkGiYjA=
+			645ti86xS7yRXuommPTecvtTguE=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZOot4wXYFCARbw6UcF5OL1LKcY2TYRxJFVDCWPLGFh8=
+			rhATvdS5e5sQs8/+qWZA+Vbs8SEBaGsNqzl4cYzjP54=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MrTzPjat79EEF1LoPufzCGRE6HU=
+			UQb5r0YGsw4BirjZYmFeqs4MvtE=
 			</data>
 			<key>hash2</key>
 			<data>
-			cm++qZLAQ3TUwSZpFwRQTikuA8O8f+6HRThupogfq3A=
+			Ue4dS0v//neXQEMtti8gbj7Jt27tqo0+PThDVsrfErg=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iwZHbHPu3m3FYRI+FCDLbHeFs44=
+			KG+MAARMrEL3ddhnu29ufvFASGw=
 			</data>
 			<key>hash2</key>
 			<data>
-			gyFhkTx7M92K1jKJpSG0Yl9R+mQfrd/YtnmTaP54ukY=
+			WlgoolnWzu5eM/3KYeZKtiav3CK3A5tX4KsQfZVhFuM=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QBAlbumsNavigationController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CNaPukcGmCwDZNqrBLX42txCXUw=
+			k/IRm7zdoMWunjwVYVMm96ZYHB4=
 			</data>
 			<key>hash2</key>
 			<data>
-			8rutCXGi8TtjNdHSQ9MhELvb4epJYFuzufjq7SEerqo=
+			DDjHnZiWqXu+tQKxrT5AIj5MynardHTXiugwKzAgmns=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QBAlbumsViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Jzuu5bOyyKCNA8ccvBilFMVAbKg=
+			WnOLDY748Vhg8SPx34NK7tpzANA=
 			</data>
 			<key>hash2</key>
 			<data>
-			iUStHuvzTMNEzA8m9Owohc6BItX3I6WMQUGjn7RKy1w=
+			Jtj2YKbIfDpC4ccHQPl1dJzYLpC3+BFVHR4qxC8sFGE=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QBAssetsViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VANfymvub8qcOP+DkaXbupqk6ag=
+			xVeWI3g0YISCMAHfNT5XiDNUUY8=
 			</data>
 			<key>hash2</key>
 			<data>
-			LNxdXn5DPvZGMWXS0i9ANMSvEjISmipsTAJXr1nh/Eg=
+			MCtKHAg8dB+yXoczoNALRU8PENw1Kc/870mJJlWVj0w=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QL5-wR-LYt-view-66K-TS-Yoc.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GHGifCaJTL5fBjMZtPmlX2/9qac=
+			CzmyOX3qfQjJA2fnJRwXNsA8d5g=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ybz3OsOk8c7AT2vdgePN2nO5FDbieISCu/5ON870/HQ=
+			WLpIyKxi1EMS5vuB+LR8akZ7btMZ/vzNot3ziCBv8m0=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QiH-NZ-ZGN-view-sD2-zK-ryo.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			h6K3uByWYguf03aRA4ZeqCORL+w=
+			6xCOmY0RO7GpkDVuHZDPHmaRDWQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			asBkNT4JWJ2Gn/RCcLuvHHTTqKPE2R++FkizvTby1F8=
+			ipZZTL/OzcFnI728teMs6x33fyKx1Z4+3/78p3tmrX0=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9CN4IhMAgH9yIT9R/fI4aWyr1vw=
+			mYyh+ue1NPl/dgDVNx19PzsxHyc=
 			</data>
 			<key>hash2</key>
 			<data>
-			vcRxoeZUfO+ZCke+erxLKSTHQpS/U6BelUTfKjNL31k=
+			vILW8POfvitb84gFcf/v1a8Liqji6EGXS4NxGV5p2nE=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/de.lproj/QBImagePicker.strings</key>
@@ -826,22 +826,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			aiF2xEPKGK38JWRNm/MrkuTFjp8=
+			3cqhkAwfTB98VYvdMeZYPcS4i4Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			t9DexgCFSgCshbkKxMUXnY6WJb4mNIaVXEXdIl3uJh8=
+			OHq/IdWDA/b7OlQRx3nE1UrBjAk79xATu+3Ym49A0k0=
 			</data>
 		</dict>
 		<key>Frameworks/RSKImageCropper.framework/RSKImageCropper</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nBSCjzAIAFiZxerhXKwJkO7Xu8Q=
+			bNw4sHdN4l31o8dUz0Mjocq0sW0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Aqb+ZrOPfUJhvB7XBDcr6zSAx/E4ay1fH6MgJpwCAwk=
+			qAScfKoomeY/hPsYUH/fxzDtNoxF3JaMO5wu7EK4xzs=
 			</data>
 		</dict>
 		<key>Frameworks/RSKImageCropper.framework/RSKImageCropperStrings.bundle/ar.lproj/RSKImageCropper.strings</key>
@@ -1251,11 +1251,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			W1IpME2dQ12P+/gewWK/Pl1O4Ww=
+			D5axiXwVOFUEmiFgVBSX++r9yVg=
 			</data>
 			<key>hash2</key>
 			<data>
-			Nfm5ZxoVV2x90mjUHBXLpOdaGCjRicFG+Pzu/unKlj8=
+			+YPP083Xex5ePtZv5SFuZmrV3IjDkoxnL0zR6E5pkMs=
 			</data>
 		</dict>
 		<key>Frameworks/XCTest.framework/Info.plist</key>
@@ -1396,11 +1396,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			c+b526dJGT7SpG3B4M+2oyK0tN4=
+			MUeGW+M7PJ673lHDs3Gy3VD9fw8=
 			</data>
 			<key>hash2</key>
 			<data>
-			ABHWZdyUFZUKuKMv/4rHf44QQD96mg5MBtGu2mqpvug=
+			6tsLZN499ZSw1RRt2DhRvwcLoFF6lmr06Wbc+MGPhmE=
 			</data>
 		</dict>
 		<key>PlugIns/ShoppingTests.xctest/Info.plist</key>
@@ -1418,11 +1418,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ULUCYgyP/1KnEHFe3qv/AmUTwIU=
+			euiMupFo66SHbHQae+6oI05ECTs=
 			</data>
 			<key>hash2</key>
 			<data>
-			ajtyI6MwlH1+gRWseNwSmP7jtIjeKgh8SvtBPISuNDc=
+			yZ8Ac116pqRu+YfW173dBieK1AirvFt2+i1X7WyHmKQ=
 			</data>
 		</dict>
 		<key>PlugIns/ShoppingTests.xctest/_CodeSignature/CodeResources</key>

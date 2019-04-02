@@ -60,7 +60,6 @@ class SignUp extends Component {
         this.props.loadingShowSignUp();
         firebaseApp.auth().createUserWithEmailAndPassword(email, password).
             then((user) => {
-                console.log(user)
                 this.props.loadingCloseSignUp();
                 setTimeout(() => {
                     Alert.alert(

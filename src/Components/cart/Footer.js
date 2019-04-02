@@ -40,7 +40,7 @@ class Footer extends Component {
         else choose = 'Mua hàng'
         return (
             <View style={styles.containerStyle}>
-                {this.state.checkout ? <FormCheckOut /> : null}
+                {this.state.checkout ? <FormCheckOut navigation={this.props.navigation} /> : null}
                 <View style={styles.buttonContainerStyle}>
                     <View style={styles.totalStyle}>
                         <Text style={{ fontWeight: 'bold',fontSize:18 }}>Tổng : </Text>

@@ -72,19 +72,18 @@ export const getDefaulProduct = () => {
             dispatch(getNewProducts(JSON.parse(JSON.stringify(defaultProducts.reverse()))));
             dispatch(getStoreProducts(JSON.parse(JSON.stringify(storeProducts))));
             dispatch(getNameProducts(JSON.parse(JSON.stringify(defaultProducts.sort(compare)))));
-
+            // console.log(`filter`);
+            // console.log(filter(defaultProducts, 'dep'))
         }, error => {
             console.log('error', error);
         });
-
-
-
     }
 }
+
 function compare(a, b) {
     const productNameA = a.productName;
     const productNameB = b.productName;
-    console.log(a);
+    // console.log(a);
     let comparison = 0;
     if (productNameA > productNameB) {
         comparison = 1
@@ -93,3 +92,19 @@ function compare(a, b) {
     }
     return comparison;
 }
+const filterItems = (array, query) => {
+    return array.filter((el) =>
+        el.toLowerCase().indexOf(query.toLowerCase()) > -1
+    );
+}
+
+const filter = (array, keyWord) => {
+    array.filter(async (item) => {
+        return await !item.productName.includes(keyWord)
+    })
+    return array
+}
+// data = data.filter(function (item) {
+//     console.log(Object.values(item));
+//     return !item.string.includes("Lets");
+// });

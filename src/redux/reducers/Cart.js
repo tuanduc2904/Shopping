@@ -1,6 +1,6 @@
 import {
     ADD_PRODUCT_TO_CART, REMOVE_PRODUCT_TO_CART,
-    DECR_QUANTITY, INCR_QUANTITY, TOTAL_MONEY, GET_CART
+    DECR_QUANTITY, INCR_QUANTITY, TOTAL_MONEY, GET_CART, REMOVE_ALL_CART
 } from '../actions/types';
 
 const DEFAULT = {
@@ -47,6 +47,10 @@ export default (state = DEFAULT, action) => {
         case GET_CART:
             return {
                 ...state, carts: action.carts
+            }
+        case REMOVE_ALL_CART:
+            return {
+                ...state, carts: [], totalMoney: '',
             }
         default:
             return state
