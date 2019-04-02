@@ -90,40 +90,14 @@ class Login extends Component {
     }
 
     clickHandler() {
-        TouchID.authenticate('to demo this react-native component', optionalConfigObject)
+        TouchID.authenticate('Đăng nhập bằng vân tay', optionalConfigObject)
             .then(success => {
                 this.props.loginSuccess(this.props.user);
                 this.navigateScreen('Main');
-
-
             })
             .catch(error => {
                 alert(error)
             });
-        // TouchID.isSupported()
-        //     .then(biometryType => {
-        //         if (biometryType === 'TouchID') {
-        //             TouchID.authenticate('Đăng nhập bằng vân tay').then(success => {
-        //                 this.props.loginSuccess(user.user);
-        //                 this.navigateScreen('Main');
-
-        //             });
-        //         } else if (biometryType === 'FaceID') {
-        //             TouchID.authenticate('Đăng nhập bằng vân tay').then(success => {
-        //                 this.props.loginSuccess(user.user);
-        //                 this.navigateScreen('Main');
-
-        //             });
-        //         } else if (biometryType === true) {
-        //             TouchID.authenticate('Đăng nhập bằng vân tay').then(success => {
-        //                 this.props.loginSuccess(user.user);
-        //                 this.navigateScreen('Main');
-        //             });
-        //         }
-        //     })
-        //     .catch(error => {
-        //         alert(`Thiết bị không được hỗ trợ`)
-        //     });
     }
 
     render() {

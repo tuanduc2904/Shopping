@@ -2,7 +2,7 @@ import {
     ERROR, CANCEL_ERROR, GET_SUCCESS_NAME_PRODUCTS,
     GET_SUCCESS_NEW_PRODUCTS, GET_SUCCESS_REFER_PRODUCTS,
     GET_SUCCESS_STORE_PRODUCTS, GET_SUCCESS_DEFAULT_PRODUCTS,
-    FINISHALL, START_GET_DATA
+    FINISHALL, START_GET_DATA, SEARCH_PRODUCT_NAME
 } from './types';
 import firebase from 'firebase';
 
@@ -68,22 +68,34 @@ export const getDefaulProduct = () => {
                 storeProducts.push(shop);
 
             })
-            dispatch(getDefault(JSON.parse(JSON.stringify(defaultProducts))));
-            dispatch(getNewProducts(JSON.parse(JSON.stringify(defaultProducts.reverse()))));
-            dispatch(getStoreProducts(JSON.parse(JSON.stringify(storeProducts))));
-            dispatch(getNameProducts(JSON.parse(JSON.stringify(defaultProducts.sort(compare)))));
-            // console.log(`filter`);
-            // console.log(filter(defaultProducts, 'dep'))
+            dispatch(getDefault(defaultProducts));
+            dispatch(getNewProducts(defaultProducts.reverse()));
+            dispatch(getStoreProducts(storeProducts));
+            dispatch(getNameProducts(defaultProducts.sort(compare)));
+            dispatch(dpSearch(defaultProducts));
+
         }, error => {
             console.log('error', error);
         });
     }
 }
 
-function compare(a, b) {
+export const searchProductName = (text) => {
+    return (dispatch, getState) => {
+        const defaultProducts = getState().Products.defaultProducts;
+        dispatch(dpSearch(filter(defaultProducts,text)))
+
+    }
+}
+const dpSearch = (searchProduct) => {
+    return {
+        type: SEARCH_PRODUCT_NAME,
+        searchProduct
+    }
+}
+const compare = (a, b) => {
     const productNameA = a.productName;
     const productNameB = b.productName;
-    // console.log(a);
     let comparison = 0;
     if (productNameA > productNameB) {
         comparison = 1
@@ -92,19 +104,11 @@ function compare(a, b) {
     }
     return comparison;
 }
-const filterItems = (array, query) => {
-    return array.filter((el) =>
-        el.toLowerCase().indexOf(query.toLowerCase()) > -1
-    );
-}
 
-const filter = (array, keyWord) => {
-    array.filter(async (item) => {
-        return await !item.productName.includes(keyWord)
+const filter = (array, text) => {
+    let keyWord = text.toLowerCase();
+    let newArr = array.filter((item) => {
+        return item.productName.toLowerCase().match(keyWord);
     })
-    return array
+    return newArr
 }
-// data = data.filter(function (item) {
-//     console.log(Object.values(item));
-//     return !item.string.includes("Lets");
-// });
