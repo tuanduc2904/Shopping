@@ -27,9 +27,18 @@ import Comment from './screen/page/Comment';
 import ManageOrder from "./screen/ManageOrder";
 import ProfileCart from "./screen/page/ProfileCart";
 import WaitingForReceive from "./screen/page/WaitingForReceive";
-
+import Notification from './screen/page/Notification'
 
 const NavStack = createStackNavigator({
+    // Notification:{
+    //     screen: Notification,
+    //     navigationOptions: {
+    //         title: 'Thông Báo',
+    //         headerStyle: {
+    //             backgroundColor: '#FFF',
+    //         },
+    //     }
+    // },
     SplashScreen: {
         screen: SplashScreen,
         navigationOptions: {
@@ -119,6 +128,7 @@ const NavStack = createStackNavigator({
             },
         }
     },
+
 
 
 

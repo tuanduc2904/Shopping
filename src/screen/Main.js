@@ -87,7 +87,7 @@ class Main extends Component {
             <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
                 {this.props.isLoading ? <Loading /> : null}
                 {this.state.selectedTab === 'Profile' ? null :
-                    <HeaderMain selectedTabSearch={this.selectedTabSearch} />
+                    <HeaderMain selectedTabSearch={this.selectedTabSearch} navigation={this.props.navigation} />
                 }
                 <TabNavigator tabBarStyle={{ backgroundColor: colors.white }}>
                     <TabNavigator.Item

@@ -152,18 +152,20 @@ class Login extends Component {
                             />
                         </View>
                     </View>
-                    <TouchableOpacity
-                        onPress={() => {
-                            if (this.props.user.email !== '') {
-                                this.clickHandler();
-                            }
-                            else {
-                                alert(`Bạn phải đặng nhập cho lần sử dụng đầu tiên`)
-                            }
-                        }}
-                    >
-                        <Icon name="md-finger-print" type="Ionicons" style={{ fontSize: 30 }} />
-                    </TouchableOpacity>
+                    <View style={{marginTop:Dimens.screen.height/50,marginBottom:Dimens.screen.height/20}}>
+                        <TouchableOpacity
+                            onPress={() => {
+                                if (this.props.user.email !== '') {
+                                    this.clickHandler();
+                                }
+                                else {
+                                    alert(`Bạn phải đặng nhập cho lần sử dụng đầu tiên`)
+                                }
+                            }}
+                        >
+                            <Icon name="md-finger-print" type="Ionicons" style={{ fontSize: 30 }} />
+                        </TouchableOpacity>
+                    </View>
                     <ButtonComponent
                         text='Login'
                         onPress={() => {
@@ -212,8 +214,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     body: {
-        marginTop: Dimens.screen.height / 10,
-        marginBottom: Dimens.screen.height / 10
+        marginTop: Dimens.screen.height / 20,
+        marginBottom: Dimens.screen.height / 20
     },
     viewTextInput: {
         height: 60

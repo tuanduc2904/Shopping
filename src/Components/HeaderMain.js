@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet,TouchableOpacity } from 'react-native'
 import { Icon, Item, Input } from "native-base";
 import { colors } from '../assets/color';
 import { searchProductName } from '../redux/actions/Product';
@@ -15,6 +15,7 @@ class HeaderMain extends Component {
         }
     }
     render() {
+        const navigate = this.props.navigate;
         return (
             <View style={styles.header}>
                 <View style={styles.viewHorizontal}>
@@ -29,7 +30,11 @@ class HeaderMain extends Component {
                                 this.setState({ text })
                             }}
                             style={{ color: colors.red, width: 200 }} />
-                        <Icon name="notifications" type='MaterialIcons' style={{ color: colors.red }} />
+                        <TouchableOpacity onPress={() => {
+                            navigate('Notification');
+                        }}>
+                            <Icon name="notifications" type='MaterialIcons' style={{ color: colors.red }} />
+                        </TouchableOpacity>
                     </Item>
                 </View>
             </View>
