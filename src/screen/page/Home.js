@@ -62,6 +62,9 @@ class Home extends Component {
     }
 
     componentWillMount() {
+
+    }
+    componentDidMount() {
         setInterval(function () {
             const { sliderIndex, maxSlider } = this.state
             let nextIndex = 0
@@ -77,7 +80,7 @@ class Home extends Component {
 
 
     render() {
-        const {navigate} = this.props.navigation;
+        const { navigate } = this.props.navigation;
         return (
             <SafeAreaView style={styles.saf}>
 
@@ -138,7 +141,7 @@ class Home extends Component {
                                 renderItem={({ item }) =>
                                     <TouchableOpacity
                                         onPress={() => {
-                                            navigate('Detaill',{item:item});
+                                            navigate('Detaill', { item: item });
                                         }}>
                                         <View style={styles.left10}>
                                             <FastImage style={styles.image}
@@ -160,7 +163,7 @@ class Home extends Component {
                         {/*view goi y hom nay*/}
                         <Card style={[styles.card]}>
                             <View style={[styles.viewHorizontal, { maNayrginTop: 5, marginBottom: 5 }]}>
-                                <View style={[styles.viewHorizontalLeft,{marginTop:5,marginBottom:5,justifyContent:'center'}]}>
+                                <View style={[styles.viewHorizontalLeft, { marginTop: 5, marginBottom: 5, justifyContent: 'center' }]}>
                                     <View style={styles.bar} />
                                     <Text style={[styles.title]}>Gợi Ý Hôm </Text>
                                 </View>
@@ -178,7 +181,7 @@ class Home extends Component {
                                 renderItem={({ item }) =>
                                     <TouchableOpacity
                                         onPress={() => {
-                                            navigate('Detaill',{item:item});
+                                            navigate('Detaill', { item: item });
                                         }}
                                         style={[styles.viewItem]}>
 

@@ -13,7 +13,7 @@ const INITIAL = {
     searchProduct: [],
     referProducts: [],
     isLoading: false,
-    err: false
+    err: false,
 }
 
 export default (state = INITIAL, action) => {

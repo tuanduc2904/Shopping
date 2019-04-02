@@ -18,7 +18,7 @@ import TextComponent from "../Common/TextComponent/TextComponent";
 import { connect } from 'react-redux';
 import { firebaseApp } from '../untils/firebase';
 // import { loginSuccess } from '../../../redux/actions/Authenticate';
-import { loginSuccess, skipLogin } from '../redux/actions/Authenticate';
+import { loginSuccess, skipLogin, logout } from '../redux/actions/Authenticate';
 import { loadingShowLogin, loadingCloseLogin } from '../redux/actions/Loading';
 import Loading from '../Components/Loading';
 import TouchID from 'react-native-touch-id';
@@ -61,22 +61,41 @@ class Login extends Component {
 
 
     LOGIN() {
-        this.props.loadingShowLogin();
-        firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-            .then((user) => {
-                // console.log(user)
-                if (user !== null) {
-                    this.props.loadingCloseLogin();
-                    this.props.loginSuccess(user.user);
-                    this.navigateScreen('Main');
-                }
-                else {
-                    console.log('null user')
-                }
-            })
-            .catch(error =>
-                this.logInFail(error)
-            );
+        if (this.state.email === this.props.user.email) {
+            this.props.loadingShowLogin();
+            firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+                .then((user) => {
+                    // console.log(user)
+                    if (user !== null) {
+                        this.props.loadingCloseLogin();
+                        this.props.loginSuccess(user.user);
+                        this.navigateScreen('Main');
+                    }
+                    else {
+                        console.log('null user')
+                    }
+                })
+                .catch(error =>
+                    this.logInFail(error)
+                );
+        } else {
+            this.props.logout();
+            this.props.loadingShowLogin();
+            firebaseApp.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+                .then((user) => {
+                    if (user !== null) {
+                        this.props.loadingCloseLogin();
+                        this.props.loginSuccess(user.user);
+                        this.navigateScreen('Main');
+                    }
+                    else {
+                        console.log('null user')
+                    }
+                })
+                .catch(error =>
+                    this.logInFail(error)
+                );
+        }
     }
     //ham khong cho bam quay lai
     navigateScreen = (screen) => {
@@ -90,14 +109,20 @@ class Login extends Component {
     }
 
     clickHandler() {
-        TouchID.authenticate('Đăng nhập bằng vân tay', optionalConfigObject)
-            .then(success => {
-                this.props.loginSuccess(this.props.user);
-                this.navigateScreen('Main');
-            })
-            .catch(error => {
-                alert(error)
-            });
+        if (this.state.email === this.props.user.email) {
+            TouchID.authenticate('Đăng nhập bằng vân tay', optionalConfigObject)
+                .then(success => {
+                    this.props.loginSuccess(this.props.user);
+                    this.navigateScreen('Main');
+                })
+                .catch(error => {
+                    // alert(error)
+                });
+        }
+        else {
+            alert(`Email không đúng`);
+        }
+
     }
 
     render() {
@@ -173,7 +198,7 @@ function mapStateToProps(state) {
         isLoading: state.Loading.isLoadingLogin
     }
 }
-export default connect(mapStateToProps, { loginSuccess, loadingShowLogin, loadingCloseLogin, skipLogin })(Login)
+export default connect(mapStateToProps, { loginSuccess, loadingShowLogin, loadingCloseLogin, skipLogin, logout })(Login)
 const styles = StyleSheet.create({
     container: {
         flex: 1,
