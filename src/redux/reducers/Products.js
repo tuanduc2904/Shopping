@@ -2,7 +2,7 @@ import {
     ERROR, CANCEL_ERROR, GET_SUCCESS_NAME_PRODUCTS,
     GET_SUCCESS_NEW_PRODUCTS, GET_SUCCESS_REFER_PRODUCTS,
     GET_SUCCESS_STORE_PRODUCTS, GET_SUCCESS_DEFAULT_PRODUCTS,
-    FINISHALL, START_GET_DATA
+    FINISHALL, START_GET_DATA, SEARCH_PRODUCT_NAME
 } from '../actions/types';
 
 const INITIAL = {
@@ -10,6 +10,7 @@ const INITIAL = {
     storeProducts: [],
     nameProducts: [],
     newProducts: [],
+    searchProduct: [],
     referProducts: [],
     isLoading: false,
     err: false
@@ -58,8 +59,13 @@ export default (state = INITIAL, action) => {
                 ...state, isLoading: true
             }
         }
+        case SEARCH_PRODUCT_NAME: {
+            return {
+                ...state, searchProduct: action.searchProduct
+            }
+        }
         default:
             return state;
     }
-    
+
 };

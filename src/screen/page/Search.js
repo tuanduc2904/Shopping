@@ -23,15 +23,13 @@ class Booth extends Component {
     }
   
 
-
-
     render() {
         return (
             <View style={styles.container}>
                 <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
                     <FlatList
                         showsVerticalScrollIndicator={false}
-                        data={this.props.nameProducts}
+                        data={this.props.searchProduct}
                         renderItem={({ item }) =>
                             <TouchableOpacity
                                 onPress={() => {
@@ -68,7 +66,7 @@ class Booth extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        nameProducts: state.Products.nameProducts
+        searchProduct: state.Products.searchProduct
     }
 }
 export default connect(mapStateToProps)(Booth)

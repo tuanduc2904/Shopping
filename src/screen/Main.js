@@ -6,7 +6,7 @@ import ShopSell from "./page/ShopSell";
 import { Icon } from "native-base";
 import { colors } from "../assets/color";
 import ShoppingCart from "./page/ShoppingCart";
-import Booth from "./page/Booth";
+import Search from "./page/Search";
 import Profile from "./page/Profile";
 import SkipedLogin from './page/SkipedLogin'
 import HeaderMain from '../Components/HeaderMain';
@@ -28,7 +28,7 @@ class Main extends Component {
         }
         global.goBackNavigation = this.goBackNavigation.bind(this);
         global.goToDetail = this.goToDetail.bind(this);
-
+        global.selectedTabSearch = this.selectedTabSearch.bind(this)
     }
     goToDetail(item) {
         this.props.navigation.navigate('Detaill', { item: item });
@@ -66,7 +66,7 @@ class Main extends Component {
         if (user.loggedIn) {
             firebaseApp.database().ref('user').child(user.uid).on('value', snapshot => {
                 if (snapshot.val()) {
-                    
+
                     this.props.updateProfile(snapshot.val());
                 }
                 else {
@@ -80,12 +80,14 @@ class Main extends Component {
 
     };
 
-
+    selectedTabSearch() {
+        this.setState({ selectedTab: 'Search' })
+    }
     render() {
         return (
             <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
                 {this.state.selectedTab === 'Profile' ? null :
-                    <HeaderMain />
+                    <HeaderMain selectedTabSearch={this.selectedTabSearch} />
                 }
                 <TabNavigator tabBarStyle={{ backgroundColor: colors.white }}>
                     <TabNavigator.Item
@@ -112,13 +114,13 @@ class Main extends Component {
                     </TabNavigator.Item>
 
                     <TabNavigator.Item
-                        selected={this.state.selectedTab === 'Booth'}
+                        selected={this.state.selectedTab === 'Search'}
                         renderIcon={() => <Icon name='isv' type='AntDesign' style={{ fontSize: 25, color: '#707070' }} />}
                         renderSelectedIcon={() => <Icon name='isv' type='AntDesign'
                             style={{ fontSize: 25, color: colors.red }} />}
                         // renderBadge={() => <CustomBadgeView />}
-                        onPress={() => this.setState({ selectedTab: 'Booth' })}>
-                        <Booth navigation={this.props.navigation} />
+                        onPress={() => this.setState({ selectedTab: 'Search' })}>
+                        <Search navigation={this.props.navigation} />
                     </TabNavigator.Item>
 
                     <TabNavigator.Item

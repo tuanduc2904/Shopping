@@ -94,8 +94,6 @@ class Login extends Component {
             .then(success => {
                 this.props.loginSuccess(this.props.user);
                 this.navigateScreen('Main');
-
-
             })
             .catch(error => {
                 alert(error)
