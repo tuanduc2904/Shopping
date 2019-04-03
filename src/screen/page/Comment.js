@@ -3,55 +3,87 @@ import {
     StyleSheet,
     View,
     TextInput,
-    Button,
     ScrollView,
     SafeAreaView,
     Text,
     FlatList,
     TouchableOpacity,
     KeyboardAvoidingView,
-    Platform,
-    NativeModules,
-    StatusBarIOS,
-    Modal
+    Alert
 } from 'react-native';
-import { Icon, Spinner } from 'native-base';
 import { connect } from 'react-redux';
 import FastImage from "react-native-fast-image";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import { colors } from "../../assets/color";
-
-export class Comment extends Component {
+import firebase from 'firebase'
+import { NavigationActions, StackActions } from 'react-navigation';
+class Comment extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dataSourceListCommnet: [
-                {
-                    id: 1,
-                    avatar: 'https://png.pngtree.com/thumb_back/fh260/back_pic/00/15/30/4656e81f6dc57c5.jpg',
-                    name: 'ken',
-                    content: 'Hihi'
-                },
-                {
-                    id: 2,
-                    avatar: 'https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
-                    , name: 'ken'
-                },
-                {
-                    id: 3,
-                    avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhcSnO3gsJmdH3kQX_2uJ9dMoG447FVNEwhuDh9dZDt0LQX07h'
-                    , name: 'ken'
-                },
-                {
-                    id: 4,
-                    avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhcSnO3gsJmdH3kQX_2uJ9dMoG447FVNEwhuDh9dZDt0LQX07h'
-                    , name: 'ken'
-                },
-            ],
+            listComment: [],
             comment: '',
         };
     }
+    componentDidMount() {
+        const item = this.props.navigation.state.params.item;
+        firebase.database().ref(`products`).child(item.uid)
+            .child(item.key).child(`comment`).on('value', snapshoot => {
+                if (snapshoot) {
+                    let listComment = [];
+                    snapshoot.forEach(item => {
+                        listComment.push(item.val())
+                    })
+                    this.setState({
+                        listComment: listComment
+                    })
+                }
+            });
 
+    }
+    postComment() {
+        if (this.props.user.loggedIn) {
+            if (this.state.length > 0) {
+                const item = this.props.navigation.state.params.item;
+                let date = new Date().toLocaleDateString("en-US");
+                firebase.database().ref(`products`).child(item.uid)
+                    .child(item.key).child(`comment`).push({
+                        avatarSource: this.props.user.avatarSource,
+                        displayName: this.props.user.displayName,
+                        date: date,
+                        comment: this.state.comment
+                    });
+                this.setState({
+                    comment: '',
+                })
+            }
+
+        }
+        else {
+            Alert.alert(
+                'Bạn chưa đăng nhập',
+                'Bạn có muốn quay lại màn hình đăng nhập để tiếp tục mua hàng?',
+                [
+                    {
+                        text: 'Để sau',
+                        onPress: () => { },
+                        style: 'cancel',
+                    },
+                    { text: 'OK', onPress: () => this.navigateScreen('Login') },
+                ],
+                { cancelable: false },
+            );
+        }
+    }
+    navigateScreen(screen) {
+        const resetAction = StackActions.reset({
+            index: 0,
+            actions: [
+                NavigationActions.navigate({ routeName: screen })
+            ]
+        });
+        this.props.navigation.dispatch(resetAction);
+    }
     render() {
         return (
             <SafeAreaView style={styles.saf}>
@@ -61,20 +93,21 @@ export class Comment extends Component {
                     >
                         <FlatList
                             // inverted
-                            data={this.state.dataSourceListCommnet}
+                            data={this.state.listComment}
                             showsVerticalScrollIndicator={false}
 
                             renderItem={({ item }) =>
-                                <View>
+
+                                <View style={{ width: '100%' }}>
                                     <View style={styles.itemview}>
-                                        <FastImage style={styles.avatar} source={{ uri: item.avatar }} />
+                                        <FastImage style={styles.avatar} source={{ uri: item.avatarSource }} />
                                         <View>
                                             <View style={styles.viewText}>
-                                                <TextComponent style={styles.title}>{item.name}</TextComponent>
-                                                <TextComponent style={styles.textComment}>{item.content}</TextComponent>
+                                                <TextComponent style={styles.title}>{item.displayName}</TextComponent>
+                                                <TextComponent style={styles.textComment}>{item.comment}</TextComponent>
                                             </View>
                                             <View style={styles.viewTime}>
-                                                <TextComponent>{item.created_date}</TextComponent>
+                                                <TextComponent style={{ fontSize: 12, paddingLeft: 10 }}>{item.date}</TextComponent>
                                             </View>
                                         </View>
 
@@ -95,13 +128,13 @@ export class Comment extends Component {
                                 style={styles.input2}
                                 underlineColorAndroid="transparent"
                                 placeholder="Viết bình luận"
+                                value={this.state.comment}
                                 onChangeText={(comment) => {
                                     this.setState({ comment });
                                 }}
-                                value={this.state.comment}
                             />
                             <TouchableOpacity onPress={() => {
-                                // this.getComment(), this.remove(),this.load()
+                                this.postComment();
                             }}>
                                 <Text style={styles.send}>Gửi</Text>
                             </TouchableOpacity>
@@ -113,6 +146,12 @@ export class Comment extends Component {
         );
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        user: state.Auth
+    }
+}
+export default connect(mapStateToProps)(Comment)
 const styles = StyleSheet.create({
     saf: {
         flex: 1,
@@ -123,11 +162,10 @@ const styles = StyleSheet.create({
         backgroundColor: colors.white
 
     },
-    key: {
-        backgroundColor: colors.white
-    },
     viewText: {
-        maxWidth: '85,2%',
+        flex: 1,
+        width: '100%',
+        // maxWidth: '85,2%',
         marginLeft: 10,
         paddingLeft: 10,
         marginBottom: 5,
@@ -232,6 +270,7 @@ const styles = StyleSheet.create({
         margin: 20,
     },
     itemview: {
+        flex: 1,
         marginTop: 10,
         marginLeft: 10,
         marginRight: 5,
@@ -258,6 +297,9 @@ const styles = StyleSheet.create({
     },
     viewTime: {
         marginLeft: 10,
+        fontSize: 9,
+        marginRight: 10
+
     },
     footer: {
         flexDirection: 'row',
@@ -292,4 +334,3 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
     },
 });
-export default Comment

@@ -1,6 +1,12 @@
 import firebase from 'firebase';
+import { ADD_TO_PRODUCT } from './types'
 
-
+addToProduct = (newProduct) => {
+    return {
+        type: ADD_TO_PRODUCT,
+        newProduct
+    }
+}
 getSuccessData = (myProducts) => {
     return {
         type: 'GET_SUCCESS_DATA',
@@ -94,7 +100,9 @@ export const addProduct = (product, user) => {
                                 date: date,
                                 time: time
                             };
-                            dispatch(addSuccess(newProduct))
+
+                            dispatch(addSuccess(newProduct));
+                            dispatch(addToProduct(newProduct))
                         })
                     }
                 }).catch(err => {

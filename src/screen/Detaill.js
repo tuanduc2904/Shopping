@@ -28,12 +28,14 @@ class Detaill extends Component {
         firebase.database().ref(`products`).child(item.uid)
             .child(item.key).on('value', snapshoot => {
                 if (snapshoot.val()) {
+                    let obj = snapshoot.val();
+                    obj.key = snapshoot.key
                     this.setState({
-                        item: snapshoot.val(),
+                        item: obj,
                         isLoading: false,
                         maxSlider: snapshoot.val().images.length
                     });
-                    console.log(snapshoot.val());
+
 
                 }
             });
@@ -103,8 +105,21 @@ class Detaill extends Component {
                                     marginRight: 10,
                                 }}>
                                     <TextComponent style={styles.infoTitle}>Mô tả sản phẩm</TextComponent>
-                                    
+
                                     <TextComponent style={{ paddingBottom: 30, paddingTop: 15 }}>{this.state.item.description}</TextComponent>
+                                </View>
+                                <View style={{
+                                    width: '100%',
+                                    height: 1,
+                                    backgroundColor: colors.background,
+                                    marginTop: 1,
+                                    marginBottom: 1
+                                }} />
+                                <View style={{
+                                    marginLeft: 10,
+                                    marginRight: 10,
+                                }}>
+                                    <TextComponent style={{ paddingBottom: 30, paddingTop: 15 }}>Ngày đăng: {this.state.item.date}</TextComponent>
                                 </View>
                             </View>
                             <View style={{
@@ -116,7 +131,7 @@ class Detaill extends Component {
                             }} />
                             <TouchableOpacity
                                 onPress={() => {
-                                    navigate('Comment');
+                                    navigate('Comment', { item: this.state.item });
                                 }}
                                 style={{ backgroundColor: colors.white, marginBottom: 10 }}>
                                 <View style={[styles.horizontall, { marginBottom: 10 }]}>

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import {
-    Platform,
     StyleSheet,
-    Text,
     View,
-    TouchableOpacity, Image, ScrollView, Alert
+    TouchableOpacity
 } from 'react-native';
 
 import { colors } from "../assets/color";

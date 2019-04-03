@@ -45,12 +45,9 @@ class Home extends Component {
                     imageUrl: 'https://saledenroi.com/wp-content/uploads/2017/07/banner-tiki-khuyen-mai.jpg'
                 },
             ],
+            _isMounted: false
         }
     }
-
-
-
-
 
 
     setRef = (c) => {
@@ -62,19 +59,24 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        setInterval(function () {
-            const { sliderIndex, maxSlider } = this.state
-            let nextIndex = 0
+        this.setState({ _isMounted: true });
+        if (this.state._isMounted) {
+            setInterval(function () {
+                const { sliderIndex, maxSlider } = this.state
+                let nextIndex = 0
 
-            if (sliderIndex < maxSlider) {
-                nextIndex = sliderIndex + 1
-            }
+                if (sliderIndex < maxSlider) {
+                    nextIndex = sliderIndex + 1
+                }
 
-            this.scrollToIndex(nextIndex, true)
-            this.setState({ sliderIndex: nextIndex })
-        }.bind(this), 3000)
+                this.scrollToIndex(nextIndex, true)
+                this.setState({ sliderIndex: nextIndex })
+            }.bind(this), 3000)
+        }
     }
-
+    componentWillUnmount() {
+        this.setState({ _isMounted: false })
+    }
 
     render() {
         const { navigate } = this.props.navigation;

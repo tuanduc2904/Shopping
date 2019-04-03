@@ -32,6 +32,7 @@ const startIsLoading = () => {
     }
 }
 const getStoreProducts = (storeProducts) => {
+    console.log(storeProducts)
     return {
         type: GET_SUCCESS_STORE_PRODUCTS,
         storeProducts
@@ -83,7 +84,7 @@ export const getDefaulProduct = () => {
 export const searchProductName = (text) => {
     return (dispatch, getState) => {
         const defaultProducts = getState().Products.defaultProducts;
-        dispatch(dpSearch(filter(defaultProducts,text)))
+        dispatch(dpSearch(filter(defaultProducts, text)));
 
     }
 }
@@ -107,7 +108,7 @@ const compare = (a, b) => {
 
 const filter = (array, text) => {
     let keyWord = text.toLowerCase();
-    let newArr = array.filter((item) => {
+    let newArr = ewArr = array.filter((item) => {
         return item.productName.toLowerCase().match(keyWord);
     })
     return newArr
