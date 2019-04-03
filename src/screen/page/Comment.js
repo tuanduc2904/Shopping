@@ -43,7 +43,7 @@ class Comment extends Component {
     }
     postComment() {
         if (this.props.user.loggedIn) {
-            if (this.state.length > 0) {
+            if (this.state.comment.length > 0) {
                 const item = this.props.navigation.state.params.item;
                 let date = new Date().toLocaleDateString("en-US");
                 firebase.database().ref(`products`).child(item.uid)
@@ -57,7 +57,6 @@ class Comment extends Component {
                     comment: '',
                 })
             }
-
         }
         else {
             Alert.alert(

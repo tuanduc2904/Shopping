@@ -26,7 +26,8 @@ import Detaill from "./screen/Detaill";
 import Comment from './screen/page/Comment';
 import ManageOrder from "./screen/ManageOrder";
 import ProfileCart from "./screen/page/ProfileCart";
-import Notification from './screen/page/Notification'
+import Notification from './screen/page/Notification';
+import EditProduct from './screen/EditProduct';
 
 const NavStack = createStackNavigator({
 
@@ -95,6 +96,16 @@ const NavStack = createStackNavigator({
         screen: UpdateProfile,
         navigationOptions: {
             title: 'Cập Nhật Thông Tin Cá Nhân',
+            headerStyle: {
+                backgroundColor: '#FFF',
+            },
+        }
+
+    },
+    EditProduct: {
+        screen: EditProduct,
+        navigationOptions: {
+            title: 'Cập Nhật Sản Phẩm',
             headerStyle: {
                 backgroundColor: '#FFF',
             },

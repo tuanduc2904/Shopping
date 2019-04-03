@@ -44,7 +44,6 @@ class Main extends Component {
     };
 
     goToUpdateProfile() {
-
         Alert.alert(
             'Bổ sung thông tin tài khoản',
             'Bạn cần phải bổ sung thông tin cho tài khoản',
@@ -85,7 +84,6 @@ class Main extends Component {
     render() {
         return (
             <SafeAreaView style={{ flex: 1, backgroundColor: colors.white }}>
-                {this.props.isLoading ? <Loading /> : null}
                 {this.state.selectedTab === 'Profile' ? null :
                     <HeaderMain selectedTabSearch={this.selectedTabSearch} navigate={this.props.navigation.navigate} />
                 }

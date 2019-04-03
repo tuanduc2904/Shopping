@@ -108,8 +108,11 @@ const compare = (a, b) => {
 
 const filter = (array, text) => {
     let keyWord = text.toLowerCase();
-    let newArr = ewArr = array.filter((item) => {
-        return item.productName.toLowerCase().match(keyWord);
-    })
+    let newArr = [];
+    if (array.length > 0) {
+        newArr = array.filter((item) => {
+            return item.productName.toLowerCase().match(keyWord);
+        })
+    }
     return newArr
 }

@@ -27,6 +27,10 @@ export default (state = INITIAL, action) => {
             return {
                 ...state, isLoading: false, err: null, myProducts: action.myProducts
             }
+        case 'UPDATE_PRODUCT':
+            return {
+                ...state
+            }
         default:
             return state;
     }

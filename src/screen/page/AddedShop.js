@@ -45,8 +45,9 @@ class AddedShop extends Component {
             <FlatList
               showsVerticalScrollIndicator={false}
               data={this.props.myProduct.myProducts}
+              style= {{height:'100%'}}
               renderItem={({ item }) =>
-                <TouchableOpacity style={[styles.viewItem]}>
+                <View style={[styles.viewItem]}>
                   <FastImage style={styles.imageNumColumns}
                     source={{ uri: item.images[0] }} />
                   <View style={[styles.left10, { marginBottom: 5, marginTop: 5 }]}>
@@ -55,14 +56,16 @@ class AddedShop extends Component {
                     <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
                   </View>
                   <View>
-                    <View style={[styles.viewHorizontal, { marginBottom: 10 }]}>
-                      <Icon name='hearto' type='AntDesign'
-                        style={{ fontSize: 20, color: colors.red }} />
-                      <Icon name='local-shipping' type='MaterialIcons'
-                        style={{ fontSize: 20, color: colors.red }} />
-                    </View>
+                    <TouchableOpacity style={[styles.viewHorizontal, { marginBottom: 10 }]}
+                      onPress={() => {
+                        this.props.navigation.navigate('EditProduct', { item: item })
+                      }}
+                    >
+                      <Icon name='settings' type='SimpleLineIcons'
+                        style={{ fontSize: 20, color: colors.red, position: 'absolute', right: 5, bottom: 10 }} />
+                    </TouchableOpacity>
                   </View>
-                </TouchableOpacity>
+                </View>
               }
               keyExtractor={(item, index) => index.toString()}
               numColumns={2}
