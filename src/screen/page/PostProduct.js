@@ -176,6 +176,7 @@ class PostProduct extends Component {
                         </View>
                         <View>
                             <View style={styles.viewTextInput}>
+                                <TextComponent style={{ paddingLeft: 14 }}>Tên sản phẩm:</TextComponent>
                                 <TextInputComponent
                                     placeholder='Tên Sản Phẩm '
                                     numberOfLines={2}
@@ -186,6 +187,7 @@ class PostProduct extends Component {
                                 />
                             </View>
                             <View style={styles.viewTextInput}>
+                                <TextComponent style={{ paddingLeft: 14 }}>Mô tả sản phẩm:</TextComponent>
                                 <TextInputComponent
                                     placeholder='Mô tả'
                                     numberOfLines={2}
@@ -196,6 +198,7 @@ class PostProduct extends Component {
                                 />
                             </View>
                             <View style={styles.viewTextInput}>
+                            <TextComponent style={{ paddingLeft: 14 }}>Giá sản phẩm:</TextComponent>
                                 <TextInputComponent
                                     style={styles.textInput}
                                     placeholder='Giá sản phẩm'
@@ -404,7 +407,8 @@ const styles = StyleSheet.create({
         fontWeight: '200'
     },
     body: {
-        alignItems: 'center'
+        alignItems: 'center',
+        position: 'absolute', left:30, right: 30, bottom: 30
     },
     bar: {
         width: '100%',

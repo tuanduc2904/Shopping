@@ -25,7 +25,6 @@ class Home extends Component {
         super(props);
         this.itemRef = firebaseApp.database();
         this.state = {
-            isLoading: true,
             dataSource: [],
             refreshing: false,
             sliderIndex: 0,

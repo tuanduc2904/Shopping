@@ -13,15 +13,22 @@ class WaitingForShipment extends Component {
     render() {
         const navigate = this.props.navigate;
         return (
-            <View style={styles.container}>
-                <FlatList
-                    showsVerticalScrollIndicator={false}
-                    data={this.props.mySelling}
-                    renderItem={({ item }) =>
-                        <ItemWaitingForShipment navigate={navigate} item={item} />
-                    }
-                    keyExtractor={(item, index) => index.toString()}
-                />
+            <View>
+                {this.props.mySelling.length > 0 ?
+                    <View style={styles.container}>
+                        <FlatList
+                            showsVerticalScrollIndicator={false}
+                            data={this.props.mySelling}
+                            renderItem={({ item }) =>
+                                <ItemWaitingForShipment navigate={navigate} item={item} />
+                            }
+                            keyExtractor={(item, index) => index.toString()}
+                        />
+                    </View> :
+                    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                        <Text style={{ fontSize: 20 }}>Bạn chưa có đơn hàng nào</Text>
+                    </View>
+                }
             </View>
         );
     }

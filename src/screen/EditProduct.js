@@ -16,9 +16,9 @@ import { Icon, List, ListItem, CheckBox, Body } from "native-base";
 import ButtonComponent from "../Common/ButtonComponent/ButtonComponent";
 import { connect } from 'react-redux'
 import FastImage from 'react-native-fast-image';
-
-
-
+import firebase from 'firebase';
+import { updateMyProduct } from '../redux/actions/MyProduct'
+import Loading from '../Components/Loading'
 
 class EditProduct extends Component {
 
@@ -36,13 +36,13 @@ class EditProduct extends Component {
             price: '',
             description: '',
             blobs: [],
-            date: ''
+            date: '',
+            isLoading: false
         };
 
     }
     componentDidMount() {
         const item = this.props.navigation.state.params.item;
-        console.log(item);
         this.setState({
             colorBlack: item.colors.colorBlack,
             colorBlue: item.colors.colorBlue,
@@ -54,8 +54,9 @@ class EditProduct extends Component {
         })
     }
     upDateProduct() {
-        let colors = this.getColors();
-        let { productName, description, price, category, blobs } = this.state;
+        const { key, uid } = this.props.navigation.state.params.item;
+
+        let { productName, description, price } = this.state;
 
         if (productName.length < 1) {
             alert(`Chưa có tên sản phẩm`)
@@ -67,9 +68,23 @@ class EditProduct extends Component {
             alert(`Giá sản phẩm ít nhất 3 giá trị`)
         }
         else {
-            let product = { colors, productName, description, price, category, blobs };
-            let user = this.props.user;
-            // this.props.addProduct(product, user);
+            this.setState({
+                isLoading: true
+            })
+            let product = { productName, description, price, uid, key };
+            firebase.database().ref(`products`).child(uid).child(key).update(product).then(() => {
+                this.setState({
+                    isLoading: false
+                })
+                this.props.updateMyProduct(product);
+                alert(`Cập nhật thành công`);
+
+            }).catch(err => {
+                this.setState({
+                    isLoading: false
+                })
+                alert(`Cập nhật thất bại : ` + err)
+            })
         }
     }
 
@@ -250,8 +265,7 @@ class EditProduct extends Component {
                             }}
                             text='Cập nhật sản phẩm' />
                     </View>
-
-
+                    {this.state.isLoading ? <Loading /> : null}
                 </View>
             </SafeAreaView>
 
@@ -260,7 +274,7 @@ class EditProduct extends Component {
     }
 }
 
-export default connect(null)(EditProduct);
+export default connect(null, { updateMyProduct })(EditProduct);
 const styles = StyleSheet.create({
     saf: {
         flex: 1,
@@ -311,7 +325,7 @@ const styles = StyleSheet.create({
         height: 80,
         marginRight: 10,
         borderRadius: 15,
-        padding:10
+        padding: 10
     },
     header: {
         marginTop: 10,
@@ -322,7 +336,8 @@ const styles = StyleSheet.create({
         fontWeight: '200'
     },
     body: {
-        alignItems: 'center'
+        alignItems: 'center',
+        position: 'absolute', left: 30, right: 30, bottom: 25
     },
     bar: {
         width: '100%',

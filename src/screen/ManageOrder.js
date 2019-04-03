@@ -31,7 +31,6 @@ class ManageOrder extends Component {
         const { navigate } = this.props.navigation
         return (
             < Container >
-                {this.props.isLoading ? <Loading /> : null}
                 <Tabs tabBarUnderlineStyle={{ backgroundColor: colors.red, height: 2 }}>
                     <Tab
                         heading={<TabHeading style={{ backgroundColor: colors.white }}><TextComponent >Chờ Nhận Hàng</TextComponent></TabHeading>}>
@@ -42,6 +41,7 @@ class ManageOrder extends Component {
                         <WaitingForShipment navigate={navigate} />
                     </Tab>
                 </Tabs>
+                {this.props.isLoading ? <Loading /> : null}
             </Container >
         );
     }

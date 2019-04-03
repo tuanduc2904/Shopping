@@ -34,6 +34,12 @@ err = () => {
 const storage = firebase.storage();
 const db = firebase.database();
 
+export const updateMyProduct = (product) => {
+    return {
+        type: 'UPDATE_PRODUCT',
+        product
+    }
+}
 export const finish = () => {
     return {
         type: 'FINISH'

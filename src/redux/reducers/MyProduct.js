@@ -1,3 +1,4 @@
+
 const INITIAL = {
     myProducts: [],
     isLoading: false,
@@ -28,8 +29,18 @@ export default (state = INITIAL, action) => {
                 ...state, isLoading: false, err: null, myProducts: action.myProducts
             }
         case 'UPDATE_PRODUCT':
+            let myProducts = state.myProducts;
+            // console.log(myProducts)
             return {
-                ...state
+                ...state, myProducts: myProducts.map(i => {
+                    if (i.key === action.product.key) {
+                        i.productName = action.product.productName;
+                        i.description = action.product.description;
+                        i.price = action.product.price;
+                        return i
+                    }
+                    else return i
+                })
             }
         default:
             return state;
