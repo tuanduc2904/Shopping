@@ -155,6 +155,7 @@ class Main extends Component {
                             </TabNavigator.Item>
                     }
                 </TabNavigator>
+                {this.props.isLoading ? <Loading /> : null}
             </SafeAreaView>
         );
     }

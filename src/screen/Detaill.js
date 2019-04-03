@@ -32,11 +32,14 @@ class Detaill extends Component {
                     obj.key = snapshoot.key
                     this.setState({
                         item: obj,
-                        isLoading: false,
                         maxSlider: snapshoot.val().images.length
                     });
 
-
+                    setTimeout(() => {
+                        this.setState({
+                            isLoading: false
+                        })
+                    }, 100);
                 }
             });
 
@@ -53,7 +56,6 @@ class Detaill extends Component {
         return (
             <SafeAreaView style={styles.saf}>
                 <Root>
-                    {this.state.isLoading ? <Loading /> : null}
                     <View style={styles.container}>
                         <ScrollView>
                             <FlatList
@@ -173,6 +175,7 @@ class Detaill extends Component {
                             />
                         </View>
                     </View>
+                    {this.state.isLoading ? <Loading /> : null}
                 </Root>
             </SafeAreaView>
         );

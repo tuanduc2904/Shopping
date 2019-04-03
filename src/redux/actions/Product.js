@@ -14,6 +14,11 @@ const getNameProducts = (nameProducts) => {
         nameProducts
     }
 }
+const finishAll = () => {
+    return {
+        type: FINISHALL
+    }
+}
 const getDefault = (defaultProducts) => {
     return {
         type: GET_SUCCESS_DEFAULT_PRODUCTS,
@@ -74,7 +79,7 @@ export const getDefaulProduct = () => {
             dispatch(getStoreProducts(storeProducts));
             dispatch(getNameProducts(defaultProducts.sort(compare)));
             dispatch(dpSearch(defaultProducts));
-
+            dispatch(finishAll())
         }, error => {
             console.log('error', error);
         });
