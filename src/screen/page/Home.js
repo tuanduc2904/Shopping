@@ -134,7 +134,7 @@ class Home extends Component {
 
                             <FlatList
                                 horizontal
-                                showsVerticalScrollIndicator={false}
+                                showsHorizontalScrollIndicator={false}
                                 data={this.props.newProducts}
                                 renderItem={({ item }) =>
                                     <TouchableOpacity

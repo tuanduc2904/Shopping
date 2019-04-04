@@ -38,7 +38,7 @@ class Footer extends Component {
         if (this.state.checkout) {
             choose = 'Ẩn'
         }
-        else choose = 'Mua hàng'
+        else choose = 'Mua Ngay'
         return (
             <View style={styles.containerStyle}>
                 {this.state.checkout ? <FormCheckOut navigation={this.props.navigation} /> : null}

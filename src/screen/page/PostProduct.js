@@ -19,7 +19,6 @@ import ButtonComponent from "../../Common/ButtonComponent/ButtonComponent";
 import { addProduct, finish } from '../../redux/actions/MyProduct'
 import RNFetchBlob from 'react-native-fetch-blob';
 import { connect } from 'react-redux'
-
 import Loading from '../../Components/Loading';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
@@ -136,7 +135,14 @@ class PostProduct extends Component {
     }
 
     renderImage(image) {
-        return <Image style={styles.image} source={image} />
+        return<View>
+            <Image style={styles.image} source={image} />
+            <View style={{ position: 'absolute',top:-5,right:3}}>
+                <TouchableOpacity>
+                   <Icon name='closecircle' type='AntDesign' style={{fontSize:25,color:colors.background}}/>
+                </TouchableOpacity>
+            </View>
+        </View>
     }
 
     renderAsset(image) {
@@ -168,7 +174,7 @@ class PostProduct extends Component {
                                     <TextComponent style={styles.textAdd}>Thêm Ảnh</TextComponent>
                                 </TouchableOpacity>
                                 {this.state.images ? this.state.images.map(i =>
-                                    <View
+                                    <View style={{ marginTop:5}}
                                         key={i.uri}>{this.renderAsset(i)}</View>
                                 ) : null}
 
@@ -298,7 +304,7 @@ class PostProduct extends Component {
                             </View>
 
                         </View>
-
+                        <View style={{marginBottom:30}}/>
                     </KeyboardAwareScrollView>
 
                     <View style={styles.body}>
@@ -391,7 +397,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderStyle: 'dashed',
         borderColor: colors.bgUser,
-        marginLeft: 10
+        marginLeft: 10,
+        marginTop:5
     },
     image: {
         width: 80,

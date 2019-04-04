@@ -158,22 +158,23 @@ class Detaill extends Component {
                             </TouchableOpacity>
 
                         </ScrollView>
-                        <View style={styles.footer}>
-                            <ButtonComponent
-                                text='Thêm Vào Giỏ Hàng'
-                                styleText={{ color: colors.white, fontWeight: 'bold' }}
-                                style={{ backgroundColor: colors.red }}
-                                onPress={() => {
-                                    this.props.addProductToCart(this.state.item);
-                                    Toast.show({
-                                        text: "Sản phẩm đã được thêm vào giỏ hàng",
-                                        buttonText: "Okay",
-                                        position: "top",
-                                        type: "success"
-                                    })
-                                }}
-                            />
-                        </View>
+
+                    </View>
+                    <View style={styles.footer}>
+                        <ButtonComponent
+                            text='Thêm Vào Giỏ Hàng'
+                            styleText={{ color: colors.white, fontWeight: 'bold' }}
+                            style={{ backgroundColor: colors.red,marginTop:10 }}
+                            onPress={() => {
+                                this.props.addProductToCart(this.state.item);
+                                Toast.show({
+                                    text: "Sản phẩm đã được thêm vào giỏ hàng",
+                                    buttonText: "Okay",
+                                    position: "top",
+                                    type: "success"
+                                })
+                            }}
+                        />
                     </View>
                     {this.state.isLoading ? <Loading /> : null}
                 </Root>
@@ -268,8 +269,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     footer: {
-        position: 'absolute',
-        bottom: 10,
+        backgroundColor:colors.white,
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%'
