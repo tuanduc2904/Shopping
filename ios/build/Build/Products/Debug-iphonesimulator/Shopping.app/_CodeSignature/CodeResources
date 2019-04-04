@@ -8,45 +8,9 @@
 		<data>
 		TneGhDkoD7Q01Gl8e5EScUBsgfM=
 		</data>
-		<key>AppIcon20x20@2x.png</key>
-		<data>
-		6nY2jYFhs0kcH0JCzMEjuhlLsfQ=
-		</data>
-		<key>AppIcon20x20@3x.png</key>
-		<data>
-		fUyOl9NDhg34TO+Qh9lNrtIscM8=
-		</data>
-		<key>AppIcon29x29@2x.png</key>
-		<data>
-		zC3kSlNBYGGMmIxsluo4Fs74aeI=
-		</data>
-		<key>AppIcon29x29@3x.png</key>
-		<data>
-		D1L5N9AyV1TJXoJhFGMr67bGv10=
-		</data>
-		<key>AppIcon40x40@2x.png</key>
-		<data>
-		YcWgRIQbG7CDYmvKetG1C2IDbYk=
-		</data>
-		<key>AppIcon40x40@3x.png</key>
-		<data>
-		4Vya7Sxa6OzT+2l076zzhOfu12s=
-		</data>
-		<key>AppIcon60x60@2x.png</key>
-		<data>
-		4Vya7Sxa6OzT+2l076zzhOfu12s=
-		</data>
-		<key>AppIcon60x60@3x.png</key>
-		<data>
-		nVfy3Osv2n4g9+wk4TP3SWpRQvM=
-		</data>
-		<key>Assets.car</key>
-		<data>
-		0k7NIT8RYm2UTvIjl5FF+nFqAkg=
-		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		G0TS6sjFs8BknQRAuITX2fBjvlI=
+		ow+70SmTUeEG4rn6s0DL1ZShhn4=
 		</data>
 		<key>Entypo.ttf</key>
 		<data>
@@ -86,35 +50,35 @@
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker</key>
 		<data>
-		UQb5r0YGsw4BirjZYmFeqs4MvtE=
+		/dja3We7e/Dv1ef2BHr9Ed/f5MQ=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/Info.plist</key>
 		<data>
-		KG+MAARMrEL3ddhnu29ufvFASGw=
+		iwZHbHPu3m3FYRI+FCDLbHeFs44=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QBAlbumsNavigationController.nib</key>
 		<data>
-		k/IRm7zdoMWunjwVYVMm96ZYHB4=
+		H3r6KK7GYxtNnLFFPf/MlZLS6GY=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QBAlbumsViewController.nib</key>
 		<data>
-		WnOLDY748Vhg8SPx34NK7tpzANA=
+		kdGImKdz/S8IK93EdaFWnZJdezg=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QBAssetsViewController.nib</key>
 		<data>
-		xVeWI3g0YISCMAHfNT5XiDNUUY8=
+		Mw7+FoBrnfH75swmu4wFiLhwD1c=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QL5-wR-LYt-view-66K-TS-Yoc.nib</key>
 		<data>
-		CzmyOX3qfQjJA2fnJRwXNsA8d5g=
+		t81+dR5LLMUVNM6O54GBpE2NvGQ=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QiH-NZ-ZGN-view-sD2-zK-ryo.nib</key>
 		<data>
-		6xCOmY0RO7GpkDVuHZDPHmaRDWQ=
+		KoRScHqqeLtiez1lX2CTIggW8cg=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/_CodeSignature/CodeResources</key>
 		<data>
-		mYyh+ue1NPl/dgDVNx19PzsxHyc=
+		qUQwfzW4PLYk4dmBFdVhDLSa6/s=
 		</data>
 		<key>Frameworks/QBImagePicker.framework/de.lproj/QBImagePicker.strings</key>
 		<dict>
@@ -185,7 +149,7 @@
 		</data>
 		<key>Frameworks/RSKImageCropper.framework/RSKImageCropper</key>
 		<data>
-		bNw4sHdN4l31o8dUz0Mjocq0sW0=
+		t4gFgVFhwK2ysUXC9bUrzQaS7bc=
 		</data>
 		<key>Frameworks/RSKImageCropper.framework/RSKImageCropperStrings.bundle/ar.lproj/RSKImageCropper.strings</key>
 		<dict>
@@ -470,38 +434,6 @@
 		<data>
 		D5axiXwVOFUEmiFgVBSX++r9yVg=
 		</data>
-		<key>Frameworks/XCTAutomationSupport.framework/Info.plist</key>
-		<data>
-		SqKfGyapsH1WaXYQ+Jifa0Tli8A=
-		</data>
-		<key>Frameworks/XCTAutomationSupport.framework/XCTAutomationSupport</key>
-		<data>
-		xvftdY2BN5PECGZPoZEC6JY47yc=
-		</data>
-		<key>Frameworks/XCTAutomationSupport.framework/XPCServices/LogArchiveCollector.xpc/Info.plist</key>
-		<data>
-		Yp/TvU30o0PlNVj/9J1+2VFXFUc=
-		</data>
-		<key>Frameworks/XCTAutomationSupport.framework/XPCServices/LogArchiveCollector.xpc/LogArchiveCollector</key>
-		<data>
-		vQ6mXGOhpLgODWoH8tYcemJ1pY4=
-		</data>
-		<key>Frameworks/XCTAutomationSupport.framework/XPCServices/LogArchiveCollector.xpc/_CodeSignature/CodeResources</key>
-		<data>
-		zlWeSQFBjpa/6DZvFHpVIuHqxvw=
-		</data>
-		<key>Frameworks/XCTAutomationSupport.framework/XPCServices/LogArchiveCollector.xpc/version.plist</key>
-		<data>
-		vcpFmLkqVnTt+3F5Kaxg7R/W1oY=
-		</data>
-		<key>Frameworks/XCTAutomationSupport.framework/_CodeSignature/CodeResources</key>
-		<data>
-		PKWWSI/Vs8PD6Ji5yClye/uQT90=
-		</data>
-		<key>Frameworks/XCTAutomationSupport.framework/version.plist</key>
-		<data>
-		YAAro+giuRFoRY4I/GJl9fZtGKU=
-		</data>
 		<key>Frameworks/XCTest.framework/Info.plist</key>
 		<data>
 		pREucHbrpXwNpqwK/2GGYDYUEgk=
@@ -537,7 +469,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		gCbdX66rzk3UyEjRCN5sa2Th6pc=
+		hu8buSjg4hnvMOeyV6Q/Y1ivnmY=
 		</data>
 		<key>Ionicons.ttf</key>
 		<data>
@@ -601,114 +533,15 @@
 			eVXKFBJ7MEEsEU6xPP1wK12rJl/rGIDRaV1zyqgkzeE=
 			</data>
 		</dict>
-		<key>AppIcon20x20@2x.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			6nY2jYFhs0kcH0JCzMEjuhlLsfQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			ZmyZpxOGIwCxnwOEgGVf0Yfc8EelvO6ckpQoQo1GWIo=
-			</data>
-		</dict>
-		<key>AppIcon20x20@3x.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			fUyOl9NDhg34TO+Qh9lNrtIscM8=
-			</data>
-			<key>hash2</key>
-			<data>
-			0RH502wMu0vpH7fapS5/zj6k73lT2F0LoQWmoQh02W4=
-			</data>
-		</dict>
-		<key>AppIcon29x29@2x.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			zC3kSlNBYGGMmIxsluo4Fs74aeI=
-			</data>
-			<key>hash2</key>
-			<data>
-			9HYVOh5JenbQHu+4/xJF8/azt1cqruVKQQlnjAt8qRM=
-			</data>
-		</dict>
-		<key>AppIcon29x29@3x.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			D1L5N9AyV1TJXoJhFGMr67bGv10=
-			</data>
-			<key>hash2</key>
-			<data>
-			Dx3oS0dlwqlH3qfCMuBvj6r6//aqkggbJbzUVFZ8FXg=
-			</data>
-		</dict>
-		<key>AppIcon40x40@2x.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			YcWgRIQbG7CDYmvKetG1C2IDbYk=
-			</data>
-			<key>hash2</key>
-			<data>
-			X/c/Tgz4B91cXg+XDBYLQw47dOJZPwFzuO4YBq7uVOU=
-			</data>
-		</dict>
-		<key>AppIcon40x40@3x.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			4Vya7Sxa6OzT+2l076zzhOfu12s=
-			</data>
-			<key>hash2</key>
-			<data>
-			jzFiHZ+dJ5v6f5Noo4N3GykeIlyWr0hhg4Uqjrszdt4=
-			</data>
-		</dict>
-		<key>AppIcon60x60@2x.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			4Vya7Sxa6OzT+2l076zzhOfu12s=
-			</data>
-			<key>hash2</key>
-			<data>
-			jzFiHZ+dJ5v6f5Noo4N3GykeIlyWr0hhg4Uqjrszdt4=
-			</data>
-		</dict>
-		<key>AppIcon60x60@3x.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			nVfy3Osv2n4g9+wk4TP3SWpRQvM=
-			</data>
-			<key>hash2</key>
-			<data>
-			qBCeoo38n0ch8+z/45YBnWvJWIqpska2yGQAX17dU1s=
-			</data>
-		</dict>
-		<key>Assets.car</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			0k7NIT8RYm2UTvIjl5FF+nFqAkg=
-			</data>
-			<key>hash2</key>
-			<data>
-			EwpCzNyh0w2x0R57d5Xi72maE7rdZLlbftqAqPsqPiA=
-			</data>
-		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			G0TS6sjFs8BknQRAuITX2fBjvlI=
+			ow+70SmTUeEG4rn6s0DL1ZShhn4=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZfG0+3reouZwykXTmJQ+Oh9CP+/zPahw748yff3u3FI=
+			wnt4NDJVS0OINzX1HRC8AaW/VSKaA3DlokGHadyV2kE=
 			</data>
 		</dict>
 		<key>Entypo.ttf</key>
@@ -814,88 +647,88 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UQb5r0YGsw4BirjZYmFeqs4MvtE=
+			/dja3We7e/Dv1ef2BHr9Ed/f5MQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ue4dS0v//neXQEMtti8gbj7Jt27tqo0+PThDVsrfErg=
+			7heeM207HWI9yfzuZUvm4rkt8VD/xWKgKaqzpVxpOpQ=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KG+MAARMrEL3ddhnu29ufvFASGw=
+			iwZHbHPu3m3FYRI+FCDLbHeFs44=
 			</data>
 			<key>hash2</key>
 			<data>
-			WlgoolnWzu5eM/3KYeZKtiav3CK3A5tX4KsQfZVhFuM=
+			gyFhkTx7M92K1jKJpSG0Yl9R+mQfrd/YtnmTaP54ukY=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QBAlbumsNavigationController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			k/IRm7zdoMWunjwVYVMm96ZYHB4=
+			H3r6KK7GYxtNnLFFPf/MlZLS6GY=
 			</data>
 			<key>hash2</key>
 			<data>
-			DDjHnZiWqXu+tQKxrT5AIj5MynardHTXiugwKzAgmns=
+			HR6MU+Dld7FJBOWvDDoq/+SOCj/YY7tuQsLicGKOPQM=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QBAlbumsViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WnOLDY748Vhg8SPx34NK7tpzANA=
+			kdGImKdz/S8IK93EdaFWnZJdezg=
 			</data>
 			<key>hash2</key>
 			<data>
-			Jtj2YKbIfDpC4ccHQPl1dJzYLpC3+BFVHR4qxC8sFGE=
+			2RIz5bRWGZKEALuDItsSbla2zDInEIaIeHZ3wMPHPVs=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QBAssetsViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xVeWI3g0YISCMAHfNT5XiDNUUY8=
+			Mw7+FoBrnfH75swmu4wFiLhwD1c=
 			</data>
 			<key>hash2</key>
 			<data>
-			MCtKHAg8dB+yXoczoNALRU8PENw1Kc/870mJJlWVj0w=
+			mJlgaGZ0l3Aky8MBZtMI30JOMrmSAN+ZDWtZxNuUGuk=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QL5-wR-LYt-view-66K-TS-Yoc.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CzmyOX3qfQjJA2fnJRwXNsA8d5g=
+			t81+dR5LLMUVNM6O54GBpE2NvGQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			WLpIyKxi1EMS5vuB+LR8akZ7btMZ/vzNot3ziCBv8m0=
+			KgjxkHb1iu6sx3dX82F9wfbQGNHvYsSe29+j1oj9D0k=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/QBImagePicker.storyboardc/QiH-NZ-ZGN-view-sD2-zK-ryo.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			6xCOmY0RO7GpkDVuHZDPHmaRDWQ=
+			KoRScHqqeLtiez1lX2CTIggW8cg=
 			</data>
 			<key>hash2</key>
 			<data>
-			ipZZTL/OzcFnI728teMs6x33fyKx1Z4+3/78p3tmrX0=
+			aqWLWz0TJK5wDP4l05rG2nMTklcbGLegvjt5ZQmkLQI=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mYyh+ue1NPl/dgDVNx19PzsxHyc=
+			qUQwfzW4PLYk4dmBFdVhDLSa6/s=
 			</data>
 			<key>hash2</key>
 			<data>
-			vILW8POfvitb84gFcf/v1a8Liqji6EGXS4NxGV5p2nE=
+			01cxzMZ1s8qvw7VH7lYCOge11LHrOqWJduqIPh/oJF8=
 			</data>
 		</dict>
 		<key>Frameworks/QBImagePicker.framework/de.lproj/QBImagePicker.strings</key>
@@ -1004,11 +837,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bNw4sHdN4l31o8dUz0Mjocq0sW0=
+			t4gFgVFhwK2ysUXC9bUrzQaS7bc=
 			</data>
 			<key>hash2</key>
 			<data>
-			qAScfKoomeY/hPsYUH/fxzDtNoxF3JaMO5wu7EK4xzs=
+			HPvHprs57IW+cEKDSrYUxnJ9w6l4hZFnNahIhic/HN4=
 			</data>
 		</dict>
 		<key>Frameworks/RSKImageCropper.framework/RSKImageCropperStrings.bundle/ar.lproj/RSKImageCropper.strings</key>
@@ -1423,94 +1256,6 @@
 			<key>hash2</key>
 			<data>
 			+YPP083Xex5ePtZv5SFuZmrV3IjDkoxnL0zR6E5pkMs=
-			</data>
-		</dict>
-		<key>Frameworks/XCTAutomationSupport.framework/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			SqKfGyapsH1WaXYQ+Jifa0Tli8A=
-			</data>
-			<key>hash2</key>
-			<data>
-			g8bPu8Yt/v23q8e+oTs64yqfCRBDp7cMllLd70a+5yc=
-			</data>
-		</dict>
-		<key>Frameworks/XCTAutomationSupport.framework/XCTAutomationSupport</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			xvftdY2BN5PECGZPoZEC6JY47yc=
-			</data>
-			<key>hash2</key>
-			<data>
-			/dRlyMRnLj5sbJu7ftUa7B8po6Awkh99iMFsBtq+sp4=
-			</data>
-		</dict>
-		<key>Frameworks/XCTAutomationSupport.framework/XPCServices/LogArchiveCollector.xpc/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			Yp/TvU30o0PlNVj/9J1+2VFXFUc=
-			</data>
-			<key>hash2</key>
-			<data>
-			IwZ52okuueFNfTBVNW2oV3wrBWiwTF+cbUP+8DARWk8=
-			</data>
-		</dict>
-		<key>Frameworks/XCTAutomationSupport.framework/XPCServices/LogArchiveCollector.xpc/LogArchiveCollector</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			vQ6mXGOhpLgODWoH8tYcemJ1pY4=
-			</data>
-			<key>hash2</key>
-			<data>
-			E9qEfzknI9w5oYVo8FYuhBE5iuwllvNEWHR3urB4N6Q=
-			</data>
-		</dict>
-		<key>Frameworks/XCTAutomationSupport.framework/XPCServices/LogArchiveCollector.xpc/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			zlWeSQFBjpa/6DZvFHpVIuHqxvw=
-			</data>
-			<key>hash2</key>
-			<data>
-			mjQtd+4cn3WgpatLPgjD5882ztRPCQLPuD2fgd11Hlo=
-			</data>
-		</dict>
-		<key>Frameworks/XCTAutomationSupport.framework/XPCServices/LogArchiveCollector.xpc/version.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			vcpFmLkqVnTt+3F5Kaxg7R/W1oY=
-			</data>
-			<key>hash2</key>
-			<data>
-			UbpbCovp9P/1OQ9QOlE+2cHqRrw8l7PN9EWKkWiu33E=
-			</data>
-		</dict>
-		<key>Frameworks/XCTAutomationSupport.framework/_CodeSignature/CodeResources</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			PKWWSI/Vs8PD6Ji5yClye/uQT90=
-			</data>
-			<key>hash2</key>
-			<data>
-			JhVWEdAnH4K2Ppo48tGHd7TAXJUr4QiTisIA7xPnOck=
-			</data>
-		</dict>
-		<key>Frameworks/XCTAutomationSupport.framework/version.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			YAAro+giuRFoRY4I/GJl9fZtGKU=
-			</data>
-			<key>hash2</key>
-			<data>
-			OywY+mjk+myZhUktMIxCaxQWkLwu37agAz+y7rbyOt4=
 			</data>
 		</dict>
 		<key>Frameworks/XCTest.framework/Info.plist</key>

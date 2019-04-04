@@ -9,7 +9,7 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, StatusBar, Button, Alert, ImageBackground } from 'react-native';
-import {Dimens} from '../assets/Dimens'
+import { Dimens } from '../assets/Dimens'
 import { Icon } from "native-base";
 import { colors } from "../assets/color";
 import ButtonComponent from "../Common/ButtonComponent/ButtonComponent";
@@ -19,7 +19,7 @@ import { connect } from 'react-redux';
 import { firebaseApp } from '../untils/firebase';
 import { loadingShowSignUp, loadingCloseSignUp } from '../redux/actions/Loading';
 import Loading from '../Components/Loading';
-
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 class SignUp extends Component {
     constructor(props) {
@@ -83,46 +83,47 @@ class SignUp extends Component {
     render() {
         return (
             <View>
-                <ImageBackground
-                    source={require('../assets/images/background-main.png')}
-                    style={styles.bg}>
-                    <View style={{ alignItems: 'center' }}>
-                        <Icon name='shopping-bag' type='FontAwesome5'
-                            style={{ fontSize: 100, color: colors.red }} /></View>
-                    <View style={styles.body}>
-                        <View style={styles.viewTextInput}>
-                            <TextInputComponent
-                                placeholder='Email'
-                                onChangeText={(email) => this.setState({ email })}
-                            />
+                <KeyboardAwareScrollView>
+                    <ImageBackground
+                        source={require('../assets/images/background-main.png')}
+                        style={styles.bg}>
+                        <View style={{ alignItems: 'center' }}>
+                            <Icon name='shopping-bag' type='FontAwesome5'
+                                style={{ fontSize: 100, color: colors.red }} /></View>
+                        <View style={styles.body}>
+                            <View style={styles.viewTextInput}>
+                                <TextInputComponent
+                                    placeholder='Email'
+                                    onChangeText={(email) => this.setState({ email })}
+                                />
+                            </View>
+                            <View style={styles.viewTextInput}>
+                                <TextInputComponent
+                                    placeholder='Mật khẩu'
+                                    onChangeText={(password) => this.setState({ password })}
+                                    type='password'
+                                    secureTextEntry={true}
+
+                                />
+                            </View>
                         </View>
-                        <View style={styles.viewTextInput}>
-                            <TextInputComponent
-                                placeholder='Mật khẩu'
-                                onChangeText={(password) => this.setState({ password })}
-                                type='password'
-                                secureTextEntry={true}
+                        <ButtonComponent
+                            text='Đăng ký'
 
-                            />
+                            onPress={() => this.checkText()}
+                        />
+                        <View style={styles.footer}>
+                            <Text> </Text>
+                            <TextComponent style={styles.text}
+                                onPress={() =>
+                                    this.props.navigation.goBack()
+                                }
+
+                            >Quay Lại</TextComponent>
                         </View>
-                    </View>
-                    <ButtonComponent
-                        text='SignUp'
-
-                        onPress={() => this.checkText()}
-                    />
-                    <View style={styles.footer}>
-                        <Text> </Text>
-                        <TextComponent style={styles.text}
-                            onPress={() =>
-                                this.props.navigation.goBack()
-                            }
-
-                        >Quay Lại</TextComponent>
-                    </View>
-                </ImageBackground>
-                {this.props.isLoading ? <Loading /> : null}
-
+                    </ImageBackground>
+                    {this.props.isLoading ? <Loading /> : null}
+                </KeyboardAwareScrollView>
             </View>
         );
     }

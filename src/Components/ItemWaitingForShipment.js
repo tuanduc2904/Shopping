@@ -24,7 +24,7 @@ export default class ItemWaitingForShipment extends Component {
         return (
             <View style={styles.container}>
                 <TouchableOpacity
-                    onPress={() => { navigate('ProfileCart', { item: item }) }}
+                    onPress={() => { navigate('Detaill', { item: item.product }) }}
                 >
                     <Card style={[styles.card]}>
                         <View style={{

@@ -21,6 +21,7 @@ import RNFetchBlob from 'react-native-fetch-blob';
 import { connect } from 'react-redux'
 
 import Loading from '../../Components/Loading';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const Blob = RNFetchBlob.polyfill.Blob;
 const fs = RNFetchBlob.fs;
@@ -155,7 +156,7 @@ class PostProduct extends Component {
         return (
             <SafeAreaView style={styles.saf}>
                 <View style={styles.container}>
-                    <ScrollView>
+                    <KeyboardAwareScrollView>
                         <View style={styles.header}>
                             <ScrollView horizontal
                                 showsHorizontalScrollIndicator={false}>
@@ -198,7 +199,7 @@ class PostProduct extends Component {
                                 />
                             </View>
                             <View style={styles.viewTextInput}>
-                            <TextComponent style={{ paddingLeft: 14 }}>Giá sản phẩm:</TextComponent>
+                                <TextComponent style={{ paddingLeft: 14 }}>Giá sản phẩm:</TextComponent>
                                 <TextInputComponent
                                     style={styles.textInput}
                                     placeholder='Giá sản phẩm'
@@ -298,7 +299,7 @@ class PostProduct extends Component {
 
                         </View>
 
-                    </ScrollView>
+                    </KeyboardAwareScrollView>
 
                     <View style={styles.body}>
                         <ButtonComponent
@@ -407,8 +408,9 @@ const styles = StyleSheet.create({
         fontWeight: '200'
     },
     body: {
+        backgroundColor: 'white',
         alignItems: 'center',
-        position: 'absolute', left:30, right: 30, bottom: 30
+        bottom: 15
     },
     bar: {
         width: '100%',

@@ -8,7 +8,7 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, StatusBar, ImageBackground, Alert } from 'react-native';
+import { Platform, StyleSheet, Text, View, StatusBar, ImageBackground, Alert} from 'react-native';
 import { Dimens } from '../assets/Dimens'
 import { Icon, Button, Toast } from "native-base";
 import { colors } from "../assets/color";
@@ -24,6 +24,7 @@ import Loading from '../Components/Loading';
 import TouchID from 'react-native-touch-id';
 import { NavigationActions, StackActions } from 'react-navigation';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 const optionalConfigObject = {
     unifiedErrors: false,
@@ -110,31 +111,36 @@ class Login extends Component {
     render() {
         return (
             <View>
+            <KeyboardAwareScrollView>
                 <ImageBackground
                     source={require('../assets/images/background-main.png')}
                     style={styles.bg}>
+                    
                     <View style={styles.container}>
                         <View style={{ alignItems: 'center' }}>
                             <Icon name='shopping-bag' type='FontAwesome5'
                                 style={{ fontSize: 100, color: colors.red }} />
                         </View>
-                        <View style={{ marginTop: 50 }}>
-                            <View style={styles.viewTextInput}>
-                                <TextInputComponent
-                                    value={this.state.email}
-                                    placeholder='Email'
-                                    onChangeText={(email) => this.setState({ email })}
-                                />
+                        
+                            <View style={{ marginTop: 50 }}>
+                                <View style={styles.viewTextInput}>
+                                    <TextInputComponent
+                                        value={this.state.email}
+                                        placeholder='Email'
+                                        onChangeText={(email) => this.setState({ email })}
+                                    />
+                                </View>
+
+                                <View style={styles.viewTextInput}>
+                                    <TextInputComponent
+                                        placeholder='Mật khẩu'
+                                        onChangeText={(password) => this.setState({ password })}
+                                        type='password'
+                                        secureTextEntry={true}
+                                    />
+                                </View>
                             </View>
-                            <View style={styles.viewTextInput}>
-                                <TextInputComponent
-                                    placeholder='Mật khẩu'
-                                    onChangeText={(password) => this.setState({ password })}
-                                    type='password'
-                                    secureTextEntry={true}
-                                />
-                            </View>
-                        </View>
+                        
                         <View style={{ paddingBottom: 10 }}>
                             <TouchableOpacity
                                 onPress={() => {
@@ -146,18 +152,18 @@ class Login extends Component {
                                     }
                                 }}
                             >
-                                <Icon name="md-finger-print" type="Ionicons" style={{ fontSize: 36,color:'red' }} />
+                                <Icon name="md-finger-print" type="Ionicons" style={{ fontSize: 36, color: 'red' }} />
                             </TouchableOpacity>
                         </View>
                         <ButtonComponent
-                            text='Login'
+                            text='Đăng nhập'
                             onPress={() => {
                                 this.LOGIN();
                             }}
                         />
                         <View style={styles.btnSignIn}>
                             <ButtonComponent
-                                text='Sign In'
+                                text='Đăng ký'
                                 onPress={() => this.props.navigation.navigate('SignUp')}
                             />
                         </View>
@@ -171,8 +177,10 @@ class Login extends Component {
                             >Bỏ Qua</TextComponent>
                         </View>
                     </View>
+                    
                 </ImageBackground>
                 {this.props.isLoading ? <Loading /> : null}
+                </KeyboardAwareScrollView>
             </View>
         );
     }
@@ -211,7 +219,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '90%',
-        position: 'absolute', left:0, right: 30, bottom: 30
+        position: 'absolute', left: 0, right: 30, bottom: 30
 
     },
     text: {
