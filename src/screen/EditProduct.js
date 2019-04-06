@@ -8,7 +8,7 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, TouchableOpacity, ScrollView, SafeAreaView, Alert,TextInput } from 'react-native';
+import { Platform, StyleSheet, Text, View, TouchableOpacity, ScrollView, SafeAreaView, Alert, TextInput } from 'react-native';
 import TextComponent from "../Common/TextComponent/TextComponent";
 import TextInputComponent from "../Common/TextInputComponent/TextInputComponent";
 import { colors } from "../assets/color";
@@ -22,7 +22,11 @@ import Loading from '../Components/Loading'
 import { TextInputMask } from 'react-native-masked-text'
 
 class EditProduct extends Component {
-
+    static navigationOptions = ({ navigation }) => {
+        return {
+            header: null,
+        };
+    }
     constructor() {
         super();
         this.state = {
@@ -78,7 +82,14 @@ class EditProduct extends Component {
                     isLoading: false
                 })
                 this.props.updateMyProduct(product);
-                alert(`Cập nhật thành công`);
+                Alert.alert(
+                    'Sửa sản phẩm',
+                    'Sửa thành công',
+                    [
+                        { text: 'OK', onPress: () => this.props.navigation.goBack() },
+                    ],
+                    { cancelable: false },
+                );
 
             }).catch(err => {
                 this.setState({
@@ -122,6 +133,53 @@ class EditProduct extends Component {
             <SafeAreaView style={styles.saf}>
                 <View style={styles.container}>
                     <View style={styles.header}>
+                        <TouchableOpacity
+                            style={{ flexDirection: 'row' }}
+                            onPress={() => {
+                                this.props.navigation.goBack();
+                            }}
+                        >
+                            <Icon name="ios-arrow-back" type="Ionicons"
+                                style={{ color: '#177EFB', paddingTop: 4 }}
+
+                            />
+                            <Text style={{ color: '#177EFB', fontSize: 18, paddingTop: 9, paddingLeft: 3 }}>
+                                Back</Text></TouchableOpacity>
+                        <Text style={{ fontSize: 18 }}>Sửa sản phẩm</Text>
+                        <TouchableOpacity
+                            style={{ flexDirection: 'row' }}
+                            onPress={() => {
+                                Alert.alert(
+                                    'Lưu thay đổi',
+                                    'Bạn có muốn lưu thay đổi này không?',
+                                    [
+                                        {
+                                            text: 'Không',
+                                            style: 'cancel',
+                                        },
+                                        {
+                                            text: 'Đồng ý', onPress: () => {
+                                                this.upDateProduct();
+                                            }
+                                        },
+                                    ],
+                                    { cancelable: false },
+                                );
+                            }}
+
+                        >
+                            {/* <Icon name="save" type="AntDesign" style={{ fontSize: 22, color: '#2D8DFB' }} /> */}
+                            <Text style={{ fontSize: 15, color: '#2D8DFB',paddingTop:2 }}>HOÀN THÀNH</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{
+                        width: '100%',
+                        height: 1,
+                        backgroundColor: colors.background,
+                        marginTop: 1,
+                        marginBottom: 1
+                    }} />
+                    <View style={styles.topView}>
                         <ScrollView horizontal
                             showsHorizontalScrollIndicator={false}>
                             {this.props.navigation.state.params.item.images.map(i =>
@@ -287,13 +345,28 @@ class EditProduct extends Component {
 
                     </ScrollView>
 
-                    <View style={styles.body}>
+                    {/* <View style={styles.body}>
                         <ButtonComponent
                             onPress={() => {
-                                this.upDateProduct();
+                                Alert.alert(
+                                    'Lưu thay đổi',
+                                    'Bạn có muốn lưu thay đổi này không?',
+                                    [
+                                        {
+                                            text: 'Không',
+                                            style: 'cancel',
+                                        },
+                                        {
+                                            text: 'Đồng ý', onPress: () => {
+                                                this.upDateProduct();
+                                            }
+                                        },
+                                    ],
+                                    { cancelable: false },
+                                );
                             }}
                             text='Cập nhật sản phẩm' />
-                    </View>
+                    </View> */}
                     {this.state.isLoading ? <Loading /> : null}
                 </View>
             </SafeAreaView>
@@ -332,7 +405,8 @@ const styles = StyleSheet.create({
 
         // borderColor:colors.red,
         borderBottomColor: colors.red,
-        borderBottomWidth: 1
+        borderBottomWidth: 1,
+        maxHeight:150
     },
     text: {
         color: 'black',
@@ -363,7 +437,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         padding: 10
     },
-    header: {
+    topView: {
         marginTop: 10,
         marginBottom: 10
     },
@@ -384,6 +458,16 @@ const styles = StyleSheet.create({
     category: {
         marginLeft: 10,
         paddingTop: 2,
+        fontSize: 18
+    },
+    header: {
+        height: 40,
+        backgroundColor: '#ffffff',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginRight: 10,
+        marginLeft: 10,
     }
 
 });

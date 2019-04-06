@@ -33,7 +33,11 @@ window.Blob = Blob;
 
 
 class PostProduct extends Component {
-
+    static navigationOptions = ({ navigation }) => {
+        return {
+            header: null,
+        };
+    }
     constructor() {
         super();
         this.state = {
@@ -69,9 +73,25 @@ class PostProduct extends Component {
             alert(`Chưa chọn ảnh`)
         }
         else {
-            let product = { colors, productName, description, price, category, blobs };
-            let user = this.props.user;
-            this.props.addProduct(product, user);
+
+            Alert.alert(
+                'Thêm sản phẩm',
+                'Bạn đồng ý thêm sản phẩm này?',
+                [
+                    {
+                        text: 'Không',
+                        style: 'cancel',
+                    },
+                    {
+                        text: 'Đồng ý', onPress: () => {
+                            let product = { colors, productName, description, price, category, blobs };
+                            let user = this.props.user;
+                            this.props.addProduct(product, user);
+                        }
+                    },
+                ],
+                { cancelable: false },
+            );
         }
     }
 
@@ -167,6 +187,38 @@ class PostProduct extends Component {
                 <View style={styles.container}>
                     <KeyboardAwareScrollView>
                         <View style={styles.header}>
+                            <TouchableOpacity
+                                style={{ flexDirection: 'row' }}
+                                onPress={() => {
+                                    this.props.navigation.goBack();
+                                }}
+                            >
+                                <Icon name="ios-arrow-back" type="Ionicons"
+                                    style={{ color: '#177EFB', paddingTop: 4 }}
+
+                                />
+                                <Text style={{ color: '#177EFB', fontSize: 18, paddingTop: 9, paddingLeft: 3 }}>
+                                    Back</Text></TouchableOpacity>
+                            <Text style={{ fontSize: 18 }}> Thêm sản phẩm</Text>
+                            <TouchableOpacity
+                                style={{ flexDirection: 'row' }}
+                                onPress={() => {
+                                    this.addProduct();
+                                }}
+
+                            >
+                                {/* <Icon name="save" type="AntDesign" style={{ fontSize: 22, color: '#2D8DFB' }} /> */}
+                                <Text style={{ fontSize: 15, color: '#2D8DFB', paddingTop: 2 }}>HOÀN THÀNH</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{
+                            width: '100%',
+                            height: 1,
+                            backgroundColor: colors.background,
+                            marginTop: 1,
+                            marginBottom: 1
+                        }} />
+                        <View style={styles.topView}>
                             <ScrollView horizontal
                                 showsHorizontalScrollIndicator={false}>
                                 <TouchableOpacity
@@ -337,13 +389,13 @@ class PostProduct extends Component {
                         <View style={{ marginBottom: 30 }} />
                     </KeyboardAwareScrollView>
 
-                    <View style={styles.body}>
+                    {/* <View style={styles.body}>
                         <ButtonComponent
                             onPress={() => {
                                 this.addProduct();
                             }}
                             text='Đăng Sản Phẩm' />
-                    </View>
+                    </View> */}
 
 
                 </View>
@@ -445,7 +497,7 @@ const styles = StyleSheet.create({
         marginRight: 10,
         borderRadius: 15,
     },
-    header: {
+    topView: {
         marginTop: 10,
         marginBottom: 10
     },
@@ -467,7 +519,16 @@ const styles = StyleSheet.create({
     category: {
         marginLeft: 10,
         paddingTop: 2,
+        fontSize: 18
+    },
+    header: {
+        height: 40,
+        backgroundColor: '#ffffff',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginRight: 10,
+        marginLeft: 10,
     }
-
 });
 
