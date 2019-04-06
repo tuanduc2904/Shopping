@@ -8,7 +8,7 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, StatusBar, ImageBackground, Alert} from 'react-native';
+import { Platform, StyleSheet, Text, View, StatusBar, ImageBackground, Alert } from 'react-native';
 import { Dimens } from '../assets/Dimens'
 import { Icon, Button, Toast } from "native-base";
 import { colors } from "../assets/color";
@@ -17,13 +17,13 @@ import TextInputComponent from "../Common/TextInputComponent/TextInputComponent"
 import TextComponent from "../Common/TextComponent/TextComponent";
 import { connect } from 'react-redux';
 import { firebaseApp } from '../untils/firebase';
-// import { loginSuccess } from '../../../redux/actions/Authenticate';
+
 import { loginSuccess, skipLogin, logout } from '../redux/actions/Authenticate';
 import { loadingShowLogin, loadingCloseLogin } from '../redux/actions/Loading';
 import Loading from '../Components/Loading';
 import TouchID from 'react-native-touch-id';
 import { NavigationActions, StackActions } from 'react-navigation';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity, TextInput } from 'react-native-gesture-handler';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 const optionalConfigObject = {
@@ -107,79 +107,108 @@ class Login extends Component {
         }
 
     }
+    getInnerRef = () => this.ref;
+    checkPassWord = () => {
+        if (this.state.password.length < 6) {
+            Alert.alert(
+                'Mật khẩu không đúng',
+                'Mật khẩu dài ít nhất 6 ký tự',
+                [
+                    {
+                        text: 'OK',
+                        style: 'cancel',
+                    }
+                ],
+                { cancelable: false },
+            );
+        }
+        else {
+            this.LOGIN();
+        }
+    }
 
     render() {
         return (
             <View>
-            <KeyboardAwareScrollView>
-                <ImageBackground
-                    source={require('../assets/images/background-main.png')}
-                    style={styles.bg}>
-                    
-                    <View style={styles.container}>
-                        <View style={{ alignItems: 'center' }}>
-                            <Icon name='shopping-bag' type='FontAwesome5'
-                                style={{ fontSize: 100, color: colors.red }} />
-                        </View>
-                        
+                <KeyboardAwareScrollView>
+                    <ImageBackground
+                        source={require('../assets/images/background-main.png')}
+                        style={styles.bg}>
+
+                        <View style={styles.container}>
+                            <View style={{ alignItems: 'center' }}>
+                                <Icon name='shopping-bag' type='FontAwesome5'
+                                    style={{ fontSize: 100, color: colors.red }} />
+                            </View>
+
                             <View style={{ marginTop: 50 }}>
                                 <View style={styles.viewTextInput}>
-                                    <TextInputComponent
+                                    <TextInput
+                                        style={styles.text}
                                         value={this.state.email}
                                         placeholder='Email'
                                         onChangeText={(email) => this.setState({ email })}
+                                        returnKeyType='next'
+                                        keyboardType='email-address'
+                                        onSubmitEditing={() => { this.refs.txtPassWord.focus() }}
                                     />
                                 </View>
 
                                 <View style={styles.viewTextInput}>
-                                    <TextInputComponent
+                                    <TextInput
+                                        style={styles.text}
                                         placeholder='Mật khẩu'
                                         onChangeText={(password) => this.setState({ password })}
                                         type='password'
                                         secureTextEntry={true}
+                                        returnKeyType='go'
+                                        ref={'txtPassWord'}
+                                        onSubmitEditing={() => {
+                                            this.checkPassWord();
+                                        }}
                                     />
                                 </View>
                             </View>
-                        
-                        <View style={{ paddingBottom: 10 }}>
-                            <TouchableOpacity
-                                onPress={() => {
-                                    if (this.props.user.email !== '') {
-                                        this.loginWithFingter();
-                                    }
-                                    else {
-                                        alert(`Bạn phải đặng nhập cho lần sử dụng đầu tiên`)
-                                    }
-                                }}
-                            >
-                                <Icon name="md-finger-print" type="Ionicons" style={{ fontSize: 36, color: 'red' }} />
-                            </TouchableOpacity>
-                        </View>
-                        <ButtonComponent
-                            text='Đăng nhập'
-                            onPress={() => {
-                                this.LOGIN();
-                            }}
-                        />
-                        <View style={styles.btnSignIn}>
+
+                            <View style={{ paddingBottom: 10 }}>
+                                <TouchableOpacity
+                                    onPress={() => {
+                                        if (this.props.user.email !== '') {
+                                            this.loginWithFingter();
+                                        }
+                                        else {
+                                            alert(`Bạn phải đặng nhập cho lần sử dụng đầu tiên`)
+                                        }
+                                    }}
+                                >
+                                    <Icon name="md-finger-print" type="Ionicons" style={{ fontSize: 36, color: 'red' }} />
+                                </TouchableOpacity>
+                            </View>
                             <ButtonComponent
-                                text='Đăng ký'
-                                onPress={() => this.props.navigation.navigate('SignUp')}
-                            />
-                        </View>
-                        <View style={styles.footer}>
-                            <Text> </Text>
-                            <TextComponent style={styles.text}
+                                text='Đăng nhập'
                                 onPress={() => {
-                                    this.props.skipLogin();
-                                    this.props.navigation.navigate('Main')
+                                    this.checkPassWord();
                                 }}
-                            >Bỏ Qua</TextComponent>
+                            />
+                            <View style={styles.btnSignIn}>
+                                <ButtonComponent
+                                    text='Đăng ký'
+                                    onPress={() => this.props.navigation.navigate('SignUp')}
+                                />
+                            </View>
+                            <View style={styles.footer}>
+                                <Text> </Text>
+                                <TextComponent style={styles.skip}
+                                    onPress={() => {
+                                        this.props.skipLogin();
+                                        this.props.navigation.navigate('Main')
+                                    }}
+                                >Bỏ Qua</TextComponent>
+                            </View>
                         </View>
-                    </View>
-                    
-                </ImageBackground>
-                {this.props.isLoading ? <Loading /> : null}
+
+                    </ImageBackground>
+                    {this.props.isLoading ? <Loading /> : null}
                 </KeyboardAwareScrollView>
             </View>
         );
@@ -224,7 +253,18 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 18,
-        color: colors.red
-    }
+        color: colors.red,
+        width: Dimens.screen.width / 1.2,
 
+        // borderColor:colors.red,
+        borderBottomColor: colors.red,
+        borderBottomWidth: 1
+    },
+    skip: {
+        fontSize: 18,
+        color: colors.red,
+        position: 'absolute',
+        bottom: 5,
+        right: 10
+    }
 })

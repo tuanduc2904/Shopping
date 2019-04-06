@@ -28,7 +28,7 @@ class ShopSell extends Component {
     constructor(props) {
         super(props);
     }
-  
+
 
     render() {
         return (
@@ -39,23 +39,27 @@ class ShopSell extends Component {
                         showsVerticalScrollIndicator={false}
                         data={this.props.storeProducts}
                         renderItem={({ item }) =>
-                            <View style={styles.container}>
-                                <Card style={[styles.card]}>
-                                    <View style={[styles.viewHorizontal, { marginTop: 5, marginBottom: 5 }]}>
-                                        <View style={styles.viewHorizontalLeft}>
-                                            <FastImage style={styles.avatar}
-                                                source={{ uri: item.avatarSource }}
-                                            />
-                                            <TextComponent style={[styles.title]}>{item.nameShop}</TextComponent>
+                            item.products.length > 0 ?
+                                <View style={styles.container}>
+
+                                    <Card style={[styles.card]}>
+                                        <View style={[styles.viewHorizontal, { marginTop: 5, marginBottom: 5 }]}>
+                                            <View style={styles.viewHorizontalLeft}>
+                                                <FastImage style={styles.avatar}
+                                                    source={{ uri: item.avatarSource }}
+                                                />
+                                                <TextComponent style={[styles.title]}>{item.nameShop}</TextComponent>
+                                            </View>
+                                            <View>
+                                                <TextComponent style={[styles.textItemRight]}>{item.products.avatarSource}</TextComponent>
+                                            </View>
                                         </View>
-                                        <View>
-                                            <TextComponent style={[styles.textItemRight]}>{item.products.avatarSource}</TextComponent>
-                                        </View>
-                                    </View>
-                                </Card>
-                                <ListShop products={item.products} />
-                            </View>
+                                    </Card>
+                                    <ListShop products={item.products} />
+                                </View>
+                                : null
                         }
+
                         keyExtractor={(item, index) => index.toString()}
 
                     />

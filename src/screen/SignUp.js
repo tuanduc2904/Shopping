@@ -8,7 +8,7 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, StatusBar, Button, Alert, ImageBackground } from 'react-native';
+import { Platform, StyleSheet, Text, View, StatusBar, Button, Alert, ImageBackground, TextInput } from 'react-native';
 import { Dimens } from '../assets/Dimens'
 import { Icon } from "native-base";
 import { colors } from "../assets/color";
@@ -20,6 +20,8 @@ import { firebaseApp } from '../untils/firebase';
 import { loadingShowSignUp, loadingCloseSignUp } from '../redux/actions/Loading';
 import Loading from '../Components/Loading';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { loginSuccess, logout } from '../redux/actions/Authenticate';
+import { NavigationActions, StackActions } from 'react-navigation';
 
 class SignUp extends Component {
     constructor(props) {
@@ -60,6 +62,8 @@ class SignUp extends Component {
         this.props.loadingShowSignUp();
         firebaseApp.auth().createUserWithEmailAndPassword(email, password).
             then((user) => {
+                console.log(user)
+                u = user.user
                 this.props.loadingCloseSignUp();
                 setTimeout(() => {
                     Alert.alert(
@@ -68,7 +72,9 @@ class SignUp extends Component {
                         [
                             {
                                 text: 'Đăng nhập', onPress: () => {
-                                    this.props.navigation.goBack();
+                                    this.props.logout();
+                                    this.props.loginSuccess(user.user);
+                                    this.navigateScreen('Main');
                                 }
                             },
                         ],
@@ -78,6 +84,15 @@ class SignUp extends Component {
             }).catch(error => {
                 this.SignFail(error);
             });
+    }
+    navigateScreen = (screen) => {
+        const resetAction = StackActions.reset({
+            index: 0,
+            actions: [
+                NavigationActions.navigate({ routeName: screen })
+            ]
+        });
+        this.props.navigation.dispatch(resetAction);
     }
 
     render() {
@@ -92,29 +107,40 @@ class SignUp extends Component {
                                 style={{ fontSize: 100, color: colors.red }} /></View>
                         <View style={styles.body}>
                             <View style={styles.viewTextInput}>
-                                <TextInputComponent
+                                <TextInput
+                                    style={styles.text}
                                     placeholder='Email'
                                     onChangeText={(email) => this.setState({ email })}
+                                    returnKeyType='next'
+                                    keyboardType='email-address'
+                                    onSubmitEditing={() => { this.refs.txtPassWord.focus() }}
+                                    autoCorrect={false}
                                 />
                             </View>
                             <View style={styles.viewTextInput}>
-                                <TextInputComponent
+                                <TextInput
+                                    style={styles.text}
                                     placeholder='Mật khẩu'
                                     onChangeText={(password) => this.setState({ password })}
                                     type='password'
                                     secureTextEntry={true}
+                                    returnKeyType='go'
+                                    ref={'txtPassWord'}
+                                    autoCorrect={false}
+                                    onSubmitEditing={() => {
+                                        this.checkText();
+                                    }}
 
                                 />
                             </View>
                         </View>
                         <ButtonComponent
                             text='Đăng ký'
-
                             onPress={() => this.checkText()}
                         />
                         <View style={styles.footer}>
                             <Text> </Text>
-                            <TextComponent style={styles.text}
+                            <TextComponent style={styles.skip}
                                 onPress={() =>
                                     this.props.navigation.goBack()
                                 }
@@ -134,7 +160,7 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, { loadingShowSignUp, loadingCloseSignUp })(SignUp)
+export default connect(mapStateToProps, { loadingShowSignUp, loadingCloseSignUp, loginSuccess, logout })(SignUp)
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -165,7 +191,16 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 18,
-        color: colors.red
+        color: colors.red,
+        width: Dimens.screen.width / 1.2,
+        borderBottomColor: colors.red,
+        borderBottomWidth: 1
+    },
+    skip: {
+        fontSize: 18,
+        color: colors.red,
+        position: 'absolute',
+        bottom: 5,
+        right: 10
     }
-
 })
