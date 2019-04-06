@@ -229,7 +229,8 @@ const styles = StyleSheet.create({
         color: colors.red,
         fontWeight: 'bold',
         padding: 10,
-        marginRight: 10
+        marginRight: 10,
+        paddingRight: 10,
     },
     horizontall: {
         flexDirection: 'row',

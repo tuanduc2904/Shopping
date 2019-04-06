@@ -1,6 +1,6 @@
 import {
-    ERROR, CANCEL_ERROR, GET_SUCCESS_NAME_PRODUCTS,
-    GET_SUCCESS_NEW_PRODUCTS, GET_SUCCESS_REFER_PRODUCTS,
+    GET_SUCCESS_NAME_PRODUCTS,
+    GET_SUCCESS_NEW_PRODUCTS,
     GET_SUCCESS_STORE_PRODUCTS, GET_SUCCESS_DEFAULT_PRODUCTS,
     FINISHALL, START_GET_DATA, SEARCH_PRODUCT_NAME
 } from './types';
@@ -46,6 +46,7 @@ const getStoreProducts = (storeProducts) => {
 export const getDefaulProduct = () => {
     return (dispatch) => {
         dispatch(startIsLoading());
+        console.log(`getDefaulProduct`)
         const defaultProducts = [];
         const storeProducts = [];
         db.ref('products').once('value', snap => {

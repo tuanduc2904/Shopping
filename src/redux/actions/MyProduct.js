@@ -1,5 +1,6 @@
 import firebase from 'firebase';
 import { ADD_TO_PRODUCT } from './types'
+import { getDefaulProduct } from './Product'
 
 addToProduct = (newProduct) => {
     return {
@@ -20,6 +21,26 @@ addSuccess = (product) => {
     }
 }
 
+dpRemoveInMyProduct = (product) => {
+    return {
+        type: 'REMOVE_MY_PRODUCT',
+        product
+    }
+}
+
+export const removeInMyProduct = (product) => {
+    return (dispatch) => {
+        db.ref('products').child(product.uid).child(product.key).remove().then(() => {
+            dispatch(dpRemoveInMyProduct(product));
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+}
+
+removeInProducts = () => {
+
+}
 startAdd = () => {
     return {
         type: 'START_ADD'
@@ -109,7 +130,7 @@ export const addProduct = (product, user) => {
                             };
 
                             dispatch(addSuccess(newProduct));
-                            dispatch(addToProduct(newProduct))
+                            // dispatch(addToProduct(newProduct))
                         })
                     }
                 }).catch(err => {

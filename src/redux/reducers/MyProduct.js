@@ -41,6 +41,11 @@ export default (state = INITIAL, action) => {
                     else return i
                 })
             }
+        case 'REMOVE_MY_PRODUCT':
+            let newProducts = state.myProducts;
+            return {
+                ...state, myProducts: newProducts.filter(i => i.key !== action.product.key)
+            }
         default:
             return state;
     }

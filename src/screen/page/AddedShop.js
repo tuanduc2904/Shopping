@@ -8,7 +8,9 @@ import FastImage from "react-native-fast-image";
 import { getProduct } from '../../redux/actions/MyProduct';
 import Loading from '../../Components/Loading';
 const { width } = Dimensions.get('window');
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { removeInMyProduct } from '../../redux/actions/MyProduct';
+import { getDefaulProduct } from '../../redux/actions/Product'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 class AddedShop extends Component {
   constructor(props) {
     super(props);
@@ -71,7 +73,8 @@ class AddedShop extends Component {
                             },
                             {
                               text: 'Xóa', onPress: () => {
-                                
+                                this.props.removeInMyProduct(item);
+                                this.props.getDefaulProduct();
                               }
                             },
                           ],
@@ -121,7 +124,7 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { getProduct })(AddedShop);
+export default connect(mapStateToProps, { getProduct, removeInMyProduct, getDefaulProduct })(AddedShop);
 
 
 const styles = StyleSheet.create({
@@ -175,9 +178,6 @@ const styles = StyleSheet.create({
     borderRadius: 8
   },
   imageNumColumns: {
-
-    // backgroundColor: colors.background,
-    // borderRadius: 8
     justifyContent: 'center',
     width: width / 2.2,
     flex: 1,

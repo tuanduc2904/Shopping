@@ -8,7 +8,7 @@
  */
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, SafeAreaView, Alert } from 'react-native';
+import { Platform, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, SafeAreaView, Alert, TextInput } from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import TextInputComponent from "../../Common/TextInputComponent/TextInputComponent";
@@ -21,6 +21,9 @@ import RNFetchBlob from 'react-native-fetch-blob';
 import { connect } from 'react-redux'
 import Loading from '../../Components/Loading';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { getDefaulProduct } from '../../redux/actions/Product'
+import { TextInputMask } from 'react-native-masked-text'
+
 
 const Blob = RNFetchBlob.polyfill.Blob;
 const fs = RNFetchBlob.fs;
@@ -135,11 +138,11 @@ class PostProduct extends Component {
     }
 
     renderImage(image) {
-        return<View>
+        return <View>
             <Image style={styles.image} source={image} />
-            <View style={{ position: 'absolute',top:-5,right:3}}>
+            <View style={{ position: 'absolute', top: -5, right: 3 }}>
                 <TouchableOpacity>
-                   <Icon name='closecircle' type='AntDesign' style={{fontSize:25,color:colors.background}}/>
+                    <Icon name='closecircle' type='AntDesign' style={{ fontSize: 25, color: colors.background }} />
                 </TouchableOpacity>
             </View>
         </View>
@@ -174,7 +177,7 @@ class PostProduct extends Component {
                                     <TextComponent style={styles.textAdd}>Thêm Ảnh</TextComponent>
                                 </TouchableOpacity>
                                 {this.state.images ? this.state.images.map(i =>
-                                    <View style={{ marginTop:5}}
+                                    <View style={{ marginTop: 5 }}
                                         key={i.uri}>{this.renderAsset(i)}</View>
                                 ) : null}
 
@@ -183,43 +186,68 @@ class PostProduct extends Component {
                         </View>
                         <View>
                             <View style={styles.viewTextInput}>
-                                <TextComponent style={{ paddingLeft: 14 }}>Tên sản phẩm:</TextComponent>
-                                <TextInputComponent
+                                <TextComponent style={{ paddingLeft: 14, fontSize: 18 }}> <Icon name="rename-box" type="MaterialCommunityIcons"
+                                    style={{ fontSize: 16 }} /> Tên sản phẩm:</TextComponent>
+                                <TextInput
                                     placeholder='Tên Sản Phẩm '
                                     numberOfLines={2}
-                                    multiline={true}
+                                    maxLength={25}
+                                    numberOfLines={2}
                                     style={styles.textInput}
+                                    returnKeyType='next'
                                     value={this.state.productName}
                                     onChangeText={(productName) => this.setState({ productName })}
+                                    onSubmitEditing={() => { this.refs.txtDescription.focus() }}
+
                                 />
                             </View>
                             <View style={styles.viewTextInput}>
-                                <TextComponent style={{ paddingLeft: 14 }}>Mô tả sản phẩm:</TextComponent>
-                                <TextInputComponent
+                                <TextComponent style={{ paddingLeft: 14, fontSize: 18 }}>
+                                    <Icon name="description" type="MaterialIcons"
+                                        style={{ fontSize: 16 }} /> Mô tả sản phẩm:</TextComponent>
+                                <TextInput
                                     placeholder='Mô tả'
                                     numberOfLines={2}
+                                    maxLength={100}
                                     multiline={true}
-                                    style={styles.textInput}
+                                    style={[styles.textInput, { maxHeight: 150 }]}
                                     value={this.state.description}
                                     onChangeText={(description) => this.setState({ description })}
+                                    ref={'txtDescription'}
                                 />
                             </View>
                             <View style={styles.viewTextInput}>
-                                <TextComponent style={{ paddingLeft: 14 }}>Giá sản phẩm:</TextComponent>
-                                <TextInputComponent
+                                <TextComponent style={{ paddingLeft: 14, fontSize: 18 }}>
+                                    <Icon name="ios-pricetags" type="Ionicons"
+                                        style={{ fontSize: 16 }} /> Giá sản phẩm:</TextComponent>
+
+                                <TextInputMask
                                     style={styles.textInput}
-                                    placeholder='Giá sản phẩm'
-                                    multiline={true}
-                                    value={this.state.price}
                                     keyboardType='number-pad'
-                                    onChangeText={(price) => this.setState({ price })}
+                                    type={'money'}
+                                    options={{
+                                        precision: 0,
+                                        separator: '.',
+                                        delimiter: ',',
+                                        unit: 'đ ',
+                                        suffixUnit: ''
+                                    }}
+                                    maxLength={12}
+                                    ref={(ref) => this.moneyField = ref}
+                                    value={this.state.price}
+                                    onChangeText={() => {
+                                        this.setState({
+                                            price: this.moneyField.getRawValue()
+                                        });
+                                    }}
                                 />
                             </View>
                             <View>
                                 <TouchableOpacity
                                     onPress={() => this.showColors()}
                                     style={[styles.button, styles.viewTextInput]}>
-                                    <TextComponent>Chọn Màu</TextComponent>
+                                    <TextComponent style={{ fontSize: 18 }}><Icon name="ios-color-wand" type="Ionicons"
+                                        style={{ fontSize: 18 }} /> Chọn Màu</TextComponent>
                                     <Icon name='color-lens' type='MaterialIcons'
                                         style={{ fontSize: 25, color: colors.red }} />
                                 </TouchableOpacity>
@@ -283,7 +311,9 @@ class PostProduct extends Component {
                                 <TouchableOpacity
                                     onPress={() => this.showCategories()}
                                     style={[styles.button, styles.viewTextInput]}>
-                                    <TextComponent>Chọn Danh Mục</TextComponent>
+                                    <TextComponent style={{ fontSize: 18 }}>
+                                        <Icon name="content-duplicate" type="MaterialCommunityIcons"
+                                            style={{ fontSize: 16 }} /> Chọn Danh Mục</TextComponent>
                                     <TextComponent style={{ marginRight: 10 }}>{this.state.category}</TextComponent>
 
                                 </TouchableOpacity>
@@ -304,7 +334,7 @@ class PostProduct extends Component {
                             </View>
 
                         </View>
-                        <View style={{marginBottom:30}}/>
+                        <View style={{ marginBottom: 30 }} />
                     </KeyboardAwareScrollView>
 
                     <View style={styles.body}>
@@ -326,6 +356,7 @@ class PostProduct extends Component {
                             text: 'OK', onPress: () => {
                                 this.props.navigation.goBack();
                                 this.props.finish();
+                                this.props.getDefaulProduct();
                             }
                         },
                     ],
@@ -353,7 +384,7 @@ export default connect((state) => {
         user: state.Auth,
         myProduct: state.MyProduct
     }
-}, { addProduct, finish })(PostProduct);
+}, { addProduct, finish, getDefaulProduct })(PostProduct);
 const styles = StyleSheet.create({
     saf: {
         flex: 1,
@@ -375,7 +406,15 @@ const styles = StyleSheet.create({
     textInput: {
         width: '100%',
         paddingLeft: 15,
-        paddingRight: 5
+        paddingRight: 5,
+        fontSize: 18,
+        color: colors.red,
+        // width: Dimens.screen.width / 1.2,
+
+        // borderColor:colors.red,
+        borderBottomColor: colors.red,
+        borderBottomWidth: 1
+
     },
     text: {
         color: 'black',
@@ -398,7 +437,7 @@ const styles = StyleSheet.create({
         borderStyle: 'dashed',
         borderColor: colors.bgUser,
         marginLeft: 10,
-        marginTop:5
+        marginTop: 5
     },
     image: {
         width: 80,
