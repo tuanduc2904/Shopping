@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Mar 21 22:56:38 ICT 2019
+#Sun Apr 07 02:51:27 ICT 2019
 60.set=NATIVE_RESOURCE
 52.set=ASSET
 53.base=/Volumes/DATA/Mobile/react-native/Shopping/android/app/build/intermediates/transforms/mergeJniLibs/debug/0

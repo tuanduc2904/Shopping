@@ -34,9 +34,15 @@ window.Blob = Blob;
 
 class PostProduct extends Component {
     static navigationOptions = ({ navigation }) => {
-        return {
-            header: null,
-        };
+        if (Platform.OS === 'ios') {
+            return {
+                header: null
+            }
+        }
+        else
+            return {
+
+            };
     }
     constructor() {
         super();
@@ -186,31 +192,33 @@ class PostProduct extends Component {
             <SafeAreaView style={styles.saf}>
                 <View style={styles.container}>
                     <KeyboardAwareScrollView>
-                        <View style={styles.header}>
-                            <TouchableOpacity
-                                style={{ flexDirection: 'row' }}
-                                onPress={() => {
-                                    this.props.navigation.goBack();
-                                }}
-                            >
-                                <Icon name="ios-arrow-back" type="Ionicons"
-                                    style={{ color: '#177EFB', paddingTop: 4 }}
+                        {Platform.OS === 'ios' ?
+                            <View style={styles.header}>
+                                <TouchableOpacity
+                                    style={{ flexDirection: 'row' }}
+                                    onPress={() => {
+                                        this.props.navigation.goBack();
+                                    }}
+                                >
+                                    <Icon name="ios-arrow-back" type="Ionicons"
+                                        style={{ color: '#177EFB', paddingTop: 4 }}
 
-                                />
-                                <Text style={{ color: '#177EFB', fontSize: 18, paddingTop: 9, paddingLeft: 3 }}>
-                                    Back</Text></TouchableOpacity>
-                            <Text style={{ fontSize: 18 }}> Thêm sản phẩm</Text>
-                            <TouchableOpacity
-                                style={{ flexDirection: 'row' }}
-                                onPress={() => {
-                                    this.addProduct();
-                                }}
+                                    />
+                                    <Text style={{ color: '#177EFB', fontSize: 18, paddingTop: 9, paddingLeft: 3 }}>
+                                        Back</Text></TouchableOpacity>
+                                <Text style={{ fontSize: 18 }}> Thêm sản phẩm</Text>
+                                <TouchableOpacity
+                                    style={{ flexDirection: 'row' }}
+                                    onPress={() => {
+                                        this.addProduct();
+                                    }}
 
-                            >
-                                {/* <Icon name="save" type="AntDesign" style={{ fontSize: 22, color: '#2D8DFB' }} /> */}
-                                <Text style={{ fontSize: 15, color: '#2D8DFB', paddingTop: 2 }}>HOÀN THÀNH</Text>
-                            </TouchableOpacity>
-                        </View>
+                                >
+                                    {/* <Icon name="save" type="AntDesign" style={{ fontSize: 22, color: '#2D8DFB' }} /> */}
+                                    <Text style={{ fontSize: 15, color: '#2D8DFB', paddingTop: 2 }}>HOÀN THÀNH</Text>
+                                </TouchableOpacity>
+                            </View>
+                            : null}
                         <View style={{
                             width: '100%',
                             height: 1,
@@ -388,14 +396,15 @@ class PostProduct extends Component {
                         </View>
                         <View style={{ marginBottom: 30 }} />
                     </KeyboardAwareScrollView>
-
-                    {/* <View style={styles.body}>
-                        <ButtonComponent
-                            onPress={() => {
-                                this.addProduct();
-                            }}
-                            text='Đăng Sản Phẩm' />
-                    </View> */}
+                    {Platform.OS === 'ios' ? null :
+                        <View style={styles.body}>
+                            <ButtonComponent
+                                onPress={() => {
+                                    this.addProduct();
+                                }}
+                                text='Đăng Sản Phẩm' />
+                        </View>
+                    }
 
 
                 </View>
