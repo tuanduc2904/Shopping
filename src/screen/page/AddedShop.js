@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, ScrollView, FlatList, TouchableOpacity, Dimensions } from 'react-native'
+import { Text, View, StyleSheet, ScrollView, FlatList, TouchableOpacity, Dimensions, Alert } from 'react-native'
 import { connect } from 'react-redux'
 import { colors } from "../../assets/color";
 import TextComponent from "../../Common/TextComponent/TextComponent";
@@ -16,6 +16,10 @@ class AddedShop extends Component {
 
   componentDidMount() {
     this.props.getProduct(this.props.user);
+  }
+  formatVND(num) {
+    var value = String(num).replace(/(.)(?=(\d{3})+$)/g, '$1,')
+    return value
   }
 
   render() {
@@ -45,24 +49,47 @@ class AddedShop extends Component {
             <FlatList
               showsVerticalScrollIndicator={false}
               data={this.props.myProduct.myProducts}
-              style= {{height:'100%'}}
+              style={{ height: '100%' }}
               renderItem={({ item }) =>
                 <View style={[styles.viewItem]}>
                   <FastImage style={styles.imageNumColumns}
                     source={{ uri: item.images[0] }} />
                   <View style={[styles.left10, { marginBottom: 5, marginTop: 5 }]}>
                     <TextComponent style={styles.name}>{item.productName}</TextComponent>
-                    <TextComponent style={styles.money}>{item.price}</TextComponent>
-                    <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
+                    <TextComponent style={[styles.money, { fontWeight: 'bold' }]}>{this.formatVND(item.price)} đ</TextComponent>
                   </View>
-                  <View>
-                    <TouchableOpacity style={[styles.viewHorizontal, { marginBottom: 10 }]}
+                  <View style={[styles.viewHorizontal, { marginBottom: 10 }]}>
+                    <TouchableOpacity
+                      onPress={() => {
+                        Alert.alert(
+                          'Xóa sản phẩm',
+                          'Bạn có chắc muốn xóa sản phẩm này không?',
+                          [
+                            {
+                              text: 'Không',
+                              style: 'cancel',
+                            },
+                            {
+                              text: 'Xóa', onPress: () => {
+                                
+                              }
+                            },
+                          ],
+                          { cancelable: false },
+                        );
+
+                      }}
+                    >
+                      <Icon name='trash' type='EvilIcons'
+                        style={{ fontSize: 30, color: colors.red, paddingRight: 10 }} />
+                    </TouchableOpacity>
+                    <TouchableOpacity
                       onPress={() => {
                         this.props.navigation.navigate('EditProduct', { item: item })
                       }}
                     >
-                      <Icon name='settings' type='SimpleLineIcons'
-                        style={{ fontSize: 20, color: colors.red, position: 'absolute', right: 5, bottom: 10 }} />
+                      <Icon name='edit' type='AntDesign'
+                        style={{ fontSize: 25, color: colors.red, paddingLeft: 10 }} />
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -190,10 +217,12 @@ const styles = StyleSheet.create({
   },
   name: {
     fontWeight: 'bold',
-    fontSize: 15
+    fontSize: 15,
+    width: 120,
   },
   money: {
-    color: colors.red
+    color: colors.red,
+    width: 120
   },
-  shopid: {}
+
 })

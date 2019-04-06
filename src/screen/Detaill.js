@@ -44,6 +44,10 @@ class Detaill extends Component {
             });
 
     }
+    formatVND(num) {
+        var value = String(num).replace(/(.)(?=(\d{3})+$)/g, '$1,')
+        return value
+    }
     setRef = (c) => {
         this.listRef = c;
     }
@@ -55,74 +59,32 @@ class Detaill extends Component {
         const { navigate } = this.props.navigation;
         return (
             <SafeAreaView style={styles.saf}>
-                <Root>
-                    <View style={styles.container}>
-                        <ScrollView>
-                            <FlatList
-                                ref={this.setRef}
-                                data={this.state.item.images}
-                                horizontal
-                                showsHorizontalScrollIndicator={false}
-                                pagingEnabled
-                                keyExtractor={(item, index) => index.toString()}
-                                renderItem={({ item, i }) =>
-                                    (
-                                        <View key={i} style={{ height, width }}>
-                                            <FastImage style={{ height, width }} source={{ uri: item }} />
-                                        </View>
-                                    )}
-                                onMomentumScrollEnd={(event) => {
-                                    let sliderIndex = event.nativeEvent.contentOffset.x ? event.nativeEvent.contentOffset.x / width : 0
-                                    this.setState({ sliderIndex })
-                                }}
-                            />
 
-                            <View style={{ backgroundColor: colors.white, marginBottom: 10 }}>
-                                <View style={styles.horizontall}>
-                                    <TextComponent style={styles.name}>{this.state.item.productName}</TextComponent>
-                                    <TextComponent style={styles.money}>Giá:  {this.state.item.price} đ</TextComponent>
-                                </View>
-                                <View style={{
-                                    width: '100%',
-                                    height: 1,
-                                    backgroundColor: colors.background,
-                                    marginTop: 1,
-                                    marginBottom: 1
-                                }} />
-                                <View style={styles.viewAvatar}>
-                                    <FastImage style={styles.avatar}
-                                        source={{ uri: this.state.item.avatarSource }}
-                                    />
-                                    <TextComponent style={styles.shopid}>{this.state.item.nameShop}</TextComponent>
-                                </View>
-                                <View style={{
-                                    width: '100%',
-                                    height: 1,
-                                    backgroundColor: colors.background,
-                                    marginTop: 1,
-                                    marginBottom: 1
-                                }} />
-                                <View style={{
-                                    marginLeft: 10,
-                                    marginRight: 10,
-                                }}>
-                                    <TextComponent style={styles.infoTitle}>Mô tả sản phẩm</TextComponent>
+                <View style={styles.container}>
+                    <ScrollView>
+                        <FlatList
+                            ref={this.setRef}
+                            data={this.state.item.images}
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                            pagingEnabled
+                            keyExtractor={(item, index) => index.toString()}
+                            renderItem={({ item, i }) =>
+                                (
+                                    <View key={i} style={{ height, width }}>
+                                        <FastImage style={{ height, width }} source={{ uri: item }} />
+                                    </View>
+                                )}
+                            onMomentumScrollEnd={(event) => {
+                                let sliderIndex = event.nativeEvent.contentOffset.x ? event.nativeEvent.contentOffset.x / width : 0
+                                this.setState({ sliderIndex })
+                            }}
+                        />
 
-                                    <TextComponent style={{ paddingBottom: 30, paddingTop: 15 }}>{this.state.item.description}</TextComponent>
-                                </View>
-                                <View style={{
-                                    width: '100%',
-                                    height: 1,
-                                    backgroundColor: colors.background,
-                                    marginTop: 1,
-                                    marginBottom: 1
-                                }} />
-                                <View style={{
-                                    marginLeft: 10,
-                                    marginRight: 10,
-                                }}>
-                                    <TextComponent style={{ paddingBottom: 30, paddingTop: 15 }}>Ngày đăng: {this.state.item.date}</TextComponent>
-                                </View>
+                        <View style={{ backgroundColor: colors.white, marginBottom: 10 }}>
+                            <View style={styles.horizontall}>
+                                <TextComponent style={styles.name}>{this.state.item.productName}</TextComponent>
+                                <TextComponent style={styles.money}>Giá:  {this.formatVND(this.state.item.price)} đ</TextComponent>
                             </View>
                             <View style={{
                                 width: '100%',
@@ -131,53 +93,93 @@ class Detaill extends Component {
                                 marginTop: 1,
                                 marginBottom: 1
                             }} />
-                            <TouchableOpacity
-                                onPress={() => {
-                                    navigate('Comment', { item: this.state.item });
-                                }}
-                                style={{ backgroundColor: colors.white, marginBottom: 10 }}>
-                                <View style={[styles.horizontall, { marginBottom: 10 }]}>
-                                    <View
-                                        style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                        <Icon name='star' type='AntDesign' style={{ fontSize: 30, color: colors.yellow }} />
-                                        <TextComponent style={styles.danhgia}>Đánh Giá Sản Phẩm</TextComponent>
-                                    </View>
-                                    <TouchableOpacity>
-                                        <TextComponent style={{ fontSize: 12, color: colors.red }}>Xem Thêm >></TextComponent>
-                                    </TouchableOpacity>
-                                </View>
-                                <View style={styles.viewAvatar}>
-                                    <FastImage style={styles.avatar}
-                                        source={{ uri: this.state.item.avatarSource }}
-                                    />
-                                    <View>
-                                        <TextComponent style={styles.shopid}>{this.state.item.nameShop}</TextComponent>
-                                        <TextComponent> San pham rat tot</TextComponent>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
+                            <View style={styles.viewAvatar}>
+                                <FastImage style={styles.avatar}
+                                    source={{ uri: this.state.item.avatarSource }}
+                                />
+                                <TextComponent style={styles.shopid}>{this.state.item.nameShop}</TextComponent>
+                            </View>
+                            <View style={{
+                                width: '100%',
+                                height: 1,
+                                backgroundColor: colors.background,
+                                marginTop: 1,
+                                marginBottom: 1
+                            }} />
+                            <View style={{
+                                marginLeft: 10,
+                                marginRight: 10,
+                            }}>
+                                <TextComponent style={styles.infoTitle}>Mô tả sản phẩm</TextComponent>
 
-                        </ScrollView>
-
-                    </View>
-                    <View style={styles.footer}>
-                        <ButtonComponent
-                            text='Thêm Vào Giỏ Hàng'
-                            styleText={{ color: colors.white, fontWeight: 'bold' }}
-                            style={{ backgroundColor: colors.red,marginTop:10 }}
+                                <TextComponent style={{ paddingBottom: 30, paddingTop: 15 }}>{this.state.item.description}</TextComponent>
+                            </View>
+                            <View style={{
+                                width: '100%',
+                                height: 1,
+                                backgroundColor: colors.background,
+                                marginTop: 1,
+                                marginBottom: 1
+                            }} />
+                            <View style={{
+                                marginLeft: 10,
+                                marginRight: 10,
+                            }}>
+                                <TextComponent style={{ paddingBottom: 30, paddingTop: 15 }}>Ngày đăng: {this.state.item.date}</TextComponent>
+                            </View>
+                        </View>
+                        <View style={{
+                            width: '100%',
+                            height: 1,
+                            backgroundColor: colors.background,
+                            marginTop: 1,
+                            marginBottom: 1
+                        }} />
+                        <TouchableOpacity
                             onPress={() => {
-                                this.props.addProductToCart(this.state.item);
-                                Toast.show({
-                                    text: "Sản phẩm đã được thêm vào giỏ hàng",
-                                    buttonText: "Okay",
-                                    position: "top",
-                                    type: "success"
-                                })
+                                navigate('Comment', { item: this.state.item });
                             }}
-                        />
-                    </View>
-                    {this.state.isLoading ? <Loading /> : null}
-                </Root>
+                            style={{ backgroundColor: colors.white, marginBottom: 10 }}>
+                            <View style={[styles.horizontall, { marginBottom: 10 }]}>
+                                <View
+                                    style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                    <Icon name='star' type='AntDesign' style={{ fontSize: 30, color: colors.yellow }} />
+                                    <TextComponent style={styles.danhgia}>Đánh Giá Sản Phẩm</TextComponent>
+                                </View>
+                                <TouchableOpacity>
+                                    {/* <TextComponent style={{ fontSize: 12, color: colors.red }}>Xem Thêm >></TextComponent> */}
+                                </TouchableOpacity>
+                            </View>
+                            <View style={styles.viewAvatar}>
+                                <FastImage style={styles.avatar}
+                                    source={{ uri: this.state.item.avatarSource }}
+                                />
+                                <View>
+                                    <TextComponent style={styles.shopid}>{this.state.item.nameShop}</TextComponent>
+                                    <TextComponent> San pham rat tot</TextComponent>
+                                </View>
+                            </View>
+                        </TouchableOpacity>
+
+                    </ScrollView>
+
+                </View>
+                <View style={styles.footer}>
+                    <ButtonComponent
+                        text='Thêm Vào Giỏ Hàng'
+                        styleText={{ color: colors.white, fontWeight: 'bold' }}
+                        style={{ backgroundColor: colors.red, marginTop: 10 }}
+                        onPress={() => {
+                            this.props.addProductToCart(this.state.item);
+                            Toast.show({
+                                text: "Sản phẩm đã được thêm vào giỏ hàng",
+                                position: "bottom",
+                                type: "success"
+                            })
+                        }}
+                    />
+                </View>
+                {this.state.isLoading ? <Loading /> : null}
             </SafeAreaView>
         );
     }
@@ -269,7 +271,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     footer: {
-        backgroundColor:colors.white,
+        backgroundColor: colors.white,
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%'

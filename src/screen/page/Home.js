@@ -12,13 +12,14 @@ import {
 } from 'react-native';
 import { colors } from "../../assets/color";
 import { Dimens } from "../../assets/Dimens";
-import { Icon, Card } from "native-base";
+import { Icon, Card, Toast, Root } from "native-base";
 const { width } = Dimensions.get('window');
 const height = width * 0.5;
 import { firebaseApp } from "../../untils/firebase";
 import FastImage from "react-native-fast-image";
 import TextComponent from "../../Common/TextComponent/TextComponent";
 import { connect } from 'react-redux'
+import { addProductToCart } from '../../redux/actions/Cart'
 
 class Home extends Component {
     constructor(props) {
@@ -48,6 +49,10 @@ class Home extends Component {
         }
     }
 
+    formatVND(num) {
+        var value = String(num).replace(/(.)(?=(\d{3})+$)/g, '$1,')
+        return value
+    }
 
     setRef = (c) => {
         this.listRef = c;
@@ -81,7 +86,6 @@ class Home extends Component {
         const { navigate } = this.props.navigation;
         return (
             <SafeAreaView style={styles.saf}>
-
                 <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
                     {/*view slilde show*/}
                     <FlatList
@@ -135,7 +139,7 @@ class Home extends Component {
                             <FlatList
                                 horizontal
                                 showsHorizontalScrollIndicator={false}
-                                data={this.props.newProducts}
+                                data={this.props.newProducts.slice(0, 6)}
                                 renderItem={({ item }) =>
                                     <TouchableOpacity
                                         onPress={() => {
@@ -146,7 +150,7 @@ class Home extends Component {
                                                 source={{ uri: item.images[0] }} />
                                             <View style={[styles.left10, { marginBottom: 5 }]}>
                                                 <TextComponent style={styles.name}>{item.productName}</TextComponent>
-                                                <TextComponent style={styles.money}>{item.price}</TextComponent>
+                                                <TextComponent style={styles.money}>{this.formatVND(item.price)} đ</TextComponent>
                                                 <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
                                             </View>
 
@@ -173,29 +177,38 @@ class Home extends Component {
                         </Card>
                         <View>
                             <FlatList
-
                                 showsVerticalScrollIndicator={false}
-                                data={this.props.defaultProducts}
+                                data={this.props.defaultProducts.slice(0, 6)}
                                 renderItem={({ item }) =>
                                     <TouchableOpacity
                                         onPress={() => {
                                             navigate('Detaill', { item: item });
                                         }}
                                         style={[styles.viewItem]}>
-
                                         <FastImage style={styles.imageNumColumns}
                                             source={{ uri: item.images[0] }} />
                                         <View style={[styles.left10, { marginBottom: 5, marginTop: 5 }]}>
                                             <TextComponent style={styles.name}>{item.productName}</TextComponent>
-                                            <TextComponent style={styles.money}>{item.price}</TextComponent>
+                                            <TextComponent style={styles.money}>{this.formatVND(item.price)} đ</TextComponent>
                                             <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
                                         </View>
                                         <View>
                                             <View style={[styles.viewHorizontal, { marginBottom: 10 }]}>
                                                 <Icon name='hearto' type='AntDesign'
                                                     style={{ fontSize: 20, color: colors.red }} />
-                                                <Icon name='local-shipping' type='MaterialIcons'
-                                                    style={{ fontSize: 20, color: colors.red }} />
+                                                <TouchableOpacity
+                                                    onPress={() => {
+                                                        this.props.addProductToCart(item);
+                                                        Toast.show({
+                                                            text: "Sản phẩm đã được thêm vào giỏ hàng",
+                                                            position: "bottom",
+                                                            type: "success"
+                                                        })
+                                                    }}
+                                                >
+                                                    <Icon name='shoppingcart' type='AntDesign'
+                                                        style={{ fontSize: 25, color: colors.red, paddingLeft: 10 }} />
+                                                </TouchableOpacity>
                                             </View>
                                         </View>
                                     </TouchableOpacity>
@@ -209,6 +222,7 @@ class Home extends Component {
                     </View>
                     <View style={{ marginBottom: 50 }} />
                 </ScrollView>
+
             </SafeAreaView>
         );
     }
@@ -219,7 +233,7 @@ const mapStateToProps = (state) => {
         newProducts: state.Products.newProducts
     }
 }
-export default connect(mapStateToProps)(Home);
+export default connect(mapStateToProps, { addProductToCart })(Home);
 const styles = StyleSheet.create({
     saf: {
         flex: 1,

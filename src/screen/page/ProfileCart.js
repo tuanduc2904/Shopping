@@ -8,6 +8,10 @@ import FastImage from "react-native-fast-image";
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class ProfileCart extends Component {
+    formatVND(num) {
+        var value = String(num).replace(/(.)(?=(\d{3})+$)/g, '$1,')
+        return value
+    }
     render() {
         const { navigate } = this.props.navigation;
         const item = this.props.navigation.state.params.item;
@@ -63,7 +67,7 @@ export default class ProfileCart extends Component {
                             </View>
                             <View style={styles.viewHorizontal}>
                                 <TextComponent style={{ color: colors.black }}>Tổng tiền hàng</TextComponent>
-                                <TextComponent style={{ color: colors.black }}>{item.totalMoney} đ</TextComponent>
+                                <TextComponent style={{ color: colors.black }}>{this.formatVND(item.totalMoney)} đ</TextComponent>
                             </View>
                             <View style={styles.viewHorizontal}>
                                 <TextComponent style={{ color: colors.black }}>Vận chuyển</TextComponent>
@@ -71,7 +75,7 @@ export default class ProfileCart extends Component {
                             </View>
                             <View style={styles.viewHorizontal}>
                                 <TextComponent style={{ color: colors.black }}>Tổng tiền </TextComponent>
-                                <TextComponent style={{ color: colors.red }}>{item.totalMoney} đ</TextComponent>
+                                <TextComponent style={{ color: colors.red }}>{this.formatVND(item.totalMoney)} đ</TextComponent>
                             </View>
 
                         </View>
@@ -111,7 +115,7 @@ export default class ProfileCart extends Component {
                                             </View>
                                             <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                                 <TextComponent style={{ color: colors.black }}>Số lượng: {item.quantity}</TextComponent>
-                                                <TextComponent style={{ color: colors.black }}>{item.product.price} đ</TextComponent>
+                                                <TextComponent style={{ color: colors.black }}>{this.formatVND(item.product.price)} đ</TextComponent>
                                             </View>
                                         </View>
                                     </TouchableOpacity>

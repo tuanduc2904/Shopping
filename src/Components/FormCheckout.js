@@ -72,16 +72,27 @@ class FromCheckOut extends Component {
     render() {
         return (
             <View style={styles.panel}>
-
-
-
                 <Text style={{ fontSize: 20, fontWeight: '400' }}>Điền thông tin người nhận hàng</Text>
                 {this.renderTextfield({ name: 'name', label: 'Tên' })}
                 {this.renderTextfield({ name: 'phone', label: 'Số điện thoại', keyboard: 'phone-pad' })}
                 {this.renderTextfield({ name: 'email', label: 'Email', keyboard: 'email-address' })}
                 {this.renderTextfield({ name: 'address', label: 'Địa chỉ' })}
                 <View style={{ alignItems: 'flex-end' }}>
-                    <TouchableOpacity style={styles.btn} onPress={this.onPressButton}>
+                    <TouchableOpacity style={styles.btn} onPress={() => {
+                        Alert.alert(
+                            'Mua hàng',
+                            'Bạn có muốn đặt hàng với thông tin trên?',
+                            [
+                                {
+                                    text: 'Không',
+                                    style: 'cancel',
+                                },
+                                { text: 'Mua ngay', onPress: () => {this.onPressButton()} },
+                            ],
+                            { cancelable: false },
+                        );
+                    }
+                    }>
                         <Text style={styles.btnText}>Xác nhận</Text>
                     </TouchableOpacity>
                 </View>

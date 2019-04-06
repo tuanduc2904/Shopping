@@ -4,13 +4,15 @@ import FastImage from "react-native-fast-image";
 import { colors } from "../../assets/color";
 import { Dimens } from "../../assets/Dimens";
 import { connect } from 'react-redux';
-import { Icon } from 'native-base'
+import { Icon, Toast } from 'native-base'
 const { width } = Dimensions.get('window');
 import TextComponent from "../../Common/TextComponent/TextComponent";
-import global from '../global'
+import global from '../global';
+import { addProductToCart } from '../../redux/actions/Cart'
+
 const height = width * 0.5;
 
-class Booth extends Component {
+class Search extends Component {
     constructor(props) {
         super(props);
 
@@ -21,8 +23,11 @@ class Booth extends Component {
 
         }
     }
-  
 
+    formatVND(num) {
+        var value = String(num).replace(/(.)(?=(\d{3})+$)/g, '$1,')
+        return value
+    }
     render() {
         return (
             <View style={styles.container}>
@@ -41,15 +46,26 @@ class Booth extends Component {
                                     source={{ uri: item.images[0] }} />
                                 <View style={[styles.left10, { marginBottom: 5, marginTop: 5 }]}>
                                     <TextComponent style={styles.name}>{item.productName}</TextComponent>
-                                    <TextComponent style={styles.money}>{item.price}</TextComponent>
+                                    <TextComponent style={styles.money}>{this.formatVND(item.price)} đ</TextComponent>
                                     <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
                                 </View>
                                 <View>
                                     <View style={[styles.viewHorizontal, { marginBottom: 10 }]}>
                                         <Icon name='hearto' type='AntDesign'
                                             style={{ fontSize: 20, color: colors.red }} />
-                                        <Icon name='local-shipping' type='MaterialIcons'
-                                            style={{ fontSize: 20, color: colors.red }} />
+                                        <TouchableOpacity
+                                            onPress={() => {
+                                                this.props.addProductToCart(item);
+                                                Toast.show({
+                                                    text: "Sản phẩm đã được thêm vào giỏ hàng",
+                                                    position: "bottom",
+                                                    type: "success"
+                                                })
+                                            }}
+                                        >
+                                            <Icon name='shoppingcart' type='AntDesign'
+                                                style={{ fontSize: 25, color: colors.red, paddingLeft: 10 }} />
+                                        </TouchableOpacity>
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -69,7 +85,7 @@ const mapStateToProps = (state) => {
         searchProduct: state.Products.searchProduct
     }
 }
-export default connect(mapStateToProps)(Booth)
+export default connect(mapStateToProps, { addProductToCart })(Search);
 const styles = StyleSheet.create({
     saf: {
         flex: 1,

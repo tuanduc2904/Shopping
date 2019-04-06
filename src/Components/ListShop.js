@@ -3,20 +3,21 @@ import { View, Text, FlatList, TouchableOpacity, StyleSheet, Dimensions } from '
 import FastImage from "react-native-fast-image";
 import TextComponent from "../Common/TextComponent/TextComponent";
 import { colors } from "../assets/color";
-import { Card, Icon } from "native-base";
+import { Card, Icon, Toast } from "native-base";
 import global from '../screen/global'
 const { width } = Dimensions.get('window');
+import { connect } from 'react-redux'
+import { addProductToCart } from '../redux/actions/Cart'
 
-
-
-export default class componentName extends Component {
+class ListShop extends Component {
     constructor(props) {
         super(props);
         this.state = {
         };
     }
-    componentDidMount() {
-        // console.log(this.props.products);
+    formatVND(num) {
+        var value = String(num).replace(/(.)(?=(\d{3})+$)/g, '$1,')
+        return value
     }
     render() {
         return (
@@ -35,15 +36,25 @@ export default class componentName extends Component {
                         <View style={[styles.left10, { marginBottom: 5, marginTop: 5 }]}>
                             <TextComponent style={styles.name}>{item.productName}</TextComponent>
                             {/*<TextComponent style={styles.name}>{item.item}</TextComponent>*/}
-                            <TextComponent style={styles.money}>{item.price}</TextComponent>
-                            <TextComponent style={styles.shopid}>{item.nameShop}</TextComponent>
+                            <TextComponent style={styles.money}>{this.formatVND(item.price)} đ</TextComponent>
                         </View>
                         <View>
                             <View style={[styles.viewHorizontal, { marginBottom: 10 }]}>
                                 <Icon name='hearto' type='AntDesign'
                                     style={{ fontSize: 20, color: colors.red }} />
-                                <Icon name='local-shipping' type='MaterialIcons'
-                                    style={{ fontSize: 20, color: colors.red }} />
+                                <TouchableOpacity
+                                    onPress={() => {
+                                        this.props.addProductToCart(item);
+                                        Toast.show({
+                                            text: "Sản phẩm đã được thêm vào giỏ hàng",
+                                            position: "bottom",
+                                            type: "success"
+                                        })
+                                    }}
+                                >
+                                    <Icon name='shoppingcart' type='AntDesign'
+                                        style={{ fontSize: 25, color: colors.red, paddingLeft: 10 }} />
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </TouchableOpacity>
@@ -54,6 +65,7 @@ export default class componentName extends Component {
         );
     }
 }
+export default connect(null, { addProductToCart })(ListShop);
 const styles = StyleSheet.create({
 
     scroll: {

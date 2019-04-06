@@ -35,7 +35,10 @@ class ShoppingCart extends Component {
         super(props);
     }
 
-
+    formatVND(num) {
+        var value = String(num).replace(/(.)(?=(\d{3})+$)/g, '$1,')
+        return value
+    }
     render() {
         return (
             <SafeAreaView style={styles.saf}>
@@ -63,7 +66,18 @@ class ShoppingCart extends Component {
                                                         <TouchableOpacity
                                                             onPress={() => {
                                                                 let key = item.product.key;
-                                                                this.props.removeProduct(key)
+                                                                Alert.alert(
+                                                                    'Xóa',
+                                                                    'Bạn có đồng ý xóa sản phẩm này khỏi giỏ hàng không?',
+                                                                    [
+                                                                        {
+                                                                            text: 'Không',
+                                                                            style: 'cancel',
+                                                                        },
+                                                                        { text: 'Đồng ý', onPress: () => this.props.removeProduct(key) },
+                                                                    ],
+                                                                    { cancelable: false },
+                                                                );
                                                             }}
                                                         >
                                                             <TextComponent
@@ -91,7 +105,7 @@ class ShoppingCart extends Component {
                                                         fontWeight: '600'
                                                     }}>{item.product.productName}</Text>
                                                     <TextComponent
-                                                        style={styles.money}>{item.product.price} đ</TextComponent>
+                                                        style={styles.money}>{this.formatVND(item.product.price)} đ</TextComponent>
                                                     <View style={styles.counterStyle}>
                                                         <TouchableOpacity
                                                             onPress={() => {
@@ -108,7 +122,7 @@ class ShoppingCart extends Component {
                                                             }}>
                                                             <Icon
                                                                 name="ios-arrow-dropleft"
-                                                                type ="Ionicons"
+                                                                type="Ionicons"
                                                                 size={25}
                                                                 style={{ color: colors.mediumGray }}
                                                             />
@@ -290,7 +304,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        
+
     }
 
 

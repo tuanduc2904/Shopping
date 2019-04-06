@@ -12,7 +12,7 @@ import { Platform, StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import SplashScreen from './screen/SplashScreen';
 import Login from "./screen/Login";
-import { Icon } from "native-base";
+import { Icon, Root } from "native-base";
 import { colors } from "./assets/color";
 // import SeeMore from "./screen/page/ShopSell";
 import SignUp from './screen/SignUp';
@@ -149,7 +149,9 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <AppContainer />
+                <Root>
+                    <AppContainer />
+                </Root>
             </Provider>
         );
     }

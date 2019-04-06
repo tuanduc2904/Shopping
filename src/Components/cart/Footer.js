@@ -11,7 +11,10 @@ class Footer extends Component {
             checkout: false
         }
     }
-
+    formatVND(num) {
+        var value = String(num).replace(/(.)(?=(\d{3})+$)/g, '$1,')
+        return value
+    }
     checkout = () => {
         if (this.props.user.loggedIn) {
             this.setState({ checkout: !this.state.checkout })
@@ -32,7 +35,7 @@ class Footer extends Component {
             );
         }
     }
-   
+
     render() {
         var choose = '';
         if (this.state.checkout) {
@@ -42,10 +45,17 @@ class Footer extends Component {
         return (
             <View style={styles.containerStyle}>
                 {this.state.checkout ? <FormCheckOut navigation={this.props.navigation} /> : null}
+                <View style={{
+                    width: '100%',
+                    height: 1,
+                    backgroundColor: colors.background,
+                    marginTop: 1,
+                    marginBottom: 1
+                }} />
                 <View style={styles.buttonContainerStyle}>
                     <View style={styles.totalStyle}>
                         <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Tổng : </Text>
-                        <Text style={{ fontWeight: 'bold', color: 'red', fontSize: 15 }}>{this.props.totalMoney} đ</Text>
+                        <Text style={{ fontWeight: 'bold', color: 'red', fontSize: 15 }}>{this.formatVND(this.props.totalMoney)} đ</Text>
                     </View>
 
                     <TouchableOpacity style={styles.checkoutButtonStyle}

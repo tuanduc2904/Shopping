@@ -19,6 +19,7 @@ addSuccess = (product) => {
         product
     }
 }
+
 startAdd = () => {
     return {
         type: 'START_ADD'

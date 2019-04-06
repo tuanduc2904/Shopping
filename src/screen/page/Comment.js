@@ -44,18 +44,37 @@ class Comment extends Component {
     postComment() {
         if (this.props.user.loggedIn) {
             if (this.state.comment.length > 0) {
-                const item = this.props.navigation.state.params.item;
-                let date = new Date().toLocaleDateString("en-US");
-                firebase.database().ref(`products`).child(item.uid)
-                    .child(item.key).child(`comment`).push({
-                        avatarSource: this.props.user.avatarSource,
-                        displayName: this.props.user.displayName,
-                        date: date,
-                        comment: this.state.comment
-                    });
-                this.setState({
-                    comment: '',
-                })
+
+                Alert.alert(
+                    'Gửi comment',
+                    'Comment của bạn sẽ được gửi đi và không thể xóa',
+                    [
+                        {
+                            text: 'Để sau',
+                            onPress: () => { },
+                            style: 'cancel',
+                        },
+                        {
+                            text: 'Gửi', onPress: () => {
+                                const item = this.props.navigation.state.params.item;
+                                let date = new Date().toLocaleDateString("en-US");
+                                firebase.database().ref(`products`).child(item.uid)
+                                    .child(item.key).child(`comment`).push({
+                                        avatarSource: this.props.user.avatarSource,
+                                        displayName: this.props.user.displayName,
+                                        date: date,
+                                        comment: this.state.comment
+                                    });
+                                this.setState({
+                                    comment: '',
+                                })
+
+                            }
+                        },
+                    ],
+                    { cancelable: false },
+                );
+
             }
         }
         else {
@@ -87,36 +106,40 @@ class Comment extends Component {
         return (
             <SafeAreaView style={styles.saf}>
                 <View style={styles.container}>
-                    <ScrollView
-                        keyboardDismissMode="interactive"
-                    >
-                        <FlatList
-                            // inverted
-                            data={this.state.listComment}
-                            showsVerticalScrollIndicator={false}
+                    {this.state.listComment.length > 0 ?
+                        <ScrollView
+                            keyboardDismissMode="interactive"
+                        >
+                            <FlatList
+                                // inverted
+                                data={this.state.listComment}
+                                showsVerticalScrollIndicator={false}
 
-                            renderItem={({ item }) =>
+                                renderItem={({ item }) =>
 
-                                <View style={{ width: '100%' }}>
-                                    <View style={styles.itemview}>
-                                        <FastImage style={styles.avatar} source={{ uri: item.avatarSource }} />
-                                        <View>
-                                            <View style={styles.viewText}>
-                                                <TextComponent style={styles.title}>{item.displayName}</TextComponent>
-                                                <TextComponent style={styles.textComment}>{item.comment}</TextComponent>
+                                    <View style={{ width: '100%' }}>
+                                        <View style={styles.itemview}>
+                                            <FastImage style={styles.avatar} source={{ uri: item.avatarSource }} />
+                                            <View>
+                                                <View style={styles.viewText}>
+                                                    <TextComponent style={styles.title}>{item.displayName}</TextComponent>
+                                                    <TextComponent style={styles.textComment}>{item.comment}</TextComponent>
+                                                </View>
+                                                <View style={styles.viewTime}>
+                                                    <TextComponent style={{ fontSize: 12, paddingLeft: 10 }}>{item.date}</TextComponent>
+                                                </View>
                                             </View>
-                                            <View style={styles.viewTime}>
-                                                <TextComponent style={{ fontSize: 12, paddingLeft: 10 }}>{item.date}</TextComponent>
-                                            </View>
+
                                         </View>
 
                                     </View>
-
-                                </View>
-                            }
-                            extraData={this.state.metaData}
-                        />
-                    </ScrollView>
+                                }
+                                extraData={this.state.metaData}
+                            />
+                        </ScrollView>
+                        : <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                            <Text style={{ fontSize: 16 }}>Chưa có đánh giá nào</Text>
+                        </View>}
 
 
                     <KeyboardAvoidingView behavior="padding"
@@ -133,6 +156,7 @@ class Comment extends Component {
                                 }}
                             />
                             <TouchableOpacity onPress={() => {
+
                                 this.postComment();
                             }}>
                                 <Text style={styles.send}>Gửi</Text>
