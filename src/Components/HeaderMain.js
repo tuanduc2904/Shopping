@@ -22,7 +22,7 @@ class HeaderMain extends Component {
                     {/* <Icon name='search1' type='AntDesign' style={{ fontSize: 30, color: colors.red }} /> */}
                     <Item>
                         <Icon name="ios-search"/>
-                        <Input placeholder="Search"
+                        <Input placeholder="Tìm kiếm sản phẩm..."
                             clearButtonMode='always'
                             onChangeText={(text) => {
                                 this.props.searchProductName(text);
