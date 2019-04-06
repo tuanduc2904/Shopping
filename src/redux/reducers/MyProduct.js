@@ -30,7 +30,6 @@ export default (state = INITIAL, action) => {
             }
         case 'UPDATE_PRODUCT':
             let myProducts = state.myProducts;
-            // console.log(myProducts)
             return {
                 ...state, myProducts: myProducts.map(i => {
                     if (i.key === action.product.key) {

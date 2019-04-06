@@ -15,8 +15,6 @@ export default class ProfileCart extends Component {
     render() {
         const { navigate } = this.props.navigation;
         const item = this.props.navigation.state.params.item;
-        // console.log(item.carts)
-        item.carts.map(i => { console.log(i) })
         return (
             <SafeAreaView style={styles.saf}>
                 <View style={styles.container}>

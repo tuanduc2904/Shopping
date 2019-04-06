@@ -41,7 +41,6 @@ class ShopSell extends Component {
                         renderItem={({ item }) =>
                             item.products.length > 0 ?
                                 <View style={styles.container}>
-
                                     <Card style={[styles.card]}>
                                         <View style={[styles.viewHorizontal, { marginTop: 5, marginBottom: 5 }]}>
                                             <View style={styles.viewHorizontalLeft}>

@@ -9,19 +9,14 @@ export const getCart = async () => {
         if (value !== null) {
             return JSON.parse(value);
         }
-        console
         return [];
     } catch (error) {
-
-        console.log(`JSON.parse(value) ` + error);
-
         return [];
     }
 };
 
 export const saveUser = async (user) => {
     await AsyncStorage.setItem('@user', JSON.stringify(user));
-    console.log(`save user`)
 
 };
 

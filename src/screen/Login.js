@@ -44,7 +44,6 @@ class Login extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.user.email);
         TouchID.isSupported()
             .then(biometryType => {
                 this.setState({ biometryType });

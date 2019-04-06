@@ -37,7 +37,6 @@ const startIsLoading = () => {
     }
 }
 const getStoreProducts = (storeProducts) => {
-    console.log(storeProducts)
     return {
         type: GET_SUCCESS_STORE_PRODUCTS,
         storeProducts
