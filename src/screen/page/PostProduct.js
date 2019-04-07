@@ -176,6 +176,7 @@ class PostProduct extends Component {
                         this.setState({
                             images: newImages
                         })
+                        this.imageAddBlob(this.state.images);
                     }}
                 >
                     <Icon name='closecircle' type='AntDesign' style={{ fontSize: 25, color: colors.background }} />
