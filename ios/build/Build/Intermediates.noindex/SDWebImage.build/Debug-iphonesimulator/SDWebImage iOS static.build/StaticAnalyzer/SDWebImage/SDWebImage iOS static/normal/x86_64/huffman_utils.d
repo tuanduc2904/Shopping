@@ -1,8 +1,8 @@
 dependencies: \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/huffman_utils.c \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/./huffman_utils.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/../webp/format_constants.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/../webp/types.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/./utils.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/../dsp/dsp.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/../dsp/../webp/types.h
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/huffman_utils.c \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/./huffman_utils.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/../webp/format_constants.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/../webp/types.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/./utils.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/../dsp/dsp.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/libwebp/src/utils/../dsp/../webp/types.h

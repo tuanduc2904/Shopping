@@ -1,3 +1,3 @@
 dependencies: \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseCore/Firebase/Core/FIRBundleUtil.m \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRBundleUtil.h
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseCore/Firebase/Core/FIRBundleUtil.m \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseCore/Firebase/Core/Private/FIRBundleUtil.h

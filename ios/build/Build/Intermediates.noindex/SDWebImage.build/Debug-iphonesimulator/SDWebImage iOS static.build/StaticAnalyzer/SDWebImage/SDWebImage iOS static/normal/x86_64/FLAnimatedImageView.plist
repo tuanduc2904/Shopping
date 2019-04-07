@@ -3,7 +3,11 @@
 <plist version="1.0">
 <dict>
  <key>clang_version</key>
-<string>Apple LLVM version 10.0.1 (clang-1001.0.46.3)</string>
+<string>Apple LLVM version 10.0.0 (clang-1000.11.45.5)</string>
+ <key>files</key>
+ <array>
+  <string>/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/FLAnimatedImage/FLAnimatedImage/FLAnimatedImageView.m</string>
+ </array>
  <key>diagnostics</key>
  <array>
   <dict>
@@ -54,18 +58,7 @@
    <key>col</key><integer>9</integer>
    <key>file</key><integer>0</integer>
   </dict>
-  <key>ExecutedLines</key>
-  <dict>
-   <key>0</key>
-   <array>
-    <integer>373</integer>
-   </array>
   </dict>
-  </dict>
- </array>
- <key>files</key>
- <array>
-  <string>/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/FLAnimatedImage/FLAnimatedImage/FLAnimatedImageView.m</string>
  </array>
 </dict>
 </plist>

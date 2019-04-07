@@ -1,3 +1,3 @@
 dependencies: \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConstants.m \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConstants.h
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConstants.m \
+  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConstants.h

@@ -401,10 +401,10 @@ const styles = StyleSheet.create({
         position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
-        bottom: 100
+        bottom: 10
     },
     button: {
-        backgroundColor: colors.bgUser
+        backgroundColor: colors.bgUser,
     },
     textButton: {
         color: colors.white

@@ -1,24 +1,22 @@
 dependencies: \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/ScrollView/RCTScrollContentView.m \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/ScrollView/RCTScrollContentView.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTView.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTBorderStyle.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTComponent.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTPointerEvents.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/UIView+React.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/ScrollView/RCTScrollView.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTAutoInsetsProtocol.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTEventDispatcher.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTBridge.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/ScrollView/RCTScrollableProtocol.h
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/ScrollView/RCTScrollContentView.m \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/ScrollView/RCTScrollContentView.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTView.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTComponent.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/UIView+React.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/ScrollView/RCTScrollView.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTAutoInsetsProtocol.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/ScrollView/RCTScrollableProtocol.h

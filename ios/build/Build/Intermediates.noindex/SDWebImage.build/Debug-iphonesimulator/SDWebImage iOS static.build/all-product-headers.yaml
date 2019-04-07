@@ -1,1 +1,167 @@
-{"case-sensitive":"false","roots":[{"contents":[{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/FLAnimatedImage/FLAnimatedImage/FLAnimatedImage.h","name":"FLAnimatedImage.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/FLAnimatedImage/FLAnimatedImageView+WebCache.h","name":"FLAnimatedImageView+WebCache.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/FLAnimatedImage/FLAnimatedImage/FLAnimatedImageView.h","name":"FLAnimatedImageView.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/MKAnnotationView+WebCache.h","name":"MKAnnotationView+WebCache.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/NSData+ImageContentType.h","name":"NSData+ImageContentType.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCache.h","name":"SDImageCache.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCacheConfig.h","name":"SDImageCacheConfig.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCoder.h","name":"SDWebImageCoder.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCoderHelper.h","name":"SDWebImageCoderHelper.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCodersManager.h","name":"SDWebImageCodersManager.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCompat.h","name":"SDWebImageCompat.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageDownloader.h","name":"SDWebImageDownloader.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.h","name":"SDWebImageDownloaderOperation.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageFrame.h","name":"SDWebImageFrame.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageGIFCoder.h","name":"SDWebImageGIFCoder.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageImageIOCoder.h","name":"SDWebImageImageIOCoder.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageManager.h","name":"SDWebImageManager.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageOperation.h","name":"SDWebImageOperation.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImagePrefetcher.h","name":"SDWebImagePrefetcher.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageTransition.h","name":"SDWebImageTransition.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageWebPCoder.h","name":"SDWebImageWebPCoder.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIButton+WebCache.h","name":"UIButton+WebCache.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+ForceDecode.h","name":"UIImage+ForceDecode.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+GIF.h","name":"UIImage+GIF.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+MemoryCacheCost.h","name":"UIImage+MemoryCacheCost.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+MultiFormat.h","name":"UIImage+MultiFormat.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+WebP.h","name":"UIImage+WebP.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.h","name":"UIImageView+HighlightedWebCache.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImageView+WebCache.h","name":"UIImageView+WebCache.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIView+WebCache.h","name":"UIView+WebCache.h","type":"file"},{"external-contents":"/Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIView+WebCacheOperation.h","name":"UIView+WebCacheOperation.h","type":"file"}],"name":"/Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/SDWebImage","type":"directory"}],"version":0}
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/SDWebImage",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "FLAnimatedImage.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/FLAnimatedImage/FLAnimatedImage/FLAnimatedImage.h"
+        },
+        {
+          'type': 'file',
+          'name': "FLAnimatedImageView+WebCache.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/FLAnimatedImage/FLAnimatedImageView+WebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "FLAnimatedImageView.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/Vendors/FLAnimatedImage/FLAnimatedImage/FLAnimatedImageView.h"
+        },
+        {
+          'type': 'file',
+          'name': "MKAnnotationView+WebCache.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/MKAnnotationView+WebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSData+ImageContentType.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/NSData+ImageContentType.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDImageCache.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDImageCacheConfig.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDImageCacheConfig.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageCoder.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageCoderHelper.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCoderHelper.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageCodersManager.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCodersManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageCompat.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCompat.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageDownloader.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageDownloader.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageDownloaderOperation.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageFrame.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageFrame.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageGIFCoder.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageGIFCoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageImageIOCoder.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageImageIOCoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageManager.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageOperation.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageOperation.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImagePrefetcher.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImagePrefetcher.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageTransition.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageTransition.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageWebPCoder.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageWebPCoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIButton+WebCache.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIButton+WebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImage+ForceDecode.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+ForceDecode.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImage+GIF.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+GIF.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImage+MemoryCacheCost.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+MemoryCacheCost.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImage+MultiFormat.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+MultiFormat.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImage+WebP.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+WebP.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImageView+HighlightedWebCache.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImageView+WebCache.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImageView+WebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIView+WebCache.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIView+WebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIView+WebCacheOperation.h",
+          'external-contents': "/Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIView+WebCacheOperation.h"
+        }
+      ]
+    }
+  ]
+}
