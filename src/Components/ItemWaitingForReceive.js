@@ -17,7 +17,10 @@ export default class WaitingForReceive extends Component {
 
     }
 
-
+    formatVND(num) {
+        var value = String(num).replace(/(.)(?=(\d{3})+$)/g, '$1,')
+        return value
+    }
     render() {
         const { navigate, item } = this.props;
         return (
@@ -47,7 +50,7 @@ export default class WaitingForReceive extends Component {
                             <View style={{ flexDirection: 'row', }}>
                                 <TextComponent>Tổng Thanh Toán: </TextComponent>
                                 <TextComponent
-                                    style={styles.money}>{item.totalMoney} đ</TextComponent>
+                                    style={styles.money}>{this.formatVND(item.totalMoney)} đ</TextComponent>
                             </View>
                         </View>
 

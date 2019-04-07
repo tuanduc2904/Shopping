@@ -90,7 +90,7 @@ export default class ProfileCart extends Component {
                                             />
                                             <TextComponent>Ken</TextComponent>
                                         </View>
-                                        <TextComponent style={{ color: colors.red, fontWeight: 'bold' }}>{item.product.price * item.quantity} đ</TextComponent>
+                                        <TextComponent style={{ color: colors.red, fontWeight: 'bold' }}>{this.formatVND(item.product.price * item.quantity)} đ</TextComponent>
                                     </View>
                                     <View style={{
                                         width: '100%',
