@@ -45,7 +45,7 @@ class Home extends Component {
                     imageUrl: 'https://saledenroi.com/wp-content/uploads/2017/07/banner-tiki-khuyen-mai.jpg'
                 },
             ],
-            _isMounted: false
+            _isMounted: true
         }
     }
 
