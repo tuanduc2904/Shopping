@@ -58,8 +58,6 @@ class ListCategory extends Component {
 
             <View style={styles.container}>
 
-
-
                 {
                     this.state.listProduct.length > 0 ?
                         <FlatList

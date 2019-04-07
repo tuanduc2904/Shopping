@@ -30,19 +30,14 @@ class FromCheckOut extends Component {
     }
 
     onPressButton = () => {
-        const { name, phone, email, address } = this.state;
-        // const { cartItems, navigation, addOrder, emptyCart } = this.props;
-        if (name.length < 3) { return Alert.alert('Nhập họ tên đúng và đầy đủ') }
-        else if (phone.length !== 10) { return Alert.alert('Số điện thoại không chính xác') }
-        else if (email.length < 5) { return Alert.alert('Email không chính xác') }
-        else if (address === '') { return Alert.alert('Địa chỉ không chính xác') }
-        else {
-            let customer = { name: name, phone: phone, email: email, address: address };
+        if (this.props.user.displayName.length > 0) {
+            let customer = {
+                name: this.props.user.displayName,
+                phone: this.props.user.phoneNumber,
+                email: this.props.user.email,
+                address: this.props.user.address
+            };
             this.props.addOrder(customer);
-            this.setState({ name: '' });
-            this.setState({ phone: '' });
-            this.setState({ email: '' });
-            this.setState({ address: '' });
             Alert.alert(
                 'Mua hàng thành công',
                 'Bạn có muốn chuyển đến Quản lý đơn hàng?',
@@ -64,6 +59,10 @@ class FromCheckOut extends Component {
                 { cancelable: false },
             )
         }
+        else {
+            Alert.alert('Cần cập nhật thông tin tài khoản trước khi mua hàng')
+        }
+
 
     }
 
@@ -72,11 +71,51 @@ class FromCheckOut extends Component {
     render() {
         return (
             <View style={styles.panel}>
-                <Text style={{ fontSize: 20, fontWeight: '400' }}>Điền thông tin người nhận hàng</Text>
-                {this.renderTextfield({ name: 'name', label: 'Tên' })}
+                <Text style={{ fontSize: 20, fontWeight: '400', paddingBottom: 10 }}>Xác nhận thông tin mua hàng</Text>
+                {/* {this.renderTextfield({ name: 'name', label: 'Tên' })}
                 {this.renderTextfield({ name: 'phone', label: 'Số điện thoại', keyboard: 'phone-pad' })}
                 {this.renderTextfield({ name: 'email', label: 'Email', keyboard: 'email-address' })}
-                {this.renderTextfield({ name: 'address', label: 'Địa chỉ' })}
+                {this.renderTextfield({ name: 'address', label: 'Địa chỉ' })} */}
+                <View style={{
+                    width: '100%',
+                    height: 1,
+                    backgroundColor: colors.background,
+                    marginTop: 1,
+                    marginBottom: 1
+                }} />
+                <Text style={styles.textField}>Họ tên: {this.state.name}</Text>
+                <View style={{
+                    width: '100%',
+                    height: 1,
+                    backgroundColor: colors.background,
+                    marginTop: 1,
+                    marginBottom: 1
+                }} />
+                <Text style={styles.textField}>Số điện thoại: {this.state.phone}</Text>
+                <View style={{
+                    width: '100%',
+                    height: 1,
+                    backgroundColor: colors.background,
+                    marginTop: 1,
+                    marginBottom: 1
+                }} />
+                <Text style={styles.textField}>Địa chỉ: {this.state.address}</Text>
+                <View style={{
+                    width: '100%',
+                    height: 1,
+                    backgroundColor: colors.background,
+                    marginTop: 1,
+                    marginBottom: 1
+                }} />
+                <Text style={styles.textField}>Email: {this.state.email}</Text>
+
+                <View style={{
+                    width: '100%',
+                    height: 1,
+                    backgroundColor: colors.background,
+                    marginTop: 1,
+                    marginBottom: 1
+                }} />
                 <View style={{ alignItems: 'flex-end' }}>
                     <TouchableOpacity style={styles.btn} onPress={() => {
                         Alert.alert(
@@ -87,7 +126,7 @@ class FromCheckOut extends Component {
                                     text: 'Không',
                                     style: 'cancel',
                                 },
-                                { text: 'Mua ngay', onPress: () => {this.onPressButton()} },
+                                { text: 'Mua ngay', onPress: () => { this.onPressButton() } },
                             ],
                             { cancelable: false },
                         );
@@ -115,10 +154,12 @@ const styles = StyleSheet.create({
         margin: 10
     },
     textField: {
-        height: 40,
-        margin: 8,
+        marginTop: 10,
+        marginLeft: 8,
         borderBottomWidth: 1,
         borderBottomColor: colors.red,
+        fontSize: 15,
+        paddingVertical: 10,
     },
     btn: {
         backgroundColor: colors.red,
