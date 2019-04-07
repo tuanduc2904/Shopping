@@ -37,7 +37,7 @@ class Category extends Component {
                 </View>
                 <ScrollView
                     horizontal>
-                    <View style={{ flexDirection: 'column' }}>
+                    <View style={{ flexDirection: 'column', paddingHorizontal: 6 }}>
                         <TouchableOpacity
                             onPress={() => {
                                 navigate('ListCategory', { title: 'Thời trang' });
@@ -65,7 +65,7 @@ class Category extends Component {
                             </View>
                         </TouchableOpacity>
                     </View>
-                    <View style={{ flexDirection: 'column' }}>
+                    <View style={{ flexDirection: 'column', paddingHorizontal: 6 }}>
                         <TouchableOpacity
                             onPress={() => {
                                 navigate('ListCategory', { title: 'Đồ gia dụng' });
@@ -93,7 +93,7 @@ class Category extends Component {
                             </View>
                         </TouchableOpacity>
                     </View>
-                    <View style={{ flexDirection: 'column' }}>
+                    <View style={{ flexDirection: 'column', paddingHorizontal: 6 }}>
                         <TouchableOpacity
                             onPress={() => {
                                 navigate('ListCategory', { title: 'Máy tính & Laptop' });
@@ -121,7 +121,7 @@ class Category extends Component {
                             </View>
                         </TouchableOpacity>
                     </View>
-                    <View style={{ flexDirection: 'column' }}>
+                    <View style={{ flexDirection: 'column', paddingHorizontal: 6 }}>
                         <TouchableOpacity
                             onPress={() => {
                                 navigate('ListCategory', { title: 'Phụ kiện' });
@@ -146,6 +146,36 @@ class Category extends Component {
                                     source={require('../assets/images/ic_category/ic_tv.jpg')} />
                                 <View style={[styles.left10, { marginBottom: 5 }]}>
                                     <TextComponent style={styles.name}>Đồ điện tử</TextComponent>
+                                </View>
+
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{ flexDirection: 'column', paddingHorizontal: 6 }}>
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigate('ListCategory', { title: 'Đồ chơi' });
+
+                            }}>
+                            <View style={styles.left10}>
+                                <FastImage style={styles.image}
+                                    source={require('../assets/images/ic_category/ic_dochoi.jpg')} />
+                                <View style={[styles.left10, { marginBottom: 5 }]}>
+                                    <TextComponent style={styles.name}>Đồ chơi</TextComponent>
+                                </View>
+
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigate('ListCategory', { title: 'Sản phẩm khác' });
+
+                            }}>
+                            <View style={styles.left10}>
+                                <FastImage style={styles.image}
+                                    source={require('../assets/images/ic_category/ic_khac.jpg')} />
+                                <View style={[styles.left10, { marginBottom: 5 }]}>
+                                    <TextComponent style={styles.name}>Sản phẩm khác</TextComponent>
                                 </View>
 
                             </View>
@@ -216,9 +246,9 @@ const styles = StyleSheet.create({
     image: {
         justifyContent: 'center',
         flex: 1,
-        width: 100,
+        width: 70,
         alignItems: 'center',
-        height: 100,
+        height: 70,
         margin: 5,
         backgroundColor: colors.background,
         borderRadius: 8
@@ -309,7 +339,7 @@ const styles = StyleSheet.create({
     },
     name: {
         fontWeight: 'bold',
-        fontSize: 15
+        fontSize: 12,
     },
     money: {
         color: colors.red

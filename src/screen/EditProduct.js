@@ -361,6 +361,12 @@ class EditProduct extends Component {
                                             <TouchableOpacity onPress={() => this.setCategory('Đồ điện tử')}>
                                                 <TextComponent style={styles.category}>Đồ điện tử</TextComponent>
                                             </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => this.setCategory('Đồ chơi')}>
+                                                <TextComponent style={styles.category}>Đồ chơi</TextComponent>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => this.setCategory('Sản phẩm khác')}>
+                                                <TextComponent style={styles.category}>Sản phẩm khác</TextComponent>
+                                            </TouchableOpacity>
                                         </View>
                                         : null}
                             </View>

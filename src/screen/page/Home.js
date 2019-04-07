@@ -133,7 +133,7 @@ class Home extends Component {
                                     <Text style={[styles.title]}>Sản Phẩm Mới</Text>
                                 </View>
                                 <View>
-                                    <Text style={[styles.textItemRight]}>Xem Thêm >></Text>
+                                    {/* <Text style={[styles.textItemRight]}>Xem Thêm >></Text> */}
                                 </View>
                             </View>
 
@@ -168,10 +168,10 @@ class Home extends Component {
                             <View style={[styles.viewHorizontal, { maNayrginTop: 5, marginBottom: 5 }]}>
                                 <View style={[styles.viewHorizontalLeft, { marginTop: 5, marginBottom: 5, justifyContent: 'center' }]}>
                                     <View style={styles.bar} />
-                                    <Text style={[styles.title]}>Gợi Ý Hôm </Text>
+                                    <Text style={[styles.title]}>Gợi Ý Hôm Nay </Text>
                                 </View>
                                 <View>
-                                    <Text style={[styles.textItemRight]}>Xem Thêm >></Text>
+                                    {/* <Text style={[styles.textItemRight]}>Xem Thêm >></Text> */}
                                 </View>
                             </View>
 
