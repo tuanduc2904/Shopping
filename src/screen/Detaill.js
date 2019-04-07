@@ -22,6 +22,7 @@ class Detaill extends Component {
             maxSlider: 3,
         };
     }
+    
 
     componentDidMount() {
         const item = this.props.navigation.state.params.item;

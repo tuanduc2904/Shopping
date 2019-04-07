@@ -18,9 +18,9 @@ const height = width * 0.5;
 import { firebaseApp } from "../../untils/firebase";
 import FastImage from "react-native-fast-image";
 import TextComponent from "../../Common/TextComponent/TextComponent";
-import { connect } from 'react-redux'
-import { addProductToCart } from '../../redux/actions/Cart'
-
+import { connect } from 'react-redux';
+import { addProductToCart } from '../../redux/actions/Cart';
+import Category from '../../Components/Category'
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -123,7 +123,8 @@ class Home extends Component {
                     </View>
 
                     <View style={styles.container}>
-                        {/*san pham moi*/}
+                        {/*Danh muc*/}
+                        <Category navigate={navigate} />
                         <Card style={[styles.card, styles.marginTop]}>
 
                             <View style={[styles.viewHorizontal, styles.marginTop]}>
@@ -373,7 +374,7 @@ const styles = StyleSheet.create({
         color: colors.red
     },
     left10: {
-        left: 5
+        left: 10
     },
     textItemRight: {
         color: colors.red

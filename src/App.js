@@ -28,7 +28,7 @@ import ManageOrder from "./screen/ManageOrder";
 import ProfileCart from "./screen/page/ProfileCart";
 import Notification from './screen/page/Notification';
 import EditProduct from './screen/EditProduct';
-
+import ListCategory from './screen/ListCategory'
 const NavStack = createStackNavigator({
 
     SplashScreen: {
@@ -140,6 +140,15 @@ const NavStack = createStackNavigator({
         }
     },
 
+    ListCategory: {
+        screen: ListCategory,
+        navigationOptions: {
+            // title: 'Danh sách sản phẩm',
+            // headerStyle: {
+            //     backgroundColor: '#FFF',
+            // },
+        }
+    },
 
 
 })

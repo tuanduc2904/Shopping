@@ -383,16 +383,30 @@ class PostProduct extends Component {
                                             <TouchableOpacity onPress={() => this.setCategory('Giày dép')}>
                                                 <TextComponent style={[styles.category]}>Giày dép</TextComponent>
                                             </TouchableOpacity>
-                                            <TouchableOpacity onPress={() => this.setCategory('Quần áo')}>
-                                                <TextComponent style={styles.category}>Quần áo</TextComponent>
+                                            <TouchableOpacity onPress={() => this.setCategory('Thời trang')}>
+                                                <TextComponent style={styles.category}>Thời trang</TextComponent>
                                             </TouchableOpacity>
                                             <TouchableOpacity onPress={() => this.setCategory('Phụ kiện')}>
                                                 <TextComponent style={styles.category}>Phụ kiện</TextComponent>
                                             </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => this.setCategory('Đồ gia dụng')}>
+                                                <TextComponent style={styles.category}>Đồ gia dụng</TextComponent>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => this.setCategory('Máy tính & Laptop')}>
+                                                <TextComponent style={styles.category}>Máy tính & Laptop</TextComponent>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => this.setCategory('Trang sức')}>
+                                                <TextComponent style={styles.category}>Trang sức</TextComponent>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => this.setCategory('Điện thoại')}>
+                                                <TextComponent style={styles.category}>Điện thoại</TextComponent>
+                                            </TouchableOpacity>
+                                            <TouchableOpacity onPress={() => this.setCategory('Đồ điện tử')}>
+                                                <TextComponent style={styles.category}>Đồ điện tử</TextComponent>
+                                            </TouchableOpacity>
                                         </View>
                                         : null}
                             </View>
-
                         </View>
                         <View style={{ marginBottom: 30 }} />
                     </KeyboardAwareScrollView>
