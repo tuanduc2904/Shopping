@@ -494,8 +494,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginRight: 10,
-        marginLeft: 10,
+        paddingRight: 10,
+        paddingLeft: 10,
     }
 
 });

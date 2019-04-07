@@ -18,7 +18,10 @@ export default class ItemWaitingForShipment extends Component {
             viewMore: false
         }
     }
-
+    formatVND(num) {
+        var value = String(num).replace(/(.)(?=(\d{3})+$)/g, '$1,')
+        return value
+    }
     render() {
         const { navigate, item } = this.props;
         return (
@@ -72,7 +75,7 @@ export default class ItemWaitingForShipment extends Component {
                             <View style={{ flexDirection: 'row', }}>
                                 <TextComponent>Tổng Thanh Toán: </TextComponent>
                                 <TextComponent
-                                    style={styles.money}> {item.product.price * item.quantity} đ</TextComponent>
+                                    style={styles.money}> {this.formatVND(item.product.price * item.quantity)} đ</TextComponent>
                             </View>
                         </View>
 
