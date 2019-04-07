@@ -105,9 +105,12 @@ class PostProduct extends Component {
         this.setState({ blobs: [] });
         images.forEach((image) => {
             new Promise((resolve, reject) => {
-                const uploadUri = Platform.OS === 'ios' ? image.uri.replace('file://', '') : image.uri;
-                const key = new Date().getTime();
-
+                let uploadUri = Platform.OS === 'ios' ? image.uri.replace('file://', '') : image.uri;
+                let min = 1;
+                let max = 100;
+                let rand = min + Math.random() * (max - min);
+                let date = new Date().getTime();
+                let key = rand + date;
                 fs.readFile(uploadUri, 'base64')
                     .then((data) => {
                         return Blob.build(data, { type: `${mime};BASE64` })
@@ -167,7 +170,14 @@ class PostProduct extends Component {
         return <View>
             <Image style={styles.image} source={image} />
             <View style={{ position: 'absolute', top: -5, right: 3 }}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => {
+                        let newImages = this.state.images.filter(uri => uri !== image);
+                        this.setState({
+                            images: newImages
+                        })
+                    }}
+                >
                     <Icon name='closecircle' type='AntDesign' style={{ fontSize: 25, color: colors.background }} />
                 </TouchableOpacity>
             </View>
