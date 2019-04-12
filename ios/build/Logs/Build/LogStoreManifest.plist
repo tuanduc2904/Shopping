@@ -3,67 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>logFormatVersion</key>
-	<integer>9</integer>
+	<integer>10</integer>
 	<key>logs</key>
-	<dict>
-		<key>9D0EAEC4-1B59-404C-98FF-C4F2744B146F</key>
-		<dict>
-			<key>className</key>
-			<string>IDECommandLineBuildLog</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>9D0EAEC4-1B59-404C-98FF-C4F2744B146F.xcactivitylog</string>
-			<key>highLevelStatus</key>
-			<string>W</string>
-			<key>schemeIdentifier-containerName</key>
-			<string>Shopping project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>Shopping</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Building workspace Shopping with scheme Shopping and configuration Debug</string>
-			<key>timeStartedRecording</key>
-			<real>576336936.22498095</real>
-			<key>timeStoppedRecording</key>
-			<real>576336943.41283202</real>
-			<key>title</key>
-			<string>Building workspace Shopping with scheme Shopping and configuration Debug</string>
-			<key>uniqueIdentifier</key>
-			<string>9D0EAEC4-1B59-404C-98FF-C4F2744B146F</string>
-		</dict>
-		<key>BD3AC0B2-125D-49A9-A082-E856E983532F</key>
-		<dict>
-			<key>className</key>
-			<string>IDECommandLineBuildLog</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>BD3AC0B2-125D-49A9-A082-E856E983532F.xcactivitylog</string>
-			<key>highLevelStatus</key>
-			<string>W</string>
-			<key>schemeIdentifier-containerName</key>
-			<string>Shopping project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>Shopping</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Building workspace Shopping with scheme Shopping and configuration Debug</string>
-			<key>timeStartedRecording</key>
-			<real>576336964.57778394</real>
-			<key>timeStoppedRecording</key>
-			<real>576336967.19581294</real>
-			<key>title</key>
-			<string>Building workspace Shopping with scheme Shopping and configuration Debug</string>
-			<key>uniqueIdentifier</key>
-			<string>BD3AC0B2-125D-49A9-A082-E856E983532F</string>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>

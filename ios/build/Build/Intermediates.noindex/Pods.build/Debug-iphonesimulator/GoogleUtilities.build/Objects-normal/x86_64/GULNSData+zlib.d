@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/GoogleUtilities/GoogleUtilities/NSData+zlib/GULNSData+zlib.m \
-  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/Target\ Support\ Files/GoogleUtilities/GoogleUtilities-prefix.pch \
-  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/GoogleUtilities/GoogleUtilities/NSData+zlib/GULNSData+zlib.h
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/GoogleUtilities/GoogleUtilities/NSData+zlib/GULNSData+zlib.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Target\ Support\ Files/GoogleUtilities/GoogleUtilities-prefix.pch \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/GoogleUtilities/GoogleUtilities/NSData+zlib/GULNSData+zlib.h

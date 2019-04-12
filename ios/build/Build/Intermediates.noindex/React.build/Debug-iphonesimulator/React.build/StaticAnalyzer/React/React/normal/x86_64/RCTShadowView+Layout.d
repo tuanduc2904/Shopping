@@ -1,18 +1,20 @@
 dependencies: \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTShadowView+Layout.m \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTShadowView+Layout.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTShadowView.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTComponent.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Views/RCTLayout.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTRootView.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTBridge.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/React/Base/RCTAssert.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTShadowView+Layout.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTShadowView+Layout.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTShadowView.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTComponent.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Views/RCTLayout.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTDefines.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTRootView.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTBridge.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/React/Base/RCTAssert.h
