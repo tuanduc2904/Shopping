@@ -15,3 +15,5 @@ $ "react-native bundle --entry-file index.js - platform ios --dev false --bundle
 
 - (Android)If you get an error the first time you run on an android device, the reason is that the react-native-fetch-blob library is having problems running on an Android device. If you get an error on your Android device, run react-native run-android for the second time, when all problems will be resolved.
 - Nodejs version: v10.15.3
+- JDK: jdk1.8.0_201
+- Xcode version Version 10.2
