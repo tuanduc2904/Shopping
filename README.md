@@ -5,7 +5,7 @@ Step 2: $ cd Shopping
 
 Step 3: $ yarn install
 
-Step 4: Go to the Android folder in the project, open the local.properties file to edit 'sdk.dir = / Users / {your users} / Library / Android / sdk'
+Step 4: Go to the 'android' folder in the project, open the local.properties file to edit 'sdk.dir = / Users / {your users} / Library / Android / sdk'
 
 Step 5: $ react-native run-android || $ react-native run-ios
 
