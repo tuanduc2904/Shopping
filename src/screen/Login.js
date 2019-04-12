@@ -172,7 +172,7 @@ class Login extends Component {
                             <View style={{ paddingBottom: 10 }}>
                                 <TouchableOpacity
                                     onPress={() => {
-                                        if (this.props.user.email !== '') {
+                                        if (this.props.user.email) {
                                             this.loginWithFingter();
                                         }
                                         else {
