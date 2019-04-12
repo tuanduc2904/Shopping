@@ -150,12 +150,7 @@ class Login extends Component {
                                         returnKeyType='next'
                                         keyboardType='email-address'
                                         onSubmitEditing={() => {
-                                            if (this.state.email.length>0){
                                                 this.refs.txtPassWord.focus()
-                                            }
-                                            else{
-                                                alert(`Email không được bỏ trống`)
-                                            }
                                         }}
                                     />
                                 </View>
@@ -170,12 +165,7 @@ class Login extends Component {
                                         returnKeyType='go'
                                         ref={'txtPassWord'}
                                         onSubmitEditing={() => {
-                                            if (this.state.password.length>0){
                                                 this.checkPassWord();
-                                            }
-                                            else{
-                                                alert(`Password không được bỏ trống`)
-                                            }
                                         }}
                                     />
                                 </View>

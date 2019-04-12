@@ -113,12 +113,7 @@ class SignUp extends Component {
                                     returnKeyType='next'
                                     keyboardType='email-address'
                                     onSubmitEditing={() => {
-                                        if (this.state.email.length > 0) {
                                             this.refs.txtPassWord.focus()
-                                        }
-                                        else {
-                                            alert(`Email không được bỏ trống`)
-                                        }
                                     }}
                                     autoCorrect={false}
                                 />
@@ -134,12 +129,7 @@ class SignUp extends Component {
                                     ref={'txtPassWord'}
                                     autoCorrect={false}
                                     onSubmitEditing={() => {
-                                        if (this.state.password.length > 0) {
                                             this.checkText();
-                                        }
-                                        else {
-                                            alert(`Password không được bỏ trống`)
-                                        }
                                     }}
 
                                 />
