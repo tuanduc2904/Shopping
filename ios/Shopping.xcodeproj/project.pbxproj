@@ -62,6 +62,7 @@
 		A962F84F223FCC6F0043CB1C /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A962F84C223FCC590043CB1C /* libRNImagePicker.a */; };
 		A962F898223FD2E70043CB1C /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A962F897223FD2D90043CB1C /* libRNFetchBlob.a */; };
 		A96BF8D622536D050024A3C4 /* libTouchID.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A96BF8D522536CED0024A3C4 /* libTouchID.a */; };
+		A9ED856522605E2F00B10198 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		B7C2B81F0D4D4A90A6F60F01 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7FA37D4958847208A8FD503 /* Feather.ttf */; };
 		BA228AFFF33EB2A333D2A216 /* libPods-Shopping-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E928A4C39CEEF89D89AF353B /* libPods-Shopping-tvOSTests.a */; };
@@ -1485,6 +1486,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				D335CCDCCA48438688D9D2B9 /* Entypo.ttf in Resources */,
+				A9ED856522605E2F00B10198 /* main.jsbundle in Resources */,
 				2ECCA4C84D504C73A7904CF5 /* EvilIcons.ttf in Resources */,
 				B7C2B81F0D4D4A90A6F60F01 /* Feather.ttf in Resources */,
 				1406A37ECAF54000BF3CEC00 /* FontAwesome.ttf in Resources */,

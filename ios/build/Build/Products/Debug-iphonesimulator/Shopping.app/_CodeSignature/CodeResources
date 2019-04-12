@@ -561,7 +561,7 @@
 		</data>
 		<key>PlugIns/ShoppingTests.xctest.dSYM/Contents/Resources/DWARF/ShoppingTests</key>
 		<data>
-		3W3+mAfpkE11ZsN8o3zjnQOX6nU=
+		bU07Ily8SX9SlVz957Wnfceq30M=
 		</data>
 		<key>PlugIns/ShoppingTests.xctest/Info.plist</key>
 		<data>
@@ -569,7 +569,7 @@
 		</data>
 		<key>PlugIns/ShoppingTests.xctest/ShoppingTests</key>
 		<data>
-		2Yybsf5amlDCYXVn1Z8DWlUSD9E=
+		4VwNxE/p1GfY++cmS9QmaJfSij8=
 		</data>
 		<key>PlugIns/ShoppingTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
@@ -582,6 +582,10 @@
 		<key>Zocial.ttf</key>
 		<data>
 		C9pZx7zT05J94EfgkYdaRCi/0as=
+		</data>
+		<key>main.jsbundle</key>
+		<data>
+		OgGbXLgdLyncx0IbcCxtLYjDnO4=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -1636,11 +1640,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3W3+mAfpkE11ZsN8o3zjnQOX6nU=
+			bU07Ily8SX9SlVz957Wnfceq30M=
 			</data>
 			<key>hash2</key>
 			<data>
-			4Q3+GIlp1WxQbAQX4roseF/banTRQ0GBIWAUo4NlXPQ=
+			CPl0/vbV3bSvB7PBerd8Q15VZe/JnUTzacxbYJV4Hlk=
 			</data>
 		</dict>
 		<key>PlugIns/ShoppingTests.xctest/Info.plist</key>
@@ -1658,11 +1662,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2Yybsf5amlDCYXVn1Z8DWlUSD9E=
+			4VwNxE/p1GfY++cmS9QmaJfSij8=
 			</data>
 			<key>hash2</key>
 			<data>
-			GlhJ/UtDvtQQnK73AyAfj6gIw9IOMxz7FIltWBE/9Rs=
+			gCRRvHyhY2BNDIqLeKj9pPmV2bn6OQVhtRQrb+psHmo=
 			</data>
 		</dict>
 		<key>PlugIns/ShoppingTests.xctest/_CodeSignature/CodeResources</key>
@@ -1696,6 +1700,17 @@
 			<key>hash2</key>
 			<data>
 			17EKHr4YMOWi8I9JA7moDiwZEsDdL3O5P88r+DIhZgI=
+			</data>
+		</dict>
+		<key>main.jsbundle</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			OgGbXLgdLyncx0IbcCxtLYjDnO4=
+			</data>
+			<key>hash2</key>
+			<data>
+			7GHNG4pnI4WdLjSNfPNRwWv18G+7OZgSjorA3x1cVyk=
 			</data>
 		</dict>
 	</dict>
