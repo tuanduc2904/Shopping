@@ -3,7 +3,7 @@ Step 1: $ git clone https://github.com/tuanduc2904/Shopping.git
 
 Step 2: $ cd Shopping
 
-Step 3: $ yarn install or $ npm install (not recommended)
+Step 3: $ yarn install
 
 Step 4: Go to the 'android' folder in the project, open the local.properties file to edit 'sdk.dir = / Users / {your users} / Library / Android / sdk'
 
