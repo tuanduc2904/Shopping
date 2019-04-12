@@ -1,0 +1,33 @@
+dependencies: \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessaging.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/Public/FIRMessaging.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessaging_Private.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingAnalytics.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/FirebaseAnalyticsInterop/FIRAnalyticsInterop.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingClient.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingConstants.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingContextManagerService.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDataMessageManager.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingDefines.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingLogger.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMMessageCode.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingPubSub.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingReceiver.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRemoteNotificationsProxy.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingRmqManager.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingSyncMessageManager.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingUtilities.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/FIRMessagingVersionUtilities.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/FirebaseCore/FIRAppInternal.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/FirebaseCore/FIRApp.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/FirebaseCore/FIRErrors.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/FirebaseCore/FIRErrorCode.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/FirebaseCore/FIRComponent.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/FirebaseCore/FIRComponentContainer.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/FirebaseCore/FIRComponentType.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/FirebaseCore/FIRLibrary.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/FirebaseCore/FIRDependency.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Public/FirebaseInstanceID/FirebaseInstanceID/FirebaseInstanceID.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Public/FirebaseInstanceID/FirebaseInstanceID/FIRInstanceID.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Headers/Private/GoogleUtilities/GULReachabilityChecker.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/FirebaseMessaging/Firebase/Messaging/NSError+FIRMessaging.h
