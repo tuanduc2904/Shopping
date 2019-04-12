@@ -1,13 +1,13 @@
 dependencies: \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.cpp \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGEnums.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGMacros.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/Utils.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGNode.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGConfig.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/Yoga-internal.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGLayout.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGFloatOptional.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGStyle.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGNodePrint.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.cpp \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGEnums.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGMacros.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/Utils.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGNode.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGConfig.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/Yoga-internal.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGLayout.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGFloatOptional.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGStyle.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native/ReactCommon/yoga/yoga/YGNodePrint.h

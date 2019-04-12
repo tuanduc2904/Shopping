@@ -1,8 +1,8 @@
 dependencies: \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+MultiFormat.m \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+MultiFormat.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCompat.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/NSData+ImageContentType.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/NSImage+WebCache.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCodersManager.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCoder.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+MultiFormat.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/UIImage+MultiFormat.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCompat.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/NSData+ImageContentType.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/NSImage+WebCache.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCodersManager.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/Vendor/SDWebImage/SDWebImage/SDWebImageCoder.h

@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/FastImage/FFFastImageSource.m \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/FastImage/FFFastImageSource.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/FastImage/FFFastImageSource.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/FastImage/FFFastImageSource.h

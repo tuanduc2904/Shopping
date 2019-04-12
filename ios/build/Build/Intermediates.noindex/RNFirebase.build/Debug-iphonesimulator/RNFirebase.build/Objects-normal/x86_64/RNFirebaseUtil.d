@@ -1,14 +1,14 @@
 dependencies: \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-firebase/ios/RNFirebase/RNFirebaseUtil.m \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-firebase/ios/RNFirebase/RNFirebaseUtil.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventEmitter.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-firebase/ios/RNFirebase/RNFirebaseUtil.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-firebase/ios/RNFirebase/RNFirebaseUtil.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventEmitter.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
   ../../../ios/Pods/Headers/Public/Firebase/Firebase.h \
   ../../../ios/Pods/Headers/Public/FirebaseCore/FirebaseCore.h \
   ../../../ios/Pods/Headers/Public/FirebaseCore/FIRAnalyticsConfiguration.h \

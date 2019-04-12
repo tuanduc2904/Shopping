@@ -1,16 +1,16 @@
 dependencies: \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/FastImage/RCTConvert+FFFastImage.m \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/FastImage/RCTConvert+FFFastImage.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-fast-image/ios/FastImage/FFFastImageSource.h
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/FastImage/RCTConvert+FFFastImage.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/FastImage/RCTConvert+FFFastImage.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-fast-image/ios/FastImage/FFFastImageSource.h

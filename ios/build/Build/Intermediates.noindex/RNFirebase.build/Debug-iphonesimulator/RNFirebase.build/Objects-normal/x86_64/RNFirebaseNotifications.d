@@ -1,19 +1,19 @@
 dependencies: \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-firebase/ios/RNFirebase/notifications/RNFirebaseNotifications.m \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-firebase/ios/RNFirebase/notifications/RNFirebaseNotifications.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventEmitter.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-firebase/ios/RNFirebase/RNFirebaseEvents.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-firebase/ios/RNFirebase/messaging/RNFirebaseMessaging.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-firebase/ios/RNFirebase/notifications/RNFirebaseNotifications.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-firebase/ios/RNFirebase/notifications/RNFirebaseNotifications.h \
   ../../../ios/Pods/Headers/Public/FirebaseMessaging/FirebaseMessaging.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTEventEmitter.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
   ../../../ios/Pods/Headers/Public/FirebaseMessaging/FIRMessaging.h \
-  /Users/apple/Desktop/DuAn/Shopping/node_modules/react-native-firebase/ios/RNFirebase/RNFirebaseUtil.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-firebase/ios/RNFirebase/RNFirebaseEvents.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-firebase/ios/RNFirebase/messaging/RNFirebaseMessaging.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/node_modules/react-native-firebase/ios/RNFirebase/RNFirebaseUtil.h \
   ../../../ios/Pods/Headers/Public/Firebase/Firebase.h \
   ../../../ios/Pods/Headers/Public/FirebaseCore/FirebaseCore.h \
   ../../../ios/Pods/Headers/Public/FirebaseCore/FIRAnalyticsConfiguration.h \
@@ -29,5 +29,5 @@ dependencies: \
   ../../../ios/Pods/Headers/Public/FirebaseAnalytics/FirebaseAnalytics/FIRUserPropertyNames.h \
   ../../../ios/Pods/Headers/Public/FirebaseInstanceID/FirebaseInstanceID/FirebaseInstanceID.h \
   ../../../ios/Pods/Headers/Public/FirebaseInstanceID/FirebaseInstanceID/FIRInstanceID.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
-  /Users/apple/Desktop/DuAn/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h

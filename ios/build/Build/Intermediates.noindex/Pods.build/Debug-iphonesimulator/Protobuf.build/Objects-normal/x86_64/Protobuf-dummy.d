@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/Target\ Support\ Files/Protobuf/Protobuf-dummy.m \
-  /Users/apple/Desktop/DuAn/Shopping/ios/Pods/Target\ Support\ Files/Protobuf/Protobuf-prefix.pch
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Target\ Support\ Files/Protobuf/Protobuf-dummy.m \
+  /Volumes/DATA/Mobile/react-native/Shopping/ios/Pods/Target\ Support\ Files/Protobuf/Protobuf-prefix.pch
